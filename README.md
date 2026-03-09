@@ -198,4 +198,4 @@ To add new metrics, create a file in `evaluation/metrics/` following the pattern
 
 - Python 3.10+ (3.11 recommended)
 - OpenAI API key(s)
-- ~2GB disk for ChromaDB + LightRAG storage
+- ~10GB disk space for ChromaDB + LightRAG storage + all the necessary virtual environments
