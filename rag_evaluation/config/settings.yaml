@@ -1,0 +1,78 @@
+# =============================================================================
+# RAG Evaluation Framework - Global Settings
+# =============================================================================
+# This file contains shared configuration used across all approaches.
+# Approach-specific overrides can be set via environment variables or .env files.
+
+# -- Model Configuration -----------------------------------------------------
+models:
+  generation_model: "gpt-4o-mini"           # LLM for answer generation
+  classifier_model: "gpt-4o-mini"           # LLM for query classification (Agentic RAG)
+  embedding_model: "text-embedding-3-small"  # Embedding model (all approaches)
+  embedding_dimensions: 1536                 # Dimensions for text-embedding-3-small
+
+# -- Ingestion Configuration --------------------------------------------------
+ingestion:
+  gdpr_data_dir: "data/gdpr"                # Directory containing GDPR .txt files
+  chunk_size: 512                            # Tokens per chunk
+  chunk_overlap: 64                          # Overlap between chunks (tokens)
+  separator: "\n\n"                          # Primary text splitter separator
+
+# -- ChromaDB Configuration ---------------------------------------------------
+chromadb:
+  persist_directory: "db/chromadb"           # ChromaDB storage path
+  collection_name: "gdpr_corpus"             # Collection name
+  distance_metric: "cosine"                  # Distance function: cosine | l2 | ip
+
+# -- LightRAG Configuration ---------------------------------------------------
+lightrag:
+  working_dir: "db/lightrag"                 # LightRAG graph storage path
+  max_token_size: 8192                       # Max tokens for embedding batches
+  chunk_token_size: 1200                     # LightRAG internal chunk size
+  entity_extract_max_gleaning: 1             # Entity extraction passes
+
+# -- Retrieval Configuration ---------------------------------------------------
+retrieval:
+  top_k: 5                                   # Number of documents to retrieve
+  similarity_threshold: 0.3                  # Minimum similarity score (0-1)
+  max_retrieval_iterations: 3                # Max iterations for multi-step retrieval
+
+# -- Agentic RAG Configuration ------------------------------------------------
+agentic_rag:
+  classifier_temperature: 0.0               # Temperature for query classifier
+  generation_temperature: 0.1               # Temperature for answer generation
+  hallucination_check_temperature: 0.0      # Temperature for grounding check
+  max_hallucination_retries: 2              # Max retries on hallucination detection
+
+# -- CRAG Configuration -------------------------------------------------------
+crag:
+  relevance_threshold_correct: 0.7          # Score above this = Correct
+  relevance_threshold_ambiguous: 0.4        # Score above this but below correct = Ambiguous
+  generation_temperature: 0.1               # Temperature for answer generation
+  max_refinement_iterations: 2              # Max query refinement iterations
+
+# -- Execution Configuration ---------------------------------------------------
+execution:
+  max_workers: 4                             # Max parallel workers per approach
+  request_delay_seconds: 0.5                 # Delay between API calls (rate limiting)
+  timeout_seconds: 120                       # Timeout per question
+
+# -- I/O Configuration --------------------------------------------------------
+io:
+  questions_path: "data/questions/questions.json"  # Question corpus path
+  outputs_dir: "outputs"                           # Approach output directory
+  results_dir: "results"                           # Evaluation results directory
+
+# -- Evaluation Configuration -------------------------------------------------
+evaluation:
+  judge_model: "gpt-4o-mini"          # LLM used as judge for all DeepEval metrics
+
+  # Per-metric pass/fail thresholds (0-1 scale)
+  thresholds:
+    faithfulness: 0.7                 # Ratio of answer claims supported by context
+    answer_relevancy: 0.7            # Ratio of answer statements relevant to the question
+    context_precision: 0.7           # Ratio of retrieved chunks that are relevant
+    context_recall: 0.7             # Ratio of ground-truth statements covered by context
+    context_relevancy: 0.7         # Ratio of retrieved statements relevant to the question
+    regulatory_grounding: 0.7        # Correct citation/paraphrase of regulation clause
+    legal_interpretability: 0.7      # Legal clarity, accuracy, and understandability

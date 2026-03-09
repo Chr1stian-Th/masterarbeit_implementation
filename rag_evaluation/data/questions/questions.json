@@ -1,0 +1,17 @@
+[
+  {
+    "id": "q001",
+    "question": "What is the main objective of the GDPR?",
+    "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms."
+  },
+  {
+    "id": "q002",
+    "question": "What are the key principles for processing personal data under the GDPR?",
+    "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability."
+  },
+  {
+    "id": "q003",
+    "question": "What rights do data subjects have under the GDPR?",
+    "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing."
+  }
+]

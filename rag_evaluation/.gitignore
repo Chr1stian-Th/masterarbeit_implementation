@@ -1,0 +1,25 @@
+# Virtual environments
+.venvs/
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Generated data
+outputs/
+results/
+db/chromadb/
+db/lightrag/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

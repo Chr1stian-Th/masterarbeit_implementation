@@ -1,0 +1,201 @@
+# RAG Evaluation Framework
+
+A comprehensive framework for evaluating Retrieval-Augmented Generation (RAG) approaches
+against a GDPR question-answering corpus using [DeepEval](https://github.com/confident-ai/deepeval) and based on RAGAS.
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        orchestrator.sh                          │
+│  Sets up venvs, runs ingestion, executes approaches, evaluates │
+└──────────┬──────────────┬──────────────┬──────────────┬─────────┘
+           │              │              │              │
+     ┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼──────┐
+     │ Ingestion │ │ LightRAG  │ │ Agentic   │ │   CRAG     │
+     │ Pipeline  │ │ (graph)   │ │ RAG       │ │(corrective)│
+     └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬──────┘
+           │              │              │              │
+     ┌─────▼─────┐       │        ┌─────▼─────┐       │
+     │ ChromaDB  │       │        │ ChromaDB  │       │
+     │ + LightRAG│       │        │ (shared)  ├───────┘
+     └───────────┘       │        └───────────┘
+                   ┌─────▼─────┐
+                   │ LightRAG  │
+                   │ Graph DB  │
+                   └───────────┘
+           │              │              │              │
+           └──────────────┴──────┬───────┴──────────────┘
+                                 │ outputs/*.json
+                           ┌─────▼─────┐
+                           │ DeepEval  │
+                           │ Evaluator │
+                           └─────┬─────┘
+                                 │ results/
+                                 ▼
+                         Evaluation Reports
+```
+
+## RAG Approaches
+
+### 1. LightRAG (Graph-Based RAG)
+Uses [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) which builds a knowledge graph
+from the GDPR corpus and performs hybrid (graph + vector) retrieval.
+
+### 2. Agentic RAG (Adaptive Retrieval)
+A multi-stage pipeline:
+- **Query Classifier**: Categorizes questions as no-retrieval / single-step / multi-step
+- **Dynamic Retrieval**: Adapts retrieval strategy based on classification
+- **Hallucination Check**: Verifies answer is grounded in retrieved context
+
+### 3. CRAG (Corrective RAG)
+Implements the Corrective Retrieval-Augmented Generation pattern:
+- **Retrieve** documents from ChromaDB
+- **Grade** each document for relevance (Correct / Incorrect / Ambiguous)
+- **Refine** by re-retrieving with improved queries if confidence is low
+- **Generate** with refined, high-quality context
+
+## Project Structure
+
+```
+rag_evaluation/
+├── README.md
+├── orchestrator.sh              # Main entry: runs everything end-to-end
+├── setup_envs.sh                # Creates virtual environments
+├── config/
+│   └── settings.yaml            # Global configuration
+├── data/
+│   ├── gdpr/                    # Place GDPR .txt files here
+│   └── questions/
+│       └── questions.json       # Question corpus (JSON with ground truth)
+├── db/
+│   ├── chromadb/                # Shared ChromaDB storage
+│   └── lightrag/                # LightRAG graph storage
+├── approaches/
+│   ├── common/                  # Shared utilities (imported via sys.path)
+│   │   ├── schemas.py           # Output data models
+│   │   ├── token_tracker.py     # OpenAI token usage tracking
+│   │   └── output_logger.py     # Standardized result logging
+│   ├── lightrag_approach/
+│   │   ├── requirements.txt
+│   │   ├── .env.example
+│   │   └── run.py
+│   ├── agentic_rag/
+│   │   ├── requirements.txt
+│   │   ├── .env.example
+│   │   └── run.py
+│   └── crag/
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── run.py
+├── ingestion/
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── ingest_chromadb.py       # Ingest GDPR into ChromaDB
+│   └── ingest_lightrag.py       # Ingest GDPR into LightRAG
+├── evaluation/
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── evaluate.py              # Main evaluation entry point
+│   └── metrics/
+│       ├── __init__.py          # Metric registry
+│       └── faithfulness.py      # DeepEval faithfulness metric
+├── outputs/                     # Generated by approach runs
+└── results/                     # Generated by evaluation
+```
+
+## Quick Start
+
+### 1. Prepare Data
+Place your GDPR text files in `data/gdpr/` (one `.txt` file per article or section).
+Place your question corpus in `data/questions/questions.json`:
+
+```json
+[
+  {
+    "id": "q001",
+    "question": "What is the right to erasure under GDPR?",
+    "ground_truth": "Article 17 establishes the right to erasure..."
+  }
+]
+```
+
+### 2. Configure Environment
+Copy `.env.example` files and fill in your API keys:
+
+```bash
+# Each approach can have its own API key
+cp ingestion/.env.example ingestion/.env
+cp approaches/lightrag_approach/.env.example approaches/lightrag_approach/.env
+cp approaches/agentic_rag/.env.example approaches/agentic_rag/.env
+cp approaches/crag/.env.example approaches/crag/.env
+cp evaluation/.env.example evaluation/.env
+```
+
+### 3. Run Everything
+```bash
+chmod +x orchestrator.sh setup_envs.sh
+./orchestrator.sh
+```
+
+Or run individual stages:
+```bash
+./orchestrator.sh --setup          # Create venvs only
+./orchestrator.sh --ingest         # Ingest data only
+./orchestrator.sh --run lightrag   # Run one approach
+./orchestrator.sh --evaluate       # Evaluate outputs
+```
+
+## Configuration
+
+Edit `config/settings.yaml` to adjust:
+- Model names (generation + embedding)
+- Chunk sizes for ingestion
+- Retrieval parameters (top-k, similarity thresholds)
+- Parallelization settings (max workers)
+- Output paths
+
+## Output Format
+
+Each approach produces a JSON file in `outputs/`:
+
+```json
+{
+  "approach": "agentic_rag",
+  "timestamp": "2025-02-23T10:30:00",
+  "model_config": { "generation_model": "gpt-4o-mini", "embedding_model": "text-embedding-3-small" },
+  "results": [
+    {
+      "question_id": "q001",
+      "input": "What is the right to erasure?",
+      "retriever_context": ["Article 17 paragraph 1...", "Article 17 paragraph 2..."],
+      "output": "The right to erasure, also known as...",
+      "ground_truth": "Article 17 establishes...",
+      "token_usage": { "prompt_tokens": 850, "completion_tokens": 200, "total_tokens": 1050 },
+      "latency_seconds": 2.3,
+      "metadata": {}
+    }
+  ],
+  "total_token_usage": { "prompt_tokens": 8500, "completion_tokens": 2000, "total_tokens": 10500 }
+}
+```
+
+## Evaluation
+
+The evaluation framework uses DeepEval and is designed to be extensible:
+
+```bash
+# Evaluate all outputs with all registered metrics
+python evaluation/evaluate.py --input-dir outputs/ --output-dir results/
+
+# Evaluate a specific approach
+python evaluation/evaluate.py --input-dir outputs/ --filter lightrag --output-dir results/
+```
+
+To add new metrics, create a file in `evaluation/metrics/` following the pattern in `faithfulness.py`.
+
+## Requirements
+
+- Python 3.10+ (3.11 recommended)
+- OpenAI API key(s)
+- ~2GB disk for ChromaDB + LightRAG storage

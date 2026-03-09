@@ -1,0 +1,767 @@
+[
+  {
+    "id": "q001",
+    "question": "What is the main objective of the GDPR?",
+    "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms."
+  },
+  {
+    "id": "q002",
+    "question": "What are the key principles for processing personal data under the GDPR?",
+    "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability."
+  },
+  {
+    "id": "q003",
+    "question": "What rights do data subjects have under the GDPR?",
+    "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing."
+  },
+  {
+    "id": "q004",
+    "question": "What conditions make the processing of personal data lawful under the GDPR?",
+    "ground_truth": "Processing is lawful if the data subject consents, it is necessary for a contract, legal compliance, protecting vital interests, performing tasks in the public interest, or for legitimate interests of the data controller."
+  },
+  {
+    "id": "q005",
+    "question": "What are special categories of personal data under the GDPR?",
+    "ground_truth": "These include data revealing racial or ethnic origin, political opinions, religious beliefs, genetic and biometric data, health information, and data concerning a person's sex life or sexual orientation."
+  },
+  {
+    "id": "q006",
+    "question": "What obligations do data controllers have to ensure compliance?",
+    "ground_truth": "Controllers must implement data protection measures by design and by default, maintain records of processing activities, conduct data protection impact assessments, and ensure transparency in their processing activities."
+  },
+  {
+    "id": "q007",
+    "question": "How does the GDPR regulate cross-border data transfers?",
+    "ground_truth": "Transfers outside the EU are allowed if the destination ensures adequate protection, or safeguards such as standard contractual clauses or binding corporate rules are in place."
+  },
+  {
+    "id": "q008",
+    "question": "What are the consequences of GDPR non-compliance?",
+    "ground_truth": "Non-compliance can lead to administrative fines up to €20 million or 4% of the annual global turnover, whichever is higher, along with reputational damage."
+  },
+  {
+    "id": "q009",
+    "question": "What is the \"right to be forgotten\" as defined in the GDPR?",
+    "ground_truth": "Individuals can request the deletion of their personal data when it is no longer necessary for the purposes collected, the data subject withdraws consent, or the processing is unlawful."
+  },
+  {
+    "id": "q010",
+    "question": "How does the GDPR address automated decision-making and profiling?",
+    "ground_truth": "Automated processing, including profiling, that significantly affects individuals is regulated, requiring safeguards like human intervention, the right to express a viewpoint, and transparency in decision-making."
+  },
+  {
+    "id": "q011",
+    "question": "Do I need a record of processing?",
+    "ground_truth": "Generally speaking, every organisation should keep a record of their processing activities. This is an inventory of all processing operations and can help you make correct assumptions of your responsibilities under the GDPR and possible risks.\n\nEach of these processing operations must be described in the record with the following information:\n\nthe purpose of the processing (e.g. customer loyalty);\nthe categories of data processed (e.g. for payroll: name, first name, date of birth, salary, etc.);\nwho has access to the data (the recipients – e.g.: the department in charge of recruitment, the IT service, management, service providers, partners...);\nwhere applicable, information related to transfers of personal data outside the European Economic Area (EEA),\nwhere possible, the storage period (the period for which the data are useful from an operational point of view, and from an archiving perspective).\nwhere possible, a general description of the security measures.\nThe record of processing activities falls under the responsibility of your organisation’s manager.\n\nThis record must be available to the data protection authority of the EEA country where you operate, if requested.\n\nIt is not required for organisations employing fewer than 250 persons to mention purely occasional activities in their record (e.g. data processed for one-off events such as the opening of a shop)."
+  },
+  {
+    "id": "q012",
+    "question": "What is the GDPR?",
+    "ground_truth": "The GDPR or General Data Protection Regulation creates a harmonised set of rules applicable to all personal data processing by organisations (public or private, regardless of their size)  established in the European Economic Area (EEA) or targeting individuals in the EU. The primary objective of GDPR is to ensure that personal data enjoys the same high standard of protection everywhere in the EEA, increasing legal certainty for both individuals and organisations processing data, and offering a high degree of protection for individuals.\n\nThe regulation entered into force on 24 May 2016 and applies since 25 May 2018."
+  },
+  {
+    "id": "q013",
+    "question": "Am I required to make my record of processing public?",
+    "ground_truth": "No, it is not necessary to make your record of processing public. You must, however, be able to make the record available to the data protection authority upon request."
+  },
+  {
+    "id": "q014",
+    "question": "What are the basic processing principles under the GDPR?",
+    "ground_truth": "Any processing of personal data must be lawful, fair and transparent.\nOnly collect personal data for specified, explicit and legitimate purposes. The processing of an individual’s data must be strictly limited to the purpose(s) initially established, and therefore not processed for subsequent or other purpose(s) that are incompatible with the initial purposes.\nOnly process personal data that is necessary and proportionate in light of the purpose envisaged.\nAll personal data you process must be accurate and kept up to date. Inaccurate personal data must be rectified or erased.\nThe storage of individuals’ personal data must be limited in time, in light of the purpose for which this data was collected and processed. As such, individuals’ personal data must be deleted or anonymised once this data is no longer necessary.\nThe processing of individuals’ data must be done in a secure way. In this sense, robust cybersecurity controls, must be put in place to ensure that individuals’ data is adequately protected.\nFinally, the controller is accountable. This means it is responsible for and must be able to demonstrate compliance with the principles above."
+  },
+  {
+    "id": "q015",
+    "question": "What is the difference between pseudonymised data and anonymised data?",
+    "ground_truth": "Pseudonymisation consists in transforming personal data so that it can no longer be attributed to a specific individual without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to individual. In practice, it may mean replacing personal data (name, first name, personal number, phone number, etc.) in a data set with indirectly identifying data (alias, sequential number, etc.). Pseudonymised data is still personal data and is subject to the GDPR.\n\nAnonymised data is data that has been rendered anonymous in such a manner that the individual is not or no longer identifiable by any means that are reasonably likely to be used. When the anonymisation is implemented properly, the GDPR no longer applies to the anonymised data."
+  },
+  {
+    "id": "q016",
+    "question": "What is sensitive data?",
+    "ground_truth": "Some types of personal data belong to special categories of personal data, meaning they deserve more protection, so-called sensitive data. Sensitive data includes data that reveals information about:\n\nan individual’s health;\nan individual’s sexual orientation;\nan individual’s racial or ethnic origin;\nan individual’s political opinions, religious or philosophical beliefs; an individual’s trade union membership;\nan individual’s biometric and genetic data.\nThe processing of an individual’s sensitive data is generally prohibited, except under specific circumstances that justify its processing."
+  },
+  {
+    "id": "q017",
+    "question": "Who is data controller and who is data processor?",
+    "ground_truth": "The GDPR distinguishes between two main roles: those of data controller and data processor. This distinction is crucial as the data controller bears more responsibility and has to fulfil more obligations than the processor.\n\nData controllers and processors can be natural or legal persons, for example: an SME, a public authority, a company, an organisation, a state body, an association etc.\n\nA data controller determines the purposes and means of a processing operation. In other words, the controller decides the how and why of a processing operation. Whereas processors process personal data on behalf of the controller. The processing carried out by processors needs to be regulated by a contract with the data controller or other legal act.\n\nExamples of data controllers:\n\ncompanies that process the personal data of their customers to complete a sale;\nfinancial institutions that process personal data of their clients;\nassociations that process the data of their members;\nschools or universities that process personal data of students and teachers;\nhospitals that process personal data of their patients;\ngovernment agencies that process personal data of citizens.\n \nExamples of data processors:\n\nan SME hires a bookkeeping service to keep its books and records, the SME is a data controller and the bookkeeping service a data processor;\na payroll company processes personal data for an SME. The payroll company will act as a processor if it solely processes the personal data on behalf of the SME. The SME determines the purposes and means of the data processing, and is therefore data controller.\nan SME commissions a marketing company to collect email addresses via third-party websites.  The marketing company does this according to the explicit instructions of the SME and for the SME’s exclusive purposes. The marketing Company acts as processor for this collection."
+  },
+  {
+    "id": "q018",
+    "question": "Can I share a list of individuals’ personal data with my business partners (third parties)?",
+    "ground_truth": "Yes, you can, but the GDPR places certain obligations on businesses which share personal data. Your organisation must inform individuals that you will share their data with a third party. You must also inform them of your purposes, security, access and the retention measures that will apply."
+  },
+  {
+    "id": "q019",
+    "question": "What are the sanctions if my organisation does not comply with the GDPR or if my processing violates the GDPR?",
+    "ground_truth": "Compliance with the GDPR is monitored by the national data protection authorities (DPAs). DPAs can conduct investigations and impose sanctions where necessary. DPAs have a number of tools at their disposal, including fines up to 20 M€ or 4% of the worldwide annual turnover whichever is higher, reprimands, and temporary or permanent processing bans."
+  },
+  {
+    "id": "q020",
+    "question": "What are the legal basics for processing under the GDPR?",
+    "ground_truth": "Data controllers can only process personal data in one of the following circumstances:\n\nwith the consent of the individuals concerned;\nwhere processing is necessary for the performance of a contract (a contract between your organisation and an individual);\nto meet a legal obligation under EU or national legislation;\nwhere processing is necessary for the performance of a task carried out in the public interest under EU or national legislation;\nto protect the vital interests of an individual;\nfor your organisation’s legitimate interests - except where they are overridden by the rights and freedoms of individuals.\nIn addition, the GDPR establishes additional conditions for the processing of sensitive data."
+  },
+  {
+    "id": "q021",
+    "question": "What are the tasks of the Data Protection Officer (DPO)?",
+    "ground_truth": "The task of the DPO include, among others:\n\nto inform and advise the organisation and its employees on data protection compliance;\nto monitor data protection compliance;\nto provide advice on requests concerning the data protection impact assessment (DPIA);\nto act as a contact point for the data protection authority (DPA) and to cooperate with that DPA;\nto act as a contact point for individuals.\nIn addition, the DPO’s presence is generally recommended where decisions with data protection implications are taken. The DPO should also be promptly consulted once a data breach or another incident has occurred."
+  },
+  {
+    "id": "q022",
+    "question": "What can I do in case the data processor does not want to sign a controller-processor contract?",
+    "ground_truth": "A valid contract between the data controller and data processor is obligatory under the GDPR. An infringement can be subject to an administrative fine up to 10M€ or up to 2% of the total annual turnover of a company, whichever is higher.\n\nTo help guide you when setting up a controller-processor agreement, the Danish and Slovenian data protection authorities, as well as the European Commission, have developed template agreements."
+  },
+  {
+    "id": "q023",
+    "question": "What is a data protection impact assessment and when is this mandatory?",
+    "ground_truth": "A Data Protection Impact Assessment or DPIA is a written assessment that your organisation should make to evaluate the impact of a planned processing operation. It helps you to identify the appropriate measures to address the risks, and to demonstrate compliance.\n\nWhile it is always preferable to anticipate the impact of planned processing operations of your organisation by doing DPIA, it is compulsory to carry out a DPIA when the processing is likely to result in a high risk for individuals’ rights and freedoms.\n\nSpecifically, this is the case when the envisaged processing involves:\n\nthe processing - on a large scale- of sensitive personal data or data related to criminal convictions;  \na systematic and extensive evaluation of an individual’s personal aspects based on automated processing, including profiling, and on which decisions are based that produce legal effects concerning the individual in questions or similarly significantly affect individuals;\nsystematic monitoring of a publicly accessible area on a large scale."
+  },
+  {
+    "id": "q024",
+    "question": "How can I obtain valid consent?",
+    "ground_truth": "For consent to be considered valid, it must be:\n\nfreely given;\nspecific;\ninformed; and\nunambiguous.\nThis means that individuals must have a genuinely free choice regarding whether or not they agree with the processing of their personal data; they need sufficient information so that they can understand which data is processed, for what purpose, and how this is done; they also need sufficient granularity in consent requests.\n\nIn addition, there should be a clear affirmative action from the individual (without pre-ticked boxes and made separately from applicable general conditions).\n\nIn addition, individuals need to be able to freely withdraw their consent (without any negative consequences) if they change their mind later on."
+  },
+  {
+    "id": "q025",
+    "question": "If I want to store CVs of candidates for future recruitment procedures, do I need to ask for the candidates’ consent?",
+    "ground_truth": "Consent could indeed be a valid legal basis for storing job applicants’ CVs. Another possible legal basis could be legitimate interest. In that case, you would have to carry out a balancing test to prove that your organisation’s legitimate interests outweigh the applicants’ rights.\n\nAt any rate, you will have to inform the candidates that you plan to store their data and for which purposes."
+  },
+  {
+    "id": "q026",
+    "question": "What constitutes a conflict of interest for a Data Protection Officer (DPO)?",
+    "ground_truth": "DPOs can fulfil other tasks within the organisation, but this cannot result in a conflict of interest. This implies that the DPO cannot have a position in which they determine the purposes and means of the processing activities. Conflicting functions include mainly management positions (chief executive, chief operating, chief financial officer, Head of HR, Head of IT, managing director) but may also involve other functions if they lead to the determination of purposes and means of processing.\n\nThe DPO must be able to perform their duties and tasks in an independent manner. This means that your organisation:\n\nmay not give instructions to the DPO with regard to the performance of their DPO duties;\nmay not penalise or dismiss the DPO for performing their tasks."
+  },
+  {
+    "id": "q027",
+    "question": "What information should I communicate to/share with individuals?",
+    "ground_truth": "The GDPR gives individuals control over the processing of their personal data. In order to do this, transparency is key. This means you have to inform individuals whose data you process about your processing operations and the purposes. In other words, you have to explain who processes their data, but also how and why. Only if the use of personal data is 'transparent' for those involved, can they assess possible risks and make decisions about their personal data.\n\nUnder the GDPR you are obliged to share the following information with individuals:\n\nthe identity and contact details of the controller;\nthe purposes of the processing;\nthe legal basis of the processing (if legitimate interest, specific information about which legitimate interests relate to the specific processing, and about which  entity  pursues  each  legitimate  interest.)\nthe contact details of the controller;\nthe contact details of the DPO (if there is a DPO);\nthe recipients or categories of recipients of the data;\nInformation on whether the data will be transferred outside the European Economic Area (EEA) (where applicable: the existence or not of an adequacy decision or reference to the appropriate safeguards and how this information can be made available to data subjects);\nthe categories of personal data processed, when the data is not obtained from the individual.\nIn addition, the GDPR requires your organisation to provide the following information to ensure fair and transparent processing:\n\nthe retention period or, where this is not possible, the criteria used to determine this period;\nthe right to request access, erasure, rectification, restriction, objection and portability of personal data;\nthe right to lodge a complaint with a data protection authority;\nif the legal basis for the processing is consent: the right to withdraw consent at any time;\nin the case of automated decision-making, relevant information about the underlying logic and the intended consequences of the processing for the data subject;\nthe source of the personal data (if you did not directly receive it from the individual concerned;\nwhether the individual is required to provide the personal data (by law or by contract or to enter into a contract) and what the consequences of refusing to provide the data are."
+  },
+  {
+    "id": "q028",
+    "question": "What should I do in case of a data breach?",
+    "ground_truth": "A personal data breach is a security breach leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data.\n\nIf the data breach poses a risk to the individuals concerned, you must report it to the relevant data protection authority within 72 hours.\nIf the breach is likely to result in a high risk to individuals, you will also need to communicate that breach to the individuals concerned without undue delay.\nIn any case, for all breaches – even those that are not notified to a DPA - you must record at least the basic details of the breach, the assessment thereof, its effects, and the steps taken in response."
+  },
+  {
+    "id": "q029",
+    "question": "Who can fulfil the role of Data Protection Officer (DPO)?",
+    "ground_truth": "The DPO can be an existing employee with sufficient knowledge of GDPR (if the professional tasks of the employee are compatible with those of the DPO and this does not lead to conflicts of interest) or an external person. The DPO should be able to carry out tasks independently and should be able to report directly to the highest management."
+  },
+  {
+    "id": "q030",
+    "question": "Do data processors also have to respect the GDPR?",
+    "ground_truth": "Yes, data processors (i.e. individuals or bodies that process data on behalf of a data controller), have obligations under the GDPR. There are, however, some differences between the responsibilities for data controllers and processors.\n\nData processors have to adhere to the responsibilities set out in the controller-processor contract, which details the processing operations and means to process personal data. For example, the processor will have to carry out the processing operations with the appropriate technical and organisational measures as instructed by the controller. In doing so, the processor assists the controller in complying with the GDPR."
+  },
+  {
+    "id": "q031",
+    "question": "Do I need consent in order to use cookies on my organisation’s website?",
+    "ground_truth": "The GDPR applies to the use of cookies when these are used to process personal data, but there are also more specific rules for cookies included the ePrivacy Directive.\n\nThe storing of a cookie, or the gaining of access to a cookie already stored, in the terminal equipment of a user is only allowed on condition that the subscriber or user concerned has been adequately informed (in particular about the purposes of the processing) and has given their consent.\n\nThe only exception are technically necessary cookies. Organisations do not need to ask for consent when using technically necessary cookies on their websites."
+  },
+  {
+    "id": "q032",
+    "question": "Do I need to be certified to become a Data Protection Officer (DPO)?",
+    "ground_truth": "No, you do not need to be certified to become a DPO.\n\nDPOs must, however, be able to demonstrate that they have the necessary qualifications required by the GDPR, such as expert knowledge of data protection law and practices."
+  },
+  {
+    "id": "q033",
+    "question": "Does the GDPR also apply to paper records?",
+    "ground_truth": "Yes, the GDPR applies if the personal data are contained or are intended to be contained in a filing system. This means that the GDPR also applies to paper records and not solely to automated processing of personal data."
+  },
+  {
+    "id": "q034",
+    "question": "How do I respond to a request for erasure?",
+    "ground_truth": "Individuals have the right to request erasure of personal data concerning them and in that case, the controller has the obligation to erase the personal data. You should respond without undue delay and at the latest within one month after receipt of the request. This deadline can be extended by another two months if the request is too complex and more time is needed to comply with the request, provided that the individual is informed of this within one month after receiving the request.\n\nIt is important to note that the right to erasure is not absolute. It does not apply when the data in question is necessary for:\n\nexercising the right to freedom of expression and information (e.g. for journalistic purposes);\ncompliance with a legal obligation which requires the processing of personal data (e.g. processing records on employees’ work hours);\nreasons of public interest in the area of public health\narchiving purposes in the public interest or scientific or historical research purposes or statistical purposes; and\nthe establishment, exercise or defence of legal claims.\nWhen the personal data that is to be erased was previously transferred to other organisations, you must inform these recipients that the individual has requested erasure, unless this proves impossible or would require disproportionate efforts."
+  },
+  {
+    "id": "q035",
+    "question": "What is a joint controller?",
+    "ground_truth": "When there are two or more data controllers who jointly determine the purpose and means of processing, they are considered joint controllers. They decide together to process personal data for a joint purpose. Joint controllership can take many forms and participation of the different controllers may be unequal. Joint controllers must therefore determine their respective responsibilities for compliance with the GDPR.\n\nIt is important to note that joint controllership leads to joint responsibility for a processing activity.\n\nExample of joint controllership:  Companies A and B have launched a co-branded product and wish to organise an event to promote this product. To that end, they decide to share data from their respective client and prospective client databases and decide on the list of invitees to the event on this basis. They also agree on the modalities for sending the invitations to the event, how to collect feedback during the event and follow-up marketing actions. Companies A and B can be considered joint controllers for the processing of personal data related to the organisation of the promotional event as they decide together on the jointly defined purpose and essential means of the data processing in this context."
+  },
+  {
+    "id": "q036",
+    "question": "What is a privacy statement?",
+    "ground_truth": "Organisations must, in the case of direct collection of personal data from the individuals concerned, provide information about the processing operations in a concise and transparent way, using understandable, easily accessible and clear and plain language. This can be done in writing (e.g. on the reverse side of a tender) or by electronic means (e.g. on a website). If the person concerned so requests, you may also provide this information orally, but you must be able to prove this afterwards.\n\nEven when the data was collected indirectly, i.e. if you do not directly collect the personal data from an individual yourself, but for example via a third party, you must provide the same detailed information to individuals"
+  },
+  {
+    "id": "q037",
+    "question": "What should be included in a controller-processor contract?",
+    "ground_truth": "The contract between the data controller and the data processor must stipulate that the data processor:\n\nprocesses the personal data only on the instructions of the data controller, including with regard to transfers of personal data to a country outside the EEA;\nensures that the persons authorised to process the data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality;\nensures security of processing;\nshall not engage another data processor without prior specific or general written authorisation of the data controller;\nassists the data controller for the fulfilment of the data controller’s obligations to respond to individual’s requests for exercising their rights;\nassists the data controller in securing the processing, notifying data breaches, and performing DPIAs;\nat the choice of the data controller, deletes or returns all personal data to the data controller after the end of the provision of services;\nmakes available to the data controller all necessary information to demonstrate compliance with the obligations under the GDPR;\nallows for and contributes to audits, including inspections conducted by the data controller or another auditor mandated by the data controller.\nIn addition, the data processor shall immediately inform the data controller if, in its opinion, instructions infringe the GDPR or other EU or national data protection provisions."
+  },
+  {
+    "id": "q038",
+    "question": "What should I do when someone asks how I process their data?",
+    "ground_truth": "Individuals can ask you whether you are processing their data and where it is the case, they have a right to access that data. So when this happens and if you process their data, you should, for example provide a copy of their personal data, free of charge, together with any necessary additional information. Where a request is made electronically, your organisation should provide the required information in a commonly used electronic format, unless the individual requests otherwise."
+  },
+  {
+    "id": "q039",
+    "question": "When should you share this information?",
+    "ground_truth": "If your organisation is collecting the personal data directly from individuals, it must provide the necessary information at the time of collection.\n\nIn case of indirect collection of personal data, your organisation must provide the information at the latest within one month after the personal data has been initially obtained. This maximum period of one month can be reduced:\n\nif the personal data is used for the purpose of communication with the data subject. In that case, you must inform the data subject at the latest at the time of the first communication to the data subject;\nif the data is transmitted to another recipient, the organisation informs the data subjects of this at the latest when the personal data is transferred."
+  },
+  {
+    "id": "q040",
+    "question": "Can I only process personal data when I have the individual’s consent?",
+    "ground_truth": "Processing personal data is allowed if there is a legal basis for it. In addition to free, specific , informed and unambiguous consent, other legal bases for processing can be used.\nIn other words, consent is necessary when none of the other legal bases applies."
+  },
+  {
+    "id": "q041",
+    "question": "Can I set up the closed CCTV on my business premises to protect my property?",
+    "ground_truth": "The first step to installing CCTV is to identify the purpose or purposes for doing so. The purposes for installing CCTV can be varied, such as ensuring the security of premises, aiding in the prevention and detection of theft and other crimes, or protection of the lives and health of employees, due to the nature of work.\n\nAs with any processing of personal data, the recording of individuals  must have a legal basis under the GDPR. Consent can provide a legal basis for such data processing. However, this is unlikely to apply to the use of CCTV in most cases, as it will be difficult to obtain the freely given consent of everyone likely to be recorded. The most common legal ground for this kind of processing of personal data is legitimate interest. When processing is based on a legitimate interest, you will need to carry out a balancing test to determine whether your legitimate interests outweigh individual’s rights.\n\nYou will need to inform individuals that they are being recorded. This can be done by placing easy to read signs in prominent places. In addition, a sign indicating the purpose of the CCTV system and the identity and contact details of the data controller should be placed at all entrances.\n\nIndividuals whose images are being recorded by a CCTV system should be provided with, the following information:\n\nthe identity and contact details of the data controller;\nthe purposes of the processing;\nthe legal basis of the processing (if legitimate interest, specific information about which legitimate interests relate to the specific processing, and about which  entity  pursues  each  legitimate  interest.);\nthe contact details of the Data Protection Officer, DPO (if there is a DPO);\nthe recipients or categories of recipients of the data;\nthe security arrangements for the CCTV footage;\nthe retention period for CCTV footage;\nthe existence of individuals’ rights under the GDPR and the right to lodge a complaint with the national data protection authority."
+  },
+  {
+    "id": "q042",
+    "question": "Can I transfer personal data outside the European Economic Area (EEA)?",
+    "ground_truth": "Under the GDPR, there are, in principle, two main ways to transfer personal data to a non-EEA country or international organisation. Transfers may take place on the basis of an adequacy decision, or, in the absence of such a decision, on the basis of appropriate safeguards, including enforceable rights and legal remedies for individuals."
+  },
+  {
+    "id": "q043",
+    "question": "Does my organisation have to comply with the GDPR?",
+    "ground_truth": "Every organisation, regardless of the their size or sector, established in the European Economic Area (EEA) or offering products or services to individuals in the EEA, processing personal data whether or not by automated means needs to comply with the GDPR. Even if the GDPR mainly relates to automated processing of personal data, processing operations carried out manually will also be subject to the GDPR from the moment the paper files are organised in a systematic manner, e.g. ordered alphabetically in a filing cabinet. \n\nExamples of processing operations include collecting, recording, organising, using, modifying, storing, disclosing, altering and erasing individuals’ personal data.\n\nNevertheless, the application of the GDPR is modulated according to the nature, context, purposes and risks of the processing operations carried out. For SMEs whose core business is not the processing of personal data, the obligations can be less strict than for a large company."
+  },
+  {
+    "id": "q044",
+    "question": "How can I respect individuals’ data protection rights?",
+    "ground_truth": "The GDPR foresees specific rights for individuals that have to be respected. You can do this by:\n\ninforming individuals whose data you process about your processing operations and the processing purposes when you collect their data, for example via a privacy statement on your website;\nby responding to individuals’ requests to exercise their rights, such as access, rectification, objection, erasure or portability requests.\nOrganisations that are transparent about their use of personal data and that respect the rights of individuals are less likely to become subject to complaints."
+  },
+  {
+    "id": "q045",
+    "question": "How long can I store personal data?",
+    "ground_truth": "You cannot store personal data forever.\n\nAs a rule, personal data can only be stored for as long necessary in light of the purposes for which the personal data is processed.\n\nIn some cases, the storage period can be determined by specific laws, for example, labour regulations determine a storage period for payroll lists.\n\nOrganisations should put in place data retention policies to make sure that personal data is not kept longer than is necessary. Individuals’ personal data must be deleted or anonymised once this data is no longer necessary for the purpose for which is was processed."
+  },
+  {
+    "id": "q046",
+    "question": "I am organising an event as part of my business activities, can I make photos and videos of the event and the people attending?",
+    "ground_truth": "Yes, but in order to do this, you will first need to determine the legal basis for processing this type of personal data. For example, the processing could be considered as a legitimate interest for your organisation. When processing personal data on the basis of legitimate interest, it is always necessary to conduct a balancing test to determine whether your legitimate interests outweigh individuals’ rights, particularly if children are involved.\n\nAnother possible legal basis for such processing could be consent. At any rate, individuals should always be informed in advance that the event is being photographed or filmed."
+  },
+  {
+    "id": "q047",
+    "question": "Is the Data Protection Officer (DPO) responsible for compliance with the GDPR?",
+    "ground_truth": "The DPO cannot be held responsible for failure to comply with the GDPR. Compliance with the GDPR is the responsibility of the organisation that appointed the DPO."
+  },
+  {
+    "id": "q048",
+    "question": "As a data controller I have collected individuals’ personal data from a third party, what do I need to do to be compliant?",
+    "ground_truth": "Make sure that the data that you received was collected legitimately and that the individuals concerned have been informed about the processing of their personal data.\nIn case a third party is processing personal data on your behalf, make sure you have a controller-processor contract, which details the processing operations and means to process personal data.\nAnd of course, comply with all the obligations of controllers."
+  },
+  {
+    "id": "q049",
+    "question": "Can I publish the names of the winners of a competition on my organisation’s website?",
+    "ground_truth": "Publishing the names of the winners of a competition on your website could be considered as a legitimate interest, if you can prove this by carrying out a balancing test to determine whether your legitimate interests outweigh individuals’ right.\n\nA good practice would be to set up an internal procedure in which the rules on publishing personal data of winners are explained.\n\nIn addition, the processing of personal data for these purposes should be part of the competition’s privacy policy, so that participants are informed in advance about how their data is going to be processed."
+  },
+  {
+    "id": "q050",
+    "question": "Can I record telephone conversations with clients in order to improve quality of service and do I need consent for this?",
+    "ground_truth": "Yes, your clients must be informed, when they make a telephone call, of the purposes of the recording, the recipients of the recordings, of their right to object and their right to access the recordings."
+  },
+  {
+    "id": "q051",
+    "question": "How can I know which security measures I need to take?",
+    "ground_truth": "The necessary security measures can differ based on the nature of the personal data you process and the associated risks to individuals. In any case, there are some minimum measures you should put into place:\n\nsecure access to the premises;\nuse regularly updated antivirus software;\ncarefully choose your passwords;\nmake users authenticate themselves before using the computer facilities;\nhave a data back-up and retrieval policy in place in case of an incident.\nIn addition, some basic measures such as locking your screen while you are away and locking up the office at the end of the day are never out of place..."
+  },
+  {
+    "id": "q052",
+    "question": "How long do I have to respond to an access request?",
+    "ground_truth": "You should respond without undue delay and at the latest within one month after receipt of the request. This deadline can be extended by another two months if the request is too complex and more time is needed to answer, provided that the individual is informed of this within one month after receiving the request.\n\nYou must do this free of charge."
+  },
+  {
+    "id": "q053",
+    "question": "Is it possible to process sensitive data?",
+    "ground_truth": "No, the processing of sensitive data is generally prohibited, except under very specific circumstances:\n\nThe individual has given their explicit consent for their sensitive data to be processed.\nThe processing of sensitive data is necessary for the data controller to fulfil their obligations, specifically in the context of employment, social security and social protection. For example, the data controller may need to process a person’s sensitive data to be able to determine if they are entitled to certain social security benefits or employment stipends.\nThe processing of sensitive data is necessary to protect the vital interests of a person where the individual is physically or legally incapable of giving consent. For example, if an individual is left unconscious as a result of an accident and requires immediate medical care, their health data may need to be processed for the appropriate medical care to be delivered.\nThe processing of sensitive data is carried out in the context of the legitimate activities of a foundation, association or other non-for-profit organisation with a political, philosophical, religious or trade union aim, and only for the processing of the personal data of their members, former members or persons having regular contact with them.\nThe sensitive data was manifestly made public by individual.\nThe processing of sensitive data is necessary in the context of legal proceedings.\nThe processing of sensitive data is necessary for matters of substantial public interest.\nThe processing of sensitive data is necessary in the context of preventive or occupational medicine. For example, assessing an individual’s sensitive data, such as their medical data, may be necessary to determine their working capacity as an employee.\nThe processing of sensitive data is necessary for matters of public health on the basis of EU or national law. For example, processing individuals’ sensitive data may be necessary to ensure a high quality of health care and a high quality of medical products, or to combat serious health threats, such as viruses.\nThe processing of sensitive data is necessary for matters of archiving purposes in the public interest, or for scientific or historical  research purposes, or statistical purposes. For example, processing sensitive data may be necessary to provide accurate statistics on a country’s situation in a particular field."
+  },
+  {
+    "id": "q054",
+    "question": "Should I appoint a Data Protection Officer (DPO)?",
+    "ground_truth": "The appointment of a DPO is mandatory in the following three cases:\n\nthe organisation is a public authority;\nthe organisation’s core activities consist in regular and systematic monitoring of individuals on a large scale, for example geolocation via a mobile application, or surveillance of shopping centres and public spaces through CCTV;\nthe organisation’s core activities consist in large-scale processing of sensitive data  or personal data relating to criminal convictions and offences.\nYou can always appoint a DPO on a voluntary basis, even if this is not legally required. Please note that in that case, you must comply with all the provisions of the GDPR concerning the tasks and position of the data protection officer."
+  },
+  {
+    "id": "q055",
+    "question": "What are cookies?",
+    "ground_truth": "Cookies are small files stored on a device, such as a computer, a mobile device or any other device that can store information. Cookies serve a number of important functions, including remembering  users and their previous interactions with a website. They can be used to keep track of items in an online shopping cart or to keep track of information when details are inserted into an online application form.\n\nAuthentication cookies are also important to identify users when they log into banking services and other online services. The information stored in cookies can include personal data, such as an IP address, a username, a unique identifier, or an email address."
+  },
+  {
+    "id": "q056",
+    "question": "What are my responsibilities under the GDPR?",
+    "ground_truth": "The GDPR imposes obligations on all organisations that process personal data, regardless of whether they are data controllers or data processors.\n\nIn particular, you should:\n\nAsk yourself if the purpose for which personal data may be collected is justified, and collect only personal data that is necessary for the specific purpose(s) envisaged;\nKeep individuals’ personal data accurate and up to date, and delete the data when it is no longer necessary;\nRespect individuals’ rights by informing them about how and why their data are processed, and allowing them to exercise their rights;\nCheck if you have an appropriate legal basis for the processing of personal data. In case you intend to rely on the consent of individuals, ask for their consent before processing their personal data;\nMake sure that individuals’ personal data is handled in a secure way;\nMaintain a record of processing operations.\nData processors will have to adhere to the responsibilities set out in the controller-processor contract, and they must not process the data otherwise than according to the controller’s instructions."
+  },
+  {
+    "id": "q057",
+    "question": "What does processing personal data mean?",
+    "ground_truth": "Processing personal data means any type of activity (processing operation) performed on or with individuals’ personal data. This includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, inquiry, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data."
+  },
+  {
+    "id": "q058",
+    "question": "What is personal data?",
+    "ground_truth": "Personal data means any information relating to an identified or identifiable individual. An identifiable individual is anyone who can be identified, either directly or indirectly. Different pieces of information that added together could lead to the identification of a particular person also constitute personal data.\n\nExamples of personal data include:\n\nname and surname;\na home address;\nan email address;\nan ID card number;\nlocation data;\nan Internet Protocol (IP) address;\na cookie ID;\nbank accounts;\ntax reports;\nbiometric data (like fingerprint);\na social security number;\npassport number;\ntest results;\ngrades in school;\nbrowsing history;\nphotograph of individual;\nvehicle registration number etc."
+  },
+  {
+    "id": "q059",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “3G regulation at the workplace” for the purpose: “Verification and documentation of your 3G (recovered, vaccinated, tested) status as a prerequisite for access to the workplace”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. c GDPR - Lawfulness of processing (legal obligation)\n\nArt. 6 para. 1 lit. a GDPR - Lawfulness of processing (consent)"
+  },
+  {
+    "id": "q060",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Absence time recording” for the purpose: “Documentation of absences and absence times for internal and external processing (e.g. illness, vacation, special leave, further education / training)”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. f GDPR - Lawfulness of processing (legitimate interest)"
+  },
+  {
+    "id": "q061",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Settlement of expenses” for the purpose: “Settlement of expenses of employees and applicants of the company”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. b GDPR - Lawfulness of processing (contract)"
+  },
+  {
+    "id": "q062",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Health management” for the purpose: “Administration and billing of health programs in the company”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. a GDPR - Lawfulness of processing (consent)"
+  },
+  {
+    "id": "q063",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Competitions” for the purpose of: “Conducting competitions to attract new customers”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. f GDPR - Lawfulness of processing (legitimate interest)"
+  },
+  {
+    "id": "q064",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Customer management” for the purpose: “Establishment and provision of a CRM system for entering, processing and managing customer data and contract data for shared use by employees”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. b GDPR - Lawfulness of processing (contract)"
+  },
+  {
+    "id": "q065",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Insurance” for the purpose: “Reporting and settlement of claims against insurance companies and the assertion of internal or external claims”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. c GDPR - Lawfulness of processing (legal obligation)\n\nArt. 6 para. 1 lit. f GDPR - Lawfulness of processing (Legitimate interest)"
+  },
+  {
+    "id": "q066",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Video surveillance” for the purpose: “Video surveillance to ensure security with regard to technical and organizational measures and to assist law enforcement authorities”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. f GDPR - Lawfulness of processing (Legitimate interest)"
+  },
+  {
+    "id": "q067",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Project management” for the purpose: “Entry and processing of project data incl. status, successes and follow-ups”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. b GDPR - Lawfulness of processing (contract)"
+  },
+  {
+    "id": "q068",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Employee appraisal” for the purpose of: “Conducting and recording employee appraisals”?\n\nLegal basis:",
+    "ground_truth": "Art. 6 para. 1 lit. a GDPR - Lawfulness of processing (consent)"
+  },
+  {
+    "id": "q069",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Location monitoring of employees via GPS” for the purpose: “Monitoring the length of breaks”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q070",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Sale of customer data to advertising companies” for the purpose of: “Generating additional revenue”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q071",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Storage of political opinions of customers” for the purpose: “Targeted political advertising”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q072",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Installation of cameras in employee toilets” for the purpose: “Security monitoring”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q073",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Analysis of the sexual orientation of customers” for the purpose: “Personalization of offers”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q074",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Publication of employee illness diagnoses” for the purpose of: “Informing the workforce”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q075",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Making secret audio recordings in the office” for the purpose of: “Checking morale”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q076",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Collection of health data without consent” for the purpose: “Optimization of office workplaces”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q077",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Transmission of customer data to private investigators” for the purpose: “Verification of solvency”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q078",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Storage of children's photos in the cloud” for the purpose: “Use for advertising purposes”?",
+    "ground_truth": "None - Processing not permitted under GDPR."
+  },
+  {
+    "id": "q079",
+    "question": "Which categories of personal data are relevant for the processing activity: “Password management” for the purpose: “Management and administration of passwords using software (password vault)”?\n\nData categories:",
+    "ground_truth": "Email address, password files"
+  },
+  {
+    "id": "q080",
+    "question": "Which categories of personal data are relevant for the processing activity: “Use of office software” for the purpose: “Creation, processing and management of documents in business operations, analyses and presentations”?\n\nData categories:",
+    "ground_truth": "E-mail address, IP address, name, usage data, password files"
+  },
+  {
+    "id": "q081",
+    "question": "Which categories of personal data are relevant for the processing activity: “Supplier tenant management” for the purpose: “Execution and management of contractually agreed deliveries or services using a supplier database or file”?\n\nData categories:",
+    "ground_truth": "billing data, address data, order data, e-mail address, name, payment conditions"
+  },
+  {
+    "id": "q082",
+    "question": "Which categories of personal data are relevant for the processing activity: “Data backup / backups” for the purpose: “Securing data in backups to ensure data availability”?\n\nData categories:",
+    "ground_truth": "every data type"
+  },
+  {
+    "id": "q083",
+    "question": "Which categories of personal data are relevant for the processing activity: “Credit assessment” for the purpose of: “Obtaining information on the creditworthiness or solvency of (future) customers”?\n\nData categories:",
+    "ground_truth": "address data, age, creditworthiness data, e-mail address, date of birth, name, telephone number"
+  },
+  {
+    "id": "q084",
+    "question": "Which categories of personal data are relevant for the processing activity: “Management” for the purpose: “Recording and documentation of internal expenses for employee catering costs”?\n\nData categories:",
+    "ground_truth": "bank details, vouchers / receipts, professional position, company affiliation, name"
+  },
+  {
+    "id": "q085",
+    "question": "Which categories of personal data are relevant for the processing activity: “Performance of payroll accounting” for the purpose: “Calculation of monthly salaries in the HR department”?\n\nData categories:",
+    "ground_truth": "address data, age, working hours, bank details, professional position, e-mail address, marital status, place of birth, gender, monthly salaries, sick days (special category according to Art. 9 GDPR), name, personnel number, religious affiliation (special category according to Art. 9 GDPR), pension insurance number, social security number, nationality, tax identification number, telephone number, vacation days"
+  },
+  {
+    "id": "q086",
+    "question": "Which categories of personal data are relevant for the processing activity: “Recording of patient findings” for the purpose: “Processing of patient data for treatment, billing and transmission via a practice management system or other systems”?\n\nData categories:",
+    "ground_truth": "billing data, address data, treatment data, health data (special category pursuant to Art. 9 GDPR), name, social security number"
+  },
+  {
+    "id": "q087",
+    "question": "Which categories of personal data are relevant for the processing activity: “Guest Wi-Fi / network access” for the purpose: “Provision of an Internet connection via Wi-Fi or network cable for guests, customers or other visitors to the business premises”?\n\nData categories:",
+    "ground_truth": "E-mail address, name, user name, connection data"
+  },
+  {
+    "id": "q088",
+    "question": "Which categories of personal data are relevant for the processing activity: “Training” for the purpose of: “Providing training to raise awareness or increase the expertise of employees”?\n\nCategories of data:",
+    "ground_truth": "professional position, expertise, skills, name"
+  },
+  {
+    "id": "q089",
+    "question": "How long may personal data be stored for the processing activity: “3G regulation in the workplace” for the purpose of: “Checking and documenting your 3G (recovered, vaccinated or tested) status” before it must be deleted?",
+    "ground_truth": "Deletion after 6 months"
+  },
+  {
+    "id": "q090",
+    "question": "How long may personal data be stored for the processing activity: “Absence time recording” for the purpose: “Documentation of employee absences and absence times” before it must be deleted?",
+    "ground_truth": "Deletion after termination of the employment relationship"
+  },
+  {
+    "id": "q091",
+    "question": "How long may personal data be stored for the processing activity: “Agencies” for the purpose: “Appointment of an agency to provide services” before it must be deleted?",
+    "ground_truth": "The data will be stored until revoked by the data subject"
+  },
+  {
+    "id": "q092",
+    "question": "How long may personal data be stored for the processing activity: “File creation” for the purpose: “Collection of data for the creation of a file with the client” before it must be deleted?",
+    "ground_truth": "The data will be stored until revoked by the data subject"
+  },
+  {
+    "id": "q093",
+    "question": "How long may personal data be stored for the processing activity: “Preparation of offers” for the purpose: “Obtaining offers to determine the best conditions” before it must be deleted?",
+    "ground_truth": "The data will be stored until revoked by the data subject"
+  },
+  {
+    "id": "q094",
+    "question": "How long may personal data be stored for the processing activity: “Acceptance of orders via a web portal” for the purpose: “Collection of customer data to initiate business processes” before it must be deleted?",
+    "ground_truth": "The data will be stored until revoked by the data subject"
+  },
+  {
+    "id": "q095",
+    "question": "How long may personal data be stored for the processing activity: “App and software development” for the purpose of: “Developing, operating and managing an app or software solution” before it must be deleted?",
+    "ground_truth": "The data will be stored until revoked by the data subject"
+  },
+  {
+    "id": "q096",
+    "question": "How long may personal data be stored for the processing activity: “Occupational safety” for the purpose: “Planning, implementation and documentation of occupational safety measures” before it must be deleted?",
+    "ground_truth": "Deletion after termination of the employment relationship"
+  },
+  {
+    "id": "q097",
+    "question": "How long may personal data be stored for the processing activity: “Employment contracts” for the purpose of: “Drawing up employment contracts to regulate employment” before they must be deleted?",
+    "ground_truth": "Deletion after termination of the employment relationship"
+  },
+  {
+    "id": "q098",
+    "question": "How long may personal data be stored for the processing activity: “Recording working hours” for the purpose of: “Recording the working hours of individual employees” before it must be deleted?",
+    "ground_truth": "Deletion after termination of the employment relationship"
+  },
+  {
+    "id": "q099",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Quality management” for the purpose: “Introduction, auditing and operation of a quality management system (QMS)”?",
+    "ground_truth": "Accounting, management, IT department, quality management"
+  },
+  {
+    "id": "q100",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Preparation of quotations” for the purpose of: “Obtaining quotations to determine the most advantageous conditions and terms of purchase”?",
+    "ground_truth": "Purchasing, Sales"
+  },
+  {
+    "id": "q101",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Remote maintenance” for the purpose of: “Maintenance, repair, update, customization and other service activities of the controller on external electronic systems via remote access using third-party software or own software”?",
+    "ground_truth": "IT department, support"
+  },
+  {
+    "id": "q102",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Mobile device management” for the purpose: “Processing of data for the management of issued mobile devices and self-brought devices”?",
+    "ground_truth": "IT department"
+  },
+  {
+    "id": "q103",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Audit / Internal audit” for the purpose of: “Internal audits for the continuous monitoring of processes to meet legal standards”?",
+    "ground_truth": "legal department"
+  },
+  {
+    "id": "q104",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Device management” for the purpose of: “Recording company-owned devices issued to employees or guests of the company”?",
+    "ground_truth": "IT department"
+  },
+  {
+    "id": "q105",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Newsletter (email marketing)” for the purpose of: “Sending information and advertising by email newsletter incl. evaluations and analyses”?",
+    "ground_truth": "Marketing, Sales"
+  },
+  {
+    "id": "q106",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Employee appraisal” for the purpose of: “Conducting and recording employee appraisals”?",
+    "ground_truth": "management, human resources, specialist department"
+  },
+  {
+    "id": "q107",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Health management” for the purpose: “Administration and billing of health programs in the company”?",
+    "ground_truth": "accounting, human resources"
+  },
+  {
+    "id": "q108",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Recording of conversations (telephone / face-to-face)” for the purpose of: “Recording and archiving of notes from telephone and face-to-face conversations”?",
+    "ground_truth": "office management, human resources, support, sales"
+  },
+  {
+    "id": "q109",
+    "question": "Which groups of data subjects are affected by the processing activity: “3G regulation at the workplace” for the purpose of: “Verification and documentation of your 3G (recovered, vaccinated, tested) status as a prerequisite for access to the workplace”?",
+    "ground_truth": "Staff"
+  },
+  {
+    "id": "q110",
+    "question": "Which groups of data subjects are affected by the processing activity: “Special payments (bonus)” for the purpose: “Settlement and administration of bonus and special payments”?",
+    "ground_truth": "Employees"
+  },
+  {
+    "id": "q111",
+    "question": "Which groups of data subjects are affected by the processing activity: “Preparation of offers” for the purpose of: “Obtaining offers to determine the most advantageous terms and conditions of purchase”?",
+    "ground_truth": "employees of customers, employees of suppliers, interested parties, suppliers, customers"
+  },
+  {
+    "id": "q112",
+    "question": "Which groups of data subjects are affected by the processing activity: “Web forum” for the purpose: “Operation of a web forum for the fulfillment of contractual services determined by the forum rules”?",
+    "ground_truth": "customers"
+  },
+  {
+    "id": "q113",
+    "question": "Which groups of data subjects are affected by the processing activity: “Contact form / chat function” for the purpose of: “Communication with customers, interested parties or other visitors to a website for the purpose of initiating a contract, customer support or for the provision of general information”?",
+    "ground_truth": "employees of customers, interested parties, customers"
+  },
+  {
+    "id": "q114",
+    "question": "Which groups of data subjects are affected by the processing activity: “Audit / Internal audit” for the purpose: “Internal audits for the continuous monitoring of processes to meet legal standards”?",
+    "ground_truth": "interested parties, customers, clients"
+  },
+  {
+    "id": "q115",
+    "question": "Which groups of data subjects are affected by the processing activity: “Recording of conversations (telephone / face-to-face)” for the purpose of: “Recording and archiving of notes from telephone and face-to-face conversations”?",
+    "ground_truth": "applicants, service providers, external contacts, external employees, freelancers, courts, \ninterested parties, law firms, customers, suppliers, clients, notaries, patients, \nproject partners, other contacts, employees of suppliers, \nemployees of customers, authorities, employees"
+  },
+  {
+    "id": "q116",
+    "question": "Which groups of data subjects are affected by the processing activity: “Co-determination of the works council” for the purpose: “Co-determination rights on individual or collective employee-related issues to safeguard the interests of employees”?",
+    "ground_truth": "employees, applicants"
+  },
+  {
+    "id": "q117",
+    "question": "We do not target customers using personal data - is the GDPR still relevant to us?",
+    "ground_truth": "Data protection regulations, especially the GDPR, impact nearly every aspect of modern businesses—even those not directly focused on using personal data. Common operations like HR records, security systems, IT infrastructure, and company communications all involve personal data. When third parties (e.g., payroll or IT providers) handle this data, contracts with data protection clauses are required. If data is transferred internationally, safeguards must be in place. Given the broad definition of personal data, virtually all companies are subject to GDPR obligations."
+  },
+  {
+    "id": "q118",
+    "question": "Does the GDPR also apply when personal data are processed outside the EU?",
+    "ground_truth": "The GDPR has an extended territorial scope and applies not only to EU-based organizations but also to non-EU companies that target or monitor individuals in the EU. Any company processing personal data as part of activities in the EU must comply. Non-EU companies offering goods, services, or tracking behavior within the EU must also follow the GDPR and appoint an EU-based representative."
+  },
+  {
+    "id": "q119",
+    "question": "Does the GDPR allow flexibility in its application?",
+    "ground_truth": "The GDPR adopts a risk-based approach, giving controllers flexibility in how they ensure compliance. Controllers must implement appropriate technical and organizational measures, considering factors like the nature and risk level of the data processing. Higher-risk activities require stricter safeguards, while low-risk operations may involve fewer obligations—for example, no breach notification or impact assessment if the risk is minimal."
+  },
+  {
+    "id": "q120",
+    "question": "I heard that we no longer need to file a notification for each processing? Is that true?",
+    "ground_truth": "Under the GDPR, the previous requirement to notify authorities of all data processing activities has been abolished. Instead, companies must keep up-to-date internal records of their processing. Prior consultation with supervisory authorities is still required for high-risk processing identified in a Data Protection Impact Assessment (DPIA), and prior authorization may be needed for data transfers to third countries. Although this record-keeping duty adds responsibility for controllers, SMEs may be exempt under certain conditions. These obligations support the GDPR’s broader goal of embedding a culture of accountability and compliance in daily business practices."
+  },
+  {
+    "id": "q121",
+    "question": "Do we need to certify GDPR compliance by certification bodies?",
+    "ground_truth": "While certification under the GDPR is not mandatory, it is encouraged as a way for companies to demonstrate compliance with data protection principles, in line with the accountability requirement. Tools like codes of conduct, seals, and certifications—developed by industries and approved by supervisory authorities—help organizations prove they meet GDPR standards. These mechanisms offer objective, verifiable evidence of compliance and can enhance trust with data subjects and business partners, especially for data processors wanting to show reliability to controllers."
+  },
+  {
+    "id": "q122",
+    "question": "What does \"accountability\" mean in practice?",
+    "ground_truth": "The GDPR establishes accountability as a core principle, requiring controllers to proactively implement and demonstrate effective data protection compliance. Organizations must be able to prove to both supervisory authorities and data subjects that they handle personal data in line with the GDPR. Key accountability measures include:\n\nInternal and external policies and procedures\n\nUp-to-date documentation of processing activities\n\nData Protection Impact Assessments (DPIAs) for high-risk processing\n\nData protection by design and by default\n\nSecurity and confidentiality measures\n\nAudits and certifications\n\nAppointment of a Data Protection Officer (DPO)\n\nThese actions are not optional; many are mandatory depending on the processing context."
+  },
+  {
+    "id": "q123",
+    "question": "Is it still possible to rely on implicit consent under the GDPR?",
+    "ground_truth": "Consent remains a valid legal basis under the GDPR but is now more strictly defined. It must be a clear, affirmative action that is freely given, specific, informed, and demonstrable by the controller. Opt-out or implied consent is no longer sufficient. Consent is invalid if there’s a power imbalance (e.g., with employers or public authorities), or if the data subject is pressured or cannot refuse without negative consequences.\n\nControllers must:\n\nEnsure genuine choice\n\nInform data subjects of their right to withdraw consent\n\nMake withdrawal as easy as giving consent\n\nConsent previously obtained under the old directive is still valid if it meets current GDPR standards. Consent cannot be tied to contract performance unless it is truly necessary for that purpose."
+  },
+  {
+    "id": "q124",
+    "question": "Should we update the information given to data subjects?",
+    "ground_truth": "Under the GDPR, transparency is a key requirement. Controllers must provide clear, comprehensive, and accessible information to data subjects through privacy notices, contracts, or interfaces. This includes details on:\n\nData retention periods\n\nData subject rights (e.g., access, rectification, erasure, restriction)\n\nRight to withdraw consent (if applicable)\n\nRight to lodge a complaint\n\nContact details of the DPO (if any)\n\nLegal basis for processing (e.g., legitimate interest, with explanation)\n\nData transfers to third countries, and applicable safeguards\n\nHow data was obtained, if not directly from the subject\n\nNotices must avoid vague or legalistic language and use plain, clear terms suitable for the target audience. Standardized icons may also be used. The obligation to inform applies regardless of the legal basis for processing—except where it would be impossible or require disproportionate effort."
+  },
+  {
+    "id": "q125",
+    "question": "How can Data Subjects ask to \"be forgotten\"?",
+    "ground_truth": "The GDPR grants individuals the right to be forgotten (right to erasure), allowing them to request deletion of their personal data. Controllers must erase the data without undue delay in cases such as:\n\nThe data is no longer needed\n\nThe subject withdraws consent\n\nThe subject objects to processing\n\nProcessing is unlawful\n\nIf the data was made public, the controller must also inform other controllers processing that data to erase it. This right applies broadly—not just to search engines—and must be balanced against other interests like freedom of expression, public health, research, and legal claims."
+  },
+  {
+    "id": "q126",
+    "question": "Can Data Subjects request a copy of their personal data or transfer these data to another service (data portability)?",
+    "ground_truth": "The GDPR introduces the right to data portability, allowing individuals to receive a copy of their personal data in a commonly used format and to request that it be transferred to another controller—even a competitor. This right applies only when:\n\nData is processed automatically\n\nThe legal basis is consent or contract\n\nThe data was provided by the data subject (not inferred or derived data)\n\nControllers are not required to make their systems technically compatible with others. The right does not apply to processing based on public interest or legitimate interest grounds."
+  },
+  {
+    "id": "q127",
+    "question": "Does the GDPR restrict profiling of Data Subjects?",
+    "ground_truth": "The GDPR defines profiling as automated processing of personal data to evaluate personal aspects, such as behavior or preferences—commonly used online. Controllers must inform individuals if profiling occurs. While profiling itself isn’t fully prohibited, individuals have the right to object to automated decisions based solely on profiling if those decisions produce legal or significant effects (e.g., credit approval, hiring), unless:\n\nIt’s necessary for a contract\n\nIt's authorized by law\n\nThe individual has given explicit consent\n\nProfiling based on sensitive data is generally prohibited unless justified by consent or public interest. When automated decisions are allowed, controllers must:\n\nExplain the logic behind the decision\n\nAllow human review upon request\n\nConduct a data protection impact assessment if profiling is used systematically."
+  },
+  {
+    "id": "q128",
+    "question": "Does the GDPR also apply if I use pseudonymous or encoded data?",
+    "ground_truth": "The GDPR introduces pseudonymisation as a privacy-enhancing technique where personal data is processed so it can’t be linked to a specific individual without separate, secured additional information. Unlike anonymised data, pseudonymised data still falls under the GDPR, but its use is subject to a less stringent regime due to reduced privacy risks.\n\nPseudonymisation offers several benefits:\n\nHelps enable processing beyond original purposes\n\nSupports scientific, historical, and statistical research\n\nAids compliance with data security and privacy by design principles\n\nIt creates an incentive for controllers to adopt stronger data protection practices."
+  },
+  {
+    "id": "q129",
+    "question": "What does a controller need to do when it relies on data processors?",
+    "ground_truth": "The GDPR distinguishes between controllers (who decide the purpose and means of data processing) and processors (who process data on the controller’s behalf). Processors can include service providers, IT support, hosting companies, and others with access to personal data.\n\nKey obligations for controllers when hiring processors:\n\nChoose processors that offer sufficient data protection guarantees\n\nSign a detailed contract specifying the scope, purpose, data types, security measures, and roles\n\nMaintain oversight of subcontracting—processors need the controller’s written consent to engage sub-processors\n\nThese rules aim to strengthen accountability and ensure GDPR compliance throughout the processing chain."
+  },
+  {
+    "id": "q130",
+    "question": "My company processes personal data on behalf of other companies. What does the GDPR mean for us as a processor?",
+    "ground_truth": "The GDPR places direct responsibilities and liabilities on data processors, requiring them to:\n\nProvide sufficient guarantees of expertise, reliability, and resources\n\nImplement appropriate technical and organizational measures for data protection\n\nFollow the controller’s instructions and legal requirements\n\nKeep detailed records of processing activities\n\nObtain the controller’s approval before using sub-processors, who must meet the same obligations\n\nEnsure that processing is governed by a binding contract or legal act, outlining tasks, responsibilities, and data handling requirements\n\nReturn or erase data after processing, based on the controller’s instructions\n\nBoth controllers and processors can be held jointly liable for GDPR violations unless the processor proves it was not responsible for the breach. Certification and codes of conduct can help demonstrate compliance."
+  },
+  {
+    "id": "q131",
+    "question": "Data Breach Notification: What to do when your personal data has been breached?",
+    "ground_truth": "Under the GDPR, a personal data breach includes any accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access to personal data—not just malicious attacks. Most breaches result from human error or negligence, making staff training and internal policies essential.\n\nControllers must:\n\nNotify the supervisory authority within 72 hours of becoming aware of a breach, unless it is unlikely to pose a risk to individuals' rights and freedoms\n\nInclude in the notification: breach details, affected individuals and records, consequences, DPO contact, and mitigation steps\n\nInform affected individuals without delay if the breach is likely to result in high risk, with limited exceptions\n\nTo meet these obligations, organizations should have clear breach response procedures to ensure timely and effective handling of incidents."
+  },
+  {
+    "id": "q132",
+    "question": "I was informed, that as a director of a company, I have to appoint a data protection officer (DPO). Is this true for all companies?",
+    "ground_truth": "Under the GDPR, appointing a Data Protection Officer (DPO) is mandatory when:\n\nA public authority processes data\n\nData subjects are regularly and systematically monitored on a large scale\n\nSensitive personal data is processed on a large scale\n\nMember States may impose additional criteria. Even when not required, organizations may voluntarily appoint a DPO. A single DPO can serve a group of companies if they are easily reachable from all locations.\n\nThe DPO must have expert knowledge of data protection laws and practices and can be an employee or external consultant. They may perform other duties, as long as these do not cause a conflict of interest."
+  },
+  {
+    "id": "q133",
+    "question": "My group of companies operates in different parts of the world. Can I still transfer personal data to countries outside the EU?",
+    "ground_truth": "To protect personal data transferred outside the EU, the GDPR allows such transfers only if the destination country offers an adequate level of protection (e.g., Argentina, New Zealand), as recognized by the European Commission.\n\nIf the country is not deemed \"safe,\" transfers are allowed only if adequate safeguards are in place, such as:\n\nStandard Contractual Clauses (SCCs)\n\nBinding Corporate Rules (BCRs) for intra-group transfers\n\nApproved codes of conduct or certification mechanisms\n\nThese safeguards must ensure that data subjects’ rights are enforceable and legal remedies are available.\n\nFor occasional or limited transfers, the GDPR permits exceptions (derogations), such as:\n\nExplicit consent from the data subject\n\nTransfers necessary for legal claims or contractual performance\n\nThese rules aim to maintain GDPR-level protection even outside the EU."
+  },
+  {
+    "id": "q134",
+    "question": "To which supervisory authority should I report?",
+    "ground_truth": "The GDPR establishes the European Data Protection Board (EDPB) (not EDPS, which is a separate EU institution for supervising EU bodies) to ensure consistent application of the GDPR across the EU. It provides guidance and helps resolve disputes between national supervisory authorities.\n\nFor companies with establishments in multiple EU countries, the Lead Supervisory Authority (LSA) of the main establishment acts as a one-stop shop for enforcement. This mechanism simplifies compliance for EU-based multinational companies but does not apply to non-EU companies, even if they have an EU representative.\n\nData subjects can still file complaints with the authority in their residence, workplace, or where the violation occurred.\n\nIn cross-border cases, the LSA coordinates with other concerned authorities, with joint operations and mutual assistance mechanisms in place. In disputes between authorities, the EDPB can issue binding decisions to resolve conflicts and ensure uniform enforcement."
+  },
+  {
+    "id": "q135",
+    "question": "Does the GDPR provide full harmonisation or are there differences between member states?",
+    "ground_truth": "Although the GDPR is directly applicable across all EU Member States, it allows for national variations in over 60 areas. This leads to differences such as:\n\nThe age of consent for children (between 13 and 16)\n\nCriteria for appointing a DPO\n\nNational rules on employee data processing\n\nConditions for processing data for scientific, archiving, or employment purposes\n\nExceptions to data subject rights and special rules for sensitive or criminal data\n\nNational supervisory authorities enforce the GDPR, which may result in variations in how data protection is applied. Additionally, Directive 2016/680 (for police and criminal justice data) must be transposed into national law, allowing Member States flexibility in how its goals are implemented."
+  },
+  {
+    "id": "q136",
+    "question": "How do I ensure that my organisation is GDPR-compliant?",
+    "ground_truth": "Establishing a clear structure and assigning responsibilities is a critical first step toward GDPR compliance. Early efforts to raise data protection awareness and implement policies and procedures make long-term compliance more manageable.\n\nOperationally, the process begins with:\n\nAssessing current data processing activities\n\nRegistering existing processing operations\n\nConducting a data protection audit, if needed\n\nIdentifying compliance gaps and associated risks\n\nPrioritizing corrective actions\n\nGDPR compliance is a continuous process. New processing activities must be assessed in advance, and existing policies, procedures, and security measures must be regularly reviewed and updated. Ongoing staff training and documentation of changes are essential to maintaining compliance."
+  },
+  {
+    "id": "q137",
+    "question": "What is the risk of my organisation to comply with data protection rules as set by the GDPR?",
+    "ground_truth": "The GDPR grants supervisory authorities a wide range of corrective powers, including:\n\nWarnings and reprimands\n\nOrders to stop processing, correct, delete, or grant access to data\n\nSuspension of international data transfers\n\nAdministrative fines\n\nReprimands are used for minor violations, while fines are imposed for serious breaches—especially when there’s risk of discrimination, identity theft, reputational harm, or misuse of sensitive or large-scale data. Fines can reach up to €20 million or 4% of global annual turnover, whichever is higher.\n\nIn addition to complaints to authorities, data subjects may seek compensation through court for material or non-material damages. Non-profit organizations can also file complaints or take legal action on behalf of data subjects."
+  },
+  {
+    "id": "q138",
+    "question": "When is a record of processing activities required under the GDPR and what does it contain?",
+    "ground_truth": "If members have 250 or more employees - keeping additional written records of all processing activities including:  o Name and details of organisation, and where applicable, other controllers, the member’s firm’s representative and data protection officer. o Purposes of the processing. o Description of the categories of individuals and personal data. o Categories of recipients to whom the personal data has been or will be disclosed. o Details of transfers to third countries (i.e. outside the EU) including the safeguards in place. o Retention schedules (where possible) \n\nThere is a limited exemption if members have fewer than 250 employees.  Detailed records of processing activities only have to be kept where one of the following applies: o  higher risk processing, such as processing personal data which could result in a risk to the rights and freedoms of an individual,  o processing which is not occasional o processing of special categories of data (including that revealing race or ethnic origin, religious beliefs, political opinions, health data or genetic / biometric data) or criminal convictions and offences."
+  },
+  {
+    "id": "q139",
+    "question": "What is the primary objective of the AI Act?",
+    "ground_truth": "The primary objective is to ensure the safe development, marketing, and use of AI systems while protecting fundamental rights, ensuring safety, and fostering trust in AI technologies."
+  },
+  {
+    "id": "q140",
+    "question": "What approach does the AI Act propose for regulating AI systems?",
+    "ground_truth": "It proposes a risk-based approach, categorizing AI systems into unacceptable, high-risk, and low/minimal risk levels, with corresponding regulatory requirements."
+  },
+  {
+    "id": "q141",
+    "question": "What are the prohibited AI practices under the AI Act?",
+    "ground_truth": "Prohibited practices include manipulative techniques beyond consciousness, exploitation of vulnerabilities of specific groups, and social scoring for general purposes by public authorities."
+  },
+  {
+    "id": "q142",
+    "question": "How are high-risk AI systems defined in the AI Act?",
+    "ground_truth": "High-risk systems include AI used as safety components in regulated products and standalone systems listed in Annex III, with significant risks to health, safety, or fundamental rights."
+  },
+  {
+    "id": "q143",
+    "question": "What obligations are imposed on high-risk AI system providers?",
+    "ground_truth": "Obligations include compliance with mandatory requirements like data quality, documentation, transparency, human oversight, robustness, and undergoing conformity assessments."
+  },
+  {
+    "id": "q144",
+    "question": "What transparency obligations exist for certain AI systems?",
+    "ground_truth": "Transparency is required for systems interacting with humans, detecting emotions, recognizing biometric data, or generating synthetic content (e.g., deep fakes)."
+  },
+  {
+    "id": "q145",
+    "question": "Does the AI Act support innovation?",
+    "ground_truth": "Yes, it promotes innovation through measures like regulatory sandboxes and support for SMEs to reduce compliance burdens."
+  },
+  {
+    "id": "q146",
+    "question": "What governance structure is proposed for enforcing the AI Act?",
+    "ground_truth": "A European Artificial Intelligence Board at the Union level and designated national authorities in Member States will oversee implementation and enforcement."
+  },
+  {
+    "id": "q147",
+    "question": "How does the AI Act align with existing EU legislation?",
+    "ground_truth": "It complements the GDPR, consumer protection laws, and sector-specific regulations, ensuring coherence across legal frameworks."
+  },
+  {
+    "id": "q148",
+    "question": "What provisions are included for the monitoring and evaluation of AI systems?",
+    "ground_truth": "Providers must report serious incidents and non-compliance, and a public EU-wide database for high-risk AI systems will be established for oversight."
+  },
+  {
+    "id": "q149",
+    "question": "What penalties does the AI Act impose for non-compliance?",
+    "ground_truth": "It includes effective, proportionate, and dissuasive penalties for violations, though specific details are left to implementation."
+  },
+  {
+    "id": "q150",
+    "question": "What is the role of the conformity assessment in the AI Act?",
+    "ground_truth": "Conformity assessments ensure that high-risk AI systems meet the prescribed requirements before being marketed or used in the Union."
+  },
+  {
+    "id": "q151",
+    "question": "What measured does the AI Act include for ensuring fairness and non-discrimination?",
+    "ground_truth": "It mandates high-quality datasets, risk management, and testing to minimize algorithmic bias and ensure equitable treatment."
+  },
+  {
+    "id": "q152",
+    "question": "Does the AI Act address the use of AI in biometric identification?",
+    "ground_truth": "Yes, it restricts the use of ‘real-time’ remote biometric identification in public spaces for law enforcement, except under narrowly defined conditions."
+  },
+  {
+    "id": "q153",
+    "question": "What timeline does the AI Act propose for implementation and compliance?",
+    "ground_truth": "A transitional period is provided to allow stakeholders to adapt, with a comprehensive evaluation and review scheduled five years post-implementation."
+  }
+]
