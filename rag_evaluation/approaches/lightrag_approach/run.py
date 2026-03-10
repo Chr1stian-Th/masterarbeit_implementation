@@ -28,7 +28,6 @@ import time
 import argparse
 import asyncio
 from functools import partial
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from dotenv import load_dotenv
 
@@ -59,8 +58,12 @@ class LightRAGRunner:
     """Wraps LightRAG for standardized question processing.
 
     Initializes a LightRAG instance pointing at the pre-built graph
-    storage directory and exposes a synchronous query interface that
+    storage directory and exposes an async query interface that
     returns structured :class:`QuestionResult` objects.
+
+    All async operations (initialize, query, finalize) must be awaited
+    within the same event loop — use :func:`_run_all` as the single
+    ``asyncio.run()`` entry point.
 
     Attributes:
         rag: The LightRAG instance.
@@ -69,7 +72,7 @@ class LightRAGRunner:
     """
 
     def __init__(self, config: dict) -> None:
-        """Initialize the LightRAG runner.
+        """Set up the LightRAG instance (no async operations here).
 
         Args:
             config: Parsed ``settings.yaml`` dictionary.
@@ -112,41 +115,15 @@ class LightRAGRunner:
             ),
         )
 
-        # Initialize storages (required in LightRAG >= 1.4)
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            loop.run_until_complete(self.rag.initialize_storages())
-        finally:
-            loop.close()
+    async def initialize(self) -> None:
+        """Initialize storages (required in LightRAG >= 1.4)."""
+        await self.rag.initialize_storages()
 
-    async def _aquery(self, question: str) -> str:
-        """Async query wrapper for LightRAG.
-
-        Args:
-            question: The question to answer.
-
-        Returns:
-            The generated answer text.
-        """
-        from lightrag import QueryParam
-
-        result = await self.rag.aquery(
-            question,
-            param=QueryParam(mode=self.query_mode),
-        )
-        return result
-
-    def finalize(self) -> None:
+    async def finalize(self) -> None:
         """Finalize storages (call once after all queries are done)."""
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            loop.run_until_complete(self.rag.finalize_storages())
-        finally:
-            loop.close()
+        await self.rag.finalize_storages()
 
-    def process_question(self, question: QuestionInput) -> QuestionResult:
+    async def process_question(self, question: QuestionInput) -> QuestionResult:
         """Process a single question through LightRAG.
 
         Queries LightRAG in hybrid mode, measures latency, and captures
@@ -165,16 +142,15 @@ class LightRAGRunner:
             For more granular context extraction, consider patching
             LightRAG's internal retrieval step.
         """
+        from lightrag import QueryParam
+
         start_time = time.time()
 
         try:
-            # Run async query in sync context
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            try:
-                answer = loop.run_until_complete(self._aquery(question.question))
-            finally:
-                loop.close()
+            answer = await self.rag.aquery(
+                question.question,
+                param=QueryParam(mode=self.query_mode, enable_rerank=False),
+            )
 
             latency = time.time() - start_time
 
@@ -217,6 +193,53 @@ class LightRAGRunner:
 # Main execution
 # ============================================================================
 
+async def _run_all(
+    cfg: dict,
+    questions: list[QuestionInput],
+    max_workers: int,
+) -> tuple["LightRAGRunner", list[QuestionResult]]:
+    """Run init → all queries → finalize inside a single event loop.
+
+    Args:
+        cfg: Parsed settings dictionary.
+        questions: List of questions to process.
+        max_workers: Max concurrent queries (uses asyncio.Semaphore).
+
+    Returns:
+        Tuple of (runner, results).
+    """
+    runner = LightRAGRunner(cfg)
+    await runner.initialize()
+
+    results: list[QuestionResult] = []
+
+    if max_workers <= 1:
+        for i, q in enumerate(questions):
+            print(f"  [{i+1}/{len(questions)}] {q.question[:80]}...")
+            result = await runner.process_question(q)
+            results.append(result)
+            print(f"    -> {result.latency_seconds}s, {result.token_usage.total_tokens} tokens")
+    else:
+        sem = asyncio.Semaphore(max_workers)
+        completed = 0
+
+        async def bounded(i: int, q: QuestionInput) -> QuestionResult:
+            nonlocal completed
+            async with sem:
+                print(f"  [{i+1}/{len(questions)}] {q.question[:80]}...")
+                result = await runner.process_question(q)
+                completed += 1
+                print(f"    [{completed}/{len(questions)}] {q.id}: {result.latency_seconds}s")
+                return result
+
+        results = list(
+            await asyncio.gather(*[bounded(i, q) for i, q in enumerate(questions)])
+        )
+
+    await runner.finalize()
+    return runner, results
+
+
 def run_lightrag(
     questions_path: str | None = None,
     output_dir: str | None = None,
@@ -248,31 +271,7 @@ def run_lightrag(
     questions = QuestionInput.load_corpus(questions_path)
     print(f"[LightRAG] Processing {len(questions)} questions (max_workers={max_workers})")
 
-    runner = LightRAGRunner(cfg)
-    results: list[QuestionResult] = []
-
-    # Process questions (sequential for LightRAG due to async internals)
-    # For parallelization, use ThreadPoolExecutor
-    if max_workers <= 1:
-        for i, q in enumerate(questions):
-            print(f"  [{i+1}/{len(questions)}] {q.question[:80]}...")
-            result = runner.process_question(q)
-            results.append(result)
-            print(f"    -> {result.latency_seconds}s, {result.token_usage.total_tokens} tokens")
-    else:
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_map = {
-                executor.submit(runner.process_question, q): q
-                for q in questions
-            }
-            for future in as_completed(future_map):
-                q = future_map[future]
-                result = future.result()
-                results.append(result)
-                print(f"  [{len(results)}/{len(questions)}] {q.id}: {result.latency_seconds}s")
-
-    # Finalize LightRAG storages
-    runner.finalize()
+    runner, results = asyncio.run(_run_all(cfg, questions, max_workers))
 
     # Sort results by question ID for deterministic output
     results.sort(key=lambda r: r.question_id)
