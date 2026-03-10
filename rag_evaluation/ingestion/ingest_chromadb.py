@@ -20,6 +20,8 @@ import os
 import sys
 import glob
 import hashlib
+import json
+from datetime import datetime, timezone
 
 from dotenv import load_dotenv
 
@@ -147,7 +149,7 @@ def chunk_text(
 
 def generate_embeddings(
     client: OpenAI, texts: list[str], model: str
-) -> list[list[float]]:
+) -> tuple[list[list[float]], int]:
     """Generate embeddings for a batch of texts.
 
     Args:
@@ -156,10 +158,11 @@ def generate_embeddings(
         model: Embedding model identifier.
 
     Returns:
-        List of embedding vectors.
+        Tuple of (embedding vectors, tokens used by the API for this batch).
     """
     response = client.embeddings.create(model=model, input=texts)
-    return [item.embedding for item in response.data]
+    tokens_used = response.usage.total_tokens if response.usage else 0
+    return [item.embedding for item in response.data], tokens_used
 
 
 def generate_chunk_id(text: str, source: str, chunk_index: int) -> str:
@@ -230,6 +233,7 @@ def ingest(config_path: str | None = None) -> None:
     all_chunks: list[str] = []
     all_metadatas: list[dict] = []
     all_ids: list[str] = []
+    doc_stats: list[dict] = []
 
     for filepath in all_files:
         filename = os.path.basename(filepath)
@@ -248,6 +252,14 @@ def ingest(config_path: str | None = None) -> None:
         chunks = chunk_text(text, chunk_size, chunk_overlap, separator)
         print(f"  {filename}: {len(chunks)} chunks")
 
+        doc_token_count = count_tokens(text, embedding_model)
+        doc_stats.append({
+            "filename": filename,
+            "char_count": len(text),
+            "token_count": doc_token_count,
+            "chunk_count": len(chunks),
+        })
+
         for i, chunk in enumerate(chunks):
             chunk_id = generate_chunk_id(chunk, filename, i)
             all_chunks.append(chunk)
@@ -263,11 +275,13 @@ def ingest(config_path: str | None = None) -> None:
     # --- Generate embeddings in batches ---
     batch_size = 100
     all_embeddings: list[list[float]] = []
+    total_embedding_tokens = 0
 
     for i in range(0, len(all_chunks), batch_size):
         batch = all_chunks[i : i + batch_size]
-        embeddings = generate_embeddings(openai_client, batch, embedding_model)
+        embeddings, batch_tokens = generate_embeddings(openai_client, batch, embedding_model)
         all_embeddings.extend(embeddings)
+        total_embedding_tokens += batch_tokens
         print(f"  Embedded batch {i // batch_size + 1}/{(len(all_chunks) - 1) // batch_size + 1}")
 
     # --- Store in ChromaDB ---
@@ -300,6 +314,32 @@ def ingest(config_path: str | None = None) -> None:
 
     print(f"[Ingest] Successfully ingested {collection.count()} chunks into ChromaDB")
     print(f"[Ingest] Collection: {collection_name} at {persist_dir}")
+
+    # --- Write token log ---
+    results_dir = os.path.join(PROJECT_ROOT, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    log_filename = f"ingestion_{datetime.now(timezone.utc).strftime('%Y-%m-%d')}.json"
+    log_path = os.path.join(results_dir, log_filename)
+
+    log = {
+        "ingestion_type": "chromadb",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "embedding_model": embedding_model,
+        "chunk_size": chunk_size,
+        "chunk_overlap": chunk_overlap,
+        "documents": doc_stats,
+        "totals": {
+            "document_count": len(doc_stats),
+            "chunk_count": len(all_chunks),
+            "input_tokens_estimated": sum(d["token_count"] for d in doc_stats),
+            "embedding_tokens_used": total_embedding_tokens,
+        },
+    }
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(log, f, indent=2)
+
+    print(f"[Ingest] Token log written to {log_path}")
 
 
 if __name__ == "__main__":

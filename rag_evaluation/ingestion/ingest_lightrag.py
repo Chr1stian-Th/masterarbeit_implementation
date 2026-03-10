@@ -20,6 +20,8 @@ import os
 import sys
 import glob
 import asyncio
+import json
+from datetime import datetime, timezone
 from functools import partial
 
 from dotenv import load_dotenv
@@ -55,9 +57,17 @@ async def ingest_async(config_path: str | None = None) -> None:
         config_path: Optional path to ``settings.yaml``.
     """
     # Import LightRAG here so it's only needed in the lightrag venv
+    import tiktoken
     from lightrag import LightRAG, QueryParam
     from lightrag.llm.openai import openai_complete_if_cache, openai_embed
     from lightrag.utils import EmbeddingFunc
+
+    def _count_tokens(text: str, model: str) -> int:
+        try:
+            enc = tiktoken.encoding_for_model(model)
+        except KeyError:
+            enc = tiktoken.get_encoding("cl100k_base")
+        return len(enc.encode(text))
 
     cfg = load_config(config_path)
     api_key = os.environ.get("OPENAI_API_KEY")
@@ -126,6 +136,8 @@ async def ingest_async(config_path: str | None = None) -> None:
         f"{len(pdf_files)} PDF files"
     )
 
+    doc_stats: list[dict] = []
+
     for filepath in all_files:
         filename = os.path.basename(filepath)
 
@@ -140,11 +152,46 @@ async def ingest_async(config_path: str | None = None) -> None:
             print(f"  Skipping empty file: {filename}")
             continue
 
-        print(f"  Inserting {filename} ({len(text)} chars)...")
+        token_count = _count_tokens(text, embedding_model)
+        doc_stats.append({
+            "filename": filename,
+            "char_count": len(text),
+            "token_count": token_count,
+        })
+
+        print(f"  Inserting {filename} ({len(text)} chars, ~{token_count} tokens)...")
         await rag.ainsert(text)
         print(f"  Done: {filename}")
 
     print(f"[LightRAG Ingest] Ingestion complete. Graph stored in {working_dir}")
+
+    # --- Write token log ---
+    results_dir = os.path.join(PROJECT_ROOT, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    log_filename = f"ingestion_{datetime.now(timezone.utc).strftime('%Y-%m-%d')}.json"
+    log_path = os.path.join(results_dir, log_filename)
+
+    log = {
+        "ingestion_type": "lightrag",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "embedding_model": embedding_model,
+        "generation_model": generation_model,
+        "documents": doc_stats,
+        "totals": {
+            "document_count": len(doc_stats),
+            "input_tokens_estimated": sum(d["token_count"] for d in doc_stats),
+        },
+        "note": (
+            "LightRAG manages LLM and embedding API calls internally. "
+            "input_tokens_estimated reflects raw document token counts; "
+            "actual API usage (entity extraction, chunking) is higher."
+        ),
+    }
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(log, f, indent=2)
+
+    print(f"[LightRAG Ingest] Token log written to {log_path}")
 
 
 def ingest(config_path: str | None = None) -> None:
