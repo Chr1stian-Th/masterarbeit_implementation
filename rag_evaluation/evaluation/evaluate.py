@@ -33,6 +33,7 @@ import json
 import glob
 import argparse
 from datetime import datetime, timezone
+from typing import Any
 
 from dotenv import load_dotenv
 
@@ -50,6 +51,152 @@ load_dotenv(os.path.join(EVAL_DIR, ".env"))
 from deepeval.test_case import LLMTestCase
 
 from metrics import get_metric, list_metrics
+
+
+# ============================================================================
+# Token Usage Tracking
+# ============================================================================
+
+class TokenUsageTracker:
+    """Tracks OpenAI API token usage by patching the openai Completions class.
+
+    Patches ``openai.resources.chat.completions.Completions.create`` and its
+    async counterpart so that every API call made by DeepEval metrics is
+    recorded, keyed by (approach, metric).
+
+    Usage::
+
+        tracker = TokenUsageTracker()
+        tracker.install()
+        tracker.set_context("lightrag", "faithfulness")
+        # ... run metric ...
+        tracker.uninstall()
+        report = tracker.compile_report(model="gpt-4o-mini")
+    """
+
+    def __init__(self) -> None:
+        self._usage: dict[str, dict[str, dict[str, int]]] = {}
+        self._current_approach: str | None = None
+        self._current_metric: str | None = None
+        self._original_create: Any = None
+        self._original_acreate: Any = None
+
+    def set_context(self, approach: str, metric: str) -> None:
+        """Set the current (approach, metric) context for attribution."""
+        self._current_approach = approach
+        self._current_metric = metric
+
+    def _record(self, usage: Any) -> None:
+        if not self._current_approach or not self._current_metric or not usage:
+            return
+        approach_data = self._usage.setdefault(self._current_approach, {})
+        metric_data = approach_data.setdefault(
+            self._current_metric,
+            {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "api_calls": 0},
+        )
+        metric_data["prompt_tokens"] += getattr(usage, "prompt_tokens", 0) or 0
+        metric_data["completion_tokens"] += getattr(usage, "completion_tokens", 0) or 0
+        metric_data["total_tokens"] += getattr(usage, "total_tokens", 0) or 0
+        metric_data["api_calls"] += 1
+
+    def install(self) -> None:
+        """Patch the OpenAI client classes to intercept usage data."""
+        try:
+            import openai.resources.chat.completions as _completions_mod
+        except ImportError:
+            return
+
+        tracker = self
+        Completions = _completions_mod.Completions
+        AsyncCompletions = _completions_mod.AsyncCompletions
+
+        original_create = Completions.create
+        self._original_create = original_create
+
+        def _patched_create(self_client, *args, **kwargs):
+            response = original_create(self_client, *args, **kwargs)
+            if hasattr(response, "usage"):
+                tracker._record(response.usage)
+            return response
+
+        Completions.create = _patched_create
+
+        try:
+            original_acreate = AsyncCompletions.create
+            self._original_acreate = original_acreate
+
+            async def _patched_acreate(self_client, *args, **kwargs):
+                response = await original_acreate(self_client, *args, **kwargs)
+                if hasattr(response, "usage"):
+                    tracker._record(response.usage)
+                return response
+
+            AsyncCompletions.create = _patched_acreate
+        except Exception:
+            pass
+
+    def uninstall(self) -> None:
+        """Restore the original OpenAI client methods."""
+        try:
+            import openai.resources.chat.completions as _completions_mod
+        except ImportError:
+            return
+
+        if self._original_create is not None:
+            _completions_mod.Completions.create = self._original_create
+        if self._original_acreate is not None:
+            _completions_mod.AsyncCompletions.create = self._original_acreate
+
+    def compile_report(self, model: str = "") -> dict:
+        """Build a structured token-usage report from collected data.
+
+        The report contains:
+
+        - ``by_approach``: per-approach breakdown with per-metric detail and
+          approach-level totals.
+        - ``by_metric``: per-metric view with per-approach detail and
+          metric-level totals.
+        - ``overview``: grand totals across all approaches and metrics.
+
+        Args:
+            model: The judge model name used during evaluation (for context).
+
+        Returns:
+            A JSON-serialisable dictionary with the full token-usage report.
+        """
+        def _zero() -> dict:
+            return {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0, "api_calls": 0}
+
+        def _add(acc: dict, src: dict) -> None:
+            for key in ("prompt_tokens", "completion_tokens", "total_tokens", "api_calls"):
+                acc[key] = acc.get(key, 0) + src.get(key, 0)
+
+        by_approach: dict = {}
+        by_metric: dict = {}
+        overview = _zero()
+
+        for approach, metrics in self._usage.items():
+            approach_totals = _zero()
+            approach_entry: dict = {"by_metric": {}, "totals": approach_totals}
+
+            for metric, counts in metrics.items():
+                approach_entry["by_metric"][metric] = dict(counts)
+                _add(approach_totals, counts)
+
+                metric_entry = by_metric.setdefault(metric, {"by_approach": {}, "totals": _zero()})
+                metric_entry["by_approach"][approach] = dict(counts)
+                _add(metric_entry["totals"], counts)
+
+            by_approach[approach] = approach_entry
+            _add(overview, approach_totals)
+
+        return {
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
+            "judge_model": model,
+            "by_approach": by_approach,
+            "by_metric": by_metric,
+            "overview": overview,
+        }
 
 # ---------------------------------------------------------------------------
 # Config loading
@@ -172,9 +319,17 @@ def run_evaluation(
     """
     os.makedirs(output_dir, exist_ok=True)
 
+    # Session-level timestamp used for all output filenames in this run
+    session_timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+
+    # Install token tracker before any metric calls
+    token_tracker = TokenUsageTracker()
+    token_tracker.install()
+
     # Load outputs
     outputs = load_approach_outputs(input_dir, filter_approach)
     if not outputs:
+        token_tracker.uninstall()
         print("[Evaluate] No outputs to evaluate.")
         return {}
 
@@ -229,6 +384,8 @@ def run_evaluation(
 
             metric_scores = []
             metric_passes = 0
+
+            token_tracker.set_context(approach, metric_name)
 
             for i, tc in enumerate(test_cases):
                 try:
@@ -297,6 +454,21 @@ def run_evaluation(
         print(f"  Saved: {result_path}")
         all_results[approach] = approach_results
 
+    # Uninstall token tracker and save token usage report
+    token_tracker.uninstall()
+    token_report = token_tracker.compile_report(model=model)
+    token_report_path = os.path.join(output_dir, f"token_usage_evaluation_{session_timestamp}.json")
+    with open(token_report_path, "w", encoding="utf-8") as f:
+        json.dump(token_report, f, indent=2, ensure_ascii=False)
+    overview = token_report["overview"]
+    print(
+        f"\n[Evaluate] Token usage — prompt: {overview['prompt_tokens']:,}, "
+        f"completion: {overview['completion_tokens']:,}, "
+        f"total: {overview['total_tokens']:,} "
+        f"({overview['api_calls']} API calls)"
+    )
+    print(f"[Evaluate] Token usage report: {token_report_path}")
+
     # Save summary across all approaches
     if len(all_results) > 1:
         summary = {
@@ -315,7 +487,7 @@ def run_evaluation(
                     }
             summary["comparative_summary"][metric_name] = comparison
 
-        summary_path = os.path.join(output_dir, f"summary_{timestamp}.json")
+        summary_path = os.path.join(output_dir, f"summary_evaluation_{session_timestamp}.json")
         with open(summary_path, "w", encoding="utf-8") as f:
             json.dump(summary, f, indent=2, ensure_ascii=False)
         print(f"\n[Evaluate] Comparative summary: {summary_path}")
