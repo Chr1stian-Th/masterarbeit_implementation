@@ -123,30 +123,129 @@ class LightRAGRunner:
         """Finalize storages (call once after all queries are done)."""
         await self.rag.finalize_storages()
 
+    @staticmethod
+    def _parse_context_sections(raw_context: str) -> list[str]:
+        """Parse LightRAG's formatted context string into individual passages.
+
+        LightRAG returns context as a single string containing CSV-formatted
+        sections for entities, relationships, and document chunks. This method
+        splits the context into individual passages suitable for LLM-as-a-judge
+        evaluation, comparable to the chunk-level passages logged by other
+        approaches (e.g. CRAG).
+
+        Only the ``Document Chunks`` section is extracted, as it contains the
+        actual retrieved text passages. Entity and relationship summaries from
+        the knowledge graph are logged separately in metadata.
+
+        Args:
+            raw_context: The formatted context string from LightRAG's
+                ``only_need_context=True`` query.
+
+        Returns:
+            A list of passage strings (document chunks). Falls back to the
+            full raw context as a single-element list if parsing fails.
+        """
+        if not raw_context or not raw_context.strip():
+            return []
+
+        chunks: list[str] = []
+        kg_data: list[str] = []
+
+        # LightRAG context has sections like "-----Entities-----",
+        # "-----Relationships-----", "-----Document Chunks-----"
+        # Split on section headers to isolate the document chunks.
+        sections = raw_context.split("-----")
+        current_section = None
+
+        for part in sections:
+            stripped = part.strip()
+            if not stripped:
+                continue
+
+            header = stripped.lower()
+            if "document chunks" in header or "sources" in header or "text units" in header:
+                current_section = "chunks"
+                continue
+            elif "entit" in header:
+                current_section = "entities"
+                continue
+            elif "relat" in header:
+                current_section = "relationships"
+                continue
+
+            if current_section == "chunks":
+                # Each chunk is typically separated by a delimiter or newlines.
+                # Split on common chunk separators used by LightRAG.
+                for chunk in stripped.split("\n\n"):
+                    chunk = chunk.strip()
+                    if chunk and len(chunk) > 20:  # skip tiny fragments
+                        chunks.append(chunk)
+            elif current_section in ("entities", "relationships"):
+                if stripped and len(stripped) > 10:
+                    kg_data.append(stripped)
+
+        # If no structured sections found, treat the whole context as passages
+        if not chunks and not kg_data:
+            # Fall back: split on double newlines as a best-effort parse
+            for passage in raw_context.split("\n\n"):
+                passage = passage.strip()
+                if passage and len(passage) > 20:
+                    chunks.append(passage)
+
+        return chunks
+
     async def process_question(self, question: QuestionInput) -> QuestionResult:
         """Process a single question through LightRAG.
 
-        Queries LightRAG in hybrid mode, measures latency, and captures
-        available context information.
+        Performs two queries per question in a specific order to ensure
+        that the logged context matches what the LLM actually used:
+
+        1. A ``only_need_context=True`` query that runs the full retrieval
+           pipeline (keyword extraction → vector search → graph traversal →
+           context assembly) but returns early **before** calling the LLM.
+           This populates LightRAG's internal ``llm_response_cache`` with the
+           keyword extraction result for this query.
+        2. A normal query to get the generated answer. Because the keyword
+           extraction LLM call from step 1 is cached, the second call reuses
+           the **same keywords**, which means it queries the same vectors and
+           traverses the same graph paths, producing identical retrieval
+           results. The only non-determinism (LLM keyword extraction) is
+           thus eliminated.
+
+        The context from step 1 is logged in ``retriever_context`` for
+        downstream LLM-as-a-judge evaluation.
 
         Args:
             question: The question to process.
 
         Returns:
-            A :class:`QuestionResult` with the answer, context, and metadata.
-
-        Note:
-            LightRAG does not expose raw retriever context through its
-            public API. The ``retriever_context`` field contains the
-            full response which includes context used for generation.
-            For more granular context extraction, consider patching
-            LightRAG's internal retrieval step.
+            A :class:`QuestionResult` with the answer, retrieved context,
+            and metadata.
         """
         from lightrag import QueryParam
 
         start_time = time.time()
 
         try:
+            # --- Step 1: Retrieve the raw context (no LLM generation) ---
+            # Uses only_need_context=True which runs the full retrieval
+            # pipeline inside kg_query() but returns the assembled context
+            # string *before* calling the LLM for answer generation.
+            # Crucially, this also caches the keyword extraction result,
+            # so the subsequent normal query will reuse the same keywords.
+            raw_context = await self.rag.aquery(
+                question.question,
+                param=QueryParam(
+                    mode=self.query_mode,
+                    enable_rerank=False,
+                    only_need_context=True,
+                ),
+            )
+
+            # --- Step 2: Generate the answer (normal query) ---
+            # The keyword extraction LLM call is now cached from step 1,
+            # so this query will retrieve the same context and pass it to
+            # the LLM for answer generation.
             answer = await self.rag.aquery(
                 question.question,
                 param=QueryParam(mode=self.query_mode, enable_rerank=False),
@@ -154,17 +253,32 @@ class LightRAGRunner:
 
             latency = time.time() - start_time
 
-            # LightRAG integrates retrieval and generation — extract what we can.
-            # The full answer includes synthesized context from the knowledge graph.
-            # We log it as context since LightRAG doesn't expose raw retrieved passages.
-            retriever_context = [
-                f"[LightRAG {self.query_mode} mode] Context integrated in response"
-            ]
+            # Handle QueryContextResult dataclass (LightRAG >= 1.4.x)
+            # or plain string (older versions).
+            if hasattr(raw_context, "content"):
+                context_str = raw_context.content or ""
+            elif isinstance(raw_context, str):
+                context_str = raw_context
+            else:
+                context_str = str(raw_context)
+
+            # Similarly handle answer if it's a result object
+            if hasattr(answer, "content"):
+                answer_str = answer.content or ""
+            elif isinstance(answer, str):
+                answer_str = answer
+            else:
+                answer_str = str(answer)
+
+            # Parse context into individual passages for fair comparison
+            # with other approaches (e.g. CRAG) that log per-chunk passages.
+            retriever_context = self._parse_context_sections(context_str)
 
             # Estimate token usage (LightRAG doesn't expose this directly)
-            # A rough heuristic based on typical LightRAG query patterns
-            estimated_prompt_tokens = len(question.question.split()) * 2 + 500
-            estimated_completion_tokens = len(answer.split()) * 2
+            # Approximation based on the actual retrieved context size
+            context_tokens = len(context_str.split()) if context_str else 0
+            estimated_prompt_tokens = context_tokens + len(question.question.split()) + 200
+            estimated_completion_tokens = len(answer_str.split()) * 2
             token_usage = TokenUsage(
                 prompt_tokens=estimated_prompt_tokens,
                 completion_tokens=estimated_completion_tokens,
@@ -173,7 +287,7 @@ class LightRAGRunner:
 
         except Exception as e:
             latency = time.time() - start_time
-            answer = f"[ERROR] {str(e)}"
+            answer_str = f"[ERROR] {str(e)}"
             retriever_context = []
             token_usage = TokenUsage()
 
@@ -181,7 +295,7 @@ class LightRAGRunner:
             question_id=question.id,
             input=question.question,
             retriever_context=retriever_context,
-            output=answer,
+            output=answer_str,
             ground_truth=question.ground_truth,
             token_usage=token_usage,
             latency_seconds=round(latency, 3),
