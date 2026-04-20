@@ -1,0 +1,242 @@
+{
+  "approach": "crag",
+  "timestamp": "2026-03-09T01:45:18",
+  "model_config": {
+    "generation_model": "gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small"
+  },
+  "results": [
+    {
+      "question_id": "q001",
+      "input": "What is the main objective of the GDPR?",
+      "retriever_context": [
+        "- (172)   The  European  Data  Protection  Supervisor  was  consulted  in  accordance  with  Article  28(2)  of  Regulation  (EC) No 45/2001 and delivered an opinion on 7 March 2012 ( 1 ).\n\n- (173)   This  Regulation  should  apply  to  all  matters  concerning  the  protection  of  fundamental  rights  and  freedoms vis-àvis the processing of personal data which are not subject to specific obligations with the same objective set out in Directive  2002/58/EC  of  the  European  Parliament  and  of  the  Council  ( 2 ),  including  the  obligations  on  the controller  and  the  rights  of  natural  persons.\n\n In  order  to  clarify  the  relationship  between  this  Regulation  and Directive 2002/58/EC, that Directive should be amended accordingly.\n\nOnce this Regulation is adopted, Directive 2002/58/EC should be reviewed in particular in order  to ensure consistency with this Regulation,\n\n( 1 ) OJ C 192, 30.6.2012, p. 7.\n\n( 2 ) Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and the  protection  of  privacy  in  the  electronic  communications  sector  (Directive  on  privacy  and  electronic  communications)  (OJ  L  201, 31.7.2002, p. 37).\n\n<!-- image -->\n\nHAVE ADOPTED THIS REGULATION:\n\n## CHAPTER I\n\n## General provisions\n\n## Article 1\n\n## Subject-matter and objectives",
+        "After  transmission of the draft legislative act to the national parliaments,\n\nHaving regard to the opinion of the European Economic and Social Committee ( 1 ),\n\nHaving regard to the opinion of the Committee of the Regions ( 2 ),\n\nActing in accordance with the ordinary legislative procedure  ( 3 ),\n\nWhereas:\n\n- (1) The  protection  of  natural  persons  in relation to the processing  of personal  data  is a  fundamental  right. Article  8(1)  of  the  Charter  of  Fundamental  Rights  of  the  European  Union  (the  'Charter')  and  Article  16(1)  of  the Treaty on the Functioning of  the European Union (TFEU) provide that everyone has the right to the protection of personal data concerning him or her.\n- (2) The  principles  of,  and  rules  on  the  protection  of  natural  persons  with  regard  to  the  processing  of  their  personal data  should,  whatever  their  nationality  or  residence,  respect  their  fundamental  rights  and  freedoms,  in  particular their  right  to  the  protection  of  personal  data.  This  Regulation  is  intended  to contribute to the  accomplishment of an  area  of  freedom,  security  and  justice  and  of  an  economic  union,  to  economic  and  social  progress,  to  the strengthening and the convergence of  the economies within the  internal  market, and  to the  well-being  of  natural persons.\n- (3) Directive  95/46/EC  of  the  European  Parliament  and  of  the  Council  ( 4 )  seeks  to  harmonise  the  protection  of fundamental rights and freedoms of natural persons in respect of processing activities and to ensure the free flow of personal data between Member States.\n\n( 1 ) OJ C 229, 31.7.2012, p. 90.\n\n( 2 ) OJ C 391, 18.12.2012, p. 127.",
+        "( 13 ) Directive (EU) 2016/680 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard  to  the  processing  of  personal  data  by competent  authorities  for  the  purposes  of  the  prevention,  investigation,  detection or prosecution  of  criminal  offences  or  the  execution  of  criminal  penalties,  and  on  the  free  movement  of  such  data,  and  repealing Council Framework Decision 2008/977/JHA (OJ L 119, 4.5.2016, p. 89).\n\n( 14 ) Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the processing of personal data and  the  protection  of  privacy  in  the  electronic  communications  sector  (Directive  on  privacy  and  electronic  communications)  (OJ L  201,  31.7.2002,  p.  37).\n\nrights and guarantees awarded to them by such Union law, including the rights related to solely automated individual decision-making, including profiling. Harmonised rules for  the placing on the market, the putting into service and the use of AI systems established under this Regulation should facilitate the effective implementation and enable the exercise of  the data  subjects'  rights  and  other  remedies  guaranteed under Union law on the protection of personal data  and  of other  fundamental  rights.",
+        " Natural  persons  increasingly  make  personal  information  available  publicly  and  globally. Technology  has  transformed  both  the  economy  and  social  life,  and  should  further  facilitate  the  free  flow  of personal data within the Union and the transfer to third countries and international organisations, while ensuring a high level of the protection of personal data. - (7) Those  developments  require  a  strong  and  more  coherent  data  protection  framework  in  the  Union,  backed  by strong  enforcement,  given  the  importance  of  creating  the  trust  that  will  allow  the  digital  economy  to  develop across  the  internal  market.  Natural  persons  should  have  control  of  their  own  personal  data.  Legal  and  practical certainty for  natural persons, economic operators and public authorities should be enhanced. - (8) Where this Regulation provides  for  specifications  or  restrictions  of  its  rules  by  Member  State  law,  Member  States may,  as  far  as  necessary  for  coherence  and  for  making  the  national  provisions  comprehensible  to  the  persons  to whom they apply, incorporate elements of this Regulation into their national law. - (9) The objectives  and  principles  of  Directive  95/46/EC  remain  sound,  but  it  has  not  prevented  fragmentation  in  the implementation  of  data  protection  across  the  Union,  legal  uncertainty  or  a  widespread  public  perception  that there  are  significant  risks  to  the  protection  of  natural  persons,  in  particular  with  regard  to  online  activity. Differences  in  the  level  of  protection  of  the  rights  and  freedoms  of  natural  persons,  in  particular  the  right  to  the protection of personal data, with regard to the processing of personal data in the Member States may prevent the free  flow  of  personal  data  throughout  the  Union.",
+        "- (98) Associations  or  other  bodies  representing  categories  of  controllers  or  processors  should  be  encouraged  to  draw up  codes  of  conduct,  within  the  limits  of  this  Regulation,  so  as  to  facilitate  the  effective  application  of  this Regulation,  taking  account  of  the  specific  characteristics  of  the  processing  carried  out  in  certain  sectors  and  the specific  needs  of  micro,  small  and  medium  enterprises.  In  particular,  such  codes  of  conduct  could  calibrate  the obligations  of  controllers  and  processors,  taking  into  account  the  risk  likely  to  result  from  the  processing  for  the rights and freedoms of natural persons. - (99) When drawing up a code of conduct, or  when amending or extending such a code, associations and other bodies representing  categories  of  controllers  or  processors  should  consult  relevant  stakeholders,  including  data  subjects where feasible, and have regard to submissions received and views expressed in response to such consultations. - (100)   In  order to  enhance  transparency  and  compliance  with  this  Regulation,  the  establishment  of  certification mechanisms  and  data  protection  seals  and  marks  should  be  encouraged,  allowing  data  subjects  to  quickly  assess the level of data protection of relevant products and services. - (101)   Flows  of  personal  data  to and  from  countries  outside  the  Union  and  international  organisations  are  necessary  for the  expansion  of  international  trade  and  international  cooperation.  The  increase  in  such  flows  has  raised  new challenges  and  concerns  with  regard  to  the  protection  of  personal  data.",
+        "The principle of transparency requires that any information and communi­ cation relating to the processing of  those personal data be easily accessible and easy to understand, and that clear and  plain  language  be  used.  That  principle  concerns,  in  particular,  information  to  the  data  subjects  on  the identity  of the  controller  and  the  purposes  of the  processing  and  further  information  to  ensure  fair  and transparent  processing  in  respect  of  the  natural  persons  concerned  and  their  right  to  obtain  confirmation  and communication  of  personal  data  concerning  them  which  are  being  processed.  Natural  persons  should  be  made aware of risks, rules, safeguards and rights in relation to the processing of personal data and how to exercise their rights  in  relation  to  such  processing.  In  particular,  the  specific  purposes  for  which  personal  data  are  processed should  be  explicit  and  legitimate  and  determined  at  the  time  of  the  collection  of  the  personal  data.  The  personal data should be adequate, relevant and limited to what is necessary for  the purposes for  which they are processed. This  requires,  in  particular,  ensuring  that  the  period  for  which  the  personal  data  are  stored  is  limited  to  a  strict minimum.  Personal  data  should  be  processed  only  if  the  purpose  of  the  processing  could  not  reasonably  be fulfilled  by other  means.  In  order  to  ensure  that  the  personal  data  are  not  kept  longer  than  necessary,  time  limits should be established by the controller for erasure or for a periodic review. Every reasonable step should be taken to  ensure  that  personal  data  which  are  inaccurate  are  rectified  or  deleted.  Personal  data  should  be  processed  in  a manner  that  ensures  appropriate  security  and  confidentiality  of  the  personal  data,  including  for  preventing unauthorised access to or use of personal data and the equipment used for the processing.",
+        " Such  measures  could  consist,  inter  alia,  of  minimising  the  processing  of personal  data,  pseudonymising  personal  data  as  soon  as  possible,  transparency  with  regard  to  the  functions  and processing  of  personal  data,  enabling  the  data  subject  to  monitor  the  data  processing,  enabling  the  controller  to create  and  improve  security  features.  When  developing,  designing,  selecting  and  using  applications,  services  and products that are based on the processing of personal data or  process personal data to fulfil  their  task,  producers of  the  products,  services  and  applications  should  be  encouraged  to take  into  account  the  right  to  data  protection when developing and designing  such products,  services  and  applications  and,  with  due  regard  to  the  state  of  the art,  to  make sure that controllers and processors are able to fulfil  their data protection obligations. The principles of  data  protection  by  design  and  by  default  should  also  be  taken  into  consideration  in  the  context  of  public tenders. - (79) The protection of  the  rights  and  freedoms of  data  subjects  as  well  as  the  responsibility  and  liability of  controllers and  processors,  also  in  relation  to  the  monitoring  by  and  measures  of  supervisory  authorities,  requires  a  clear allocation of  the  responsibilities  under  this  Regulation,  including  where  a  controller  determines  the  purposes  and means of the processing jointly with other controllers or  where a processing operation is carried out on behalf of a controller.",
+        "- (26)  'international  organisation'  means  an  organisation  and  its  subordinate  bodies  governed  by  public  international  law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.\n\n## CHAPTER II\n\n## Principles\n\n## Article 5\n\n## Principles relating to processing of personal data\n\n1. Personal data shall be:\n2. (a)   processed  lawfully,  fairly  and  in  a  transparent  manner  in  relation  to  the  data  subject  ('lawfulness,  fairness  and transparency');\n3. (b)   collected  for  specified,  explicit  and  legitimate  purposes  and  not  further  processed  in  a  manner  that  is  incompatible with  those  purposes;  further  processing  for  archiving  purposes  in  the  public  interest,  scientific  or  historical  research purposes  or  statistical  purposes  shall,  in  accordance  with  Article  89(1),  not  be  considered  to  be  incompatible  with the initial purposes ('purpose limitation');\n4. (c)   adequate,  relevant  and  limited  to  what  is  necessary  in  relation  to  the  purposes  for  which  they  are  processed  ('data minimisation');\n5. (d)   accurate and, where necessary, kept up to date; every reasonable step must be taken to ensure that personal data that are  inaccurate,  having  regard  to  the  purposes  for  which  they  are  processed,  are  erased  or  rectified  without  delay ('accuracy');\n\n( 1 ) Directive  (EU)  2015/1535  of  the  European  Parliament  and  of  the  Council  of  9  September  2015  laying  down  a  procedure  for  the provision of information in the field of technical regulations and of rules on Information Society services (OJ L 241, 17.9.2015, p. 1).",
+        " Personal  data  should  be  processed  in  a manner  that  ensures  appropriate  security  and  confidentiality  of  the  personal  data,  including  for  preventing unauthorised access to or use of personal data and the equipment used for the processing.\n\n- (40) In  order  for  processing  to  be  lawful,  personal  data  should  be  processed  on  the  basis  of  the  consent  of  the  data subject concerned or some other legitimate basis, laid down by law, either in this Regulation or in other Union or\n\nMember  State  law  as  referred  to  in  this  Regulation,  including  the  necessity  for  compliance  with  the  legal obligation  to which the  controller  is  subject  or  the  necessity  for  the  performance  of  a  contract  to which  the  data subject is party or in order  to take steps at the request of  the data subject prior  to entering into a contract.",
+        "- (e)   kept  in  a  form  which  permits  identification  of  data  subjects  for  no  longer  than  is  necessary  for  the  purposes  for which  the  personal  data  are  processed;  personal  data  may  be  stored  for  longer  periods  insofar  as  the  personal  data will  be  processed  solely  for  archiving  purposes  in  the  public  interest,  scientific  or  historical  research  purposes  or statistical  purposes  in  accordance  with  Article  89(1)  subject  to  implementation  of  the  appropriate  technical  and organisational measures required by this Regulation in order  to safeguard the rights and freedoms of the data subject ('storage limitation');\n- (f)   processed in a manner  that  ensures appropriate security of the personal data, including protection against unauthorised  or  unlawful  processing  and  against  accidental  loss,  destruction  or  damage,  using  appropriate  technical or organisational measures ('integrity and confidentiality').\n2. The controller shall be responsible for, and be able to demonstrate compliance with, paragraph 1 ('accountability').\n\n## Article 6\n\n## Lawfulness of processing",
+        "## Article 25\n\n## Data protection by design and by default\n\n1. Taking into account the state of the art, the cost of implementation and the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for  rights and freedoms of natural persons posed by the processing, the controller shall, both at the time of the determination of  the means for processing and at the time of  the processing  itself,  implement  appropriate  technical  and  organisational  measures,  such  as  pseudonymisation,  which  are designed to implement data-protection principles, such as data minimisation, in an effective manner and to integrate the necessary  safeguards  into  the  processing  in  order  to  meet  the  requirements  of  this  Regulation  and  protect  the  rights  of data subjects.\n2. The  controller  shall  implement  appropriate  technical  and  organisational  measures  for  ensuring  that,  by  default, only personal data which are necessary for each specific purpose of the processing are processed. That obligation applies to the amount of personal data collected, the extent of their processing, the period of their storage and their accessibility. In  particular,  such  measures  shall  ensure  that  by  default  personal  data  are  not  made  accessible  without  the  individual's intervention to an indefinite number of natural persons.\n3. An  approved  certification  mechanism  pursuant  to  Article  42  may  be  used  as  an  element  to  demonstrate compliance with the requirements set out in paragraphs 1 and 2 of this Article.\n\n## Article 26\n\n## Joint controllers",
+        "- (d)   the  prevention,  investigation,  detection  or  prosecution  of  criminal  offences  or  the  execution  of  criminal  penalties, including the safeguarding against and the prevention of threats to public security;\n- (e)   other  important  objectives  of  general  public  interest  of  the  Union  or  of  a  Member  State,  in  particular  an  important economic  or  financial  interest  of  the  Union  or  of  a  Member  State,  including  monetary,  budgetary  and  taxation  a matters, public health and social security;\n- (f)   the protection of judicial independence and judicial proceedings;\n- (g)   the  prevention, investigation, detection and prosecution of breaches of ethics for regulated professions;\n- (h)   a  monitoring,  inspection  or  regulatory  function  connected,  even  occasionally,  to  the  exercise  of  official  authority  in the cases referred to in points (a) to (e) and (g);\n- (i) the protection of the data subject or  the rights and freedoms of others;\n- (j) the enforcement of civil law claims.\n2. In  particular,  any  legislative  measure  referred  to  in  paragraph  1  shall  contain  specific  provisions  at  least,  where relevant, as to:\n- (a)   the  purposes of  the processing or categories of processing;\n- (b)   the  categories of personal data;\n- (c)   the  scope of  the restrictions introduced;\n- (d)   the  safeguards to prevent abuse or  unlawful access or  transfer;\n- (e)   the  specification of  the controller or categories of controllers;\n- (f)   the  storage  periods  and  the  applicable  safeguards  taking  into  account  the  nature,  scope  and  purposes  of  the processing or categories of processing;\n- (g)   the  risks  to the rights and freedoms of data subjects; and\n- (h)   the  right  of  data  subjects  to  be  informed  about  the  restriction,  unless  that  may  be  prejudicial  to  the  purpose  of  the restriction.\n\n## CHAPTER IV\n\n## Controller and processor\n\n## Section 1"
+      ],
+      "output": "The main objective of the GDPR, as outlined in the provided context, is to protect the fundamental rights and freedoms of natural persons in relation to the processing of their personal data. This is emphasized in Article 1, which states that the protection of natural persons regarding personal data processing is a fundamental right, supported by Article 8(1) of the Charter of Fundamental Rights of the European Union and Article 16(1) of the Treaty on the Functioning of the European Union (TFEU).\n\nThe GDPR aims to ensure that the principles and rules governing the processing of personal data respect the rights of individuals, regardless of their nationality or residence. It seeks to create a coherent data protection framework across the European Union, enhancing legal certainty for individuals, economic operators, and public authorities. Additionally, it aims to facilitate the free flow of personal data within the Union while ensuring a high level of data protection.\n\nThe regulation also addresses the need for strong enforcement mechanisms to build trust in the digital economy and emphasizes the importance of transparency, accountability, and the rights of data subjects, including their ability to control their personal data.\n\nIn summary, the GDPR's main objective is to safeguard individuals' rights concerning their personal data, promote transparency and accountability in data processing, and ensure a consistent and high level of data protection across the EU.\n\nThe context provided is comprehensive regarding the objectives of the GDPR, but it does not detail specific enforcement mechanisms or examples of how these principles are applied in practice. Further information on the practical implementation of these objectives and the roles of various stakeholders would enhance the understanding of the GDPR's objectives.",
+      "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms.",
+      "token_usage": {
+        "prompt_tokens": 18639,
+        "completion_tokens": 2651,
+        "total_tokens": 21290,
+        "embedding_tokens": 42
+      },
+      "latency_seconds": 67.536,
+      "metadata": {
+        "initial_verdict": "ambiguous",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.7,
+            "reasoning": "The passage discusses procedural aspects and references to other regulations but does not explicitly state the main objective of the GDPR. It lacks a clear explanation of the goals or purposes of the GDPR itself."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses the protection of natural persons in relation to the processing of personal data, which is a fundamental right under the GDPR. It outlines the objectives of the regulation, including the respect for fundamental rights and freedoms, and the intention to create an area of freedom, security, and justice. This directly relates to the main objective of the GDPR, which is to protect personal data and ensure individuals' rights."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.7,
+            "reasoning": "The passage discusses specific directives related to the processing of personal data and privacy in various contexts, but it does not directly address the main objective of the GDPR. The GDPR's primary aim is to protect personal data and privacy of individuals within the EU, which is not explicitly stated in the passage."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.85,
+            "reasoning": "The passage discusses the need for a strong and coherent data protection framework in the EU, emphasizing the importance of protecting personal data and ensuring individuals have control over their own data. This aligns with the main objective of the GDPR, which is to enhance data protection and privacy for individuals within the EU."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.3,
+            "reasoning": "The passage discusses the roles of associations in creating codes of conduct and mechanisms for compliance with the GDPR, but it does not directly address the main objective of the GDPR itself. The main objective is typically related to the protection of personal data and the rights of individuals, which is not explicitly mentioned in this passage."
+          }
+        ],
+        "refinement_iterations": 2,
+        "final_context_count": 12
+      }
+    },
+    {
+      "question_id": "q002",
+      "input": "What are the key principles for processing personal data under the GDPR?",
+      "retriever_context": [
+        "The principle of transparency requires that information related to the processing of personal data be easily accessible and understandable.",
+        "Data subjects must be informed about the identity of the controller and the purposes of the processing.",
+        "Natural persons should be made aware of risks, rules, safeguards, and rights regarding the processing of personal data.",
+        "The specific purposes for processing personal data must be explicit, legitimate, and determined at the time of collection.",
+        "Personal data must be adequate, relevant, and limited to what is necessary for the purposes of processing.",
+        "The storage period for personal data should be limited to a strict minimum.",
+        "Personal data should only be processed if the purpose cannot be reasonably fulfilled by other means.",
+        "Time limits for erasure or periodic review of personal data should be established by the controller.",
+        "Every reasonable step must be taken to rectify or delete inaccurate personal data.",
+        "Personal data must be processed in a manner that ensures appropriate security and confidentiality.",
+        "Personal data should be processed in a manner that ensures appropriate security and confidentiality.",
+        "Processing of personal data must prevent unauthorized access to or use of personal data.",
+        "Personal data should be processed on the basis of the consent of the data subject or another legitimate basis laid down by law.",
+        "Legitimate bases for processing include compliance with legal obligations or the necessity for the performance of a contract.",
+        "Processing must meet an objective of public interest and be proportionate to the legitimate aim pursued.",
+        "Processing for a purpose other than the original purpose must be compatible with the initial purpose.",
+        "Factors to consider for compatibility include any link between the original and intended purposes.",
+        "The context of data collection, particularly the relationship between data subjects and the controller, must be considered.",
+        "The nature of the personal data, including whether special categories or data related to criminal convictions are involved, is relevant.",
+        "The possible consequences of the intended further processing for data subjects must be assessed.",
+        "The existence of appropriate safeguards, such as encryption or pseudonymisation, should be taken into account.",
+        "Personal data must be kept in a form that permits identification of data subjects for no longer than necessary for the purposes for which the data are processed ('storage limitation').",
+        "Personal data may be stored for longer periods for archiving purposes in the public interest, scientific or historical research purposes, or statistical purposes, subject to appropriate technical and organisational measures ('storage limitation').",
+        "Personal data must be processed in a manner that ensures appropriate security, including protection against unauthorised or unlawful processing and against accidental loss, destruction, or damage ('integrity and confidentiality').",
+        "The controller is responsible for and must be able to demonstrate compliance with the principles of processing personal data ('accountability').",
+        "Minimising the processing of personal data is a key principle.",
+        "Pseudonymising personal data as soon as possible is encouraged.",
+        "Transparency regarding the functions and processing of personal data is essential.",
+        "Enabling the data subject to monitor the data processing is important.",
+        "Controllers should create and improve security features.",
+        "Producers of products, services, and applications should consider the right to data protection during development.",
+        "Data protection by design and by default are important principles.",
+        "There should be a clear allocation of responsibilities under the GDPR."
+      ],
+      "output": "The key principles for processing personal data under the GDPR, based on the provided context, are as follows:\n\n1. **Transparency**: Information related to the processing of personal data must be easily accessible and understandable to data subjects. They must be informed about the identity of the controller and the purposes of the processing.\n\n2. **Purpose Limitation**: Personal data must be collected for explicit, legitimate, and determined purposes at the time of collection. Processing for a purpose other than the original must be compatible with the initial purpose.\n\n3. **Data Minimization**: Personal data must be adequate, relevant, and limited to what is necessary for the purposes of processing. Minimizing the processing of personal data is a key principle.\n\n4. **Storage Limitation**: Personal data should be kept in a form that permits identification of data subjects for no longer than necessary for the purposes for which the data are processed. Longer storage is permissible only for archiving purposes in the public interest, scientific or historical research, or statistical purposes, subject to appropriate safeguards.\n\n5. **Accuracy**: Every reasonable step must be taken to rectify or delete inaccurate personal data to ensure that the data is accurate and up to date.\n\n6. **Security and Confidentiality**: Personal data must be processed in a manner that ensures appropriate security and confidentiality, protecting against unauthorized access, unlawful processing, and accidental loss, destruction, or damage.\n\n7. **Accountability**: The controller is responsible for compliance with the principles of processing personal data and must be able to demonstrate this compliance.\n\n8. **Legitimate Basis for Processing**: Personal data must be processed based on the consent of the data subject or another legitimate basis laid down by law, such as compliance with legal obligations or the necessity for the performance of a contract.\n\n9. **Proportionality**: Processing must meet an objective of public interest and be proportionate to the legitimate aim pursued.\n\n10. **Data Protection by Design and by Default**: Producers of products, services, and applications should consider the right to data protection during development, ensuring that data protection measures are integrated into the processing activities.\n\n11. **Pseudonymization**: Pseudonymizing personal data as soon as possible is encouraged to enhance privacy and security.\n\n12. **Monitoring and Safeguards**: Data subjects should be enabled to monitor the data processing, and appropriate safeguards, such as encryption or pseudonymization, should be established.\n\nThese principles collectively ensure that personal data is processed lawfully, fairly, and in a transparent manner, while also safeguarding the rights and freedoms of data subjects. \n\nThe provided context is comprehensive in outlining these principles, and no significant gaps are identified regarding the key principles for processing personal data under the GDPR.",
+      "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability.",
+      "token_usage": {
+        "prompt_tokens": 5312,
+        "completion_tokens": 1649,
+        "total_tokens": 6961,
+        "embedding_tokens": 13
+      },
+      "latency_seconds": 37.472,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses several key principles for processing personal data under the GDPR, including transparency, purpose limitation, data minimization, accuracy, storage limitation, and security. These principles directly address the question about the key principles for processing personal data under the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.85,
+            "reasoning": "The passage discusses key aspects of processing personal data under the GDPR, including the need for lawful processing based on consent or other legitimate bases, as well as ensuring security and confidentiality. These points are directly related to the key principles for processing personal data as outlined in the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.85,
+            "reasoning": "The passage discusses the conditions under which personal data can be processed, including the necessity of consent and the compatibility of further processing with the original purpose of data collection. This aligns with the key principles for processing personal data under the GDPR, making it relevant to the question."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage outlines specific principles related to the processing of personal data under the GDPR, including storage limitation, integrity and confidentiality, and accountability. These are key principles that directly address the question about the key principles for processing personal data under the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses key measures and principles related to the processing of personal data, including minimization, pseudonymization, transparency, and the responsibilities of data controllers and processors. These concepts are directly related to the key principles for processing personal data under the GDPR, making the passage relevant to the question."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 33
+      }
+    },
+    {
+      "question_id": "q003",
+      "input": "What rights do data subjects have under the GDPR?",
+      "retriever_context": [
+        "Every data subject has the right to know and obtain communication regarding the purposes for which their personal data are processed.",
+        "Data subjects have the right to know the period for which their personal data are processed.",
+        "Data subjects have the right to know the recipients of their personal data.",
+        "Data subjects have the right to know the logic involved in any automatic personal data processing.",
+        "Data subjects have the right to know the consequences of processing based on profiling.",
+        "Data subjects should have remote access to a secure system to access their personal data directly, where possible.",
+        "The right to access personal data should not adversely affect the rights or freedoms of others, including trade secrets or intellectual property.",
+        "Controllers should not refuse to provide all information to the data subject based on considerations of others' rights.",
+        "Controllers can request that data subjects specify the information or processing activities related to their request if a large quantity of information is processed.",
+        "Controllers should verify the identity of data subjects who request access to their personal data.",
+        "Data subjects have the right to have their personal data rectified.",
+        "Data subjects have the right to be forgotten if the retention of their data infringes the GDPR or applicable law.",
+        "The data subject has the right to obtain confirmation from the controller as to whether personal data concerning them is being processed.",
+        "The data subject has the right to access their personal data and information about the purposes of the processing.",
+        "The data subject has the right to know the categories of personal data concerned.",
+        "The data subject has the right to know the recipients or categories of recipients to whom their personal data have been or will be disclosed.",
+        "The data subject has the right to know the envisaged period for which their personal data will be stored or the criteria used to determine that period.",
+        "The data subject has the right to request rectification or erasure of personal data or restriction of processing concerning them.",
+        "The data subject has the right to object to the processing of their personal data.",
+        "The data subject has the right to lodge a complaint with a supervisory authority.",
+        "The data subject has the right to be informed of the source of personal data not collected from them.",
+        "The data subject has the right to be informed about the existence of automated decision-making, including profiling, and meaningful information about the logic involved.",
+        "The data subject has the right to be informed of appropriate safeguards relating to the transfer of personal data to a third country or international organization.",
+        "The controller shall provide a copy of the personal data undergoing processing.",
+        "Data subjects have the right of access to personal data collected concerning them.",
+        "Data subjects can exercise their right of access easily and at reasonable intervals.",
+        "The right of access allows data subjects to be aware of and verify the lawfulness of the processing.",
+        "This right includes access to data concerning their health, such as medical records, diagnoses, examination results, assessments by treating physicians, and treatment or interventions provided.",
+        "Data subjects have the right to obtain the erasure of personal data.",
+        "The right to erasure does not apply to personal data necessary for the performance of a contract.",
+        "Data subjects have the right to have personal data transmitted directly from one controller to another where technically feasible.",
+        "Data subjects have the right to object to the processing of personal data relating to their particular situation.",
+        "The controller must demonstrate that its legitimate interest overrides the rights of the data subject.",
+        "Data subjects have the right to object to the processing of personal data for direct marketing purposes at any time and free of charge.",
+        "The right to object to direct marketing must be clearly presented to the data subject.",
+        "The right referred to in paragraphs 1 and 2 shall be explicitly brought to the attention of the data subject at the latest at the time of the first communication.",
+        "The right shall be presented clearly and separately from any other information.",
+        "The data subject may exercise his or her right to object by automated means using technical specifications in the context of information society services.",
+        "The data subject has the right to object to the processing of personal data concerning him or her for scientific, historical research, or statistical purposes on grounds relating to his or her particular situation.",
+        "The right to object does not apply if the processing is necessary for the performance of a task carried out for reasons of public interest."
+      ],
+      "output": "Under the GDPR, data subjects have a range of rights concerning their personal data. These rights include:\n\n1. **Right to Access**: Data subjects have the right to know whether their personal data is being processed and to access their personal data along with information about the purposes of processing, categories of personal data concerned, recipients of the data, and the envisaged period for which the data will be stored.\n\n2. **Right to Rectification**: Data subjects have the right to request the correction of inaccurate personal data concerning them.\n\n3. **Right to Erasure (Right to be Forgotten)**: Data subjects can request the deletion of their personal data if its retention infringes the GDPR or applicable law, although this right does not apply to data necessary for the performance of a contract.\n\n4. **Right to Restriction of Processing**: Data subjects have the right to request the restriction of processing of their personal data under certain conditions.\n\n5. **Right to Object**: Data subjects can object to the processing of their personal data, particularly in relation to direct marketing, and for scientific, historical research, or statistical purposes based on their particular situation.\n\n6. **Right to Data Portability**: Data subjects have the right to have their personal data transmitted directly from one controller to another where technically feasible.\n\n7. **Right to be Informed**: Data subjects have the right to be informed about the source of their personal data if it was not collected from them, as well as the existence of automated decision-making, including profiling, and meaningful information about the logic involved.\n\n8. **Right to Lodge a Complaint**: Data subjects have the right to lodge a complaint with a supervisory authority if they believe their rights under the GDPR have been violated.\n\n9. **Right to Know the Logic of Automated Processing**: Data subjects have the right to know the logic involved in any automatic processing of their personal data and the consequences of such processing.\n\n10. **Right to Remote Access**: Data subjects should have remote access to a secure system to access their personal data directly, where possible.\n\n11. **Right to be Informed of Safeguards**: Data subjects have the right to be informed about appropriate safeguards relating to the transfer of their personal data to a third country or international organization.\n\n12. **Right to Confirmation of Processing**: Data subjects have the right to obtain confirmation from the controller as to whether personal data concerning them is being processed.\n\nThese rights are designed to empower data subjects and ensure transparency and control over their personal data. However, the context does not specify the procedures for exercising these rights or the specific timelines for responses from controllers, which are important aspects of the GDPR framework.",
+      "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing.",
+      "token_usage": {
+        "prompt_tokens": 6182,
+        "completion_tokens": 1847,
+        "total_tokens": 8029,
+        "embedding_tokens": 10
+      },
+      "latency_seconds": 58.747,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses specific rights that data subjects have under the GDPR, including the right to access personal data, the right to rectification, and the right to be forgotten. This directly addresses the question about the rights of data subjects under the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly outlines the rights of data subjects under the GDPR, including the right to access personal data, request rectification or erasure, and lodge complaints. This information is essential for answering the question about the rights of data subjects."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses the rights of data subjects under the GDPR, specifically mentioning the right of access to personal data. This directly addresses the question about the rights of data subjects, making the passage relevant."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses specific rights of data subjects under the GDPR, including the right to erasure of personal data, the right to data portability, and the right to object to processing for direct marketing. These points directly address the question about the rights of data subjects under the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.8,
+            "reasoning": "The passage discusses the rights of data subjects under the GDPR, specifically the right to object to the processing of personal data. This directly relates to the question about the rights of data subjects under the GDPR, making it relevant. However, it does not provide a comprehensive overview of all rights, which is why the confidence is not at the maximum level."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 40
+      }
+    }
+  ],
+  "total_token_usage": {
+    "prompt_tokens": 30133,
+    "completion_tokens": 6147,
+    "total_tokens": 36280,
+    "embedding_tokens": 65
+  }
+}

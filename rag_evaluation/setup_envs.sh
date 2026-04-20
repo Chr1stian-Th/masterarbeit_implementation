@@ -18,8 +18,8 @@
 #   ./setup_envs.sh
 #
 # Requirements:
-#   - Python 3.10+ (python3 must be on PATH)
-#   - pip (included with Python 3.10+)
+#   - uv (https://github.com/astral-sh/uv)
+#   - Python 3.10+
 # =============================================================================
 
 set -euo pipefail
@@ -28,26 +28,25 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 VENVS_DIR="$SCRIPT_DIR/.venvs"
-PYTHON="${PYTHON:-python3}"
+UV="${UV:-uv}"
 
 echo "============================================="
 echo "  RAG Evaluation - Environment Setup"
 echo "============================================="
-echo "Python: $($PYTHON --version)"
+echo "uv: $($UV --version)"
 echo "Venvs directory: $VENVS_DIR"
 echo ""
 
 mkdir -p "$VENVS_DIR"
 
 # ---------------------------------------------------------------------------
-# Use the D drive for pip's temp and cache dirs to avoid exhausting tmpfs
+# Use the D drive for uv's cache dir to avoid exhausting tmpfs
 # ---------------------------------------------------------------------------
-PIP_TMP_DIR="/mnt/d/tmp/pip"
-mkdir -p "$PIP_TMP_DIR"
-export TMPDIR="$PIP_TMP_DIR"
-export PIP_CACHE_DIR="$PIP_TMP_DIR/cache"
+UV_CACHE_DIR="/mnt/d/tmp/uv-cache"
+mkdir -p "$UV_CACHE_DIR"
+export UV_CACHE_DIR
 
-echo "Pip temp/cache dir: $PIP_TMP_DIR"
+echo "uv cache dir: $UV_CACHE_DIR"
 echo ""
 
 # ---------------------------------------------------------------------------
@@ -64,14 +63,10 @@ setup_venv() {
         echo "  Venv already exists. Reinstalling dependencies..."
     else
         echo "  Creating venv..."
-        $PYTHON -m venv "$venv_path"
+        $UV venv "$venv_path"
     fi
 
-    # Activate and install
-    source "$venv_path/bin/activate"
-    pip install --upgrade pip --quiet
-    pip install -r "$requirements" --quiet
-    deactivate
+    $UV pip install -r "$requirements" --python "$venv_path/bin/python"
 
     echo "  Done: $name"
     echo ""
@@ -85,9 +80,7 @@ setup_venv() {
 setup_venv "ingestion" "$SCRIPT_DIR/ingestion/requirements.txt"
 
 # Also install LightRAG in the ingestion venv for ingest_lightrag.py
-source "$VENVS_DIR/ingestion/bin/activate"
-pip install lightrag-hku --quiet
-deactivate
+$UV pip install lightrag-hku --python "$VENVS_DIR/ingestion/bin/python"
 
 # 2. LightRAG approach
 setup_venv "lightrag" "$SCRIPT_DIR/approaches/lightrag_approach/requirements.txt"

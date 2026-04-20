@@ -6,10 +6,10 @@
 
 # -- Model Configuration -----------------------------------------------------
 models:
-  generation_model: "gpt-4o-mini"           # LLM for answer generation
-  classifier_model: "gpt-4o-mini"           # LLM for query classification (Agentic RAG)
-  embedding_model: "text-embedding-3-small"  # Embedding model (all approaches)
-  embedding_dimensions: 1536                 # Dimensions for text-embedding-3-small
+  generation_model: "google/gemma-4-31b-it"           # LLM for answer generation
+  classifier_model: "google/gemma-4-31b-it"           # LLM for query classification (Agentic RAG)
+  embedding_model: "text-embedding-3-large"  # Embedding model (all approaches)
+  embedding_dimensions: 3072                 # Dimensions for text-embedding-3-large
 
 # -- Ingestion Configuration --------------------------------------------------
 ingestion:
@@ -65,7 +65,7 @@ io:
 
 # -- Evaluation Configuration -------------------------------------------------
 evaluation:
-  judge_model: "gpt-4o-mini"          # LLM used as judge for all DeepEval metrics
+  judge_model: "google/gemma-4-31b-it"          # LLM used as judge for all DeepEval metrics
 
   # Per-metric pass/fail thresholds (0-1 scale)
   thresholds:

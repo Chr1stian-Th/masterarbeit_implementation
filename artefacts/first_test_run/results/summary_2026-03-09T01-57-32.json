@@ -1,0 +1,24 @@
+{
+  "evaluation_timestamp": "2026-03-09T01:57:32",
+  "approaches_evaluated": [
+    "agentic_rag",
+    "crag",
+    "lightrag"
+  ],
+  "comparative_summary": {
+    "faithfulness": {
+      "agentic_rag": {
+        "average_score": 0.8889,
+        "pass_rate": 0.6667
+      },
+      "crag": {
+        "average_score": 0.9762,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 0.3333,
+        "pass_rate": 0.3333
+      }
+    }
+  }
+}

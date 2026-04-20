@@ -12,8 +12,8 @@ Usage:
     python ingestion/ingest_lightrag.py
 
 Environment Variables:
-    OPENAI_API_KEY: Required. Your OpenAI API key.
-    OPENAI_BASE_URL: Optional. Custom API base URL.
+    OPENAI_API_KEY: Required. Your OpenRouter API key.
+    OPENAI_BASE_URL: Optional. Custom API base URL (e.g. https://openrouter.ai/api/v1).
 """
 
 import os
@@ -21,8 +21,8 @@ import sys
 import glob
 import asyncio
 import json
+import numpy as np
 from datetime import datetime, timezone
-from functools import partial
 
 from dotenv import load_dotenv
 
@@ -42,25 +42,12 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 
 async def ingest_async(config_path: str | None = None) -> None:
-    """Run the LightRAG ingestion pipeline asynchronously.
-
-    LightRAG's insert API is async, so this function handles the
-    async lifecycle. Called by :func:`ingest` which wraps it in
-    ``asyncio.run()``.
-
-    Steps:
-        1. Load GDPR text files.
-        2. Initialize LightRAG with OpenAI models.
-        3. Insert each document (LightRAG handles chunking and graph construction).
-
-    Args:
-        config_path: Optional path to ``settings.yaml``.
-    """
-    # Import LightRAG here so it's only needed in the lightrag venv
+    """Run the LightRAG ingestion pipeline asynchronously."""
     import tiktoken
-    from lightrag import LightRAG, QueryParam
-    from lightrag.llm.openai import openai_complete_if_cache, openai_embed
+    from lightrag import LightRAG
+    from lightrag.llm.openai import openai_complete_if_cache
     from lightrag.utils import EmbeddingFunc
+    from openai import AsyncOpenAI
 
     def _count_tokens(text: str, model: str) -> int:
         try:
@@ -74,7 +61,6 @@ async def ingest_async(config_path: str | None = None) -> None:
     if not api_key:
         raise ValueError("OPENAI_API_KEY environment variable is required.")
 
-    # Set for LightRAG's internal OpenAI calls
     os.environ["OPENAI_API_KEY"] = api_key
 
     embedding_model = cfg["models"]["embedding_model"]
@@ -83,14 +69,47 @@ async def ingest_async(config_path: str | None = None) -> None:
     working_dir = os.path.join(PROJECT_ROOT, cfg["lightrag"]["working_dir"])
     data_dir = os.path.join(PROJECT_ROOT, cfg["ingestion"]["gdpr_data_dir"])
     max_token_size = cfg["lightrag"]["max_token_size"]
+    base_url = os.environ.get("OPENAI_BASE_URL")
 
     os.makedirs(working_dir, exist_ok=True)
 
+    # --- Custom embedding function ---
+    # Bypasses LightRAG's openai_embed wrapper which has two bugs in the
+    # current version:
+    #   1. Returns 2x vectors due to internal sparse/hybrid embedding support
+    #   2. EmbeddingFunc expects a numpy array back (calls .size on the result),
+    #      but openai_embed returns a plain list
+    async def _embed(texts: list[str]) -> np.ndarray:
+        client = AsyncOpenAI(
+            api_key=api_key,
+            base_url=base_url or None,
+        )
+        response = await client.embeddings.create(
+            model=embedding_model,
+            input=texts,
+            dimensions=embedding_dim,  # required for text-embedding-3-* models
+        )
+        # Sort by index to guarantee order matches input, return as numpy array
+        return np.array(
+            [item.embedding for item in sorted(response.data, key=lambda x: x.index)]
+        )
+
+    # --- LLM wrapper: strips Gemma 4 thinking blocks before LightRAG parses output ---
+    # Gemma 4 IT models emit <|channel>thought\n...<channel|> reasoning preambles
+    # when thinking mode is active. LightRAG's entity extractor counts every line
+    # as a field, causing "found N/4 fields" format errors and 0 Ent + 0 Rel chunks.
+    import re
+
+    async def _llm_with_stripped_thinking(*args, **kwargs) -> str:
+        response = await openai_complete_if_cache(generation_model, *args, **kwargs)
+        # Remove Gemma 4 thinking blocks (non-greedy to handle multiple blocks)
+        cleaned = re.sub(r"<\|channel>thought.*?<channel\|>", "", response, flags=re.DOTALL)
+        return cleaned.strip()
+
     # --- Initialize LightRAG ---
-    base_url = os.environ.get("OPENAI_BASE_URL")
     rag = LightRAG(
         working_dir=working_dir,
-        llm_model_func=partial(openai_complete_if_cache, generation_model),
+        llm_model_func=_llm_with_stripped_thinking,
         llm_model_name=generation_model,
         llm_model_max_async=4,
         llm_model_kwargs={
@@ -100,12 +119,7 @@ async def ingest_async(config_path: str | None = None) -> None:
         embedding_func=EmbeddingFunc(
             embedding_dim=embedding_dim,
             max_token_size=max_token_size,
-            func=lambda texts: openai_embed(
-                texts,
-                model=embedding_model,
-                base_url=base_url,
-                api_key=api_key,
-            ),
+            func=_embed,
         ),
         chunk_token_size=cfg["lightrag"].get("chunk_token_size", 1200),
         entity_extract_max_gleaning=cfg["lightrag"].get(
@@ -115,7 +129,6 @@ async def ingest_async(config_path: str | None = None) -> None:
 
     await rag.initialize_storages()
 
-    # Import here so the ingestion directory is on sys.path (set above)
     from pdf_utils import pdf_to_markdown
 
     # --- Load and insert documents ---
@@ -195,11 +208,7 @@ async def ingest_async(config_path: str | None = None) -> None:
 
 
 def ingest(config_path: str | None = None) -> None:
-    """Synchronous entry point for LightRAG ingestion.
-
-    Args:
-        config_path: Optional path to ``settings.yaml``.
-    """
+    """Synchronous entry point for LightRAG ingestion."""
     asyncio.run(ingest_async(config_path))
 
 

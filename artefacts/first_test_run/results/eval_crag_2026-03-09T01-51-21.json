@@ -1,0 +1,82 @@
+{
+  "approach": "crag",
+  "source_file": "crag_2026-03-09T01-45-18.json",
+  "evaluation_timestamp": "2026-03-09T01:50:23",
+  "model_config": {
+    "generation_model": "gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small"
+  },
+  "metrics": {
+    "faithfulness": {
+      "average_score": 0.9762,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 0.9285714285714286,
+          "reason": "The score is 0.93 because the actual output misrepresents the legal references by incorrectly stating the existence of Article 1 of the GDPR, while the relevant protection of personal data is actually found in Article 8 of the Charter of Fundamental Rights.",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "per_question": [
+    {
+      "question_id": "q001",
+      "input": "What is the main objective of the GDPR?",
+      "output": "The main objective of the GDPR, as outlined in the provided context, is to protect the fundamental rights and freedoms of natural persons in relation to the processing of their personal data. This is emphasized in Article 1, which states that the protection of natural persons regarding personal data processing is a fundamental right, supported by Article 8(1) of the Charter of Fundamental Rights of the European Union and Article 16(1) of the Treaty on the Functioning of the European Union (TFEU).\n\nThe GDPR aims to ensure that the principles and rules governing the processing of personal data respect the rights of individuals, regardless of their nationality or residence. It seeks to create a coherent data protection framework across the European Union, enhancing legal certainty for individuals, economic operators, and public authorities. Additionally, it aims to facilitate the free flow of personal data within the Union while ensuring a high level of data protection.\n\nThe regulation also addresses the need for strong enforcement mechanisms to build trust in the digital economy and emphasizes the importance of transparency, accountability, and the rights of data subjects, including their ability to control their personal data.\n\nIn summary, the GDPR's main objective is to safeguard individuals' rights concerning their personal data, promote transparency and accountability in data processing, and ensure a consistent and high level of data protection across the EU.\n\nThe context provided is comprehensive regarding the objectives of the GDPR, but it does not detail specific enforcement mechanisms or examples of how these principles are applied in practice. Further information on the practical implementation of these objectives and the roles of various stakeholders would enhance the understanding of the GDPR's objectives.",
+      "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q001",
+          "score": 0.9285714285714286,
+          "reason": "The score is 0.93 because the actual output misrepresents the legal references by incorrectly stating the existence of Article 1 of the GDPR, while the relevant protection of personal data is actually found in Article 8 of the Charter of Fundamental Rights.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "question_id": "q002",
+      "input": "What are the key principles for processing personal data under the GDPR?",
+      "output": "The key principles for processing personal data under the GDPR, based on the provided context, are as follows:\n\n1. **Transparency**: Information related to the processing of personal data must be easily accessible and understandable to data subjects. They must be informed about the identity of the controller and the purposes of the processing.\n\n2. **Purpose Limitation**: Personal data must be collected for explicit, legitimate, and determined purposes at the time of collection. Processing for a purpose other than the original must be compatible with the initial purpose.\n\n3. **Data Minimization**: Personal data must be adequate, relevant, and limited to what is necessary for the purposes of processing. Minimizing the processing of personal data is a key principle.\n\n4. **Storage Limitation**: Personal data should be kept in a form that permits identification of data subjects for no longer than necessary for the purposes for which the data are processed. Longer storage is permissible only for archiving purposes in the public interest, scientific or historical research, or statistical purposes, subject to appropriate safeguards.\n\n5. **Accuracy**: Every reasonable step must be taken to rectify or delete inaccurate personal data to ensure that the data is accurate and up to date.\n\n6. **Security and Confidentiality**: Personal data must be processed in a manner that ensures appropriate security and confidentiality, protecting against unauthorized access, unlawful processing, and accidental loss, destruction, or damage.\n\n7. **Accountability**: The controller is responsible for compliance with the principles of processing personal data and must be able to demonstrate this compliance.\n\n8. **Legitimate Basis for Processing**: Personal data must be processed based on the consent of the data subject or another legitimate basis laid down by law, such as compliance with legal obligations or the necessity for the performance of a contract.\n\n9. **Proportionality**: Processing must meet an objective of public interest and be proportionate to the legitimate aim pursued.\n\n10. **Data Protection by Design and by Default**: Producers of products, services, and applications should consider the right to data protection during development, ensuring that data protection measures are integrated into the processing activities.\n\n11. **Pseudonymization**: Pseudonymizing personal data as soon as possible is encouraged to enhance privacy and security.\n\n12. **Monitoring and Safeguards**: Data subjects should be enabled to monitor the data processing, and appropriate safeguards, such as encryption or pseudonymization, should be established.\n\nThese principles collectively ensure that personal data is processed lawfully, fairly, and in a transparent manner, while also safeguarding the rights and freedoms of data subjects. \n\nThe provided context is comprehensive in outlining these principles, and no significant gaps are identified regarding the key principles for processing personal data under the GDPR.",
+      "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "question_id": "q003",
+      "input": "What rights do data subjects have under the GDPR?",
+      "output": "Under the GDPR, data subjects have a range of rights concerning their personal data. These rights include:\n\n1. **Right to Access**: Data subjects have the right to know whether their personal data is being processed and to access their personal data along with information about the purposes of processing, categories of personal data concerned, recipients of the data, and the envisaged period for which the data will be stored.\n\n2. **Right to Rectification**: Data subjects have the right to request the correction of inaccurate personal data concerning them.\n\n3. **Right to Erasure (Right to be Forgotten)**: Data subjects can request the deletion of their personal data if its retention infringes the GDPR or applicable law, although this right does not apply to data necessary for the performance of a contract.\n\n4. **Right to Restriction of Processing**: Data subjects have the right to request the restriction of processing of their personal data under certain conditions.\n\n5. **Right to Object**: Data subjects can object to the processing of their personal data, particularly in relation to direct marketing, and for scientific, historical research, or statistical purposes based on their particular situation.\n\n6. **Right to Data Portability**: Data subjects have the right to have their personal data transmitted directly from one controller to another where technically feasible.\n\n7. **Right to be Informed**: Data subjects have the right to be informed about the source of their personal data if it was not collected from them, as well as the existence of automated decision-making, including profiling, and meaningful information about the logic involved.\n\n8. **Right to Lodge a Complaint**: Data subjects have the right to lodge a complaint with a supervisory authority if they believe their rights under the GDPR have been violated.\n\n9. **Right to Know the Logic of Automated Processing**: Data subjects have the right to know the logic involved in any automatic processing of their personal data and the consequences of such processing.\n\n10. **Right to Remote Access**: Data subjects should have remote access to a secure system to access their personal data directly, where possible.\n\n11. **Right to be Informed of Safeguards**: Data subjects have the right to be informed about appropriate safeguards relating to the transfer of their personal data to a third country or international organization.\n\n12. **Right to Confirmation of Processing**: Data subjects have the right to obtain confirmation from the controller as to whether personal data concerning them is being processed.\n\nThese rights are designed to empower data subjects and ensure transparency and control over their personal data. However, the context does not specify the procedures for exercising these rights or the specific timelines for responses from controllers, which are important aspects of the GDPR framework.",
+      "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      }
+    }
+  ]
+}

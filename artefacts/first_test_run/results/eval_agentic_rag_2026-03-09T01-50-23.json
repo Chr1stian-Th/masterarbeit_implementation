@@ -1,0 +1,83 @@
+{
+  "approach": "agentic_rag",
+  "source_file": "agentic_rag_2026-03-09T01-42-33.json",
+  "evaluation_timestamp": "2026-03-09T01:49:37",
+  "model_config": {
+    "generation_model": "gpt-4o-mini",
+    "classifier_model": "gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small"
+  },
+  "metrics": {
+    "faithfulness": {
+      "average_score": 0.8889,
+      "pass_rate": 0.6667,
+      "total_cases": 3,
+      "passed": 2,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 0.6666666666666666,
+          "reason": "The score is 0.67 because the actual output introduces 'Accountability' and 'Compatibility of Further Processing' as key principles, which are not mentioned in the retrieval context, indicating a lack of alignment.",
+          "passed": false
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "per_question": [
+    {
+      "question_id": "q001",
+      "input": "What is the main objective of the GDPR?",
+      "output": "The main objective of the General Data Protection Regulation (GDPR) is to enhance the protection of personal data and privacy for individuals within the European Union (EU) and the European Economic Area (EEA). It aims to give individuals greater control over their personal data, establish clear guidelines for data processing, and ensure that organizations handle personal data responsibly and transparently. Additionally, the GDPR seeks to harmonize data protection laws across EU member states, thereby facilitating the free flow of personal data within the EU while ensuring a high standard of data protection.",
+      "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      }
+    },
+    {
+      "question_id": "q002",
+      "input": "What are the key principles for processing personal data under the GDPR?",
+      "output": "The key principles for processing personal data under the GDPR, as derived from the provided context, include the following:\n\n1. **Transparency**: Information and communication regarding the processing of personal data must be easily accessible and understandable. Clear and plain language should be used to inform data subjects about the identity of the data controller, the purposes of processing, and their rights concerning their personal data.\n\n2. **Purpose Limitation**: Personal data should be collected for explicit and legitimate purposes and not further processed in a manner incompatible with those purposes. The specific purposes for which personal data are processed must be determined at the time of collection.\n\n3. **Data Minimization**: Personal data collected should be adequate, relevant, and limited to what is necessary for the purposes for which they are processed. This principle emphasizes the need to avoid excessive data collection.\n\n4. **Storage Limitation**: Personal data should be kept in a form that permits identification of data subjects for no longer than necessary for the purposes for which the data are processed. Time limits for data storage should be established to ensure compliance with this principle.\n\n5. **Accuracy**: Every reasonable step must be taken to ensure that personal data that are inaccurate are rectified or deleted. This principle highlights the importance of maintaining accurate and up-to-date data.\n\n6. **Security and Confidentiality**: Personal data must be processed in a manner that ensures appropriate security and confidentiality, including protection against unauthorized access, unlawful processing, and accidental loss, destruction, or damage. This involves implementing appropriate technical and organizational measures.\n\n7. **Accountability**: The data controller is responsible for demonstrating compliance with the GDPR principles. This includes maintaining records of processing activities and cooperating with supervisory authorities.\n\n8. **Lawfulness of Processing**: Processing of personal data must be based on a legitimate legal basis, such as the consent of the data subject, compliance with a legal obligation, or the necessity for the performance of a contract.\n\n9. **Compatibility of Further Processing**: If personal data are to be processed for a purpose other than that for which they were collected, the controller must assess whether this further processing is compatible with the original purpose.\n\nThe context provided covers these principles comprehensively. However, it does not detail specific examples of legitimate bases for processing or the mechanisms for ensuring compliance, such as the role of Data Protection Officers or the specifics of data subject rights. Additional information on these aspects would enhance the understanding of GDPR compliance.",
+      "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q002",
+          "score": 0.6666666666666666,
+          "reason": "The score is 0.67 because the actual output introduces 'Accountability' and 'Compatibility of Further Processing' as key principles, which are not mentioned in the retrieval context, indicating a lack of alignment.",
+          "passed": false
+        }
+      }
+    },
+    {
+      "question_id": "q003",
+      "input": "What rights do data subjects have under the GDPR?",
+      "output": "Under the GDPR, data subjects have several rights concerning their personal data. Based on the provided context, the following rights are explicitly mentioned:\n\n1. **Right of Access**: Data subjects have the right to obtain confirmation from the controller as to whether their personal data is being processed. If so, they can access their personal data and receive information about:\n   - The purposes of the processing.\n   - The categories of personal data concerned.\n   - The recipients or categories of recipients to whom the data has been disclosed.\n   - The envisaged period for which the data will be stored or the criteria used to determine that period.\n   - The existence of the right to request rectification or erasure of personal data, or to restrict processing.\n   - The right to lodge a complaint with a supervisory authority.\n   - The source of the personal data if it was not collected from the data subject.\n   - Information about automated decision-making, including profiling, and its consequences.\n\n2. **Right to Rectification**: Data subjects have the right to obtain the rectification of inaccurate personal data concerning them without undue delay. They can also have incomplete personal data completed.\n\n3. **Right to Erasure ('Right to be Forgotten')**: Data subjects can request the erasure of their personal data without undue delay under certain conditions, such as when the data is no longer necessary for the purposes for which it was collected.\n\n4. **Right to Restriction of Processing**: Data subjects can request the restriction of processing of their personal data under specific circumstances, such as when they contest the accuracy of the data or when they oppose the processing.\n\n5. **Right to Data Portability**: Data subjects have the right to receive their personal data in a structured, commonly used, and machine-readable format and to transmit that data to another controller without hindrance, provided the processing is based on consent or a contract and is carried out by automated means.\n\n6. **Right to Object**: Data subjects can object to the processing of their personal data, particularly in cases of direct marketing or when processing is based on legitimate interests.\n\n7. **Right to be Informed**: Data subjects should be informed about the processing of their personal data, including the purposes, categories, and recipients of the data, as well as their rights.\n\n8. **Right to Withdraw Consent**: If the processing is based on consent, data subjects have the right to withdraw their consent at any time.\n\nThe context also notes that these rights should not adversely affect the rights or freedoms of others, including trade secrets or intellectual property rights. Additionally, there are provisions for exceptions to these rights under certain circumstances, such as when the data subject already possesses the information or when providing the information would involve a disproportionate effort.\n\nWhile the context provides a comprehensive overview of the rights of data subjects under the GDPR, it does not detail the specific procedures for exercising these rights or the timelines within which controllers must respond to requests. Further information on these procedural aspects would be necessary for a complete understanding of how data subjects can effectively exercise their rights.",
+      "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing.",
+      "metrics": {
+        "faithfulness": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output aligns perfectly with the retrieval context.",
+          "passed": true
+        }
+      }
+    }
+  ]
+}
