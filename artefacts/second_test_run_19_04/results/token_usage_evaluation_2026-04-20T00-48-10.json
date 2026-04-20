@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-04-20T00:52:54",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "lightrag": {
+      "by_metric": {
+        "faithfulness": {
+          "prompt_tokens": 96921,
+          "completion_tokens": 4236,
+          "total_tokens": 101157,
+          "api_calls": 12
+        }
+      },
+      "totals": {
+        "prompt_tokens": 96921,
+        "completion_tokens": 4236,
+        "total_tokens": 101157,
+        "api_calls": 12
+      }
+    }
+  },
+  "by_metric": {
+    "faithfulness": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 96921,
+          "completion_tokens": 4236,
+          "total_tokens": 101157,
+          "api_calls": 12
+        }
+      },
+      "totals": {
+        "prompt_tokens": 96921,
+        "completion_tokens": 4236,
+        "total_tokens": 101157,
+        "api_calls": 12
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 96921,
+    "completion_tokens": 4236,
+    "total_tokens": 101157,
+    "api_calls": 12
+  }
+}

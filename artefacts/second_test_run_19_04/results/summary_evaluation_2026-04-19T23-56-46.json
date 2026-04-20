@@ -1,0 +1,108 @@
+{
+  "evaluation_timestamp": "2026-04-20T00:35:29",
+  "approaches_evaluated": [
+    "agentic_rag",
+    "crag",
+    "lightrag"
+  ],
+  "comparative_summary": {
+    "answer_relevancy": {
+      "agentic_rag": {
+        "average_score": 0.8759,
+        "pass_rate": 0.6667
+      },
+      "crag": {
+        "average_score": 0.9707,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 0.8012,
+        "pass_rate": 1.0
+      }
+    },
+    "context_precision": {
+      "agentic_rag": {
+        "average_score": 0.3333,
+        "pass_rate": 0.3333
+      },
+      "crag": {
+        "average_score": 0.6968,
+        "pass_rate": 0.3333
+      },
+      "lightrag": {
+        "average_score": 0.1661,
+        "pass_rate": 0.0
+      }
+    },
+    "context_recall": {
+      "agentic_rag": {
+        "average_score": 0.6667,
+        "pass_rate": 0.6667
+      },
+      "crag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      }
+    },
+    "context_relevancy": {
+      "agentic_rag": {
+        "average_score": 0.5658,
+        "pass_rate": 0.6667
+      },
+      "crag": {
+        "average_score": 0.9487,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 0.5311,
+        "pass_rate": 0.0
+      }
+    },
+    "faithfulness": {
+      "agentic_rag": {
+        "average_score": 0.6667,
+        "pass_rate": 0.6667
+      },
+      "crag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      }
+    },
+    "legal_interpretability": {
+      "agentic_rag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "crag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "lightrag": {
+        "average_score": 1.0,
+        "pass_rate": 1.0
+      }
+    },
+    "regulatory_grounding": {
+      "agentic_rag": {
+        "average_score": 0.3333,
+        "pass_rate": 0.0
+      },
+      "crag": {
+        "average_score": 0.5,
+        "pass_rate": 0.0
+      },
+      "lightrag": {
+        "average_score": 0.5,
+        "pass_rate": 0.0
+      }
+    }
+  }
+}

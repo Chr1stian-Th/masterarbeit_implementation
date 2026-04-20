@@ -1,0 +1,23 @@
+{
+  "ingestion_type": "lightrag",
+  "timestamp": "2026-04-19T23:04:35.227255+00:00",
+  "embedding_model": "text-embedding-3-large",
+  "generation_model": "google/gemma-4-31b-it",
+  "documents": [
+    {
+      "filename": "AI_ACT_EN.pdf",
+      "char_count": 628879,
+      "token_count": 153285
+    },
+    {
+      "filename": "GDPR_EN.pdf",
+      "char_count": 387819,
+      "token_count": 99904
+    }
+  ],
+  "totals": {
+    "document_count": 2,
+    "input_tokens_estimated": 253189
+  },
+  "note": "LightRAG manages LLM and embedding API calls internally. input_tokens_estimated reflects raw document token counts; actual API usage (entity extraction, chunking) is higher."
+}

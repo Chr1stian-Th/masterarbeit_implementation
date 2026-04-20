@@ -1,0 +1,25 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-20 12:48:28
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 1
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260420_124828.log
+=============================================
+[2026-04-20 12:48:28] INFO  Approach [crag] starting
+
+=============================================
+  [2026-04-20 12:48:28] Running: CRAG
+=============================================
+[2026-04-20 12:48:28] INFO  Starting [crag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/crag/run.py --questions data/questions/questions.json --max-workers 1 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+[CRAG] Processing 3 questions (max_workers=1)
+  [1/3] What is the main objective of the GDPR?...
+    -> verdict=correct, 80.908s, 6126 tokens
+  [2/3] What are the key principles for processing personal data under the GDPR?...
+    -> verdict=correct, 67.663s, 6538 tokens
+  [3/3] What rights do data subjects have under the GDPR?...
+    -> verdict=correct, 105.531s, 8619 tokens
+[OutputLogger] Saved 3 results to /root/home/masterarbeit_implementation/rag_evaluation/outputs/crag_2026-04-20T10-52-44.json
+[CRAG] Done. Output: /root/home/masterarbeit_implementation/rag_evaluation/outputs/crag_2026-04-20T10-52-44.json
+[2026-04-20 12:52:44] INFO  Finished [crag] in 256s
+[2026-04-20 12:52:44] INFO  Approach [crag] done in 256s

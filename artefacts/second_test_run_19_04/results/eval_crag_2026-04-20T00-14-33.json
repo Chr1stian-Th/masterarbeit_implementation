@@ -1,0 +1,352 @@
+{
+  "approach": "crag",
+  "source_file": "crag_2026-04-19T23-51-19.json",
+  "evaluation_timestamp": "2026-04-20T00:05:08",
+  "model_config": {
+    "generation_model": "google/gemma-4-31b-it",
+    "embedding_model": "text-embedding-3-large"
+  },
+  "metrics": {
+    "answer_relevancy": {
+      "average_score": 0.9707,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is perfectly focused and contains no irrelevant information!",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 0.9444444444444444,
+          "reason": "The score is 0.94 because the response accurately addresses the key principles of the GDPR, but it is not higher due to the inclusion of specific legal bases which deviate slightly from the core principles requested.",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 0.967741935483871,
+          "reason": "The score is 0.97 because the response is almost entirely accurate and relevant, but it is not a perfect 1.0 due to a small portion of the output providing implementation recommendations rather than strictly describing the data subject's rights.",
+          "passed": true
+        }
+      ]
+    },
+    "context_precision": {
+      "average_score": 0.6968,
+      "pass_rate": 0.3333,
+      "total_cases": 3,
+      "passed": 1,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 0.5865772571654924,
+          "reason": "The score is 0.59 because while the first and second nodes in the retrieval contexts are relevant, the score is lowered because irrelevant nodes—such as the third node which \"does not directly state the main objective\", the fourth node which discusses a \"secondary benefit\", the fifth node which is a \"general principle\", and the sixth node which is not the \"primary objective\"—are ranked higher than relevant nodes like the seventh node which mentions \"effective protection of personal data throughout the Union\" and the tenth node which \"explicitly states the intent to 'lay down rules relating to the protection of natural persons'\". ",
+          "passed": false
+        },
+        {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because every single node in the retrieval contexts is relevant, starting from the first node which \"Discusses transparency and accessibility\" all the way to the twenty-sixth node which \"Further elaborates on the 'accuracy' principle\". Great job!",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 0.5039103884841813,
+          "reason": "The score is 0.50 because several irrelevant nodes are ranked higher than relevant ones; for example, the first through fifth nodes in retrieval contexts are irrelevant as they 'is not explicitly listed in the expected output's summary of core rights', whereas the sixth node in retrieval contexts is relevant because it 'Supports the \"access to their data\" part of the output'. The score is not higher because these irrelevant nodes precede highly relevant nodes that 'Directly supports' core GDPR rights.",
+          "passed": false
+        }
+      ]
+    },
+    "context_recall": {
+      "average_score": 1.0,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the expected output is perfectly supported by nodes in retrieval context 10, 11, and 12! Great job!",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because all principles mentioned in sentence 1 are perfectly captured across nodes in retrieval context (nodes 17, 19, 20, 22, 24, and 25). Great job!",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the entire expected output is perfectly supported by various node(s) in retrieval context, specifically nodes 7, 8, 10, 15, 16, 17, 18, 25, 27, 32, 33, and 38. Great job!",
+          "passed": true
+        }
+      ]
+    },
+    "context_relevancy": {
+      "average_score": 0.9487,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context perfectly answers the input, explicitly stating that the \"objective of this Regulation is to ensure an equivalent level of protection of natural persons\" and to \"ensure the free flow of personal data throughout the Union.\" Great job!",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 0.8461538461538461,
+          "reason": "The score is 0.85 because the context provides extensive relevant details on key principles, such as stating 'Personal data shall be processed lawfully, fairly and in a transparent manner' and 'Personal data shall be collected for specified, explicit and legitimate purposes'. However, some parts of the context are less relevant as they focus on 'Information and communication' requirements or 'Legitimate bases for processing' rather than the general principles themselves.",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context is perfect! It provides a comprehensive list of rights, such as the \"right to be forgotten\" and the \"right to object to the processing of their personal data,\" directly answering the input.",
+          "passed": true
+        }
+      ]
+    },
+    "faithfulness": {
+      "average_score": 1.0,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        }
+      ]
+    },
+    "legal_interpretability": {
+      "average_score": 1.0,
+      "pass_rate": 1.0,
+      "total_cases": 3,
+      "passed": 3,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The response accurately identifies the dual objectives of the GDPR (protection of natural persons and free flow of data) and correctly breaks down the normative goals. It uses precise legal terminology, distinguishes between rights and obligations, and is written in a clear manner accessible to non-specialists without misleading simplifications.",
+          "passed": true
+        },
+        {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The response accurately identifies all seven key principles of the GDPR, using precise legal terminology and correctly distinguishing between obligations (e.g., the controller's responsibility under Accountability) and permissions (e.g., exceptions for scientific research under Purpose Limitation). The explanation is clear for non-specialists and includes necessary qualifications regarding storage limits and lawful bases, aligning perfectly with the normative interpretation required.",
+          "passed": true
+        },
+        {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The response is legally precise and accurately reflects the GDPR's data subject rights. It correctly distinguishes between different rights (access, rectification, erasure, portability), provides necessary qualifications for the right to be forgotten and data portability, and uses clear terminology accessible to a non-specialist.",
+          "passed": true
+        }
+      ]
+    },
+    "regulatory_grounding": {
+      "average_score": 0.5,
+      "pass_rate": 0.0,
+      "total_cases": 3,
+      "passed": 0,
+      "threshold": 0.7,
+      "per_question_scores": [
+        {
+          "question_id": "q001",
+          "score": 0.5,
+          "reason": "The response accurately captures the objectives listed in the retrieval context and correctly identifies the primary objectives. However, it fails to reference the specific regulatory provision (such as the Article or Recital number) as required by the first two evaluation steps.",
+          "passed": false
+        },
+        {
+          "question_id": "q002",
+          "score": 0.5,
+          "reason": "The response accurately characterizes the principles based on the retrieval context, but it fails to identify or reference the specific regulatory provision (Article 5 of the GDPR) by name or number, which is a primary requirement of the evaluation steps.",
+          "passed": false
+        },
+        {
+          "question_id": "q003",
+          "score": 0.5,
+          "reason": "The response accurately paraphrases the rights listed in the retrieval context, but it fails to identify or reference any specific regulatory provisions (articles, paragraphs, or clauses) by name or number, which is a primary requirement of the evaluation steps.",
+          "passed": false
+        }
+      ]
+    }
+  },
+  "per_question": [
+    {
+      "question_id": "q001",
+      "input": "What is the main objective of the GDPR?",
+      "output": "The main objectives of the GDPR are to ensure an equivalent level of protection of natural persons and to ensure the free flow of personal data throughout the Union.\n\nTo achieve this, the GDPR aims to:\n*   **Protect Personal Data:** Ensure a high level of protection and effective protection of personal data throughout the Union, providing natural persons in all Member States with the same level of legally enforceable rights and control over their own personal data.\n*   **Facilitate Data Movement:** Facilitate the free flow of personal data within the Union, its transfer to third countries and international organisations, and ensure that such movement is not restricted or prohibited for reasons connected to the protection of natural persons.\n*   **Establish a Coherent Framework:** Create a strong, coherent data protection framework backed by strong enforcement, including equivalent powers for monitoring compliance and equivalent sanctions for infringements across Member States.\n*   **Provide Certainty and Trust:** Enhance legal and practical certainty and transparency for natural persons, public authorities, and economic operators to create trust that allows the digital economy to develop across the internal market.\n*   **Define Rights and Obligations:** Strengthen and detail the rights of data subjects and the obligations of those who process personal data.",
+      "ground_truth": "The GDPR aims to protect natural persons regarding the processing of personal data and ensure the free movement of such data within the EU while safeguarding fundamental rights and freedoms.",
+      "metrics": {
+        "answer_relevancy": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is perfectly focused and contains no irrelevant information!",
+          "passed": true
+        },
+        "context_precision": {
+          "question_id": "q001",
+          "score": 0.5865772571654924,
+          "reason": "The score is 0.59 because while the first and second nodes in the retrieval contexts are relevant, the score is lowered because irrelevant nodes—such as the third node which \"does not directly state the main objective\", the fourth node which discusses a \"secondary benefit\", the fifth node which is a \"general principle\", and the sixth node which is not the \"primary objective\"—are ranked higher than relevant nodes like the seventh node which mentions \"effective protection of personal data throughout the Union\" and the tenth node which \"explicitly states the intent to 'lay down rules relating to the protection of natural persons'\". ",
+          "passed": false
+        },
+        "context_recall": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the expected output is perfectly supported by nodes in retrieval context 10, 11, and 12! Great job!",
+          "passed": true
+        },
+        "context_relevancy": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context perfectly answers the input, explicitly stating that the \"objective of this Regulation is to ensure an equivalent level of protection of natural persons\" and to \"ensure the free flow of personal data throughout the Union.\" Great job!",
+          "passed": true
+        },
+        "faithfulness": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        },
+        "legal_interpretability": {
+          "question_id": "q001",
+          "score": 1.0,
+          "reason": "The response accurately identifies the dual objectives of the GDPR (protection of natural persons and free flow of data) and correctly breaks down the normative goals. It uses precise legal terminology, distinguishes between rights and obligations, and is written in a clear manner accessible to non-specialists without misleading simplifications.",
+          "passed": true
+        },
+        "regulatory_grounding": {
+          "question_id": "q001",
+          "score": 0.5,
+          "reason": "The response accurately captures the objectives listed in the retrieval context and correctly identifies the primary objectives. However, it fails to reference the specific regulatory provision (such as the Article or Recital number) as required by the first two evaluation steps.",
+          "passed": false
+        }
+      }
+    },
+    {
+      "question_id": "q002",
+      "input": "What are the key principles for processing personal data under the GDPR?",
+      "output": "Based on the provided text, the key principles for processing personal data are as follows:\n\n*   **Lawfulness, Fairness, and Transparency:** Personal data must be processed lawfully, fairly, and in a transparent manner. Lawful processing requires the consent of the data subject or another legitimate basis laid down by law, such as compliance with a legal obligation, the necessity for the performance of a contract, or taking steps at the data subject's request prior to entering a contract.\n*   **Purpose Limitation:** Data must be collected for specified, explicit, and legitimate purposes determined at the time of collection, and must not be further processed in a manner incompatible with those purposes. However, further processing for statistical purposes, scientific or historical research, or archiving in the public interest is not considered incompatible.\n*   **Data Minimization:** Personal data must be adequate, relevant, and limited to what is necessary for the purposes for which they are processed. Furthermore, data should only be processed if the purpose cannot reasonably be fulfilled by other means.\n*   **Accuracy:** Personal data must be accurate and, where necessary, kept up to date. Reasonable steps must be taken to ensure that inaccurate data are rectified or erased without delay.\n*   **Storage Limitation:** Data must be kept in a form that permits identification of data subjects for no longer than is necessary for the processing purposes. The storage period should be limited to a strict minimum, and controllers should establish time limits for periodic review or erasure. Data may be stored longer if processed solely for statistical purposes, scientific or historical research, or archiving in the public interest, provided appropriate safeguards are implemented.\n*   **Integrity and Confidentiality (Security):** Personal data must be processed to ensure appropriate security and confidentiality. This includes protecting against unauthorized or unlawful processing, accidental loss, destruction, or damage, and preventing unauthorized access to the data and the processing equipment.\n*   **Accountability:** The controller is responsible for, and must be able to demonstrate compliance with, these processing principles.",
+      "ground_truth": "Principles include lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, confidentiality, and accountability.",
+      "metrics": {
+        "answer_relevancy": {
+          "question_id": "q002",
+          "score": 0.9444444444444444,
+          "reason": "The score is 0.94 because the response accurately addresses the key principles of the GDPR, but it is not higher due to the inclusion of specific legal bases which deviate slightly from the core principles requested.",
+          "passed": true
+        },
+        "context_precision": {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because every single node in the retrieval contexts is relevant, starting from the first node which \"Discusses transparency and accessibility\" all the way to the twenty-sixth node which \"Further elaborates on the 'accuracy' principle\". Great job!",
+          "passed": true
+        },
+        "context_recall": {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because all principles mentioned in sentence 1 are perfectly captured across nodes in retrieval context (nodes 17, 19, 20, 22, 24, and 25). Great job!",
+          "passed": true
+        },
+        "context_relevancy": {
+          "question_id": "q002",
+          "score": 0.8461538461538461,
+          "reason": "The score is 0.85 because the context provides extensive relevant details on key principles, such as stating 'Personal data shall be processed lawfully, fairly and in a transparent manner' and 'Personal data shall be collected for specified, explicit and legitimate purposes'. However, some parts of the context are less relevant as they focus on 'Information and communication' requirements or 'Legitimate bases for processing' rather than the general principles themselves.",
+          "passed": true
+        },
+        "faithfulness": {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        },
+        "legal_interpretability": {
+          "question_id": "q002",
+          "score": 1.0,
+          "reason": "The response accurately identifies all seven key principles of the GDPR, using precise legal terminology and correctly distinguishing between obligations (e.g., the controller's responsibility under Accountability) and permissions (e.g., exceptions for scientific research under Purpose Limitation). The explanation is clear for non-specialists and includes necessary qualifications regarding storage limits and lawful bases, aligning perfectly with the normative interpretation required.",
+          "passed": true
+        },
+        "regulatory_grounding": {
+          "question_id": "q002",
+          "score": 0.5,
+          "reason": "The response accurately characterizes the principles based on the retrieval context, but it fails to identify or reference the specific regulatory provision (Article 5 of the GDPR) by name or number, which is a primary requirement of the evaluation steps.",
+          "passed": false
+        }
+      }
+    },
+    {
+      "question_id": "q003",
+      "input": "What rights do data subjects have under the GDPR?",
+      "output": "Under the GDPR, data subjects have the following rights:\n\n**Rights to Information and Access**\n*   **Confirmation and Access:** The right to obtain confirmation from the controller as to whether their personal data are being processed, the right to access their personal data, and the right to be provided with a copy of the personal data undergoing processing. Where possible, direct access should be provided via a secure system.\n*   **Specific Information:** The right to know and obtain communication regarding:\n    *   The purposes of the processing.\n    *   The categories of personal data concerned.\n    *   The recipients or categories of recipients to whom the data have been or will be disclosed.\n    *   The envisaged storage period (where possible) or the criteria used to determine that period.\n    *   The source of the personal data if it was not collected from the data subject.\n    *   Appropriate safeguards when data are transferred to an international organisation or a third country.\n*   **Automated Decision-Making:** The right to be informed about the existence of automated decision-making (including profiling), as well as the logic involved, the significance, and the consequences.\n\n**Rights to Rectification and Erasure**\n*   **Rectification:** The right to have personal data rectified, including the right to obtain the rectification of inaccurate data from the controller without undue delay and the right to have incomplete data completed (including via a supplementary statement).\n*   **Erasure (\"Right to be Forgotten\"):** The right to have personal data erased and no longer processed without undue delay under certain grounds, including:\n    *   When the data are no longer necessary for the purposes for which they were collected or processed.\n    *   When the data subject withdraws consent or objects to the processing.\n    *   When the processing does not comply with the GDPR.\n    *   When the retention of data infringes the Regulation or Union or Member State law.\n    *   This right applies to individuals who gave consent as a child and later wish to remove that data, regardless of whether they are still a child.\n\n**Rights to Control Processing**\n*   **Restriction and Objection:** The right to request the restriction of processing and the right to object to the processing of their personal data.\n*   **Complaints:** The right to lodge a complaint with a supervisory authority.\n\n**Right to Data Portability**\n*   **Portability:** The right to receive their personal data in a structured, commonly used, and machine-readable format and to transmit that data to another controller without hindrance.\n*   **Direct Transmission:** The right to have data transmitted directly from one controller to another, where technically feasible.\n*   **Conditions and Limitations:** This right applies when processing is carried out by automated means and is based on a contract or consent. It does not apply to processing necessary for the exercise of official authority or a task carried out in the public interest. Additionally, the exercise of this right must not adversely affect the rights and freedoms of others.",
+      "ground_truth": "Data subjects have rights including access to their data, rectification, erasure (right to be forgotten), restriction of processing, data portability, and the right to object to certain types of processing.",
+      "metrics": {
+        "answer_relevancy": {
+          "question_id": "q003",
+          "score": 0.967741935483871,
+          "reason": "The score is 0.97 because the response is almost entirely accurate and relevant, but it is not a perfect 1.0 due to a small portion of the output providing implementation recommendations rather than strictly describing the data subject's rights.",
+          "passed": true
+        },
+        "context_precision": {
+          "question_id": "q003",
+          "score": 0.5039103884841813,
+          "reason": "The score is 0.50 because several irrelevant nodes are ranked higher than relevant ones; for example, the first through fifth nodes in retrieval contexts are irrelevant as they 'is not explicitly listed in the expected output's summary of core rights', whereas the sixth node in retrieval contexts is relevant because it 'Supports the \"access to their data\" part of the output'. The score is not higher because these irrelevant nodes precede highly relevant nodes that 'Directly supports' core GDPR rights.",
+          "passed": false
+        },
+        "context_recall": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the entire expected output is perfectly supported by various node(s) in retrieval context, specifically nodes 7, 8, 10, 15, 16, 17, 18, 25, 27, 32, 33, and 38. Great job!",
+          "passed": true
+        },
+        "context_relevancy": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context is perfect! It provides a comprehensive list of rights, such as the \"right to be forgotten\" and the \"right to object to the processing of their personal data,\" directly answering the input.",
+          "passed": true
+        },
+        "faithfulness": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+          "passed": true
+        },
+        "legal_interpretability": {
+          "question_id": "q003",
+          "score": 1.0,
+          "reason": "The response is legally precise and accurately reflects the GDPR's data subject rights. It correctly distinguishes between different rights (access, rectification, erasure, portability), provides necessary qualifications for the right to be forgotten and data portability, and uses clear terminology accessible to a non-specialist.",
+          "passed": true
+        },
+        "regulatory_grounding": {
+          "question_id": "q003",
+          "score": 0.5,
+          "reason": "The response accurately paraphrases the rights listed in the retrieval context, but it fails to identify or reference any specific regulatory provisions (articles, paragraphs, or clauses) by name or number, which is a primary requirement of the evaluation steps.",
+          "passed": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-04-20T00:35:29",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "agentic_rag": {
+      "by_metric": {
+        "answer_relevancy": {
+          "prompt_tokens": 5377,
+          "completion_tokens": 2785,
+          "total_tokens": 8162,
+          "api_calls": 9
+        },
+        "context_precision": {
+          "prompt_tokens": 6844,
+          "completion_tokens": 725,
+          "total_tokens": 7569,
+          "api_calls": 5
+        },
+        "context_recall": {
+          "prompt_tokens": 6817,
+          "completion_tokens": 434,
+          "total_tokens": 7251,
+          "api_calls": 6
+        },
+        "context_relevancy": {
+          "prompt_tokens": 10976,
+          "completion_tokens": 3457,
+          "total_tokens": 14433,
+          "api_calls": 13
+        },
+        "faithfulness": {
+          "prompt_tokens": 10732,
+          "completion_tokens": 3809,
+          "total_tokens": 14541,
+          "api_calls": 10
+        },
+        "legal_interpretability": {
+          "prompt_tokens": 2625,
+          "completion_tokens": 278,
+          "total_tokens": 2903,
+          "api_calls": 3
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 6991,
+          "completion_tokens": 304,
+          "total_tokens": 7295,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 50362,
+        "completion_tokens": 11792,
+        "total_tokens": 62154,
+        "api_calls": 49
+      }
+    },
+    "crag": {
+      "by_metric": {
+        "answer_relevancy": {
+          "prompt_tokens": 5301,
+          "completion_tokens": 2919,
+          "total_tokens": 8220,
+          "api_calls": 9
+        },
+        "context_precision": {
+          "prompt_tokens": 7227,
+          "completion_tokens": 3968,
+          "total_tokens": 11195,
+          "api_calls": 6
+        },
+        "context_recall": {
+          "prompt_tokens": 4380,
+          "completion_tokens": 670,
+          "total_tokens": 5050,
+          "api_calls": 6
+        },
+        "context_relevancy": {
+          "prompt_tokens": 38705,
+          "completion_tokens": 5345,
+          "total_tokens": 44050,
+          "api_calls": 84
+        },
+        "faithfulness": {
+          "prompt_tokens": 9679,
+          "completion_tokens": 3753,
+          "total_tokens": 13432,
+          "api_calls": 12
+        },
+        "legal_interpretability": {
+          "prompt_tokens": 2613,
+          "completion_tokens": 261,
+          "total_tokens": 2874,
+          "api_calls": 3
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 4363,
+          "completion_tokens": 206,
+          "total_tokens": 4569,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 72268,
+        "completion_tokens": 17122,
+        "total_tokens": 89390,
+        "api_calls": 123
+      }
+    },
+    "lightrag": {
+      "by_metric": {
+        "answer_relevancy": {
+          "prompt_tokens": 5527,
+          "completion_tokens": 2618,
+          "total_tokens": 8145,
+          "api_calls": 9
+        },
+        "context_precision": {
+          "prompt_tokens": 31992,
+          "completion_tokens": 1682,
+          "total_tokens": 33674,
+          "api_calls": 2
+        },
+        "context_recall": {
+          "prompt_tokens": 91677,
+          "completion_tokens": 592,
+          "total_tokens": 92269,
+          "api_calls": 6
+        },
+        "context_relevancy": {
+          "prompt_tokens": 102750,
+          "completion_tokens": 9681,
+          "total_tokens": 112431,
+          "api_calls": 24
+        },
+        "faithfulness": {
+          "prompt_tokens": 97017,
+          "completion_tokens": 4172,
+          "total_tokens": 101189,
+          "api_calls": 12
+        },
+        "legal_interpretability": {
+          "prompt_tokens": 2804,
+          "completion_tokens": 290,
+          "total_tokens": 3094,
+          "api_calls": 3
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 91888,
+          "completion_tokens": 354,
+          "total_tokens": 92242,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 423655,
+        "completion_tokens": 19389,
+        "total_tokens": 443044,
+        "api_calls": 59
+      }
+    }
+  },
+  "by_metric": {
+    "answer_relevancy": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 5377,
+          "completion_tokens": 2785,
+          "total_tokens": 8162,
+          "api_calls": 9
+        },
+        "crag": {
+          "prompt_tokens": 5301,
+          "completion_tokens": 2919,
+          "total_tokens": 8220,
+          "api_calls": 9
+        },
+        "lightrag": {
+          "prompt_tokens": 5527,
+          "completion_tokens": 2618,
+          "total_tokens": 8145,
+          "api_calls": 9
+        }
+      },
+      "totals": {
+        "prompt_tokens": 16205,
+        "completion_tokens": 8322,
+        "total_tokens": 24527,
+        "api_calls": 27
+      }
+    },
+    "context_precision": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 6844,
+          "completion_tokens": 725,
+          "total_tokens": 7569,
+          "api_calls": 5
+        },
+        "crag": {
+          "prompt_tokens": 7227,
+          "completion_tokens": 3968,
+          "total_tokens": 11195,
+          "api_calls": 6
+        },
+        "lightrag": {
+          "prompt_tokens": 31992,
+          "completion_tokens": 1682,
+          "total_tokens": 33674,
+          "api_calls": 2
+        }
+      },
+      "totals": {
+        "prompt_tokens": 46063,
+        "completion_tokens": 6375,
+        "total_tokens": 52438,
+        "api_calls": 13
+      }
+    },
+    "context_recall": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 6817,
+          "completion_tokens": 434,
+          "total_tokens": 7251,
+          "api_calls": 6
+        },
+        "crag": {
+          "prompt_tokens": 4380,
+          "completion_tokens": 670,
+          "total_tokens": 5050,
+          "api_calls": 6
+        },
+        "lightrag": {
+          "prompt_tokens": 91677,
+          "completion_tokens": 592,
+          "total_tokens": 92269,
+          "api_calls": 6
+        }
+      },
+      "totals": {
+        "prompt_tokens": 102874,
+        "completion_tokens": 1696,
+        "total_tokens": 104570,
+        "api_calls": 18
+      }
+    },
+    "context_relevancy": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 10976,
+          "completion_tokens": 3457,
+          "total_tokens": 14433,
+          "api_calls": 13
+        },
+        "crag": {
+          "prompt_tokens": 38705,
+          "completion_tokens": 5345,
+          "total_tokens": 44050,
+          "api_calls": 84
+        },
+        "lightrag": {
+          "prompt_tokens": 102750,
+          "completion_tokens": 9681,
+          "total_tokens": 112431,
+          "api_calls": 24
+        }
+      },
+      "totals": {
+        "prompt_tokens": 152431,
+        "completion_tokens": 18483,
+        "total_tokens": 170914,
+        "api_calls": 121
+      }
+    },
+    "faithfulness": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 10732,
+          "completion_tokens": 3809,
+          "total_tokens": 14541,
+          "api_calls": 10
+        },
+        "crag": {
+          "prompt_tokens": 9679,
+          "completion_tokens": 3753,
+          "total_tokens": 13432,
+          "api_calls": 12
+        },
+        "lightrag": {
+          "prompt_tokens": 97017,
+          "completion_tokens": 4172,
+          "total_tokens": 101189,
+          "api_calls": 12
+        }
+      },
+      "totals": {
+        "prompt_tokens": 117428,
+        "completion_tokens": 11734,
+        "total_tokens": 129162,
+        "api_calls": 34
+      }
+    },
+    "legal_interpretability": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 2625,
+          "completion_tokens": 278,
+          "total_tokens": 2903,
+          "api_calls": 3
+        },
+        "crag": {
+          "prompt_tokens": 2613,
+          "completion_tokens": 261,
+          "total_tokens": 2874,
+          "api_calls": 3
+        },
+        "lightrag": {
+          "prompt_tokens": 2804,
+          "completion_tokens": 290,
+          "total_tokens": 3094,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 8042,
+        "completion_tokens": 829,
+        "total_tokens": 8871,
+        "api_calls": 9
+      }
+    },
+    "regulatory_grounding": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 6991,
+          "completion_tokens": 304,
+          "total_tokens": 7295,
+          "api_calls": 3
+        },
+        "crag": {
+          "prompt_tokens": 4363,
+          "completion_tokens": 206,
+          "total_tokens": 4569,
+          "api_calls": 3
+        },
+        "lightrag": {
+          "prompt_tokens": 91888,
+          "completion_tokens": 354,
+          "total_tokens": 92242,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 103242,
+        "completion_tokens": 864,
+        "total_tokens": 104106,
+        "api_calls": 9
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 546285,
+    "completion_tokens": 48303,
+    "total_tokens": 594588,
+    "api_calls": 231
+  }
+}

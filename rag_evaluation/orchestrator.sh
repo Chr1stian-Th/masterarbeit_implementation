@@ -37,6 +37,10 @@ cd "$SCRIPT_DIR"
 VENVS_DIR="$SCRIPT_DIR/.venvs"
 OUTPUTS_DIR="$SCRIPT_DIR/outputs"
 RESULTS_DIR="$SCRIPT_DIR/results"
+LOG_FILE="$SCRIPT_DIR/pipeline_$(date +%Y%m%d_%H%M%S).log"
+
+# Tee all output to log file
+exec > >(tee -a "$LOG_FILE") 2>&1
 
 # Defaults
 MAX_WORKERS=1
@@ -103,12 +107,21 @@ done
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+ts() { date '+%Y-%m-%d %H:%M:%S'; }
+
 log() {
     echo ""
     echo "============================================="
-    echo "  $1"
+    echo "  [$(ts)] $1"
     echo "============================================="
 }
+
+info()  { echo "[$(ts)] INFO  $*"; }
+warn()  { echo "[$(ts)] WARN  $*"; }
+error() { echo "[$(ts)] ERROR $*" >&2; }
+
+# Trap unexpected errors with file/line context
+trap 'error "Pipeline failed at line $LINENO (exit $?). Check $LOG_FILE for details."' ERR
 
 run_in_venv() {
     local venv_name="$1"
@@ -116,12 +129,14 @@ run_in_venv() {
     local venv_path="$VENVS_DIR/$venv_name"
 
     if [ ! -d "$venv_path" ]; then
-        echo "ERROR: Venv '$venv_name' not found. Run ./setup_envs.sh first."
+        error "Venv '$venv_name' not found. Run ./setup_envs.sh first."
         exit 1
     fi
 
-    # Run the command using the venv's Python
+    info "Starting [$venv_name]: $*"
+    local t0=$SECONDS
     "$venv_path/bin/python" "$@"
+    info "Finished [$venv_name] in $((SECONDS - t0))s"
 }
 
 check_envs() {
@@ -136,7 +151,9 @@ check_envs() {
 # ---------------------------------------------------------------------------
 do_setup() {
     log "Setting up virtual environments"
+    local t0=$SECONDS
     bash "$SCRIPT_DIR/setup_envs.sh"
+    info "Setup complete in $((SECONDS - t0))s"
 }
 
 # ---------------------------------------------------------------------------
@@ -144,16 +161,19 @@ do_setup() {
 # ---------------------------------------------------------------------------
 do_ingest() {
     log "Ingesting GDPR documents (target: $INGEST_TARGET)"
+    local t0=$SECONDS
 
     if [ "$INGEST_TARGET" = "all" ] || [ "$INGEST_TARGET" = "chromadb" ]; then
-        echo "--- ChromaDB ingestion ---"
+        info "--- ChromaDB ingestion ---"
         run_in_venv "ingestion" "$SCRIPT_DIR/ingestion/ingest_chromadb.py"
     fi
 
     if [ "$INGEST_TARGET" = "all" ] || [ "$INGEST_TARGET" = "lightrag" ]; then
-        echo "--- LightRAG ingestion ---"
+        info "--- LightRAG ingestion ---"
         run_in_venv "ingestion" "$SCRIPT_DIR/ingestion/ingest_lightrag.py"
     fi
+
+    info "Ingestion complete in $((SECONDS - t0))s"
 }
 
 # ---------------------------------------------------------------------------
@@ -162,6 +182,8 @@ do_ingest() {
 run_approach() {
     local approach="$1"
     local extra_args=""
+    info "Approach [$approach] starting"
+    local t0=$SECONDS
 
     if [ -n "$QUESTIONS" ]; then
         extra_args="$extra_args --questions $QUESTIONS"
@@ -189,11 +211,11 @@ run_approach() {
                 $extra_args
             ;;
         *)
-            echo "ERROR: Unknown approach '$approach'"
-            echo "Available: lightrag, agentic_rag, crag"
+            error "Unknown approach '$approach'. Available: lightrag, agentic_rag, crag"
             exit 1
             ;;
     esac
+    info "Approach [$approach] done in $((SECONDS - t0))s"
 }
 
 do_run() {
@@ -217,24 +239,27 @@ do_run() {
 do_evaluate() {
     log "Evaluating outputs with DeepEval"
     mkdir -p "$RESULTS_DIR"
+    local t0=$SECONDS
 
     run_in_venv "evaluation" \
         "$SCRIPT_DIR/evaluation/evaluate.py" \
         --input-dir "$OUTPUTS_DIR" \
         --output-dir "$RESULTS_DIR"
 
-    echo ""
-    echo "Evaluation complete. Results in: $RESULTS_DIR/"
+    info "Evaluation complete in $((SECONDS - t0))s. Results in: $RESULTS_DIR/"
 }
 
 # ---------------------------------------------------------------------------
 # Main execution
 # ---------------------------------------------------------------------------
+PIPELINE_START=$SECONDS
 echo "============================================="
 echo "  RAG Evaluation Pipeline"
-echo "  Mode: $MODE"
-echo "  Approaches: $APPROACHES"
+echo "  Started:     $(ts)"
+echo "  Mode:        $MODE"
+echo "  Approaches:  $APPROACHES"
 echo "  Max workers: $MAX_WORKERS"
+echo "  Log file:    $LOG_FILE"
 echo "============================================="
 
 case "$MODE" in
@@ -266,7 +291,7 @@ case "$MODE" in
         do_run "all"
         do_evaluate
 
-        log "Pipeline complete!"
+        log "Pipeline complete in $((SECONDS - PIPELINE_START))s!"
         echo "Outputs:  $OUTPUTS_DIR/"
         echo "Results:  $RESULTS_DIR/"
         echo ""
