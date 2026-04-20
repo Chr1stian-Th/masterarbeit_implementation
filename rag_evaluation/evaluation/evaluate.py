@@ -32,6 +32,7 @@ import sys
 import json
 import glob
 import argparse
+import time
 from datetime import datetime, timezone
 from typing import Any
 
@@ -198,6 +199,74 @@ class TokenUsageTracker:
             "overview": overview,
         }
 
+# ============================================================================
+# Retry / Checkpoint Helpers
+# ============================================================================
+
+_RETRYABLE_PATTERNS = ("429", "500", "502", "503", "504", "timeout", "connection", "rate limit")
+
+
+def _measure_with_retry(
+    metric,
+    tc,
+    max_retries: int = 3,
+    base_delay: float = 2.0,
+) -> tuple:
+    """Call metric.measure with exponential backoff on transient errors.
+
+    Returns (score, reason, errored: bool).
+    """
+    last_exc: Exception | None = None
+    for attempt in range(max_retries):
+        try:
+            metric.measure(tc)
+            return metric.score, getattr(metric, "reason", None), False
+        except Exception as exc:
+            last_exc = exc
+            err_lower = str(exc).lower()
+            retryable = any(p in err_lower for p in _RETRYABLE_PATTERNS)
+            if retryable and attempt < max_retries - 1:
+                delay = base_delay * (2 ** attempt)
+                print(f"      [retry {attempt + 1}/{max_retries - 1}] {str(exc)[:100]} — waiting {delay:.0f}s")
+                time.sleep(delay)
+            else:
+                break
+    return 0.0, f"Error: {last_exc}", True
+
+
+def _checkpoint_path(checkpoint_dir: str, approach: str) -> str:
+    return os.path.join(checkpoint_dir, f"ckpt_{approach}.json")
+
+
+def _load_checkpoint(checkpoint_dir: str, approach: str) -> dict:
+    """Load {metric_name: {question_id: score_record}} from disk, or {}."""
+    path = _checkpoint_path(checkpoint_dir, approach)
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_checkpoint(checkpoint_dir: str, approach: str, data: dict) -> None:
+    """Atomically write checkpoint to disk."""
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    path = _checkpoint_path(checkpoint_dir, approach)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f)
+    os.replace(tmp, path)
+
+
+def _delete_checkpoint(checkpoint_dir: str, approach: str) -> None:
+    try:
+        os.remove(_checkpoint_path(checkpoint_dir, approach))
+    except FileNotFoundError:
+        pass
+
+
 # ---------------------------------------------------------------------------
 # Config loading
 # ---------------------------------------------------------------------------
@@ -318,6 +387,7 @@ def run_evaluation(
         Dictionary mapping approach names to their evaluation results.
     """
     os.makedirs(output_dir, exist_ok=True)
+    checkpoint_dir = os.path.join(output_dir, "checkpoints")
 
     # Session-level timestamp used for all output filenames in this run
     session_timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
@@ -326,171 +396,180 @@ def run_evaluation(
     token_tracker = TokenUsageTracker()
     token_tracker.install()
 
-    # Load outputs
-    outputs = load_approach_outputs(input_dir, filter_approach)
-    if not outputs:
-        token_tracker.uninstall()
-        print("[Evaluate] No outputs to evaluate.")
-        return {}
+    all_results: dict = {}
 
-    # Initialize metrics — pass per-metric thresholds from config when available
-    def _metric_kwargs(name: str) -> dict:
-        kwargs: dict = {"model": model}
-        if name in _DEFAULT_THRESHOLDS:
-            kwargs["threshold"] = _DEFAULT_THRESHOLDS[name]
-        return kwargs
+    try:
+        # Load outputs
+        outputs = load_approach_outputs(input_dir, filter_approach)
+        if not outputs:
+            print("[Evaluate] No outputs to evaluate.")
+            return {}
 
-    if metric_names:
-        metrics_dict = {name: get_metric(name, **_metric_kwargs(name)) for name in metric_names}
-    else:
-        # get_all_metrics passes the same kwargs to every factory; build a
-        # combined set using the first threshold found (metrics with their own
-        # thresholds in config will be handled individually below).
-        metrics_dict = {}
-        from metrics import list_metrics as _list_metrics
-        for name in _list_metrics():
-            metrics_dict[name] = get_metric(name, **_metric_kwargs(name))
+        # Initialize metrics — pass per-metric thresholds from config when available
+        def _metric_kwargs(name: str) -> dict:
+            kwargs: dict = {"model": model}
+            if name in _DEFAULT_THRESHOLDS:
+                kwargs["threshold"] = _DEFAULT_THRESHOLDS[name]
+            return kwargs
 
-    if not metrics_dict:
-        print("[Evaluate] No metrics registered. Add metrics to evaluation/metrics/.")
-        return {}
+        if metric_names:
+            metrics_dict = {name: get_metric(name, **_metric_kwargs(name)) for name in metric_names}
+        else:
+            metrics_dict = {}
+            from metrics import list_metrics as _list_metrics
+            for name in _list_metrics():
+                metrics_dict[name] = get_metric(name, **_metric_kwargs(name))
 
-    print(f"[Evaluate] Running metrics: {list(metrics_dict.keys())}")
+        if not metrics_dict:
+            print("[Evaluate] No metrics registered. Add metrics to evaluation/metrics/.")
+            return {}
 
-    all_results = {}
+        print(f"[Evaluate] Running metrics: {list(metrics_dict.keys())}")
 
-    for output in outputs:
-        approach = output.get("approach", "unknown")
-        source_file = output.get("_source_file", "unknown.json")
-        print(f"\n[Evaluate] Evaluating: {approach} ({source_file})")
+        for output in outputs:
+            approach = output.get("approach", "unknown")
+            source_file = output.get("_source_file", "unknown.json")
+            print(f"\n[Evaluate] Evaluating: {approach} ({source_file})")
 
-        test_cases = build_test_cases(output)
-        if not test_cases:
-            print(f"  No test cases for {approach}")
-            continue
+            test_cases = build_test_cases(output)
+            if not test_cases:
+                print(f"  No test cases for {approach}")
+                continue
 
-        # Run each metric on all test cases
-        approach_results = {
-            "approach": approach,
-            "source_file": source_file,
-            "evaluation_timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
-            "model_config": output.get("model_config", {}),
-            "metrics": {},
-            "per_question": [],
-        }
+            # Load checkpoint — resumes a previously interrupted run
+            checkpoint = _load_checkpoint(checkpoint_dir, approach)
+            if any(checkpoint.values()):
+                completed = sum(len(v) for v in checkpoint.values())
+                print(f"  [resume] Checkpoint found — {completed} question×metric result(s) already scored.")
 
-        for metric_name, metric in metrics_dict.items():
-            print(f"  Running metric: {metric_name}...")
-
-            metric_scores = []
-            metric_passes = 0
-
-            token_tracker.set_context(approach, metric_name)
-
-            for i, tc in enumerate(test_cases):
-                try:
-                    metric.measure(tc)
-                    score = metric.score
-                    reason = getattr(metric, "reason", None)
-                    threshold = getattr(metric, "threshold", None)
-                    passed = (score >= threshold) if threshold is not None else None
-                except Exception as e:
-                    score = 0.0
-                    reason = f"Error: {str(e)}"
-                    passed = False
-
-                if passed is True:
-                    metric_passes += 1
-
-                metric_scores.append({
-                    "question_id": output["results"][i].get("question_id", f"q{i}"),
-                    "score": score,
-                    "reason": reason,
-                    "passed": passed,
-                })
-
-            avg_score = (
-                sum(s["score"] for s in metric_scores) / len(metric_scores)
-                if metric_scores
-                else 0.0
-            )
-
-            scoreable_cases = [s for s in metric_scores if s["passed"] is not None]
-            approach_results["metrics"][metric_name] = {
-                "average_score": round(avg_score, 4),
-                "pass_rate": round(metric_passes / len(scoreable_cases), 4) if scoreable_cases else 0.0,
-                "total_cases": len(metric_scores),
-                "passed": metric_passes,
-                "threshold": getattr(metric, "threshold", None),
-                "per_question_scores": metric_scores,
-            }
-
-            print(f"    {metric_name}: avg={avg_score:.4f}, pass_rate={metric_passes}/{len(metric_scores)}")
-
-        # Build per-question combined view
-        for i, result in enumerate(output.get("results", [])):
-            question_eval = {
-                "question_id": result.get("question_id", f"q{i}"),
-                "input": result.get("input", ""),
-                "output": result.get("output", ""),
-                "ground_truth": result.get("ground_truth", ""),
+            approach_results = {
+                "approach": approach,
+                "source_file": source_file,
+                "evaluation_timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
+                "model_config": output.get("model_config", {}),
                 "metrics": {},
+                "per_question": [],
             }
-            for metric_name, metric_data in approach_results["metrics"].items():
-                if i < len(metric_data["per_question_scores"]):
-                    question_eval["metrics"][metric_name] = (
-                        metric_data["per_question_scores"][i]
-                    )
-            approach_results["per_question"].append(question_eval)
 
-        # Save results
-        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
-        result_filename = f"eval_{approach}_{timestamp}.json"
-        result_path = os.path.join(output_dir, result_filename)
+            for metric_name, metric in metrics_dict.items():
+                print(f"  Running metric: {metric_name}...")
 
-        with open(result_path, "w", encoding="utf-8") as f:
-            json.dump(approach_results, f, indent=2, ensure_ascii=False)
+                metric_checkpoint = checkpoint.setdefault(metric_name, {})
+                metric_scores = []
 
-        print(f"  Saved: {result_path}")
-        all_results[approach] = approach_results
+                token_tracker.set_context(approach, metric_name)
 
-    # Uninstall token tracker and save token usage report
-    token_tracker.uninstall()
-    token_report = token_tracker.compile_report(model=model)
-    token_report_path = os.path.join(output_dir, f"token_usage_evaluation_{session_timestamp}.json")
-    with open(token_report_path, "w", encoding="utf-8") as f:
-        json.dump(token_report, f, indent=2, ensure_ascii=False)
-    overview = token_report["overview"]
-    print(
-        f"\n[Evaluate] Token usage — prompt: {overview['prompt_tokens']:,}, "
-        f"completion: {overview['completion_tokens']:,}, "
-        f"total: {overview['total_tokens']:,} "
-        f"({overview['api_calls']} API calls)"
-    )
-    print(f"[Evaluate] Token usage report: {token_report_path}")
+                for i, tc in enumerate(test_cases):
+                    q_id = output["results"][i].get("question_id", f"q{i}")
 
-    # Save summary across all approaches
-    if len(all_results) > 1:
-        summary = {
-            "evaluation_timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
-            "approaches_evaluated": list(all_results.keys()),
-            "comparative_summary": {},
-        }
+                    if q_id in metric_checkpoint:
+                        # Reuse previously saved result — no API call needed
+                        metric_scores.append(metric_checkpoint[q_id])
+                        continue
 
-        for metric_name in metrics_dict.keys():
-            comparison = {}
-            for approach, result in all_results.items():
-                if metric_name in result["metrics"]:
-                    comparison[approach] = {
-                        "average_score": result["metrics"][metric_name]["average_score"],
-                        "pass_rate": result["metrics"][metric_name]["pass_rate"],
+                    score, reason, errored = _measure_with_retry(metric, tc)
+                    threshold = getattr(metric, "threshold", None)
+                    if errored:
+                        passed = False
+                    elif threshold is not None:
+                        passed = score >= threshold
+                    else:
+                        passed = None
+
+                    record: dict = {
+                        "question_id": q_id,
+                        "score": score,
+                        "reason": reason,
+                        "passed": passed,
                     }
-            summary["comparative_summary"][metric_name] = comparison
+                    if errored:
+                        record["errored"] = True
 
-        summary_path = os.path.join(output_dir, f"summary_evaluation_{session_timestamp}.json")
-        with open(summary_path, "w", encoding="utf-8") as f:
-            json.dump(summary, f, indent=2, ensure_ascii=False)
-        print(f"\n[Evaluate] Comparative summary: {summary_path}")
+                    metric_scores.append(record)
+                    metric_checkpoint[q_id] = record
+                    _save_checkpoint(checkpoint_dir, approach, checkpoint)
+
+                metric_passes = sum(1 for s in metric_scores if s["passed"] is True)
+                avg_score = (
+                    sum(s["score"] for s in metric_scores) / len(metric_scores)
+                    if metric_scores else 0.0
+                )
+                scoreable_cases = [s for s in metric_scores if s["passed"] is not None]
+                approach_results["metrics"][metric_name] = {
+                    "average_score": round(avg_score, 4),
+                    "pass_rate": round(metric_passes / len(scoreable_cases), 4) if scoreable_cases else 0.0,
+                    "total_cases": len(metric_scores),
+                    "passed": metric_passes,
+                    "threshold": getattr(metric, "threshold", None),
+                    "per_question_scores": metric_scores,
+                }
+
+                print(f"    {metric_name}: avg={avg_score:.4f}, pass_rate={metric_passes}/{len(metric_scores)}")
+
+            # Build per-question combined view
+            for i, result in enumerate(output.get("results", [])):
+                question_eval = {
+                    "question_id": result.get("question_id", f"q{i}"),
+                    "input": result.get("input", ""),
+                    "output": result.get("output", ""),
+                    "ground_truth": result.get("ground_truth", ""),
+                    "metrics": {},
+                }
+                for metric_name, metric_data in approach_results["metrics"].items():
+                    if i < len(metric_data["per_question_scores"]):
+                        question_eval["metrics"][metric_name] = metric_data["per_question_scores"][i]
+                approach_results["per_question"].append(question_eval)
+
+            # Save results and clean up checkpoint on success
+            timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+            result_filename = f"eval_{approach}_{timestamp}.json"
+            result_path = os.path.join(output_dir, result_filename)
+
+            with open(result_path, "w", encoding="utf-8") as f:
+                json.dump(approach_results, f, indent=2, ensure_ascii=False)
+
+            _delete_checkpoint(checkpoint_dir, approach)
+            print(f"  Saved: {result_path}")
+            all_results[approach] = approach_results
+
+        # Save summary across all approaches
+        if len(all_results) > 1:
+            summary = {
+                "evaluation_timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
+                "approaches_evaluated": list(all_results.keys()),
+                "comparative_summary": {},
+            }
+
+            for metric_name in metrics_dict.keys():
+                comparison = {}
+                for approach, result in all_results.items():
+                    if metric_name in result["metrics"]:
+                        comparison[approach] = {
+                            "average_score": result["metrics"][metric_name]["average_score"],
+                            "pass_rate": result["metrics"][metric_name]["pass_rate"],
+                        }
+                summary["comparative_summary"][metric_name] = comparison
+
+            summary_path = os.path.join(output_dir, f"summary_evaluation_{session_timestamp}.json")
+            with open(summary_path, "w", encoding="utf-8") as f:
+                json.dump(summary, f, indent=2, ensure_ascii=False)
+            print(f"\n[Evaluate] Comparative summary: {summary_path}")
+
+    finally:
+        # Always uninstall the tracker and persist the token report, even on crash
+        token_tracker.uninstall()
+        token_report = token_tracker.compile_report(model=model)
+        token_report_path = os.path.join(output_dir, f"token_usage_evaluation_{session_timestamp}.json")
+        with open(token_report_path, "w", encoding="utf-8") as f:
+            json.dump(token_report, f, indent=2, ensure_ascii=False)
+        overview = token_report["overview"]
+        print(
+            f"\n[Evaluate] Token usage — prompt: {overview['prompt_tokens']:,}, "
+            f"completion: {overview['completion_tokens']:,}, "
+            f"total: {overview['total_tokens']:,} "
+            f"({overview['api_calls']} API calls)"
+        )
+        print(f"[Evaluate] Token usage report: {token_report_path}")
 
     return all_results
 
