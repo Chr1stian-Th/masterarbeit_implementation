@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-04-23T20:08:04",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "lightrag": {
+      "by_metric": {
+        "faithfulness": {
+          "prompt_tokens": 2064812,
+          "completion_tokens": 136915,
+          "total_tokens": 2201727,
+          "api_calls": 246
+        },
+        "legal_interpretability": {
+          "prompt_tokens": 259481,
+          "completion_tokens": 17214,
+          "total_tokens": 276695,
+          "api_calls": 153
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 4816761,
+          "completion_tokens": 19947,
+          "total_tokens": 4836708,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 7141054,
+        "completion_tokens": 174076,
+        "total_tokens": 7315130,
+        "api_calls": 552
+      }
+    }
+  },
+  "by_metric": {
+    "faithfulness": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 2064812,
+          "completion_tokens": 136915,
+          "total_tokens": 2201727,
+          "api_calls": 246
+        }
+      },
+      "totals": {
+        "prompt_tokens": 2064812,
+        "completion_tokens": 136915,
+        "total_tokens": 2201727,
+        "api_calls": 246
+      }
+    },
+    "legal_interpretability": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 259481,
+          "completion_tokens": 17214,
+          "total_tokens": 276695,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 259481,
+        "completion_tokens": 17214,
+        "total_tokens": 276695,
+        "api_calls": 153
+      }
+    },
+    "regulatory_grounding": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 4816761,
+          "completion_tokens": 19947,
+          "total_tokens": 4836708,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 4816761,
+        "completion_tokens": 19947,
+        "total_tokens": 4836708,
+        "api_calls": 153
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 7141054,
+    "completion_tokens": 174076,
+    "total_tokens": 7315130,
+    "api_calls": 552
+  }
+}
