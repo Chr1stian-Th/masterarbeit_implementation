@@ -1,0 +1,64 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-25 13:24:07
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 2
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260425_132407.log
+=============================================
+[2026-04-25 13:24:07] INFO  Approach [lightrag] starting
+
+=============================================
+  [2026-04-25 13:24:07] Running: LightRAG
+=============================================
+[2026-04-25 13:24:07] INFO  Starting [lightrag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py --questions data/questions/specifcquestions.json --max-workers 2 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+INFO: [] Loaded graph from /root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/graph_chunk_entity_relation.graphml with 1214 nodes, 2148 edges
+INFO:nano-vectordb:Load (1214, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_entities.json'} 1214 data
+INFO:nano-vectordb:Load (2148, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_relationships.json'} 2148 data
+INFO:nano-vectordb:Load (230, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_chunks.json'} 230 data
+INFO: [] Process 520621 KV load full_docs with 2 records
+INFO: [] Process 520621 KV load text_chunks with 230 records
+INFO: [] Process 520621 KV load full_entities with 2 records
+INFO: [] Process 520621 KV load full_relations with 2 records
+INFO: [] Process 520621 KV load entity_chunks with 1214 records
+INFO: [] Process 520621 KV load relation_chunks with 2148 records
+INFO: [] Process 520621 KV load llm_response_cache with 305 records
+INFO: [] Process 520621 doc status load doc_status with 2 records
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: Query nodes: AI Act, Non-compliance, Fines, Sanctions, Enforcement measures (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 256 relations
+INFO: Query edges: AI regulation, Legal penalties, Compliance requirements, Regulatory framework (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 72 entities, 281 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 163 relations
+INFO: Selecting 97 from 179 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 21 relations (deduplicated 64)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 39 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R4/2 E2/3 R2/3 E1/4 R2/4 E3/5 R2/5 E1/6 R11/6
+INFO: Query nodes: AI Act, Non-compliance, Fines, Sanctions, Enforcement measures (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 256 relations
+INFO: Query edges: AI regulation, Legal penalties, Compliance requirements, Regulatory framework (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 72 entities, 281 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 163 relations
+INFO: Selecting 97 from 179 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 21 relations (deduplicated 64)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 39 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R4/2 E2/3 R2/3 E1/4 R2/4 E3/5 R2/5 E1/6 R11/6
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO:  == LLM cache == saving: hybrid:query:8bc2075068808a24e6265554f63c291f
+INFO: Successfully finalized 12 storages
+[LightRAG] Processing 1 questions (max_workers=2)
+  [1/1] What penalties does the AI Act impose for non-compliance?...
+    [1/1] q149: 93.197s
+[OutputLogger] Saved 1 results to /root/home/masterarbeit_implementation/rag_evaluation/outputs/lightrag_2026-04-25T11-25-42.json
+[LightRAG] Done. Output: /root/home/masterarbeit_implementation/rag_evaluation/outputs/lightrag_2026-04-25T11-25-42.json
+[2026-04-25 13:25:42] INFO  Finished [lightrag] in 95s
+[2026-04-25 13:25:42] INFO  Approach [lightrag] done in 95s

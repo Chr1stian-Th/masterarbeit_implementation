@@ -1,0 +1,118 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-25 12:25:37
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 2
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260425_122537.log
+=============================================
+[2026-04-25 12:25:37] INFO  Approach [lightrag] starting
+
+=============================================
+  [2026-04-25 12:25:37] Running: LightRAG
+=============================================
+[2026-04-25 12:25:37] INFO  Starting [lightrag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py --questions data/questions/questions.json --max-workers 2 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+INFO: [] Loaded graph from /root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/graph_chunk_entity_relation.graphml with 1214 nodes, 2148 edges
+INFO:nano-vectordb:Load (1214, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_entities.json'} 1214 data
+INFO:nano-vectordb:Load (2148, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_relationships.json'} 2148 data
+INFO:nano-vectordb:Load (230, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_chunks.json'} 230 data
+INFO: [] Process 503683 KV load full_docs with 2 records
+INFO: [] Process 503683 KV load text_chunks with 230 records
+INFO: [] Process 503683 KV load full_entities with 2 records
+INFO: [] Process 503683 KV load full_relations with 2 records
+INFO: [] Process 503683 KV load entity_chunks with 1214 records
+INFO: [] Process 503683 KV load relation_chunks with 2148 records
+INFO: [] Process 503683 KV load llm_response_cache with 90 records
+INFO: [] Process 503683 doc status load doc_status with 2 records
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: Query nodes: GDPR, General Data Protection Regulation, Personal data, EU law (top_k:40, cosine:0.2)
+INFO: Query nodes: GDPR, General Data Protection Regulation, Lawful basis, Consent, Data minimization, Purpose limitation, Storage limitation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 350 relations
+INFO: Query edges: Data protection regulation, Privacy laws, Regulatory compliance, Objective (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 310 relations
+INFO: Query edges: Data processing principles, Personal data protection, Regulatory compliance, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 58 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 139 relations
+INFO: Selecting 87 from 180 entity-related chunks by vector similarity
+INFO: Find 33 additional chunks in 29 relations (deduplicated 73)
+INFO: Selecting 33 from 33 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 120 -> 120 (deduplicated 0)
+INFO: Final context: 35 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E3/2 R4/2 E4/3 R1/3 E3/4 R1/4 E1/5 R2/5 E3/6 R6/6
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 66 entities, 314 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 129 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 21 relations (deduplicated 83)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 39 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E5/2 R2/2 E4/3 R1/3 E4/4 R3/4 E3/5 R1/5 E2/6 R3/6
+INFO: Query nodes: GDPR, General Data Protection Regulation, Personal data, EU law (top_k:40, cosine:0.2)
+INFO: Query nodes: GDPR, General Data Protection Regulation, Lawful basis, Consent, Data minimization, Purpose limitation, Storage limitation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 350 relations
+INFO: Query edges: Data protection regulation, Privacy laws, Regulatory compliance, Objective (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 58 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 139 relations
+INFO: Selecting 87 from 180 entity-related chunks by vector similarity
+INFO: Find 33 additional chunks in 29 relations (deduplicated 73)
+INFO: Selecting 33 from 33 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 120 -> 120 (deduplicated 0)
+INFO: Final context: 35 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E3/2 R4/2 E4/3 R1/3 E3/4 R1/4 E1/5 R2/5 E3/6 R6/6
+INFO:  == LLM cache == Query cache hit, using cached response as query result
+INFO: Local query: 40 entites, 310 relations
+INFO: Query edges: Data processing principles, Personal data protection, Regulatory compliance, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 66 entities, 314 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 129 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 21 relations (deduplicated 83)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 39 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E5/2 R2/2 E4/3 R1/3 E4/4 R3/4 E3/5 R1/5 E2/6 R3/6
+INFO:  == LLM cache == Query cache hit, using cached response as query result
+INFO: Query nodes: General Data Protection Regulation, Right to access, Right to rectification, Right to erasure, Right to restriction of processing, Right to data portability, Right to object, Right not to be subject to automated decision-making (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 314 relations
+INFO: Query edges: Data subject rights, GDPR compliance, Data protection regulations, Privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 35 entites, 40 relations
+INFO: Raw search results: 61 entities, 316 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 130 relations
+INFO: Selecting 112 from 178 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 87)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 45 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E9/2 R1/2 E7/3 R1/3 E5/4 R1/4 E9/5 R1/5 E4/6 R3/6
+INFO: Query nodes: General Data Protection Regulation, Right to access, Right to rectification, Right to erasure, Right to restriction of processing, Right to data portability, Right to object, Right not to be subject to automated decision-making (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 314 relations
+INFO: Query edges: Data subject rights, GDPR compliance, Data protection regulations, Privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 35 entites, 40 relations
+INFO: Raw search results: 61 entities, 316 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 130 relations
+INFO: Selecting 112 from 178 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 87)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 45 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E9/2 R1/2 E7/3 R1/3 E5/4 R1/4 E9/5 R1/5 E4/6 R3/6
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO:  == LLM cache == saving: hybrid:query:1feb0f4e9a60cfb90609a6756e11fff0
+INFO: Successfully finalized 12 storages
+[LightRAG] Processing 3 questions (max_workers=2)
+  [1/3] What is the main objective of the GDPR?...
+  [2/3] What are the key principles for processing personal data under the GDPR?...
+    [1/3] q001: 1.446s
+  [3/3] What rights do data subjects have under the GDPR?...
+    [2/3] q002: 1.562s
+    [3/3] q003: 35.135s
+[OutputLogger] Saved 3 results to /root/home/masterarbeit_implementation/rag_evaluation/outputs/lightrag_2026-04-25T10-26-16.json
+[LightRAG] Done. Output: /root/home/masterarbeit_implementation/rag_evaluation/outputs/lightrag_2026-04-25T10-26-16.json
+[2026-04-25 12:26:16] INFO  Finished [lightrag] in 39s
+[2026-04-25 12:26:16] INFO  Approach [lightrag] done in 39s

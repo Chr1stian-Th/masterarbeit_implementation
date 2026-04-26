@@ -6,8 +6,8 @@
 
 # -- Model Configuration -----------------------------------------------------
 models:
-  generation_model: "mistralai/mistral-small-2603"           # LLM for answer generation
-  classifier_model: "mistralai/mistral-small-2603"           # LLM for query classification (Agentic RAG)
+  generation_model: "mistralai/mistral-large-2512"           # LLM for answer generation
+  classifier_model: "mistralai/mistral-large-2512"           # LLM for query classification (Agentic RAG)
   embedding_model: "text-embedding-3-large"  # Embedding model (all approaches)
   embedding_dimensions: 3072                 # Dimensions for text-embedding-3-large
 

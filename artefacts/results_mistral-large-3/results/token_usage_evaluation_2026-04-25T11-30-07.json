@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-04-26T19:47:29",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "lightrag": {
+      "by_metric": {
+        "answer_relevancy": {
+          "prompt_tokens": 473243,
+          "completion_tokens": 251661,
+          "total_tokens": 724904,
+          "api_calls": 445
+        },
+        "context_precision": {
+          "prompt_tokens": 4185575,
+          "completion_tokens": 154298,
+          "total_tokens": 4339873,
+          "api_calls": 258
+        },
+        "context_recall": {
+          "prompt_tokens": 4704589,
+          "completion_tokens": 54898,
+          "total_tokens": 4759487,
+          "api_calls": 302
+        },
+        "context_relevancy": {
+          "prompt_tokens": 7854809,
+          "completion_tokens": 675669,
+          "total_tokens": 8530478,
+          "api_calls": 1928
+        },
+        "faithfulness": {
+          "prompt_tokens": 5161662,
+          "completion_tokens": 333897,
+          "total_tokens": 5495559,
+          "api_calls": 611
+        },
+        "legal_interpretability": {
+          "prompt_tokens": 271726,
+          "completion_tokens": 16955,
+          "total_tokens": 288681,
+          "api_calls": 153
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 4821258,
+          "completion_tokens": 20245,
+          "total_tokens": 4841503,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 27472862,
+        "completion_tokens": 1507623,
+        "total_tokens": 28980485,
+        "api_calls": 3850
+      }
+    }
+  },
+  "by_metric": {
+    "answer_relevancy": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 473243,
+          "completion_tokens": 251661,
+          "total_tokens": 724904,
+          "api_calls": 445
+        }
+      },
+      "totals": {
+        "prompt_tokens": 473243,
+        "completion_tokens": 251661,
+        "total_tokens": 724904,
+        "api_calls": 445
+      }
+    },
+    "context_precision": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 4185575,
+          "completion_tokens": 154298,
+          "total_tokens": 4339873,
+          "api_calls": 258
+        }
+      },
+      "totals": {
+        "prompt_tokens": 4185575,
+        "completion_tokens": 154298,
+        "total_tokens": 4339873,
+        "api_calls": 258
+      }
+    },
+    "context_recall": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 4704589,
+          "completion_tokens": 54898,
+          "total_tokens": 4759487,
+          "api_calls": 302
+        }
+      },
+      "totals": {
+        "prompt_tokens": 4704589,
+        "completion_tokens": 54898,
+        "total_tokens": 4759487,
+        "api_calls": 302
+      }
+    },
+    "context_relevancy": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 7854809,
+          "completion_tokens": 675669,
+          "total_tokens": 8530478,
+          "api_calls": 1928
+        }
+      },
+      "totals": {
+        "prompt_tokens": 7854809,
+        "completion_tokens": 675669,
+        "total_tokens": 8530478,
+        "api_calls": 1928
+      }
+    },
+    "faithfulness": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 5161662,
+          "completion_tokens": 333897,
+          "total_tokens": 5495559,
+          "api_calls": 611
+        }
+      },
+      "totals": {
+        "prompt_tokens": 5161662,
+        "completion_tokens": 333897,
+        "total_tokens": 5495559,
+        "api_calls": 611
+      }
+    },
+    "legal_interpretability": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 271726,
+          "completion_tokens": 16955,
+          "total_tokens": 288681,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 271726,
+        "completion_tokens": 16955,
+        "total_tokens": 288681,
+        "api_calls": 153
+      }
+    },
+    "regulatory_grounding": {
+      "by_approach": {
+        "lightrag": {
+          "prompt_tokens": 4821258,
+          "completion_tokens": 20245,
+          "total_tokens": 4841503,
+          "api_calls": 153
+        }
+      },
+      "totals": {
+        "prompt_tokens": 4821258,
+        "completion_tokens": 20245,
+        "total_tokens": 4841503,
+        "api_calls": 153
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 27472862,
+    "completion_tokens": 1507623,
+    "total_tokens": 28980485,
+    "api_calls": 3850
+  }
+}

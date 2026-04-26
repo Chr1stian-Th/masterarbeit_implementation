@@ -1,0 +1,1941 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-24 13:57:34
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 3
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260424_135734.log
+=============================================
+[2026-04-24 13:57:34] INFO  Approach [lightrag] starting
+
+=============================================
+  [2026-04-24 13:57:34] Running: LightRAG
+=============================================
+[2026-04-24 13:57:34] INFO  Starting [lightrag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py --questions data/questions/allquestions.json --max-workers 3 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+INFO: [] Loaded graph from /root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/graph_chunk_entity_relation.graphml with 1214 nodes, 2148 edges
+INFO:nano-vectordb:Load (1214, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_entities.json'} 1214 data
+INFO:nano-vectordb:Load (2148, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_relationships.json'} 2148 data
+INFO:nano-vectordb:Load (230, 3072) data
+INFO:nano-vectordb:Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': '/root/home/masterarbeit_implementation/rag_evaluation/db/lightrag/vdb_chunks.json'} 230 data
+INFO: [] Process 32206 KV load full_docs with 2 records
+INFO: [] Process 32206 KV load text_chunks with 230 records
+INFO: [] Process 32206 KV load full_entities with 2 records
+INFO: [] Process 32206 KV load full_relations with 2 records
+INFO: [] Process 32206 KV load entity_chunks with 1214 records
+INFO: [] Process 32206 KV load relation_chunks with 2148 records
+INFO: [] Process 32206 KV load llm_response_cache with 0 records
+INFO: [] Process 32206 doc status load doc_status with 2 records
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO:  == LLM cache == saving: hybrid:keywords:4d6fdd607648ddfc4b5443ec45b30c9f
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: Query nodes: GDPR, General Data Protection Regulation, Personal data, EU law (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 350 relations
+INFO: Query edges: Data protection regulation, Privacy laws, Regulatory compliance, Objective (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 58 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 139 relations
+INFO: Selecting 87 from 180 entity-related chunks by vector similarity
+INFO: Find 33 additional chunks in 29 relations (deduplicated 73)
+INFO: Selecting 33 from 33 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 120 -> 120 (deduplicated 0)
+INFO: Final context: 35 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E3/2 R4/2 E4/3 R1/3 E3/4 R1/4 E1/5 R2/5 E3/6 R6/6
+INFO: Query nodes: GDPR, General Data Protection Regulation, Personal data, EU law (top_k:40, cosine:0.2)
+INFO:  == LLM cache == saving: hybrid:keywords:c0d26af91cd94b5abcd0748f06c4b6c5
+INFO: Local query: 40 entites, 350 relations
+INFO: Query edges: Data protection regulation, Privacy laws, Regulatory compliance, Objective (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 58 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 139 relations
+INFO: Selecting 87 from 180 entity-related chunks by vector similarity
+INFO: Find 33 additional chunks in 29 relations (deduplicated 73)
+INFO: Selecting 33 from 33 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 120 -> 120 (deduplicated 0)
+INFO: Final context: 35 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E3/2 R4/2 E4/3 R1/3 E3/4 R1/4 E1/5 R2/5 E3/6 R6/6
+INFO:  == LLM cache == saving: hybrid:keywords:d50fc2c634fb9a228606456029ce6b85
+INFO: Query nodes: GDPR, General Data Protection Regulation, Lawful basis, Consent, Data minimization, Purpose limitation, Storage limitation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 310 relations
+INFO: Query edges: Data processing principles, Personal data protection, Regulatory compliance, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 66 entities, 314 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 129 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 21 relations (deduplicated 83)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 39 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E5/2 R2/2 E4/3 R1/3 E4/4 R3/4 E3/5 R1/5 E2/6 R3/6
+INFO: Query nodes: General Data Protection Regulation, Right to access, Right to rectification, Right to erasure, Right to restriction of processing, Right to data portability, Right to object, Right not to be subject to automated decision-making (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 314 relations
+INFO: Query edges: Data subject rights, GDPR compliance, Data protection regulations, Privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 35 entites, 40 relations
+INFO: Raw search results: 61 entities, 316 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 130 relations
+INFO: Selecting 112 from 178 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 87)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 45 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E9/2 R1/2 E7/3 R1/3 E5/4 R1/4 E9/5 R1/5 E4/6 R3/6
+INFO: Query nodes: GDPR, General Data Protection Regulation, Lawful basis, Consent, Data minimization, Purpose limitation, Storage limitation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 310 relations
+INFO: Query edges: Data processing principles, Personal data protection, Regulatory compliance, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 66 entities, 314 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 129 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 21 relations (deduplicated 83)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 39 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E5/2 R2/2 E4/3 R1/3 E4/4 R3/4 E3/5 R1/5 E2/6 R3/6
+INFO: Query nodes: General Data Protection Regulation, Right to access, Right to rectification, Right to erasure, Right to restriction of processing, Right to data portability, Right to object, Right not to be subject to automated decision-making (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 314 relations
+INFO: Query edges: Data subject rights, GDPR compliance, Data protection regulations, Privacy laws (top_k:40, cosine:0.2)
+INFO: Global query: 35 entites, 40 relations
+INFO: Raw search results: 61 entities, 316 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 130 relations
+INFO: Selecting 112 from 178 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 87)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 45 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E9/2 R1/2 E7/3 R1/3 E5/4 R1/4 E9/5 R1/5 E4/6 R3/6
+INFO:  == LLM cache == saving: hybrid:query:a03b1c531e0f63ef429a45ce5616815d
+INFO:  == LLM cache == saving: hybrid:keywords:ca9c9a853e72980952c439c268f5eaab
+INFO: Query nodes: Consent, Contractual necessity, Legal obligation, Vital interests, Public task, Legitimate interests, General Data Protection Regulation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 126 relations
+INFO: Query edges: Personal data processing, GDPR compliance, Lawful conditions, Data protection regulations (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 65 entities, 141 relations, 0 vector chunks
+INFO: After truncation: 44 entities, 141 relations
+INFO: Selecting 110 from 174 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 50)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 44 entities, 141 relations, 13 chunks
+INFO: Final chunks S+F/O: E8/1 R1/1 E6/2 R1/2 E4/3 R4/3 E3/4 R2/4 E4/5 R1/5 E2/6 R3/6 E6/7
+INFO: Query nodes: Consent, Contractual necessity, Legal obligation, Vital interests, Public task, Legitimate interests, General Data Protection Regulation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 126 relations
+INFO: Query edges: Personal data processing, GDPR compliance, Lawful conditions, Data protection regulations (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 65 entities, 141 relations, 0 vector chunks
+INFO: After truncation: 44 entities, 141 relations
+INFO: Selecting 110 from 174 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 50)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 44 entities, 141 relations, 13 chunks
+INFO: Final chunks S+F/O: E8/1 R1/1 E6/2 R1/2 E4/3 R4/3 E3/4 R2/4 E4/5 R1/5 E2/6 R3/6 E6/7
+INFO:  == LLM cache == saving: hybrid:query:9e71dc87bb014dd561f2ecfe478c4c30
+INFO:  == LLM cache == saving: hybrid:keywords:c72bfc4f35ba2cb6656c7a90a76abba4
+INFO: Query nodes: Special categories of personal data, Sensitive data, Racial or ethnic origin, Political opinions, Religious beliefs, Biometric data, Health data, Sexual orientation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 201 relations
+INFO: Query edges: Personal data, GDPR, Data protection regulations, Legal categories (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 64 entities, 207 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 150 relations
+INFO: Selecting 87 from 181 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 16 relations (deduplicated 70)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 103 -> 103 (deduplicated 0)
+INFO: Final context: 35 entities, 150 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E5/2 R1/2 E4/3 R3/3 E5/4 R3/4 E9/5 R1/5 E7/6 R3/6
+INFO: Query nodes: Special categories of personal data, Sensitive data, Racial or ethnic origin, Political opinions, Religious beliefs, Biometric data, Health data, Sexual orientation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 201 relations
+INFO: Query edges: Personal data, GDPR, Data protection regulations, Legal categories (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 64 entities, 207 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 150 relations
+INFO: Selecting 87 from 181 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 16 relations (deduplicated 70)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 103 -> 103 (deduplicated 0)
+INFO: Final context: 35 entities, 150 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E5/2 R1/2 E4/3 R3/3 E5/4 R3/4 E9/5 R1/5 E7/6 R3/6
+ERROR: OpenAI API Call Failed,
+Model: mistralai/mistral-large-2512,
+Params: {'stream': False}, Got: Expecting value: line 559 column 1 (char 3069)
+ERROR: LLM func: Error in decorated function for task 124550818103376_9080.322693904: Expecting value: line 559 column 1 (char 3069)
+ERROR: Query failed: Expecting value: line 559 column 1 (char 3069)
+INFO:  == LLM cache == saving: hybrid:keywords:fa0616d4dc1cbe82848b24b9f371050f
+INFO: Query nodes: Data controllers, GDPR, Data processing, Consent management, Data subject rights, Privacy policies (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 353 relations
+INFO: Query edges: Data compliance, Regulatory obligations, Data protection, Legal requirements (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 372 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 113 relations
+INFO: Selecting 87 from 175 entity-related chunks by vector similarity
+INFO: Find 29 additional chunks in 28 relations (deduplicated 68)
+INFO: Selecting 29 from 29 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 35 entities, 113 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R1/1 E6/2 R5/2 E6/3 R4/3 E4/4 R1/4 E5/5 R3/5 E6/6 R1/6
+INFO: Query nodes: Data controllers, GDPR, Data processing, Consent management, Data subject rights, Privacy policies (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 353 relations
+INFO: Query edges: Data compliance, Regulatory obligations, Data protection, Legal requirements (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 372 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 113 relations
+INFO: Selecting 87 from 175 entity-related chunks by vector similarity
+INFO: Find 29 additional chunks in 28 relations (deduplicated 68)
+INFO: Selecting 29 from 29 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 35 entities, 113 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R1/1 E6/2 R5/2 E6/3 R4/3 E4/4 R1/4 E5/5 R3/5 E6/6 R1/6
+ERROR: OpenAI API Call Failed,
+Model: mistralai/mistral-large-2512,
+Params: {'stream': False}, Got: Expecting value: line 1331 column 1 (char 7315)
+ERROR: LLM func: Error in decorated function for task 124550825429712_8939.266384532: Expecting value: line 1331 column 1 (char 7315)
+ERROR: Query failed: Expecting value: line 1331 column 1 (char 7315)
+INFO:  == LLM cache == saving: hybrid:keywords:6f57cf8668fcdd0dbf436a8dd1acf41a
+INFO: Query nodes: General Data Protection Regulation, Adequacy decisions, Standard Contractual Clauses, Binding Corporate Rules, European Union, Data privacy (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 342 relations
+INFO: Query edges: GDPR regulation, Cross-border data transfers, Data protection laws, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 59 entities, 348 relations, 0 vector chunks
+INFO: After truncation: 29 entities, 135 relations
+INFO: Selecting 72 from 197 entity-related chunks by vector similarity
+INFO: Find 47 additional chunks in 37 relations (deduplicated 63)
+INFO: Selecting 47 from 47 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 29 entities, 135 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E7/2 R1/2 E7/3 R2/3 E8/4 R2/4 E5/5 R4/5 E9/6 R2/6
+INFO: Query nodes: General Data Protection Regulation, Adequacy decisions, Standard Contractual Clauses, Binding Corporate Rules, European Union, Data privacy (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 342 relations
+INFO: Query edges: GDPR regulation, Cross-border data transfers, Data protection laws, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 59 entities, 348 relations, 0 vector chunks
+INFO: After truncation: 29 entities, 135 relations
+INFO: Selecting 72 from 197 entity-related chunks by vector similarity
+INFO: Find 47 additional chunks in 37 relations (deduplicated 63)
+INFO: Selecting 47 from 47 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 29 entities, 135 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E7/2 R1/2 E7/3 R2/3 E8/4 R2/4 E5/5 R4/5 E9/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550825430096_9061.252573062 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:cc71d61808ae703960fa86aa83f4660b
+INFO: Query nodes: GDPR non-compliance, Fines, Penalties, Data breaches, Regulatory enforcement, Personal data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 295 relations
+INFO: Query edges: GDPR compliance, Regulatory consequences, Data protection laws, Legal implications (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 61 entities, 306 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 141 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 38 additional chunks in 32 relations (deduplicated 69)
+INFO: Selecting 38 from 38 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 135 -> 135 (deduplicated 0)
+INFO: Final context: 39 entities, 141 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R1/2 E4/3 R3/3 E3/4 R3/4 E1/5 R5/5 E4/6 R2/6
+INFO: Query nodes: GDPR non-compliance, Fines, Penalties, Data breaches, Regulatory enforcement, Personal data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 295 relations
+INFO: Query edges: GDPR compliance, Regulatory consequences, Data protection laws, Legal implications (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 61 entities, 306 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 141 relations
+INFO: Selecting 97 from 181 entity-related chunks by vector similarity
+INFO: Find 38 additional chunks in 32 relations (deduplicated 69)
+INFO: Selecting 38 from 38 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 135 -> 135 (deduplicated 0)
+INFO: Final context: 39 entities, 141 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R1/2 E4/3 R3/3 E3/4 R3/4 E1/5 R5/5 E4/6 R2/6
+INFO:  == LLM cache == saving: hybrid:query:57baa10cb48e8c56f797bf3c7da331ba
+INFO:  == LLM cache == saving: hybrid:keywords:13bade97d258c85127d1b3d81ea7f974
+INFO: Query nodes: General Data Protection Regulation, Personal data erasure, EU regulation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 319 relations
+INFO: Query edges: Right to be forgotten, GDPR, Data privacy law, Legal definition (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 58 entities, 319 relations, 0 vector chunks
+INFO: After truncation: 52 entities, 130 relations
+INFO: Selecting 130 from 182 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 11 relations (deduplicated 92)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 143 -> 143 (deduplicated 0)
+INFO: Final context: 52 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E8/2 R1/2 E9/3 R1/3 E6/4 R1/4 E5/5 R3/5 E3/6 R1/6
+INFO: Query nodes: General Data Protection Regulation, Personal data erasure, EU regulation, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 319 relations
+INFO: Query edges: Right to be forgotten, GDPR, Data privacy law, Legal definition (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 58 entities, 319 relations, 0 vector chunks
+INFO: After truncation: 52 entities, 130 relations
+INFO: Selecting 130 from 182 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 11 relations (deduplicated 92)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 143 -> 143 (deduplicated 0)
+INFO: Final context: 52 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E8/2 R1/2 E9/3 R1/3 E6/4 R1/4 E5/5 R3/5 E3/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550827237712_9221.639455681 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:1f2985deb4361cfcc6536d0bc6a57026
+INFO: Query nodes: General Data Protection Regulation, Article 22, Data subject rights, Consent requirements, Algorithmic transparency (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 190 relations
+INFO: Query edges: GDPR, Data protection regulations, Automated decision-making, Profiling, Legal frameworks (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 64 entities, 208 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 155 relations
+INFO: Selecting 95 from 170 entity-related chunks by vector similarity
+INFO: Find 37 additional chunks in 31 relations (deduplicated 59)
+INFO: Selecting 37 from 37 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 132 -> 132 (deduplicated 0)
+INFO: Final context: 38 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R7/1 E8/2 R2/2 E4/3 R1/3 E3/4 R6/4 E6/5 R1/5 E4/6 R2/6
+INFO: Query nodes: General Data Protection Regulation, Article 22, Data subject rights, Consent requirements, Algorithmic transparency (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 190 relations
+INFO: Query edges: GDPR, Data protection regulations, Automated decision-making, Profiling, Legal frameworks (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 64 entities, 208 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 155 relations
+INFO: Selecting 95 from 170 entity-related chunks by vector similarity
+INFO: Find 37 additional chunks in 31 relations (deduplicated 59)
+INFO: Selecting 37 from 37 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 132 -> 132 (deduplicated 0)
+INFO: Final context: 38 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R7/1 E8/2 R2/2 E4/3 R1/3 E3/4 R6/4 E6/5 R1/5 E4/6 R2/6
+INFO:  == LLM cache == saving: hybrid:query:386e8d89d31f1a63d2ee4a4082894f38
+INFO:  == LLM cache == saving: hybrid:keywords:72c92e7cf46d01a8499494f2ee3dda26
+INFO: Query nodes: Record of processing, GDPR, Data protection, Processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 145 relations
+INFO: Query edges: Data processing, Record-keeping requirements, Compliance (top_k:40, cosine:0.2)
+INFO: Global query: 51 entites, 40 relations
+INFO: Raw search results: 81 entities, 167 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 164 relations
+INFO: Selecting 102 from 184 entity-related chunks by vector similarity
+INFO: Find 20 additional chunks in 19 relations (deduplicated 72)
+INFO: Selecting 20 from 20 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 41 entities, 164 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E4/2 R4/2 E2/3 R1/3 E3/4 R1/4 E1/5 R1/5 E5/6 R3/6
+INFO: Query nodes: Record of processing, GDPR, Data protection, Processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 145 relations
+INFO: Query edges: Data processing, Record-keeping requirements, Compliance (top_k:40, cosine:0.2)
+INFO: Global query: 51 entites, 40 relations
+INFO: Raw search results: 81 entities, 167 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 164 relations
+INFO: Selecting 102 from 184 entity-related chunks by vector similarity
+INFO: Find 20 additional chunks in 19 relations (deduplicated 72)
+INFO: Selecting 20 from 20 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 41 entities, 164 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E4/2 R4/2 E2/3 R1/3 E3/4 R1/4 E1/5 R1/5 E5/6 R3/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818168912_9424.02780299 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:83e0263f6adebba63500a67c435226a7
+INFO: Query nodes: GDPR, General Data Protection Regulation, European Union, Personal data, Data processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 388 relations
+INFO: Query edges: Data protection regulations, Privacy laws, Legal compliance, Digital rights (top_k:40, cosine:0.2)
+INFO: Global query: 29 entites, 40 relations
+INFO: Raw search results: 58 entities, 392 relations, 0 vector chunks
+INFO: After truncation: 34 entities, 132 relations
+INFO: Selecting 85 from 195 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 37 relations (deduplicated 63)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 130 -> 130 (deduplicated 0)
+INFO: Final context: 34 entities, 132 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E4/2 R1/2 E4/3 R2/3 E2/4 R1/4 E1/5 R4/5 E2/6 R4/6
+INFO: Query nodes: GDPR, General Data Protection Regulation, European Union, Personal data, Data processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 388 relations
+INFO: Query edges: Data protection regulations, Privacy laws, Legal compliance, Digital rights (top_k:40, cosine:0.2)
+INFO: Global query: 29 entites, 40 relations
+INFO: Raw search results: 58 entities, 392 relations, 0 vector chunks
+INFO: After truncation: 34 entities, 132 relations
+INFO: Selecting 85 from 195 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 37 relations (deduplicated 63)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 130 -> 130 (deduplicated 0)
+INFO: Final context: 34 entities, 132 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E4/2 R1/2 E4/3 R2/3 E2/4 R1/4 E1/5 R4/5 E2/6 R4/6
+ERROR: OpenAI API Call Failed,
+Model: mistralai/mistral-large-2512,
+Params: {'stream': False}, Got: Expecting value: line 429 column 1 (char 2354)
+ERROR: LLM func: Error in decorated function for task 124550825304592_9732.138031241: Expecting value: line 429 column 1 (char 2354)
+ERROR: Query failed: Expecting value: line 429 column 1 (char 2354)
+INFO:  == LLM cache == saving: hybrid:keywords:e128541faf9c0c6de1d042cf9cece067
+INFO: Query nodes: Record of processing, GDPR, Data protection laws, Transparency obligations (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 136 relations
+INFO: Query edges: Data processing records, Public disclosure requirements, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 43 entites, 40 relations
+INFO: Raw search results: 70 entities, 158 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 157 relations
+INFO: Selecting 92 from 181 entity-related chunks by vector similarity
+INFO: Find 27 additional chunks in 22 relations (deduplicated 59)
+INFO: Selecting 27 from 27 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 37 entities, 157 relations, 12 chunks
+INFO: Final chunks S+F/O: E8/1 R1/1 E5/2 R1/2 E2/3 R3/3 E4/4 R6/4 E5/5 R1/5 E1/6 R1/6
+INFO: Query nodes: Record of processing, GDPR, Data protection laws, Transparency obligations (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 136 relations
+INFO: Query edges: Data processing records, Public disclosure requirements, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 43 entites, 40 relations
+INFO: Raw search results: 70 entities, 158 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 157 relations
+INFO: Selecting 92 from 181 entity-related chunks by vector similarity
+INFO: Find 27 additional chunks in 22 relations (deduplicated 59)
+INFO: Selecting 27 from 27 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 37 entities, 157 relations, 12 chunks
+INFO: Final chunks S+F/O: E8/1 R1/1 E5/2 R1/2 E2/3 R3/3 E4/4 R6/4 E5/5 R1/5 E1/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550825302672_9584.449820885 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:6ddd3076b19592baef1d68a3cb5b2925
+INFO: Query nodes: General Data Protection Regulation, Lawfulness, Fairness, Transparency, Purpose limitation, Data minimization, Accuracy, Storage limitation, Integrity, Confidentiality, Accountability (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 256 relations
+INFO: Query edges: Data protection principles, GDPR compliance, Regulatory framework, Personal data processing (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 61 entities, 262 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 143 relations
+INFO: Selecting 97 from 182 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 23 relations (deduplicated 74)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 39 entities, 143 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R5/1 E3/2 R1/2 E3/3 R1/3 E3/4 R3/4 E3/5 R3/5 E2/6 R1/6
+INFO: Query nodes: General Data Protection Regulation, Lawfulness, Fairness, Transparency, Purpose limitation, Data minimization, Accuracy, Storage limitation, Integrity, Confidentiality, Accountability (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 256 relations
+INFO: Query edges: Data protection principles, GDPR compliance, Regulatory framework, Personal data processing (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 61 entities, 262 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 143 relations
+INFO: Selecting 97 from 182 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 23 relations (deduplicated 74)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 39 entities, 143 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R5/1 E3/2 R1/2 E3/3 R1/3 E3/4 R3/4 E3/5 R3/5 E2/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:2512214b79229de78820084913467526
+INFO:  == LLM cache == saving: hybrid:keywords:d629066998db1ff59cad5c39d4e37157
+INFO: Query nodes: Pseudonymised data, Anonymised data, GDPR, Data anonymization techniques, Re-identification risk (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 360 relations
+INFO: Query edges: Data privacy, Data protection, Personal data handling, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 365 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 128 relations
+INFO: Selecting 92 from 176 entity-related chunks by vector similarity
+INFO: Find 42 additional chunks in 28 relations (deduplicated 74)
+INFO: Selecting 42 from 42 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 37 entities, 128 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R3/1 E3/2 R6/2 E2/3 R1/3 E2/4 R1/4 E3/5 R2/5 E4/6 R2/6
+INFO: Query nodes: Pseudonymised data, Anonymised data, GDPR, Data anonymization techniques, Re-identification risk (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 360 relations
+INFO: Query edges: Data privacy, Data protection, Personal data handling, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 365 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 128 relations
+INFO: Selecting 92 from 176 entity-related chunks by vector similarity
+INFO: Find 42 additional chunks in 28 relations (deduplicated 74)
+INFO: Selecting 42 from 42 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 37 entities, 128 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R3/1 E3/2 R6/2 E2/3 R1/3 E2/4 R1/4 E3/5 R2/5 E4/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550828444416_9786.690522913 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:268f594add166706812fcb2cdbd2011f
+INFO: Query nodes: Personal data, Confidential information, Privacy, Data protection, GDPR, PII (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 239 relations
+INFO: Query edges: Sensitive data, Data classification, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 70 entities, 251 relations, 0 vector chunks
+INFO: After truncation: 52 entities, 153 relations
+INFO: Selecting 130 from 171 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 88)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 135 -> 135 (deduplicated 0)
+INFO: Final context: 52 entities, 153 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R5/1 E3/2 R1/2 E4/3 R1/3 E4/4 R1/4 E3/5 R1/5 E2/6 E3/7
+INFO: Query nodes: Personal data, Confidential information, Privacy, Data protection, GDPR, PII (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 239 relations
+INFO: Query edges: Sensitive data, Data classification, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 70 entities, 251 relations, 0 vector chunks
+INFO: After truncation: 52 entities, 153 relations
+INFO: Selecting 130 from 171 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 88)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 135 -> 135 (deduplicated 0)
+INFO: Final context: 52 entities, 153 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R5/1 E3/2 R1/2 E4/3 R1/3 E4/4 R1/4 E3/5 R1/5 E2/6 E3/7
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550828445024_9825.251119626 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:a8753c134026d304d2494e457a066d91
+INFO: Query nodes: GDPR, Personal data, Data processing, Legal responsibilities, Data protection authority (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 413 relations
+INFO: Query edges: Data controller, Data processor, Roles in data protection, Data governance (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 59 entities, 414 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 102 relations
+INFO: Selecting 92 from 166 entity-related chunks by vector similarity
+INFO: Find 14 additional chunks in 14 relations (deduplicated 78)
+INFO: Selecting 14 from 14 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 106 -> 106 (deduplicated 0)
+INFO: Final context: 37 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E5/2 R5/2 E5/3 R2/3 E4/4 R1/4 E5/5 R1/5 E5/6 R1/6
+INFO: Query nodes: GDPR, Personal data, Data processing, Legal responsibilities, Data protection authority (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 413 relations
+INFO: Query edges: Data controller, Data processor, Roles in data protection, Data governance (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 59 entities, 414 relations, 0 vector chunks
+INFO: After truncation: 37 entities, 102 relations
+INFO: Selecting 92 from 166 entity-related chunks by vector similarity
+INFO: Find 14 additional chunks in 14 relations (deduplicated 78)
+INFO: Selecting 14 from 14 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 106 -> 106 (deduplicated 0)
+INFO: Final context: 37 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R3/1 E5/2 R5/2 E5/3 R2/3 E4/4 R1/4 E5/5 R1/5 E5/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:dfcd93143e79d17a90a3596f51afb6b4
+INFO:  == LLM cache == saving: hybrid:keywords:7e2e8f55da59c08068fc3638f94bef8e
+INFO: Query nodes: Individuals' personal data, Business partners, Third parties, Consent requirements, GDPR, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 266 relations
+INFO: Query edges: Data sharing, Personal data protection, Business partnerships, Third-party data handling, Privacy regulations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 65 entities, 273 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 131 relations
+INFO: Selecting 90 from 195 entity-related chunks by vector similarity
+INFO: Find 26 additional chunks in 20 relations (deduplicated 67)
+INFO: Selecting 26 from 26 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 36 entities, 131 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R3/2 E3/3 R1/3 E5/4 R1/4 E2/5 R3/5 E2/6 R1/6
+INFO: Query nodes: Individuals' personal data, Business partners, Third parties, Consent requirements, GDPR, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 266 relations
+INFO: Query edges: Data sharing, Personal data protection, Business partnerships, Third-party data handling, Privacy regulations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 65 entities, 273 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 131 relations
+INFO: Selecting 90 from 195 entity-related chunks by vector similarity
+INFO: Find 26 additional chunks in 20 relations (deduplicated 67)
+INFO: Selecting 26 from 26 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 36 entities, 131 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R3/2 E3/3 R1/3 E5/4 R1/4 E2/5 R3/5 E2/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:61449ae049bfa86445c6d77cb7335181
+INFO:  == LLM cache == saving: hybrid:keywords:9966d37dd9b6228f34a1eb2c6abdb9b3
+INFO: Query nodes: GDPR, Non-compliance penalties, Fines, Administrative sanctions, Data breach, Processing violations, EU data protection (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 349 relations
+INFO: Query edges: GDPR compliance, Data protection regulations, Legal consequences, Organizational sanctions, Data processing violations (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 61 entities, 358 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 126 relations
+INFO: Selecting 82 from 183 entity-related chunks by vector similarity
+INFO: Find 49 additional chunks in 37 relations (deduplicated 64)
+INFO: Selecting 49 from 49 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 131 -> 131 (deduplicated 0)
+INFO: Final context: 33 entities, 126 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E5/2 R1/2 E4/3 R1/3 E4/4 R2/4 E5/5 R2/5 E3/6 R4/6
+INFO: Query nodes: GDPR, Non-compliance penalties, Fines, Administrative sanctions, Data breach, Processing violations, EU data protection (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 349 relations
+INFO: Query edges: GDPR compliance, Data protection regulations, Legal consequences, Organizational sanctions, Data processing violations (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 61 entities, 358 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 126 relations
+INFO: Selecting 82 from 183 entity-related chunks by vector similarity
+INFO: Find 49 additional chunks in 37 relations (deduplicated 64)
+INFO: Selecting 49 from 49 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 131 -> 131 (deduplicated 0)
+INFO: Final context: 33 entities, 126 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E5/2 R1/2 E4/3 R1/3 E4/4 R2/4 E5/5 R2/5 E3/6 R4/6
+INFO:openai._base_client:Retrying request to /chat/completions in 0.386891 seconds
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550828791728_10149.248168712 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:81ee2673ffbe97aedb2d8c1e37987c20
+INFO: Query nodes: General Data Protection Regulation, Personal data, Data subject rights, Lawful basis, Consent, Data controller, Data processor (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 458 relations
+INFO: Query edges: Legal basics, Data processing, GDPR compliance, Regulatory framework (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 59 entities, 464 relations, 0 vector chunks
+INFO: After truncation: 32 entities, 112 relations
+INFO: Selecting 80 from 187 entity-related chunks by vector similarity
+INFO: Find 36 additional chunks in 29 relations (deduplicated 70)
+INFO: Selecting 36 from 36 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 32 entities, 112 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R2/1 E7/2 R3/2 E5/3 R2/3 E6/4 R1/4 E2/5 R1/5 E7/6 R2/6
+INFO: Query nodes: General Data Protection Regulation, Personal data, Data subject rights, Lawful basis, Consent, Data controller, Data processor (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 458 relations
+INFO: Query edges: Legal basics, Data processing, GDPR compliance, Regulatory framework (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 59 entities, 464 relations, 0 vector chunks
+INFO: After truncation: 32 entities, 112 relations
+INFO: Selecting 80 from 187 entity-related chunks by vector similarity
+INFO: Find 36 additional chunks in 29 relations (deduplicated 70)
+INFO: Selecting 36 from 36 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 32 entities, 112 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R2/1 E7/2 R3/2 E5/3 R2/3 E6/4 R1/4 E2/5 R1/5 E7/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550829028176_10207.033359662 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:8a0117ba37a5b0253492728596c7c0a1
+INFO: Query nodes: DPO, GDPR, Personal data protection, Risk assessment, Data breach management, Compliance monitoring (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 274 relations
+INFO: Query edges: Data Protection Officer, Roles and responsibilities, Data privacy, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 28 entites, 40 relations
+INFO: Raw search results: 56 entities, 280 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 123 relations
+INFO: Selecting 100 from 171 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 12 relations (deduplicated 74)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 40 entities, 123 relations, 12 chunks
+INFO: Final chunks S+F/O: E12/1 R1/1 E7/2 R1/2 E8/3 R1/3 E7/4 R2/4 E1/5 R3/5 E7/6 R1/6
+INFO: Query nodes: DPO, GDPR, Personal data protection, Risk assessment, Data breach management, Compliance monitoring (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 274 relations
+INFO: Query edges: Data Protection Officer, Roles and responsibilities, Data privacy, Regulatory compliance (top_k:40, cosine:0.2)
+INFO: Global query: 28 entites, 40 relations
+INFO: Raw search results: 56 entities, 280 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 123 relations
+INFO: Selecting 100 from 171 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 12 relations (deduplicated 74)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 40 entities, 123 relations, 12 chunks
+INFO: Final chunks S+F/O: E12/1 R1/1 E7/2 R1/2 E8/3 R1/3 E7/4 R2/4 E1/5 R3/5 E7/6 R1/6
+INFO:openai._base_client:Retrying request to /chat/completions in 0.965072 seconds
+WARNING: LLM func: Worker timeout for task 124550828890768_10332.387091804 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:f4f84421c3e8e9660656d6254ac3578b
+INFO: Query nodes: Data processor, Contract signing refusal, GDPR, Data controller, Contract enforcement (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 308 relations
+INFO: Query edges: Data processor obligations, Controller-processor contract, Data protection compliance, Legal requirements, Contractual agreements (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 59 entities, 310 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 117 relations
+INFO: Selecting 97 from 178 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 12 relations (deduplicated 77)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 109 -> 109 (deduplicated 0)
+INFO: Final context: 39 entities, 117 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R1/1 E9/2 R1/2 E3/3 R1/3 E6/4 R1/4 E3/5 R2/5 E5/6 R3/6
+INFO: Query nodes: Data processor, Contract signing refusal, GDPR, Data controller, Contract enforcement (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 308 relations
+INFO: Query edges: Data processor obligations, Controller-processor contract, Data protection compliance, Legal requirements, Contractual agreements (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 59 entities, 310 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 117 relations
+INFO: Selecting 97 from 178 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 12 relations (deduplicated 77)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 109 -> 109 (deduplicated 0)
+INFO: Final context: 39 entities, 117 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R1/1 E9/2 R1/2 E3/3 R1/3 E6/4 R1/4 E3/5 R2/5 E5/6 R3/6
+INFO:  == LLM cache == saving: hybrid:query:99c178ea5d9e9a715310c1c867f8d221
+INFO:  == LLM cache == saving: hybrid:keywords:b018a153cb5f24fb27db4b7ae59baaf0
+INFO: Query nodes: Data protection impact assessment, DPIA, GDPR, Personal data processing, High-risk processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 241 relations
+INFO: Query edges: Data protection, Regulatory compliance, Privacy assessment, Mandatory requirements (top_k:40, cosine:0.2)
+INFO: Global query: 40 entites, 40 relations
+INFO: Raw search results: 65 entities, 252 relations, 0 vector chunks
+INFO: After truncation: 31 entities, 151 relations
+INFO: Selecting 77 from 182 entity-related chunks by vector similarity
+INFO: Find 30 additional chunks in 22 relations (deduplicated 57)
+INFO: Selecting 30 from 30 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 107 -> 107 (deduplicated 0)
+INFO: Final context: 31 entities, 151 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R3/1 E6/2 R3/2 E5/3 R4/3 E7/4 R1/4 E4/5 R2/5 E5/6 R3/6
+INFO: Query nodes: Data protection impact assessment, DPIA, GDPR, Personal data processing, High-risk processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 241 relations
+INFO: Query edges: Data protection, Regulatory compliance, Privacy assessment, Mandatory requirements (top_k:40, cosine:0.2)
+INFO: Global query: 40 entites, 40 relations
+INFO: Raw search results: 65 entities, 252 relations, 0 vector chunks
+INFO: After truncation: 31 entities, 151 relations
+INFO: Selecting 77 from 182 entity-related chunks by vector similarity
+INFO: Find 30 additional chunks in 22 relations (deduplicated 57)
+INFO: Selecting 30 from 30 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 107 -> 107 (deduplicated 0)
+INFO: Final context: 31 entities, 151 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R3/1 E6/2 R3/2 E5/3 R4/3 E7/4 R1/4 E4/5 R2/5 E5/6 R3/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550828891008_10512.441254604 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:309719d9d335f578dc229a306e0f1bca
+INFO: Query nodes: Valid consent, Informed consent, GDPR, Explicit consent, Consent forms, User agreement (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 286 relations
+INFO: Query edges: Consent, Legal compliance, Data protection, Ethical practices (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 67 entities, 297 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 142 relations
+INFO: Selecting 112 from 177 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 20 relations (deduplicated 77)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 45 entities, 142 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E7/2 R3/2 E4/3 R5/3 E9/4 R1/4 E8/5 R2/5 E3/6 R1/6
+INFO: Query nodes: Valid consent, Informed consent, GDPR, Explicit consent, Consent forms, User agreement (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 286 relations
+INFO: Query edges: Consent, Legal compliance, Data protection, Ethical practices (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 67 entities, 297 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 142 relations
+INFO: Selecting 112 from 177 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 20 relations (deduplicated 77)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 45 entities, 142 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E7/2 R3/2 E4/3 R5/3 E9/4 R1/4 E8/5 R2/5 E3/6 R1/6
+ERROR: Invalid response from OpenAI API
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550825587024_10695.623906859 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:154fa46c3513d53ca98bee1066581e5d
+INFO: Query nodes: CV storage, Candidate data, GDPR, Data protection, Future recruitment, Explicit consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 204 relations
+INFO: Query edges: Data storage, Recruitment procedures, Candidate consent, Privacy compliance, Human resources management (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 69 entities, 214 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 154 relations
+INFO: Selecting 95 from 181 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 12 relations (deduplicated 67)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 108 -> 108 (deduplicated 0)
+INFO: Final context: 38 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E3/2 R3/2 E4/3 R1/3 E4/4 R1/4 E3/5 R2/5 E3/6 R1/6
+INFO: Query nodes: CV storage, Candidate data, GDPR, Data protection, Future recruitment, Explicit consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 204 relations
+INFO: Query edges: Data storage, Recruitment procedures, Candidate consent, Privacy compliance, Human resources management (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 69 entities, 214 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 154 relations
+INFO: Selecting 95 from 181 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 12 relations (deduplicated 67)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 108 -> 108 (deduplicated 0)
+INFO: Final context: 38 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E3/2 R3/2 E4/3 R1/3 E4/4 R1/4 E3/5 R2/5 E3/6 R1/6
+WARNING: LLM func: Worker timeout for task 124550825587248_10703.784731844 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:d3724faa039b3951e1aa1347e3e7a179
+INFO: Query nodes: DPO, GDPR, Data privacy, Organizational independence, Dual roles, Accountability (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 431 relations
+INFO: Query edges: Conflict of interest, Data Protection Officer, Regulatory compliance, Professional ethics, Role responsibilities (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 59 entities, 436 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 102 relations
+INFO: Selecting 90 from 183 entity-related chunks by vector similarity
+INFO: Find 20 additional chunks in 16 relations (deduplicated 80)
+INFO: Selecting 20 from 20 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 110 -> 110 (deduplicated 0)
+INFO: Final context: 36 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R2/1 E7/2 R1/2 E8/3 R2/3 E5/4 R1/4 E2/5 R1/5 E6/6 R1/6
+INFO: Query nodes: DPO, GDPR, Data privacy, Organizational independence, Dual roles, Accountability (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 431 relations
+INFO: Query edges: Conflict of interest, Data Protection Officer, Regulatory compliance, Professional ethics, Role responsibilities (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 59 entities, 436 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 102 relations
+INFO: Selecting 90 from 183 entity-related chunks by vector similarity
+INFO: Find 20 additional chunks in 16 relations (deduplicated 80)
+INFO: Selecting 20 from 20 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 110 -> 110 (deduplicated 0)
+INFO: Final context: 36 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R2/1 E7/2 R1/2 E8/3 R2/3 E5/4 R1/4 E2/5 R1/5 E6/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:7b45afc15af0a94dd5a604b3ca688c79
+INFO:  == LLM cache == saving: hybrid:keywords:dae08d6e708381d827d812295ea162f8
+INFO: Query nodes: Key details, Relevant data, Audience needs, Clarity, Context (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 118 relations
+INFO: Query edges: Information sharing, Communication strategies, Interpersonal communication (top_k:40, cosine:0.2)
+INFO: Global query: 48 entites, 40 relations
+INFO: Raw search results: 83 entities, 153 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 153 relations
+INFO: Selecting 105 from 185 entity-related chunks by vector similarity
+INFO: Find 39 additional chunks in 24 relations (deduplicated 60)
+INFO: Selecting 39 from 39 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 144 -> 144 (deduplicated 0)
+INFO: Final context: 42 entities, 153 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R5/1 E2/2 R1/2 E2/3 R1/3 E3/4 R2/4 E2/5 R3/5 E2/6 R4/6
+INFO: Query nodes: Key details, Relevant data, Audience needs, Clarity, Context (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 118 relations
+INFO: Query edges: Information sharing, Communication strategies, Interpersonal communication (top_k:40, cosine:0.2)
+INFO: Global query: 48 entites, 40 relations
+INFO: Raw search results: 83 entities, 153 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 153 relations
+INFO: Selecting 105 from 185 entity-related chunks by vector similarity
+INFO: Find 39 additional chunks in 24 relations (deduplicated 60)
+INFO: Selecting 39 from 39 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 144 -> 144 (deduplicated 0)
+INFO: Final context: 42 entities, 153 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R5/1 E2/2 R1/2 E2/3 R1/3 E3/4 R2/4 E2/5 R3/5 E2/6 R4/6
+INFO:  == LLM cache == saving: hybrid:query:c0865bdeae02c712884eb1c1a42ec3ff
+INFO:  == LLM cache == saving: hybrid:keywords:bd9016c3eba3a8b6747b8b028169e82d
+INFO: Query nodes: Personal data protection, Notification procedures, Legal obligations, Data encryption, Security protocols, Breach containment (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 140 relations
+INFO: Query edges: Data breach, Incident response, Cybersecurity measures, Risk management (top_k:40, cosine:0.2)
+INFO: Global query: 45 entites, 40 relations
+INFO: Raw search results: 77 entities, 167 relations, 0 vector chunks
+INFO: After truncation: 51 entities, 163 relations
+INFO: Selecting 127 from 185 entity-related chunks by vector similarity
+INFO: Find 10 additional chunks in 10 relations (deduplicated 75)
+INFO: Selecting 10 from 10 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 51 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E8/2 R1/2 E4/3 R1/3 E6/4 R1/4 E5/5 R1/5 E2/6 R1/6
+INFO: Query nodes: Personal data protection, Notification procedures, Legal obligations, Data encryption, Security protocols, Breach containment (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 140 relations
+INFO: Query edges: Data breach, Incident response, Cybersecurity measures, Risk management (top_k:40, cosine:0.2)
+INFO: Global query: 45 entites, 40 relations
+INFO: Raw search results: 77 entities, 167 relations, 0 vector chunks
+INFO: After truncation: 51 entities, 163 relations
+INFO: Selecting 127 from 185 entity-related chunks by vector similarity
+INFO: Find 10 additional chunks in 10 relations (deduplicated 75)
+INFO: Selecting 10 from 10 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 51 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E8/2 R1/2 E4/3 R1/3 E6/4 R1/4 E5/5 R1/5 E2/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:be1e04c62aa87c8ddeea189c37fdf72d
+INFO:  == LLM cache == saving: hybrid:keywords:b2c471295718f0781e981d85d0ba3340
+INFO: Query nodes: DPO, GDPR, Data privacy, Organizational requirements, Qualified personnel (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 237 relations
+INFO: Query edges: Data Protection Officer, Role fulfillment, Regulatory compliance, Professional responsibilities (top_k:40, cosine:0.2)
+INFO: Global query: 28 entites, 40 relations
+INFO: Raw search results: 55 entities, 244 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 130 relations
+INFO: Selecting 97 from 171 entity-related chunks by vector similarity
+INFO: Find 14 additional chunks in 14 relations (deduplicated 69)
+INFO: Selecting 14 from 14 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 111 -> 111 (deduplicated 0)
+INFO: Final context: 39 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E11/1 R3/1 E7/2 R1/2 E8/3 R3/3 E5/4 R4/4 E6/5 R2/5 E6/6 R1/6
+INFO: Query nodes: DPO, GDPR, Data privacy, Organizational requirements, Qualified personnel (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 237 relations
+INFO: Query edges: Data Protection Officer, Role fulfillment, Regulatory compliance, Professional responsibilities (top_k:40, cosine:0.2)
+INFO: Global query: 28 entites, 40 relations
+INFO: Raw search results: 55 entities, 244 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 130 relations
+INFO: Selecting 97 from 171 entity-related chunks by vector similarity
+INFO: Find 14 additional chunks in 14 relations (deduplicated 69)
+INFO: Selecting 14 from 14 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 111 -> 111 (deduplicated 0)
+INFO: Final context: 39 entities, 130 relations, 12 chunks
+INFO: Final chunks S+F/O: E11/1 R3/1 E7/2 R1/2 E8/3 R3/3 E5/4 R4/4 E6/5 R2/5 E6/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:ecc20f862a4cfc315a250b11b01c9b85
+INFO:  == LLM cache == saving: hybrid:keywords:c62a1096ac28db10063efac765b9a626
+INFO: Query nodes: Data processors, General Data Protection Regulation, GDPR, Personal data handling (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 338 relations
+INFO: Query edges: Data protection regulations, GDPR compliance, Legal obligations, Data processing (top_k:40, cosine:0.2)
+INFO: Global query: 29 entites, 40 relations
+INFO: Raw search results: 59 entities, 348 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 115 relations
+INFO: Selecting 87 from 190 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 21 relations (deduplicated 73)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 35 entities, 115 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R1/2 E3/3 R1/3 E1/4 R1/4 E4/5 R1/5 E1/6 R3/6
+INFO: Query nodes: Data processors, General Data Protection Regulation, GDPR, Personal data handling (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 338 relations
+INFO: Query edges: Data protection regulations, GDPR compliance, Legal obligations, Data processing (top_k:40, cosine:0.2)
+INFO: Global query: 29 entites, 40 relations
+INFO: Raw search results: 59 entities, 348 relations, 0 vector chunks
+INFO: After truncation: 35 entities, 115 relations
+INFO: Selecting 87 from 190 entity-related chunks by vector similarity
+INFO: Find 25 additional chunks in 21 relations (deduplicated 73)
+INFO: Selecting 25 from 25 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 35 entities, 115 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R1/2 E3/3 R1/3 E1/4 R1/4 E4/5 R1/5 E1/6 R3/6
+INFO:  == LLM cache == saving: hybrid:query:bf31b8249e2e955ccf0c89d3712f15ef
+INFO:  == LLM cache == saving: hybrid:keywords:0a8fd731817865001efcb82acfad5cdd
+INFO: Query nodes: Cookies, Organisation's website, GDPR, ePrivacy Directive, Opt-in consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 113 relations
+INFO: Query edges: Website compliance, Data privacy, User consent, Digital regulations (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 72 entities, 139 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 139 relations
+INFO: Selecting 95 from 173 entity-related chunks by vector similarity
+INFO: Find 17 additional chunks in 17 relations (deduplicated 58)
+INFO: Selecting 17 from 17 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 38 entities, 139 relations, 13 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E3/2 R4/2 E6/3 R2/3 E3/4 R2/4 E3/5 R1/5 E3/6 R5/6 E3/7
+INFO: Query nodes: Cookies, Organisation's website, GDPR, ePrivacy Directive, Opt-in consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 113 relations
+INFO: Query edges: Website compliance, Data privacy, User consent, Digital regulations (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 72 entities, 139 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 139 relations
+INFO: Selecting 95 from 173 entity-related chunks by vector similarity
+INFO: Find 17 additional chunks in 17 relations (deduplicated 58)
+INFO: Selecting 17 from 17 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 38 entities, 139 relations, 13 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E3/2 R4/2 E6/3 R2/3 E3/4 R2/4 E3/5 R1/5 E3/6 R5/6 E3/7
+INFO:  == LLM cache == saving: hybrid:query:6ab13de1f9dbdbe4985dc94062af77d2
+INFO:  == LLM cache == saving: hybrid:keywords:905e6b9c0611b9f36345badb1ce6a458
+INFO: Query nodes: Data Protection Officer, DPO, GDPR, Compliance, Certification (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 328 relations
+INFO: Query edges: Certification requirements, Professional roles, Data protection regulations (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 64 entities, 343 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 107 relations
+INFO: Selecting 120 from 156 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 8 relations (deduplicated 86)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 132 -> 132 (deduplicated 0)
+INFO: Final context: 48 entities, 107 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E5/2 R1/2 E7/3 R2/3 E6/4 R3/4 E7/5 R2/5 E4/6 R1/6
+INFO: Query nodes: Data Protection Officer, DPO, GDPR, Compliance, Certification (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 328 relations
+INFO: Query edges: Certification requirements, Professional roles, Data protection regulations (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 64 entities, 343 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 107 relations
+INFO: Selecting 120 from 156 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 8 relations (deduplicated 86)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 132 -> 132 (deduplicated 0)
+INFO: Final context: 48 entities, 107 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E5/2 R1/2 E7/3 R2/3 E6/4 R3/4 E7/5 R2/5 E4/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:9747239703aa838d8c00716349051067
+INFO:  == LLM cache == saving: hybrid:keywords:d336b97f635994116a039643dc95bae9
+INFO: Query nodes: GDPR, Paper records, Personal data, Processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 254 relations
+INFO: Query edges: GDPR applicability, Data protection regulations, Legal compliance (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 272 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 145 relations
+INFO: Selecting 100 from 179 entity-related chunks by vector similarity
+INFO: Find 9 additional chunks in 9 relations (deduplicated 75)
+INFO: Selecting 9 from 9 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 109 -> 109 (deduplicated 0)
+INFO: Final context: 40 entities, 145 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E2/2 R1/2 E1/3 R1/3 E6/4 R2/4 E3/5 R4/5 E3/6 R3/6
+INFO: Query nodes: GDPR, Paper records, Personal data, Processing activities (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 254 relations
+INFO: Query edges: GDPR applicability, Data protection regulations, Legal compliance (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 67 entities, 272 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 145 relations
+INFO: Selecting 100 from 179 entity-related chunks by vector similarity
+INFO: Find 9 additional chunks in 9 relations (deduplicated 75)
+INFO: Selecting 9 from 9 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 109 -> 109 (deduplicated 0)
+INFO: Final context: 40 entities, 145 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E2/2 R1/2 E1/3 R1/3 E6/4 R2/4 E3/5 R4/5 E3/6 R3/6
+INFO:  == LLM cache == saving: hybrid:query:df7b2f8665bfa80f054f8f8e7596b98c
+INFO:  == LLM cache == saving: hybrid:keywords:e6721849c67fc9e2ccb3d0bc42d128a8
+INFO: Query nodes: Request for erasure, Right to be forgotten, GDPR, Data deletion process, User data management (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 348 relations
+INFO: Query edges: Data privacy, Personal data rights, Legal compliance, User request handling (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 60 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 112 relations
+INFO: Selecting 100 from 175 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 13 relations (deduplicated 75)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 40 entities, 112 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R5/1 E7/2 R3/2 E9/3 R3/3 E3/4 R3/4 E5/5 R3/5 E5/6 R1/6
+INFO: Query nodes: Request for erasure, Right to be forgotten, GDPR, Data deletion process, User data management (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 348 relations
+INFO: Query edges: Data privacy, Personal data rights, Legal compliance, User request handling (top_k:40, cosine:0.2)
+INFO: Global query: 33 entites, 40 relations
+INFO: Raw search results: 60 entities, 353 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 112 relations
+INFO: Selecting 100 from 175 entity-related chunks by vector similarity
+INFO: Find 16 additional chunks in 13 relations (deduplicated 75)
+INFO: Selecting 16 from 16 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 116 -> 116 (deduplicated 0)
+INFO: Final context: 40 entities, 112 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R5/1 E7/2 R3/2 E9/3 R3/3 E3/4 R3/4 E5/5 R3/5 E5/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:4a5df6889b7cdd0d7a079ffac1ecbda4
+INFO:  == LLM cache == saving: hybrid:keywords:319ecc5389266f3d5ce7efefaa19352f
+INFO: Query nodes: Joint controller, GDPR, Data processing, Shared responsibility, Legal entity (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 462 relations
+INFO: Query edges: Data protection, Legal roles, Controller responsibilities, Privacy regulations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 63 entities, 465 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 103 relations
+INFO: Selecting 82 from 176 entity-related chunks by vector similarity
+INFO: Find 40 additional chunks in 22 relations (deduplicated 60)
+INFO: Selecting 40 from 40 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 33 entities, 103 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E9/2 R2/2 E3/3 R3/3 E7/4 R2/4 E9/5 R3/5 E4/6 R3/6
+INFO: Query nodes: Joint controller, GDPR, Data processing, Shared responsibility, Legal entity (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 462 relations
+INFO: Query edges: Data protection, Legal roles, Controller responsibilities, Privacy regulations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 63 entities, 465 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 103 relations
+INFO: Selecting 82 from 176 entity-related chunks by vector similarity
+INFO: Find 40 additional chunks in 22 relations (deduplicated 60)
+INFO: Selecting 40 from 40 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 122 -> 122 (deduplicated 0)
+INFO: Final context: 33 entities, 103 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E9/2 R2/2 E3/3 R3/3 E7/4 R2/4 E9/5 R3/5 E4/6 R3/6
+INFO:openai._base_client:Retrying request to /chat/completions in 0.434254 seconds
+INFO:  == LLM cache == saving: hybrid:query:b91c6ac6c0ddc12896b84c97e18f86a3
+INFO:  == LLM cache == saving: hybrid:keywords:4420dadab2005598585ab5abe7f98577
+INFO: Query nodes: Privacy statement, User data, Policy terms (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 232 relations
+INFO: Query edges: Privacy, Data protection, Legal documentation (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 69 entities, 241 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 140 relations
+INFO: Selecting 105 from 182 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 11 relations (deduplicated 77)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 117 -> 117 (deduplicated 0)
+INFO: Final context: 42 entities, 140 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R2/1 E2/2 R1/2 E2/3 R4/3 E1/4 R1/4 E4/5 R1/5 E3/6 R2/6
+INFO: Query nodes: Privacy statement, User data, Policy terms (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 232 relations
+INFO: Query edges: Privacy, Data protection, Legal documentation (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 69 entities, 241 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 140 relations
+INFO: Selecting 105 from 182 entity-related chunks by vector similarity
+INFO: Find 12 additional chunks in 11 relations (deduplicated 77)
+INFO: Selecting 12 from 12 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 117 -> 117 (deduplicated 0)
+INFO: Final context: 42 entities, 140 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R2/1 E2/2 R1/2 E2/3 R4/3 E1/4 R1/4 E4/5 R1/5 E3/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550825589712_11562.634204151 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:7eff62074d92ec45577c94f66101dec0
+INFO: Query nodes: Data processing terms, GDPR compliance, Confidentiality clauses, Liability provisions, Subprocessor agreements (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 226 relations
+INFO: Query edges: Controller-processor contract, Data protection agreement, Legal requirements (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 63 entities, 235 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 136 relations
+INFO: Selecting 90 from 180 entity-related chunks by vector similarity
+INFO: Find 27 additional chunks in 16 relations (deduplicated 52)
+INFO: Selecting 27 from 27 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 117 -> 117 (deduplicated 0)
+INFO: Final context: 36 entities, 136 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R3/1 E7/2 R2/2 E2/3 R2/3 E8/4 R3/4 E3/5 R5/5 E5/6 R1/6
+INFO: Query nodes: Data processing terms, GDPR compliance, Confidentiality clauses, Liability provisions, Subprocessor agreements (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 226 relations
+INFO: Query edges: Controller-processor contract, Data protection agreement, Legal requirements (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 63 entities, 235 relations, 0 vector chunks
+INFO: After truncation: 36 entities, 136 relations
+INFO: Selecting 90 from 180 entity-related chunks by vector similarity
+INFO: Find 27 additional chunks in 16 relations (deduplicated 52)
+INFO: Selecting 27 from 27 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 117 -> 117 (deduplicated 0)
+INFO: Final context: 36 entities, 136 relations, 12 chunks
+INFO: Final chunks S+F/O: E10/1 R3/1 E7/2 R2/2 E2/3 R2/3 E8/4 R3/4 E3/5 R5/5 E5/6 R1/6
+WARNING: LLM func: Worker timeout for task 124550825589936_11579.30116026 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:b12c679907d4a7e8ce4f1a2bf4ec9730
+INFO: Query nodes: Personal data, Data consent, GDPR compliance, Data storage, Data sharing policies (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 255 relations
+INFO: Query edges: Data processing, User privacy, Data handling procedures, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 69 entities, 262 relations, 0 vector chunks
+INFO: After truncation: 47 entities, 137 relations
+INFO: Selecting 117 from 172 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 83)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 123 -> 123 (deduplicated 0)
+INFO: Final context: 47 entities, 137 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E2/2 R1/2 E5/3 R4/3 E2/4 R1/4 E2/5 R1/5 E2/6 R1/6
+INFO: Query nodes: Personal data, Data consent, GDPR compliance, Data storage, Data sharing policies (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 255 relations
+INFO: Query edges: Data processing, User privacy, Data handling procedures, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 69 entities, 262 relations, 0 vector chunks
+INFO: After truncation: 47 entities, 137 relations
+INFO: Selecting 117 from 172 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 83)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 123 -> 123 (deduplicated 0)
+INFO: Final context: 47 entities, 137 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E2/2 R1/2 E5/3 R4/3 E2/4 R1/4 E2/5 R1/5 E2/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550825590160_11729.64146217 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:2f55d95a2bc533d8a3f855c2c2c8dd2f
+INFO: Query nodes: Sensitive information, Confidential data, Context, Audience, Purpose (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 163 relations
+INFO: Query edges: Information sharing, Data disclosure, Communication timing (top_k:40, cosine:0.2)
+INFO: Global query: 52 entites, 40 relations
+INFO: Raw search results: 87 entities, 192 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 144 relations
+INFO: Selecting 107 from 183 entity-related chunks by vector similarity
+INFO: Find 36 additional chunks in 22 relations (deduplicated 60)
+INFO: Selecting 36 from 36 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 143 -> 143 (deduplicated 0)
+INFO: Final context: 43 entities, 144 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E3/2 R5/2 E1/3 R2/3 E2/4 R1/4 E4/5 R1/5 E3/6 R1/6
+INFO: Query nodes: Sensitive information, Confidential data, Context, Audience, Purpose (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 163 relations
+INFO: Query edges: Information sharing, Data disclosure, Communication timing (top_k:40, cosine:0.2)
+INFO: Global query: 52 entites, 40 relations
+INFO: Raw search results: 87 entities, 192 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 144 relations
+INFO: Selecting 107 from 183 entity-related chunks by vector similarity
+INFO: Find 36 additional chunks in 22 relations (deduplicated 60)
+INFO: Selecting 36 from 36 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 143 -> 143 (deduplicated 0)
+INFO: Final context: 43 entities, 144 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E3/2 R5/2 E1/3 R2/3 E2/4 R1/4 E4/5 R1/5 E3/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:d0c0d02fbf06ab8987e8da7757f2d9ee
+INFO:  == LLM cache == saving: hybrid:keywords:f344118d1a9e41e1b8db5465dc82f192
+INFO: Query nodes: Individual consent, GDPR, Data protection laws, Explicit permission (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 206 relations
+INFO: Query edges: Personal data processing, Data privacy, Legal requirements, Consent (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 66 entities, 210 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 154 relations
+INFO: Selecting 107 from 174 entity-related chunks by vector similarity
+INFO: Find 7 additional chunks in 7 relations (deduplicated 76)
+INFO: Selecting 7 from 7 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 114 -> 114 (deduplicated 0)
+INFO: Final context: 43 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E4/2 R1/2 E6/3 R1/3 E7/4 R2/4 E5/5 R1/5 E4/6 R1/6
+INFO: Query nodes: Individual consent, GDPR, Data protection laws, Explicit permission (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 206 relations
+INFO: Query edges: Personal data processing, Data privacy, Legal requirements, Consent (top_k:40, cosine:0.2)
+INFO: Global query: 38 entites, 40 relations
+INFO: Raw search results: 66 entities, 210 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 154 relations
+INFO: Selecting 107 from 174 entity-related chunks by vector similarity
+INFO: Find 7 additional chunks in 7 relations (deduplicated 76)
+INFO: Selecting 7 from 7 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 114 -> 114 (deduplicated 0)
+INFO: Final context: 43 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E4/2 R1/2 E6/3 R1/3 E7/4 R2/4 E5/5 R1/5 E4/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:64fc26a05536c18aca081dce3e40d2ce
+INFO:  == LLM cache == saving: hybrid:keywords:d299d7fe50ad00d3c8f3c32f8b40edbc
+INFO: Query nodes: Closed CCTV, Business premises, Legal compliance, Privacy regulations, Security cameras (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 54 relations
+INFO: Query edges: CCTV setup, Business premises security, Property protection, Surveillance systems (top_k:40, cosine:0.2)
+INFO: Global query: 54 entites, 40 relations
+INFO: Raw search results: 84 entities, 83 relations, 0 vector chunks
+INFO: After truncation: 55 entities, 83 relations
+INFO: Selecting 135 from 135 entity-related chunks by vector similarity
+INFO: Find 3 additional chunks in 3 relations (deduplicated 47)
+INFO: Selecting 3 from 3 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 138 -> 138 (deduplicated 0)
+INFO: Final context: 55 entities, 83 relations, 15 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R1/2 E6/3 R2/3 E6/4 E3/5 E5/6 E3/7 E1/8 E1/9 E1/10 E1/11 E1/12
+INFO: Query nodes: Closed CCTV, Business premises, Legal compliance, Privacy regulations, Security cameras (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 54 relations
+INFO: Query edges: CCTV setup, Business premises security, Property protection, Surveillance systems (top_k:40, cosine:0.2)
+INFO: Global query: 54 entites, 40 relations
+INFO: Raw search results: 84 entities, 83 relations, 0 vector chunks
+INFO: After truncation: 55 entities, 83 relations
+INFO: Selecting 135 from 135 entity-related chunks by vector similarity
+INFO: Find 3 additional chunks in 3 relations (deduplicated 47)
+INFO: Selecting 3 from 3 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 138 -> 138 (deduplicated 0)
+INFO: Final context: 55 entities, 83 relations, 15 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E2/2 R1/2 E6/3 R2/3 E6/4 E3/5 E5/6 E3/7 E1/8 E1/9 E1/10 E1/11 E1/12
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818185296_11941.803303461 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:23656ea54015f5ff39f95949bb195d02
+INFO: Query nodes: European Economic Area (EEA), GDPR, Cross-border data flow, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 435 relations
+INFO: Query edges: Data transfer, Personal data protection, International data regulations (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 62 entities, 442 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 133 relations
+INFO: Selecting 82 from 201 entity-related chunks by vector similarity
+INFO: Find 47 additional chunks in 36 relations (deduplicated 68)
+INFO: Selecting 47 from 47 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 129 -> 129 (deduplicated 0)
+INFO: Final context: 33 entities, 133 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R2/1 E6/2 R2/2 E10/3 R1/3 E7/4 R1/4 E8/5 R1/5 E5/6 R1/6
+INFO: Query nodes: European Economic Area (EEA), GDPR, Cross-border data flow, Data privacy laws (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 435 relations
+INFO: Query edges: Data transfer, Personal data protection, International data regulations (top_k:40, cosine:0.2)
+INFO: Global query: 36 entites, 40 relations
+INFO: Raw search results: 62 entities, 442 relations, 0 vector chunks
+INFO: After truncation: 33 entities, 133 relations
+INFO: Selecting 82 from 201 entity-related chunks by vector similarity
+INFO: Find 47 additional chunks in 36 relations (deduplicated 68)
+INFO: Selecting 47 from 47 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 129 -> 129 (deduplicated 0)
+INFO: Final context: 33 entities, 133 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R2/1 E6/2 R2/2 E10/3 R1/3 E7/4 R1/4 E8/5 R1/5 E5/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:ae0a235973f3a5f05dc326cfc2b2ffea
+INFO:  == LLM cache == saving: hybrid:keywords:eefce7df7fda2403ce6dbaf9c2b5e6a8
+INFO: Query nodes: GDPR, General Data Protection Regulation, Organization, Personal data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 363 relations
+INFO: Query edges: Organizational compliance, Data protection regulations, Legal obligations (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 68 entities, 375 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 132 relations
+INFO: Selecting 105 from 175 entity-related chunks by vector similarity
+INFO: Find 29 additional chunks in 26 relations (deduplicated 80)
+INFO: Selecting 29 from 29 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 42 entities, 132 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R5/1 E4/2 R1/2 E3/3 R1/3 E4/4 R1/4 E1/5 R1/5 E3/6 R4/6
+INFO: Query nodes: GDPR, General Data Protection Regulation, Organization, Personal data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 363 relations
+INFO: Query edges: Organizational compliance, Data protection regulations, Legal obligations (top_k:40, cosine:0.2)
+INFO: Global query: 41 entites, 40 relations
+INFO: Raw search results: 68 entities, 375 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 132 relations
+INFO: Selecting 105 from 175 entity-related chunks by vector similarity
+INFO: Find 29 additional chunks in 26 relations (deduplicated 80)
+INFO: Selecting 29 from 29 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 42 entities, 132 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R5/1 E4/2 R1/2 E3/3 R1/3 E4/4 R1/4 E1/5 R1/5 E3/6 R4/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818185968_12240.94158161 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:237f99383bdc2c6c2e43b576b9ffefe3
+INFO: Query nodes: GDPR, Consent management, Data access requests, Right to erasure, Data minimization (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 189 relations
+INFO: Query edges: Data protection rights, Individual privacy, Legal compliance, Personal data security (top_k:40, cosine:0.2)
+INFO: Global query: 40 entites, 40 relations
+INFO: Raw search results: 70 entities, 206 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 154 relations
+INFO: Selecting 100 from 174 entity-related chunks by vector similarity
+INFO: Find 15 additional chunks in 14 relations (deduplicated 61)
+INFO: Selecting 15 from 15 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 115 -> 115 (deduplicated 0)
+INFO: Final context: 40 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E4/2 R1/2 E3/3 R1/3 E6/4 R3/4 E9/5 R2/5 E6/6 R1/6
+INFO: Query nodes: GDPR, Consent management, Data access requests, Right to erasure, Data minimization (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 189 relations
+INFO: Query edges: Data protection rights, Individual privacy, Legal compliance, Personal data security (top_k:40, cosine:0.2)
+INFO: Global query: 40 entites, 40 relations
+INFO: Raw search results: 70 entities, 206 relations, 0 vector chunks
+INFO: After truncation: 40 entities, 154 relations
+INFO: Selecting 100 from 174 entity-related chunks by vector similarity
+INFO: Find 15 additional chunks in 14 relations (deduplicated 61)
+INFO: Selecting 15 from 15 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 115 -> 115 (deduplicated 0)
+INFO: Final context: 40 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R1/1 E4/2 R1/2 E3/3 R1/3 E6/4 R3/4 E9/5 R2/5 E6/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818186192_12304.104354841 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:2987e74ce861ce5cd10303c6d23fb926
+INFO: Query nodes: Personal data, Storage duration, Data privacy, Legal compliance (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 172 relations
+INFO: Query edges: Data storage, Personal data management, Data retention (top_k:40, cosine:0.2)
+INFO: Global query: 43 entites, 40 relations
+INFO: Raw search results: 73 entities, 178 relations, 0 vector chunks
+INFO: After truncation: 56 entities, 155 relations
+INFO: Selecting 140 from 160 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 80)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 141 -> 141 (deduplicated 0)
+INFO: Final context: 56 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E5/2 E6/3 E6/4 E4/5 E3/6 E5/7 E7/8 E5/9 E7/10 E3/11
+INFO: Query nodes: Personal data, Storage duration, Data privacy, Legal compliance (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 172 relations
+INFO: Query edges: Data storage, Personal data management, Data retention (top_k:40, cosine:0.2)
+INFO: Global query: 43 entites, 40 relations
+INFO: Raw search results: 73 entities, 178 relations, 0 vector chunks
+INFO: After truncation: 56 entities, 155 relations
+INFO: Selecting 140 from 160 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 80)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 141 -> 141 (deduplicated 0)
+INFO: Final context: 56 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E5/2 E6/3 E6/4 E4/5 E3/6 E5/7 E7/8 E5/9 E7/10 E3/11
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818186416_12445.572342978 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:9061b4b3e4f4ffb218baade4ac4af407
+INFO: Query nodes: Photos, Videos, Attendees, Consent, Privacy laws, Data protection (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 189 relations
+INFO: Query edges: Event organization, Business activities, Media rights, Legal considerations (top_k:40, cosine:0.2)
+INFO: Global query: 58 entites, 40 relations
+INFO: Raw search results: 97 entities, 227 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 154 relations
+INFO: Selecting 107 from 181 entity-related chunks by vector similarity
+INFO: Find 30 additional chunks in 19 relations (deduplicated 70)
+INFO: Selecting 30 from 30 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 43 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E4/2 R2/2 E2/3 R1/3 E2/4 R2/4 E2/5 R1/5 E4/6 R1/6
+INFO: Query nodes: Photos, Videos, Attendees, Consent, Privacy laws, Data protection (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 189 relations
+INFO: Query edges: Event organization, Business activities, Media rights, Legal considerations (top_k:40, cosine:0.2)
+INFO: Global query: 58 entites, 40 relations
+INFO: Raw search results: 97 entities, 227 relations, 0 vector chunks
+INFO: After truncation: 43 entities, 154 relations
+INFO: Selecting 107 from 181 entity-related chunks by vector similarity
+INFO: Find 30 additional chunks in 19 relations (deduplicated 70)
+INFO: Selecting 30 from 30 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 137 -> 137 (deduplicated 0)
+INFO: Final context: 43 entities, 154 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R2/1 E4/2 R2/2 E2/3 R1/3 E2/4 R2/4 E2/5 R1/5 E4/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:68fa2e4ea7ee9374227c55929a9b7846
+INFO:  == LLM cache == saving: hybrid:keywords:3507b7ef7b17b85632ca9b65bf82daac
+INFO: Query nodes: Data Protection Officer (DPO), GDPR, Compliance obligations, Personal data processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 386 relations
+INFO: Query edges: Data protection, Regulatory compliance, GDPR responsibilities, Organizational roles (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 57 entities, 391 relations, 0 vector chunks
+INFO: After truncation: 34 entities, 102 relations
+INFO: Selecting 85 from 196 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 71)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 107 -> 107 (deduplicated 0)
+INFO: Final context: 34 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E6/2 R1/2 E7/3 R2/3 E2/4 R5/4 E5/5 R3/5 E6/6 R2/6
+INFO: Query nodes: Data Protection Officer (DPO), GDPR, Compliance obligations, Personal data processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 386 relations
+INFO: Query edges: Data protection, Regulatory compliance, GDPR responsibilities, Organizational roles (top_k:40, cosine:0.2)
+INFO: Global query: 31 entites, 40 relations
+INFO: Raw search results: 57 entities, 391 relations, 0 vector chunks
+INFO: After truncation: 34 entities, 102 relations
+INFO: Selecting 85 from 196 entity-related chunks by vector similarity
+INFO: Find 22 additional chunks in 19 relations (deduplicated 71)
+INFO: Selecting 22 from 22 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 107 -> 107 (deduplicated 0)
+INFO: Final context: 34 entities, 102 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E6/2 R1/2 E7/3 R2/3 E2/4 R5/4 E5/5 R3/5 E6/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818186640_12603.532211538 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:52a839e771bf134f35ad6a07c1ba9967
+INFO: Query nodes: Data controller responsibilities, GDPR compliance, Individuals' personal data, Data processing agreements, Consent management, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 433 relations
+INFO: Query edges: Data compliance, Personal data collection, Regulatory requirements, Data protection, Third-party data handling (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 60 entities, 438 relations, 0 vector chunks
+INFO: After truncation: 27 entities, 111 relations
+INFO: Selecting 67 from 199 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 33 relations (deduplicated 63)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 27 entities, 111 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E6/2 R4/2 E6/3 R1/3 E4/4 R5/4 E4/5 R2/5 E4/6 R3/6
+INFO: Query nodes: Data controller responsibilities, GDPR compliance, Individuals' personal data, Data processing agreements, Consent management, Data subject rights (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 433 relations
+INFO: Query edges: Data compliance, Personal data collection, Regulatory requirements, Data protection, Third-party data handling (top_k:40, cosine:0.2)
+INFO: Global query: 30 entites, 40 relations
+INFO: Raw search results: 60 entities, 438 relations, 0 vector chunks
+INFO: After truncation: 27 entities, 111 relations
+INFO: Selecting 67 from 199 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 33 relations (deduplicated 63)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 112 -> 112 (deduplicated 0)
+INFO: Final context: 27 entities, 111 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E6/2 R4/2 E6/3 R1/3 E4/4 R5/4 E4/5 R2/5 E4/6 R3/6
+INFO:  == LLM cache == saving: hybrid:query:6e588069e158a7f35e77244eaf7e2dd9
+INFO:  == LLM cache == saving: hybrid:keywords:162afffa5dbd594a31f33906dece7948
+INFO: Query nodes: Names of winners, Competition, Organization’s website, Privacy considerations, Legal compliance (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 62 relations
+INFO: Query edges: Publishing information, Competition winners, Organizational website, Data sharing (top_k:40, cosine:0.2)
+INFO: Global query: 48 entites, 40 relations
+INFO: Raw search results: 85 entities, 98 relations, 0 vector chunks
+INFO: After truncation: 46 entities, 98 relations
+INFO: Selecting 115 from 192 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 20 relations (deduplicated 48)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 139 -> 139 (deduplicated 0)
+INFO: Final context: 46 entities, 98 relations, 14 chunks
+INFO: Final chunks S+F/O: E1/1 R2/1 E3/2 R1/2 E2/3 R2/3 E4/4 R1/4 E2/5 R1/5 E4/6 R1/6 E3/7 R1/7
+INFO: Query nodes: Names of winners, Competition, Organization’s website, Privacy considerations, Legal compliance (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 62 relations
+INFO: Query edges: Publishing information, Competition winners, Organizational website, Data sharing (top_k:40, cosine:0.2)
+INFO: Global query: 48 entites, 40 relations
+INFO: Raw search results: 85 entities, 98 relations, 0 vector chunks
+INFO: After truncation: 46 entities, 98 relations
+INFO: Selecting 115 from 192 entity-related chunks by vector similarity
+INFO: Find 24 additional chunks in 20 relations (deduplicated 48)
+INFO: Selecting 24 from 24 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 139 -> 139 (deduplicated 0)
+INFO: Final context: 46 entities, 98 relations, 14 chunks
+INFO: Final chunks S+F/O: E1/1 R2/1 E3/2 R1/2 E2/3 R2/3 E4/4 R1/4 E2/5 R1/5 E4/6 R1/6 E3/7 R1/7
+INFO:  == LLM cache == saving: hybrid:query:2bed4c589c84aad9402ec55284fab85f
+INFO:  == LLM cache == saving: hybrid:keywords:e254cb3dde9b6a9192696b1c53db453b
+INFO: Query nodes: Call recording, Client consent, Data privacy, Regulatory laws, Service quality metrics (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 216 relations
+INFO: Query edges: Telephone conversation recording, Client communication, Quality of service improvement, Legal compliance, Consent requirements (top_k:40, cosine:0.2)
+INFO: Global query: 55 entites, 40 relations
+INFO: Raw search results: 82 entities, 240 relations, 0 vector chunks
+INFO: After truncation: 57 entities, 163 relations
+INFO: Selecting 142 from 176 entity-related chunks by vector similarity
+INFO: Find 18 additional chunks in 17 relations (deduplicated 81)
+INFO: Selecting 18 from 18 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 160 -> 160 (deduplicated 0)
+INFO: Final context: 57 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E4/2 R1/2 E2/3 R1/3 E4/4 R2/4 E5/5 R2/5 E4/6 R1/6
+INFO: Query nodes: Call recording, Client consent, Data privacy, Regulatory laws, Service quality metrics (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 216 relations
+INFO: Query edges: Telephone conversation recording, Client communication, Quality of service improvement, Legal compliance, Consent requirements (top_k:40, cosine:0.2)
+INFO: Global query: 55 entites, 40 relations
+INFO: Raw search results: 82 entities, 240 relations, 0 vector chunks
+INFO: After truncation: 57 entities, 163 relations
+INFO: Selecting 142 from 176 entity-related chunks by vector similarity
+INFO: Find 18 additional chunks in 17 relations (deduplicated 81)
+INFO: Selecting 18 from 18 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 160 -> 160 (deduplicated 0)
+INFO: Final context: 57 entities, 163 relations, 12 chunks
+INFO: Final chunks S+F/O: E3/1 R1/1 E4/2 R1/2 E2/3 R1/3 E4/4 R2/4 E5/5 R2/5 E4/6 R1/6
+INFO:openai._base_client:Retrying request to /chat/completions in 0.489111 seconds
+INFO:  == LLM cache == saving: hybrid:query:e2cbf7ef120775a1020d74e34f4d8f1b
+INFO:  == LLM cache == saving: hybrid:keywords:40247a1d15c23f66c28b6539fb7816dc
+INFO: Query nodes: Firewalls, Encryption, Access control, Intrusion detection, Security policies, Vulnerability scanning (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 55 relations
+INFO: Query edges: Security measures, Risk assessment, Cybersecurity, Physical security (top_k:40, cosine:0.2)
+INFO: Global query: 46 entites, 40 relations
+INFO: Raw search results: 73 entities, 78 relations, 0 vector chunks
+INFO: After truncation: 57 entities, 78 relations
+INFO: Selecting 142 from 175 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 44)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 147 -> 147 (deduplicated 0)
+INFO: Final context: 57 entities, 78 relations, 15 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E3/2 R1/2 E2/3 R1/3 E3/4 R2/4 E3/5 R1/5 E2/6 E3/7 E6/8 E5/9 E6/10
+INFO: Query nodes: Firewalls, Encryption, Access control, Intrusion detection, Security policies, Vulnerability scanning (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 55 relations
+INFO: Query edges: Security measures, Risk assessment, Cybersecurity, Physical security (top_k:40, cosine:0.2)
+INFO: Global query: 46 entites, 40 relations
+INFO: Raw search results: 73 entities, 78 relations, 0 vector chunks
+INFO: After truncation: 57 entities, 78 relations
+INFO: Selecting 142 from 175 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 44)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 147 -> 147 (deduplicated 0)
+INFO: Final context: 57 entities, 78 relations, 15 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E3/2 R1/2 E2/3 R1/3 E3/4 R2/4 E3/5 R1/5 E2/6 E3/7 E6/8 E5/9 E6/10
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818187760_12969.602364697 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:102b40ec73b0012bd3a4e8a093359a39
+INFO: Query nodes: Access request, Legal deadline, Privacy regulations, Subject access request (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 379 relations
+INFO: Query edges: Data access request, Response time, Compliance requirements (top_k:40, cosine:0.2)
+INFO: Global query: 45 entites, 40 relations
+INFO: Raw search results: 79 entities, 408 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 109 relations
+INFO: Selecting 102 from 194 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 35 relations (deduplicated 77)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 147 -> 147 (deduplicated 0)
+INFO: Final context: 41 entities, 109 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R4/2 E5/3 R2/3 E4/4 R1/4 E4/5 R1/5 E2/6 R1/6
+INFO: Query nodes: Access request, Legal deadline, Privacy regulations, Subject access request (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 379 relations
+INFO: Query edges: Data access request, Response time, Compliance requirements (top_k:40, cosine:0.2)
+INFO: Global query: 45 entites, 40 relations
+INFO: Raw search results: 79 entities, 408 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 109 relations
+INFO: Selecting 102 from 194 entity-related chunks by vector similarity
+INFO: Find 45 additional chunks in 35 relations (deduplicated 77)
+INFO: Selecting 45 from 45 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 147 -> 147 (deduplicated 0)
+INFO: Final context: 41 entities, 109 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R1/1 E4/2 R4/2 E5/3 R2/3 E4/4 R1/4 E4/5 R1/5 E2/6 R1/6
+INFO:  == LLM cache == saving: hybrid:query:b6ac9a4a6a6339c5dffdf0880f8287ba
+INFO:  == LLM cache == saving: hybrid:keywords:cdd712b93e515ecdb8c261dabfa4bd50
+INFO: Query nodes: Sensitive data, Data encryption, Compliance, Privacy regulations, GDPR, HIPAA (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 177 relations
+INFO: Query edges: Data processing, Sensitive data handling, Data security (top_k:40, cosine:0.2)
+INFO: Global query: 44 entites, 40 relations
+INFO: Raw search results: 75 entities, 186 relations, 0 vector chunks
+INFO: After truncation: 50 entities, 155 relations
+INFO: Selecting 125 from 149 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 77)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 131 -> 131 (deduplicated 0)
+INFO: Final context: 50 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R2/1 E4/2 R1/2 E3/3 R1/3 E3/4 R1/4 E3/5 R3/5 E3/6 R1/6
+INFO: Query nodes: Sensitive data, Data encryption, Compliance, Privacy regulations, GDPR, HIPAA (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 177 relations
+INFO: Query edges: Data processing, Sensitive data handling, Data security (top_k:40, cosine:0.2)
+INFO: Global query: 44 entites, 40 relations
+INFO: Raw search results: 75 entities, 186 relations, 0 vector chunks
+INFO: After truncation: 50 entities, 155 relations
+INFO: Selecting 125 from 149 entity-related chunks by vector similarity
+INFO: Find 6 additional chunks in 6 relations (deduplicated 77)
+INFO: Selecting 6 from 6 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 131 -> 131 (deduplicated 0)
+INFO: Final context: 50 entities, 155 relations, 12 chunks
+INFO: Final chunks S+F/O: E4/1 R2/1 E4/2 R1/2 E3/3 R1/3 E3/4 R1/4 E3/5 R3/5 E3/6 R1/6
+WARNING: LLM func: Worker timeout for task 124550818187984_13084.976651134 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:8d13caa244650dfca4785d550cc17de4
+INFO: Query nodes: Data Protection Officer, DPO, GDPR, Personal data handling, Legal obligations (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 331 relations
+INFO: Query edges: Data protection, Regulatory compliance, Organizational roles, Privacy management (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 62 entities, 340 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 117 relations
+INFO: Selecting 97 from 176 entity-related chunks by vector similarity
+INFO: Find 17 additional chunks in 17 relations (deduplicated 74)
+INFO: Selecting 17 from 17 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 114 -> 114 (deduplicated 0)
+INFO: Final context: 39 entities, 117 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E6/2 R1/2 E6/3 R1/3 E4/4 R1/4 E6/5 R4/5 E6/6 R1/6
+INFO: Query nodes: Data Protection Officer, DPO, GDPR, Personal data handling, Legal obligations (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 331 relations
+INFO: Query edges: Data protection, Regulatory compliance, Organizational roles, Privacy management (top_k:40, cosine:0.2)
+INFO: Global query: 37 entites, 40 relations
+INFO: Raw search results: 62 entities, 340 relations, 0 vector chunks
+INFO: After truncation: 39 entities, 117 relations
+INFO: Selecting 97 from 176 entity-related chunks by vector similarity
+INFO: Find 17 additional chunks in 17 relations (deduplicated 74)
+INFO: Selecting 17 from 17 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 114 -> 114 (deduplicated 0)
+INFO: Final context: 39 entities, 117 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E6/2 R1/2 E6/3 R1/3 E4/4 R1/4 E6/5 R4/5 E6/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818188432_13332.022868307 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:09ab3abb9073f23ad02fe62e0e42bd4a
+INFO: Query nodes: Cookies, HTTP cookies, Browser cookies, Website tracking, User data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 280 relations
+INFO: Query edges: Internet technology, Web browsing, Data storage (top_k:40, cosine:0.2)
+INFO: Global query: 54 entites, 40 relations
+INFO: Raw search results: 85 entities, 297 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 123 relations
+INFO: Selecting 120 from 181 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 12 relations (deduplicated 83)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 133 -> 133 (deduplicated 0)
+INFO: Final context: 48 entities, 123 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R2/1 E8/2 R2/2 E6/3 R2/3 E3/4 R2/4 E6/5 R3/5 E6/6 R1/6
+INFO: Query nodes: Cookies, HTTP cookies, Browser cookies, Website tracking, User data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 280 relations
+INFO: Query edges: Internet technology, Web browsing, Data storage (top_k:40, cosine:0.2)
+INFO: Global query: 54 entites, 40 relations
+INFO: Raw search results: 85 entities, 297 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 123 relations
+INFO: Selecting 120 from 181 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 12 relations (deduplicated 83)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 133 -> 133 (deduplicated 0)
+INFO: Final context: 48 entities, 123 relations, 12 chunks
+INFO: Final chunks S+F/O: E5/1 R2/1 E8/2 R2/2 E6/3 R2/3 E3/4 R2/4 E6/5 R3/5 E6/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818188656_13402.897142285 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:0e179de2bda7dc158f8b4458127d20c2
+INFO: Query nodes: General Data Protection Regulation, Personal data handling, Data subject rights, Data breaches, Consent management (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 324 relations
+INFO: Query edges: Data protection responsibilities, GDPR compliance, Regulatory obligations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 61 entities, 332 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 129 relations
+INFO: Selecting 95 from 179 entity-related chunks by vector similarity
+INFO: Find 39 additional chunks in 32 relations (deduplicated 75)
+INFO: Selecting 39 from 39 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 38 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R2/1 E5/2 R1/2 E3/3 R5/3 E3/4 R2/4 E2/5 R1/5 E4/6 R1/6
+INFO: Query nodes: General Data Protection Regulation, Personal data handling, Data subject rights, Data breaches, Consent management (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 324 relations
+INFO: Query edges: Data protection responsibilities, GDPR compliance, Regulatory obligations (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 61 entities, 332 relations, 0 vector chunks
+INFO: After truncation: 38 entities, 129 relations
+INFO: Selecting 95 from 179 entity-related chunks by vector similarity
+INFO: Find 39 additional chunks in 32 relations (deduplicated 75)
+INFO: Selecting 39 from 39 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 134 -> 134 (deduplicated 0)
+INFO: Final context: 38 entities, 129 relations, 12 chunks
+INFO: Final chunks S+F/O: E2/1 R2/1 E5/2 R1/2 E3/3 R5/3 E3/4 R2/4 E2/5 R1/5 E4/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818188880_13447.473828023 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:9b4f262ec99d1e51292be6562f1b51ce
+INFO: Query nodes: Personal data, Data collection, Data storage, Data usage, GDPR, Privacy (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 248 relations
+INFO: Query edges: Personal data processing, Data handling, Information management (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 70 entities, 254 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 140 relations
+INFO: Selecting 120 from 155 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 86)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 48 entities, 140 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E5/2 E6/3 E3/4 E7/5 E3/6 E2/7 E5/8 E3/9 E3/10 E3/11
+INFO: Query nodes: Personal data, Data collection, Data storage, Data usage, GDPR, Privacy (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 248 relations
+INFO: Query edges: Personal data processing, Data handling, Information management (top_k:40, cosine:0.2)
+INFO: Global query: 42 entites, 40 relations
+INFO: Raw search results: 70 entities, 254 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 140 relations
+INFO: Selecting 120 from 155 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 86)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 121 -> 121 (deduplicated 0)
+INFO: Final context: 48 entities, 140 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R1/1 E5/2 E6/3 E3/4 E7/5 E3/6 E2/7 E5/8 E3/9 E3/10 E3/11
+INFO:  == LLM cache == saving: hybrid:query:1e1736516c5d57a127d34c5d39bbfb5e
+INFO:  == LLM cache == saving: hybrid:keywords:7a11ab37f11f7c6399f396e96332ff44
+INFO: Query nodes: Personally identifiable information, Sensitive data, GDPR, Data protection, User consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 297 relations
+INFO: Query edges: Personal data, Data privacy, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 60 entities, 301 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 136 relations
+INFO: Selecting 112 from 157 entity-related chunks by vector similarity
+INFO: Find 7 additional chunks in 7 relations (deduplicated 91)
+INFO: Selecting 7 from 7 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 45 entities, 136 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E4/2 R2/2 E5/3 R1/3 E4/4 R2/4 E4/5 R2/5 E3/6 R1/6
+INFO: Query nodes: Personally identifiable information, Sensitive data, GDPR, Data protection, User consent (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 297 relations
+INFO: Query edges: Personal data, Data privacy, Information security (top_k:40, cosine:0.2)
+INFO: Global query: 34 entites, 40 relations
+INFO: Raw search results: 60 entities, 301 relations, 0 vector chunks
+INFO: After truncation: 45 entities, 136 relations
+INFO: Selecting 112 from 157 entity-related chunks by vector similarity
+INFO: Find 7 additional chunks in 7 relations (deduplicated 91)
+INFO: Selecting 7 from 7 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 119 -> 119 (deduplicated 0)
+INFO: Final context: 45 entities, 136 relations, 12 chunks
+INFO: Final chunks S+F/O: E6/1 R1/1 E4/2 R2/2 E5/3 R1/3 E4/4 R2/4 E4/5 R2/5 E3/6 R1/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818189104_13694.162188921 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:0a7c8dbcb5d4f71c3cbed45cc0d2bad2
+INFO: Query nodes: 3G regulation, Workplace access, Recovered status, Vaccinated status, Tested status, Verification documentation, COVID-19 measures, Employee health data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 294 relations
+INFO: Query edges: GDPR legal basis, Personal data processing, Workplace regulations, Data protection compliance, Legal justification (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 63 entities, 308 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 139 relations
+INFO: Selecting 102 from 179 entity-related chunks by vector similarity
+INFO: Find 26 additional chunks in 23 relations (deduplicated 72)
+INFO: Selecting 26 from 26 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 128 -> 128 (deduplicated 0)
+INFO: Final context: 41 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R3/1 E4/2 R3/2 E6/3 R2/3 E9/4 R1/4 E3/5 R1/5 E6/6 R2/6
+INFO: Query nodes: 3G regulation, Workplace access, Recovered status, Vaccinated status, Tested status, Verification documentation, COVID-19 measures, Employee health data (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 294 relations
+INFO: Query edges: GDPR legal basis, Personal data processing, Workplace regulations, Data protection compliance, Legal justification (top_k:40, cosine:0.2)
+INFO: Global query: 32 entites, 40 relations
+INFO: Raw search results: 63 entities, 308 relations, 0 vector chunks
+INFO: After truncation: 41 entities, 139 relations
+INFO: Selecting 102 from 179 entity-related chunks by vector similarity
+INFO: Find 26 additional chunks in 23 relations (deduplicated 72)
+INFO: Selecting 26 from 26 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 128 -> 128 (deduplicated 0)
+INFO: Final context: 41 entities, 139 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R3/1 E4/2 R3/2 E6/3 R2/3 E9/4 R1/4 E3/5 R1/5 E6/6 R2/6
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818189328_13765.786066212 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:9ad00d7de6b167952b61a298718f1761
+INFO: Query nodes: Absence time recording, Documentation of absences, Illness, Vacation, Special leave, Further education, Training, Internal processing, External processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 85 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Processing activities, Purpose of data processing (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 74 entities, 113 relations, 0 vector chunks
+INFO: After truncation: 58 entities, 113 relations
+INFO: Selecting 145 from 153 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 48)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 146 -> 146 (deduplicated 0)
+INFO: Final context: 58 entities, 113 relations, 14 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E10/2 E10/3 E11/4 E7/5 E8/6 E5/7 E9/8 E4/9 E6/10 E3/11 E5/12 E5/13
+INFO: Query nodes: Absence time recording, Documentation of absences, Illness, Vacation, Special leave, Further education, Training, Internal processing, External processing (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 85 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Processing activities, Purpose of data processing (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 74 entities, 113 relations, 0 vector chunks
+INFO: After truncation: 58 entities, 113 relations
+INFO: Selecting 145 from 153 entity-related chunks by vector similarity
+INFO: Find 1 additional chunks in 1 relations (deduplicated 48)
+INFO: Selecting 1 from 1 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 146 -> 146 (deduplicated 0)
+INFO: Final context: 58 entities, 113 relations, 14 chunks
+INFO: Final chunks S+F/O: E10/1 R1/1 E10/2 E10/3 E11/4 E7/5 E8/6 E5/7 E9/8 E4/9 E6/10 E3/11 E5/12 E5/13
+ERROR: Invalid response from OpenAI API
+WARNING: LLM func: Worker timeout for task 124550818189776_13950.065354854 after 360s
+ERROR: Query failed: LLM func: Worker execution timeout after 360s
+INFO:  == LLM cache == saving: hybrid:keywords:57ddd979f1f73fde3b25ac92859dd030
+INFO: Query nodes: Settlement of expenses, Employees, Applicants, Company expenses, Article 6 GDPR, Consent, Contractual necessity, Legal obligation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 160 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Processing activities (top_k:40, cosine:0.2)
+INFO: Global query: 40 entites, 40 relations
+INFO: Raw search results: 69 entities, 172 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 150 relations
+INFO: Selecting 120 from 178 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 73)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 125 -> 125 (deduplicated 0)
+INFO: Final context: 48 entities, 150 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R2/1 E8/2 R3/2 E6/3 R1/3 E9/4 R1/4 E7/5 R2/5 E7/6 E5/7
+INFO: Query nodes: Settlement of expenses, Employees, Applicants, Company expenses, Article 6 GDPR, Consent, Contractual necessity, Legal obligation (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 160 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Processing activities (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 68 entities, 173 relations, 0 vector chunks
+INFO: After truncation: 48 entities, 151 relations
+INFO: Selecting 120 from 178 entity-related chunks by vector similarity
+INFO: Find 5 additional chunks in 5 relations (deduplicated 73)
+INFO: Selecting 5 from 5 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 125 -> 125 (deduplicated 0)
+INFO: Final context: 48 entities, 151 relations, 12 chunks
+INFO: Final chunks S+F/O: E7/1 R2/1 E8/2 R3/2 E6/3 R1/3 E9/4 R1/4 E7/5 R2/5 E7/6 E5/7
+INFO:  == LLM cache == saving: hybrid:query:83056612a1c528f762dd322fb6b324d5
+INFO:  == LLM cache == saving: hybrid:keywords:c7c775fca2d6feee19658addecd8b354
+INFO: Query nodes: Health programs administration, Billing of health programs, Company health programs, GDPR Article 6, GDPR Article 9, Explicit consent, Public health, Employment law (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 198 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Health management, Administrative processing (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 64 entities, 205 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 150 relations
+INFO: Selecting 105 from 177 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 13 relations (deduplicated 67)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 118 -> 118 (deduplicated 0)
+INFO: Final context: 42 entities, 150 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R1/1 E9/2 R1/2 E10/3 R2/3 E10/4 R3/4 E5/5 R1/5 E8/6 R2/6
+INFO: Query nodes: Health programs administration, Billing of health programs, Company health programs, GDPR Article 6, GDPR Article 9, Explicit consent, Public health, Employment law (top_k:40, cosine:0.2)
+INFO: Local query: 40 entites, 198 relations
+INFO: Query edges: Legal basis, GDPR, Personal data processing, Data protection regulations, Health management, Administrative processing (top_k:40, cosine:0.2)
+INFO: Global query: 39 entites, 40 relations
+INFO: Raw search results: 64 entities, 205 relations, 0 vector chunks
+INFO: After truncation: 42 entities, 150 relations
+INFO: Selecting 105 from 177 entity-related chunks by vector similarity
+INFO: Find 13 additional chunks in 13 relations (deduplicated 67)
+INFO: Selecting 13 from 13 relation-related chunks by vector similarity
+INFO: Round-robin merged chunks: 118 -> 118 (deduplicated 0)
+INFO: Final context: 42 entities, 150 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 R1/1 E9/2 R1/2 E10/3 R2/3 E10/4 R3/4 E5/5 R1/5 E8/6 R2/6
+[LightRAG] Processing 153 questions (max_workers=3)
+  [1/153] What is the main objective of the GDPR?...
+  [2/153] What are the key principles for processing personal data under the GDPR?...
+  [3/153] What rights do data subjects have under the GDPR?...
+    [1/153] q001: 122.673s
+  [4/153] What conditions make the processing of personal data lawful under the GDPR?...
+    [2/153] q002: 142.161s
+  [5/153] What are special categories of personal data under the GDPR?...
+    [3/153] q005: 120.799s
+  [6/153] What obligations do data controllers have to ensure compliance?...
+    [4/153] q003: 283.961s
+  [7/153] How does the GDPR regulate cross-border data transfers?...
+    [5/153] q004: 363.548s
+  [8/153] What are the consequences of GDPR non-compliance?...
+    [6/153] q006: 277.376s
+  [9/153] What is the "right to be forgotten" as defined in the GDPR?...
+    [7/153] q007: 362.65s
+  [10/153] How does the GDPR address automated decision-making and profiling?...
+    [8/153] q009: 253.923s
+  [11/153] Do I need a record of processing?...
+    [9/153] q008: 362.775s
+  [12/153] What is the GDPR?...
+    [10/153] q011: 93.243s
+  [13/153] Am I required to make my record of processing public?...
+    [11/153] q010: 362.808s
+  [14/153] What are the basic processing principles under the GDPR?...
+    [12/153] q014: 123.738s
+  [15/153] What is the difference between pseudonymised data and anonymised data?...
+    [13/153] q012: 362.662s
+  [16/153] What is sensitive data?...
+    [14/153] q013: 362.713s
+  [17/153] Who is data controller and who is data processor?...
+    [15/153] q015: 135.895s
+  [18/153] Can I share a list of individuals’ personal data with my business partners (thir...
+    [16/153] q017: 144.332s
+  [19/153] What are the sanctions if my organisation does not comply with the GDPR or if my...
+    [17/153] q016: 362.555s
+  [20/153] What are the legal basics for processing under the GDPR?...
+    [18/153] q018: 362.946s
+  [21/153] What are the tasks of the Data Protection Officer (DPO)?...
+    [19/153] q019: 362.801s
+  [22/153] What can I do in case the data processor does not want to sign a controller-proc...
+    [20/153] q021: 134.387s
+  [23/153] What is a data protection impact assessment and when is this mandatory?...
+    [21/153] q020: 363.191s
+  [24/153] How can I obtain valid consent?...
+    [22/153] q022: 363.233s
+  [25/153] If I want to store CVs of candidates for future recruitment procedures, do I nee...
+    [23/153] q023: 362.36s
+  [26/153] What constitutes a conflict of interest for a Data Protection Officer (DPO)?...
+    [24/153] q024: 278.31s
+  [27/153] What information should I communicate to/share with individuals?...
+    [25/153] q026: 136.98s
+  [28/153] What should I do in case of a data breach?...
+    [26/153] q027: 148.213s
+  [29/153] Who can fulfil the role of Data Protection Officer (DPO)?...
+    [27/153] q025: 274.902s
+  [30/153] Do data processors also have to respect the GDPR?...
+    [28/153] q028: 146.337s
+  [31/153] Do I need consent in order to use cookies on my organisation’s website?...
+    [29/153] q029: 122.319s
+  [32/153] Do I need to be certified to become a Data Protection Officer (DPO)?...
+    [30/153] q031: 143.365s
+  [33/153] Does the GDPR also apply to paper records?...
+    [31/153] q032: 138.515s
+  [34/153] How do I respond to a request for erasure?...
+    [32/153] q030: 245.739s
+  [35/153] What is a joint controller?...
+    [33/153] q033: 237.142s
+  [36/153] What is a privacy statement?...
+    [34/153] q034: 362.828s
+  [37/153] What should be included in a controller-processor contract?...
+    [35/153] q035: 363.034s
+  [38/153] What should I do when someone asks how I process their data?...
+    [36/153] q036: 362.029s
+  [39/153] When should you share this information?...
+    [37/153] q037: 261.591s
+  [40/153] Can I only process personal data when I have the individual’s consent?...
+    [38/153] q039: 148.606s
+  [41/153] Can I set up the closed CCTV on my business premises to protect my property?...
+    [39/153] q038: 362.503s
+  [42/153] Can I transfer personal data outside the European Economic Area (EEA)?...
+    [40/153] q040: 258.56s
+  [43/153] Does my organisation have to comply with the GDPR?...
+    [41/153] q041: 362.69s
+  [44/153] How can I respect individuals’ data protection rights?...
+    [42/153] q042: 362.298s
+  [45/153] How long can I store personal data?...
+    [43/153] q043: 362.784s
+  [46/153] I am organising an event as part of my business activities, can I make photos an...
+    [44/153] q045: 151.597s
+  [47/153] Is the Data Protection Officer (DPO) responsible for compliance with the GDPR?...
+    [45/153] q044: 362.588s
+  [48/153] As a data controller I have collected individuals’ personal data from a third pa...
+    [46/153] q046: 161.346s
+  [49/153] Can I publish the names of the winners of a competition on my organisation’s web...
+    [47/153] q047: 265.815s
+  [50/153] Can I record telephone conversations with clients in order to improve quality of...
+    [48/153] q048: 280.456s
+  [51/153] How can I know which security measures I need to take?...
+    [49/153] q049: 362.681s
+  [52/153] How long do I have to respond to an access request?...
+    [50/153] q051: 156.601s
+  [53/153] Is it possible to process sensitive data?...
+    [51/153] q050: 363.457s
+  [54/153] Should I appoint a Data Protection Officer (DPO)?...
+    [52/153] q052: 362.419s
+  [55/153] What are cookies?...
+    [53/153] q053: 362.306s
+  [56/153] What are my responsibilities under the GDPR?...
+    [54/153] q054: 362.494s
+  [57/153] What does processing personal data mean?...
+    [55/153] q057: 140.078s
+  [58/153] What is personal data?...
+    [56/153] q055: 362.137s
+  [59/153] Under which legal basis from the GDPR may personal data be processed for the pro...
+    [57/153] q056: 362.885s
+  [60/153] Under which legal basis from the GDPR may personal data be processed for the pro...
+    [58/153] q058: 362.51s
+  [61/153] Under which legal basis from the GDPR may personal data be processed for the pro...
+    [59/153] q059: 274.512s
+  [62/153] Under which legal basis from the GDPR may personal data be processed for the pro...
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 350, in _run_all
+    await asyncio.gather(*[bounded(i, q) for i, q in enumerate(questions)])
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 344, in bounded
+    result = await runner.process_question(q)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 249, in process_question
+    answer = await self.rag.aquery(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/lightrag.py", line 2646, in aquery
+    result = await self.aquery_llm(query, param, system_prompt)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/lightrag.py", line 2912, in aquery_llm
+    query_result = await kg_query(
+                   ^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/operate.py", line 3316, in kg_query
+    response = await use_model_func(
+               ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py", line 1043, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 132, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 431, in <module>
+    main()
+    ~~~~^^
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 422, in main
+    filepath = run_lightrag(
+        questions_path=args.questions,
+        output_dir=args.output_dir,
+        max_workers=args.max_workers,
+    )
+  File "/root/home/masterarbeit_implementation/rag_evaluation/approaches/lightrag_approach/run.py", line 388, in run_lightrag
+    runner, results = asyncio.run(_run_all(cfg, questions, max_workers))
+                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 203, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 63, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 71, in close
+    _cancel_all_tasks(loop)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 215, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.14/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-166' coro=<priority_limit_async_func_call.<locals>.final_decro.<locals>.worker() running at /root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py:718> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[set.discard(), gather.<locals>._done_callback() at /usr/lib/python3.14/asyncio/tasks.py:810]>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-165' coro=<priority_limit_async_func_call.<locals>.final_decro.<locals>.worker() running at /root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py:718> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[set.discard(), gather.<locals>._done_callback() at /usr/lib/python3.14/asyncio/tasks.py:810]>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-168' coro=<priority_limit_async_func_call.<locals>.final_decro.<locals>.worker() running at /root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py:718> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[set.discard(), gather.<locals>._done_callback() at /usr/lib/python3.14/asyncio/tasks.py:810]>
+ERROR: LLM func: Critical error in worker: Event loop is closed
+Exception ignored while closing generator <coroutine object priority_limit_async_func_call.<locals>.final_decro.<locals>.worker at 0x71473f451fe0>:
+Traceback (most recent call last):
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py", line 793, in worker
+  File "/usr/lib/python3.14/asyncio/tasks.py", line 696, in sleep
+RuntimeError: no running event loop
+ERROR: LLM func: Critical error in worker: Event loop is closed
+Exception ignored while closing generator <coroutine object priority_limit_async_func_call.<locals>.final_decro.<locals>.worker at 0x71473f451b90>:
+Traceback (most recent call last):
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py", line 793, in worker
+  File "/usr/lib/python3.14/asyncio/tasks.py", line 696, in sleep
+RuntimeError: no running event loop
+ERROR: LLM func: Critical error in worker: Event loop is closed
+Exception ignored while closing generator <coroutine object priority_limit_async_func_call.<locals>.final_decro.<locals>.worker at 0x71473f451d00>:
+Traceback (most recent call last):
+  File "/root/home/masterarbeit_implementation/rag_evaluation/.venvs/lightrag/lib/python3.14/site-packages/lightrag/utils.py", line 793, in worker
+  File "/usr/lib/python3.14/asyncio/tasks.py", line 696, in sleep
+RuntimeError: no running event loop
