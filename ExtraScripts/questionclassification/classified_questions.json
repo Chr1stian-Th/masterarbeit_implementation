@@ -1,0 +1,2469 @@
+[
+  {
+    "id": "q001",
+    "question": "What is the main objective of the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for the core objective of the regulation, which is explicitly stated in Article 1 of the GDPR without requiring complex interpretation.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the core purpose and scope of the GDPR as a legal framework.",
+    "gdpr_articles": [
+      "Art. 1"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the fundamental subject matter and objectives of the regulation as defined in the opening articles."
+  },
+  {
+    "id": "q002",
+    "question": "What are the key principles for processing personal data under the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a list of principles directly stated in Article 5 of the GDPR, requiring only basic recall of a single foundational article.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the core principles found in Article 5 of the GDPR without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question directly addresses the core data processing principles established in Article 5 of the GDPR."
+  },
+  {
+    "id": "q003",
+    "question": "What rights do data subjects have under the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic descriptive question that can be answered by listing the specific rights explicitly enumerated in Chapter 3 of the GDPR.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific rights granted to data subjects under the GDPR without requiring complex procedural steps or comparative analysis.",
+    "gdpr_articles": [
+      "Art. 15",
+      "Art. 16",
+      "Art. 17",
+      "Art. 18",
+      "Art. 20"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically addresses the individual rights granted to data subjects under Chapter III of the GDPR."
+  },
+  {
+    "id": "q004",
+    "question": "What conditions make the processing of personal data lawful under the GDPR?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This question asks for a direct list of the six legal bases for processing personal data as explicitly enumerated in Article 6(1) of the GDPR.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the six legal bases for processing data as specified in Article 6 without requiring complex procedural steps or scenario-based application.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 7",
+      "Art. 8",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal bases for processing personal data as defined in Article 6 of the GDPR."
+  },
+  {
+    "id": "q005",
+    "question": "What are special categories of personal data under the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic definitional question that can be answered by directly referencing the list provided in Article 9(1) of the GDPR.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific data types that constitute special categories under Article 9 without requiring complex procedural steps or logical chaining.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 4"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the definition and prohibition of processing special categories of personal data as defined in Article 9."
+  },
+  {
+    "id": "q006",
+    "question": "What obligations do data controllers have to ensure compliance?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires synthesizing several distinct obligations (Articles 24, 25, 30, and 35) rather than quoting a single article, but remains at a foundational level of regulatory knowledge.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines specific regulatory obligations and actions that a controller must perform to ensure compliance with the law.",
+    "gdpr_articles": [
+      "Art. 24",
+      "Art. 25",
+      "Art. 30",
+      "Art. 35",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question and answer specifically address the organizational and technical duties imposed on controllers under Chapter IV of the GDPR."
+  },
+  {
+    "id": "q007",
+    "question": "How does the GDPR regulate cross-border data transfers?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question covers the core mechanisms of Chapter V GDPR, requiring an understanding of several distinct legal instruments like adequacy and SCCs, but remains at a high-level conceptual level.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific legal mechanisms and conditions required to process and authorize the transfer of data across borders.",
+    "gdpr_articles": [
+      "Art. 44",
+      "Art. 45",
+      "Art. 46",
+      "Art. 47"
+    ],
+    "ai_act_relevant": false,
+    "domain": "transfers",
+    "domain_rationale": "The query specifically addresses the legal mechanisms and conditions for transferring personal data to third countries or international organizations."
+  },
+  {
+    "id": "q008",
+    "question": "What are the consequences of GDPR non-compliance?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a direct factual summary of Article 83, which can be answered by quoting the specific penalty thresholds defined in the regulation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer lists the specific penalties and consequences of non-compliance without requiring complex procedural steps or comparative analysis.",
+    "gdpr_articles": [
+      "Art. 83",
+      "Art. 84",
+      "Art. 79",
+      "Art. 82"
+    ],
+    "ai_act_relevant": false,
+    "domain": "enforcement_and_remedies",
+    "domain_rationale": "The question specifically addresses the administrative fines and penalties resulting from a failure to comply with the regulation."
+  },
+  {
+    "id": "q009",
+    "question": "What is the \"right to be forgotten\" as defined in the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a foundational concept directly defined in Article 17 of the GDPR, requiring only a straightforward explanation of a single legal provision.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer explains the meaning and scope of a specific legal right established under the GDPR.",
+    "gdpr_articles": [
+      "Art. 17",
+      "Art. 12",
+      "Art. 19"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically concerns the right to erasure, which is a core individual right under Chapter III of the GDPR."
+  },
+  {
+    "id": "q010",
+    "question": "How does the GDPR address automated decision-making and profiling?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires understanding the specific conditions and safeguards of Article 22, moving beyond a single definition to the application of procedural rights.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific regulatory requirements and safeguards that must be followed when conducting automated decision-making.",
+    "gdpr_articles": [
+      "Art. 22",
+      "Art. 13",
+      "Art. 14",
+      "Art. 15",
+      "Art. 4"
+    ],
+    "ai_act_relevant": true,
+    "domain": "data_subject_rights",
+    "domain_rationale": "Article 22 establishes the specific right of data subjects not to be subject to decisions based solely on automated processing, including profiling."
+  },
+  {
+    "id": "q011",
+    "question": "Do I need a record of processing?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question involves understanding Article 30 requirements and the specific exemption for SMEs regarding occasional processing, requiring the application of a threshold principle.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific obligations, required content, and management responsibilities for maintaining a record of processing activities under the GDPR.",
+    "gdpr_articles": [
+      "Art. 30",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question and answer specifically address the obligation of controllers and processors to maintain a record of processing activities as mandated by Article 30."
+  },
+  {
+    "id": "q012",
+    "question": "What is the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a foundational definition of the regulation, which can be answered by referencing the introductory recitals and Article 1 regarding its scope and objectives.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer provides a high-level definition of the GDPR, explaining its nature, scope, and primary objectives.",
+    "gdpr_articles": [
+      "Art. 1",
+      "Art. 2",
+      "Art. 3",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "cross_cutting",
+    "domain_rationale": "The text provides a general overview of the regulation's scope, objectives, and territorial application, which spans across the entire legal framework."
+  },
+  {
+    "id": "q013",
+    "question": "Am I required to make my record of processing public?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic question answered by a direct reading of Article 30(4) of the GDPR, which specifies the obligation to provide records to the supervisory authority rather than the public.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific legal obligation regarding the handling and availability of records to a supervisory authority.",
+    "gdpr_articles": [
+      "Art. 30",
+      "Art. 31"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns the maintenance and accessibility of records of processing activities, which is a core obligation for controllers and processors under Article 30."
+  },
+  {
+    "id": "q014",
+    "question": "What are the basic processing principles under the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This question asks for a foundational list of principles directly enumerated in Article 5 of the GDPR, requiring no complex synthesis or application.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the core data protection principles set out in Article 5 of the GDPR without requiring complex procedural steps or scenario-based application.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question and answer specifically detail the core data processing principles and accountability requirements set out in Article 5 of the GDPR."
+  },
+  {
+    "id": "q015",
+    "question": "What is the difference between pseudonymised data and anonymised data?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires distinguishing between two fundamental legal concepts by applying the definitions found in Article 4(5) and Recital 26 of the GDPR.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts the legal status and technical characteristics of pseudonymised data versus anonymised data to highlight their differences under the GDPR.",
+    "gdpr_articles": [
+      "Art. 4",
+      "Recital 26"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the fundamental definitions of personal data and the scope of the Regulation's application based on identifiability."
+  },
+  {
+    "id": "q016",
+    "question": "What is sensitive data?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a definition that is directly provided by a single article (Article 9 GDPR) and represents a foundational concept in data protection law.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the concept of sensitive data by explaining its nature as a special category of personal data and listing the specific types of information it encompasses.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 4",
+      "Art. 5"
+    ],
+    "ai_act_relevant": true,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question and answer specifically define and address the prohibition and exceptions for processing special categories of personal data under Article 9."
+  },
+  {
+    "id": "q017",
+    "question": "Who is data controller and who is data processor?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for the fundamental definitions of 'controller' and 'processor', which are directly provided in Article 4 of the GDPR and represent the most basic conceptual building blocks of the regulation.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts the roles, responsibilities, and decision-making powers of data controllers versus data processors to clarify their legal distinction.",
+    "gdpr_articles": [
+      "Art. 4",
+      "Art. 24",
+      "Art. 28"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The text defines the roles and legal distinctions between data controllers and processors as established in the GDPR."
+  },
+  {
+    "id": "q018",
+    "question": "Can I share a list of individuals’ personal data with my business partners (third parties)?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question involves applying the core principle of transparency and the duty to inform under Articles 13 and 14, requiring an understanding of how data sharing interacts with data subject rights.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific transparency and notification obligations an organization must follow when sharing data with third parties.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14",
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question focuses on the transparency requirements and legal basis for sharing data with third parties, which are core principles of lawful processing."
+  },
+  {
+    "id": "q019",
+    "question": "What are the sanctions if my organisation does not comply with the GDPR or if my processing violates the GDPR?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a direct list of sanctions which can be answered by quoting Article 83 and Article 58 of the GDPR without complex legal reasoning.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer lists the specific types of sanctions and enforcement tools available to DPAs without requiring complex procedural steps or legal inference.",
+    "gdpr_articles": [
+      "Art. 83",
+      "Art. 58",
+      "Art. 79",
+      "Art. 82",
+      "Art. 84"
+    ],
+    "ai_act_relevant": false,
+    "domain": "enforcement_and_remedies",
+    "domain_rationale": "The query specifically addresses administrative fines, corrective powers, and sanctions for non-compliance with the Regulation."
+  },
+  {
+    "id": "q020",
+    "question": "What are the legal basics for processing under the GDPR?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a foundational list of legal bases directly enumerated in Article 6 of the GDPR, requiring simple recall of a core provision.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the six lawful bases for processing personal data as specified in Article 6 of the GDPR.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query specifically addresses the legal bases for lawful processing of personal data and the conditions for sensitive data."
+  },
+  {
+    "id": "q021",
+    "question": "What are the tasks of the Data Protection Officer (DPO)?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a list of tasks explicitly defined in Article 39 of the GDPR, requiring only direct retrieval of statutory requirements.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific tasks and responsibilities assigned to the DPO as outlined in the GDPR.",
+    "gdpr_articles": [
+      "Art. 39",
+      "Art. 38",
+      "Art. 37"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The Data Protection Officer's tasks and position are core organizational obligations for controllers and processors under Section 4 of the GDPR."
+  },
+  {
+    "id": "q022",
+    "question": "What can I do in case the data processor does not want to sign a controller-processor contract?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires understanding the mandatory nature of Article 28 GDPR and the associated sanctions, applying basic compliance principles to a refusal scenario.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the legal obligations and potential consequences of failing to establish a contract, while pointing to the process of using official templates to achieve compliance.",
+    "gdpr_articles": [
+      "Art. 28",
+      "Art. 83"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query concerns the mandatory contractual relationship and liability between controllers and processors as defined in Article 28."
+  },
+  {
+    "id": "q023",
+    "question": "What is a data protection impact assessment and when is this mandatory?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires defining a core GDPR concept and identifying the specific conditions for its mandatory application, which involves applying Article 35 criteria.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer primarily defines the concept of a DPIA and specifies the legal criteria and thresholds for its mandatory application.",
+    "gdpr_articles": [
+      "Art. 35",
+      "Art. 36"
+    ],
+    "ai_act_relevant": true,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question specifically addresses the Data Protection Impact Assessment (DPIA), which is a core obligation for controllers under Article 35."
+  },
+  {
+    "id": "q024",
+    "question": "How can I obtain valid consent?",
+    "difficulty": 0.25,
+    "difficulty_rationale": "The answer provides a direct summary of the conditions for consent as defined in Article 4(11) and Article 7 of the GDPR, representing a foundational concept.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the specific legal requirements and characteristics necessary for consent to be valid under the GDPR.",
+    "gdpr_articles": [
+      "Art. 7",
+      "Art. 4(11)",
+      "Art. 6(1)(a)",
+      "Art. 8",
+      "Art. 9(2)(a)"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query and answer focus specifically on the legal requirements and conditions for valid consent as a lawful basis for processing personal data."
+  },
+  {
+    "id": "q025",
+    "question": "If I want to store CVs of candidates for future recruitment procedures, do I need to ask for the candidates’ consent?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires moving beyond a single article to apply the concept of legal bases (Art. 6 GDPR) to a specific HR scenario, involving the comparison of consent versus legitimate interest and the associated balancing test.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the necessary legal obligations and steps, such as selecting a legal basis and performing a balancing test, required to process data for a specific purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on determining the appropriate legal basis for processing personal data and the associated transparency requirements."
+  },
+  {
+    "id": "q026",
+    "question": "What constitutes a conflict of interest for a Data Protection Officer (DPO)?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The answer requires applying the principle of independence and the legal test of 'determining purposes and means' to specific organizational roles, moving beyond a simple definition to functional application.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the legal concept of a conflict of interest for a DPO by identifying the criteria and specific roles that characterize such a state.",
+    "gdpr_articles": [
+      "Art. 38",
+      "Art. 39",
+      "Art. 37"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns the operational independence and conflict of interest rules specifically governing the designation and position of the Data Protection Officer."
+  },
+  {
+    "id": "q027",
+    "question": "What information should I communicate to/share with individuals?",
+    "difficulty": 0.25,
+    "difficulty_rationale": "The question asks for a list of mandatory disclosures which are explicitly enumerated in Articles 13 and 14 of the GDPR, requiring direct retrieval rather than complex legal synthesis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a comprehensive list of specific information items that must be disclosed under GDPR Articles 13 and 14 without requiring complex legal reasoning or procedural steps.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14",
+      "Art. 12",
+      "Art. 5",
+      "Art. 22"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically addresses the transparency obligations and the right to be informed regarding how personal data is processed."
+  },
+  {
+    "id": "q028",
+    "question": "What should I do in case of a data breach?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The answer requires understanding the tiered notification obligations under Articles 33 and 34 of the GDPR, involving the application of 'risk' versus 'high risk' thresholds.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps and obligations an organization must follow when a data breach occurs, including notification timelines and documentation requirements.",
+    "gdpr_articles": [
+      "Art. 33",
+      "Art. 34",
+      "Art. 4",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response details the specific obligations of controllers regarding notification to authorities and communication to data subjects following a personal data breach."
+  },
+  {
+    "id": "q029",
+    "question": "Who can fulfil the role of Data Protection Officer (DPO)?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This requires understanding Article 37 and 38 of the GDPR, specifically the dual possibility of internal/external appointment and the principle of avoiding conflicts of interest.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the qualifications, status, and eligibility criteria for the specific role of a Data Protection Officer.",
+    "gdpr_articles": [
+      "Art. 37",
+      "Art. 38"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The designation and status of the Data Protection Officer are core organizational obligations for controllers and processors under Section 4 of Chapter IV."
+  },
+  {
+    "id": "q030",
+    "question": "Do data processors also have to respect the GDPR?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question addresses a foundational concept of the GDPR regarding the scope of obligations for processors, which is directly defined in Articles 4 and 28.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts the distinct roles and responsibilities of data processors versus data controllers while explaining their relationship under the GDPR.",
+    "gdpr_articles": [
+      "Art. 28",
+      "Art. 4",
+      "Art. 32",
+      "Art. 30"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The text specifically addresses the legal obligations of data processors and their contractual relationship with controllers under the GDPR."
+  },
+  {
+    "id": "q031",
+    "question": "Do I need consent in order to use cookies on my organisation’s website?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The answer requires applying the general principle of consent while distinguishing between different categories of cookies and navigating the interplay between the GDPR and the ePrivacy Directive.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific legal obligations and conditions under which an organization must obtain consent or provide information to use cookies.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 7",
+      "Art. 4",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on the legal basis for processing, specifically the requirement for consent under Article 6(1)(a) in the context of cookie usage."
+  },
+  {
+    "id": "q032",
+    "question": "Do I need to be certified to become a Data Protection Officer (DPO)?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question addresses a single, straightforward concept regarding professional requirements and is answered by a direct interpretation of Article 37(5) of the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the legal requirements and professional qualifications necessary to fulfill the obligation of appointing a Data Protection Officer under the GDPR.",
+    "gdpr_articles": [
+      "Art. 37",
+      "Art. 38",
+      "Art. 39"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns the professional requirements and qualifications of the Data Protection Officer, which is governed by the section on controller and processor obligations."
+  },
+  {
+    "id": "q033",
+    "question": "Does the GDPR also apply to paper records?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a foundational question regarding the material scope of the GDPR, directly answered by Article 2(1) concerning manual processing in a filing system.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer clarifies the material scope of the GDPR by defining how the concept of personal data processing extends to non-automated filing systems.",
+    "gdpr_articles": [
+      "Art. 2",
+      "Art. 4"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the material scope of the Regulation and the definition of a filing system for personal data."
+  },
+  {
+    "id": "q034",
+    "question": "How do I respond to a request for erasure?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The answer requires understanding the procedural timelines of Article 12 alongside the specific substantive exceptions and downstream notification obligations found in Articles 17 and 19.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps, timelines, and conditions a controller must follow to fulfill a request for erasure under the GDPR.",
+    "gdpr_articles": [
+      "Art. 17",
+      "Art. 12",
+      "Art. 19"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically addresses the right to erasure and the procedural requirements for responding to data subject requests."
+  },
+  {
+    "id": "q035",
+    "question": "What is a joint controller?",
+    "difficulty": 0.22,
+    "difficulty_rationale": "The question asks for a foundational definition provided directly by Article 26 of the GDPR and settled case law, requiring only basic conceptual understanding.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer primarily explains the meaning of the term 'joint controller' by outlining its core criteria and legal characteristics.",
+    "gdpr_articles": [
+      "Art. 26",
+      "Art. 4",
+      "Art. 82"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query specifically addresses the definition and liability framework of joint controllers as established in Article 26 of the GDPR."
+  },
+  {
+    "id": "q036",
+    "question": "What is a privacy statement?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a basic definition of a privacy statement, which is directly addressed by the transparency requirements found in Articles 12, 13, and 14 of the GDPR.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the nature, purpose, and required characteristics of a privacy statement as a mechanism for providing mandatory transparency information to data subjects.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14",
+      "Art. 12"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The question and answer specifically address the transparency obligations and the right to be informed when personal data is collected directly or indirectly."
+  },
+  {
+    "id": "q037",
+    "question": "What should be included in a controller-processor contract?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for the mandatory elements of a data processing agreement, which are explicitly listed as a direct inventory in Article 28(3) of the GDPR.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of mandatory contractual clauses required by Article 28 of the GDPR without requiring complex procedural steps or scenario-based application.",
+    "gdpr_articles": [
+      "Art. 28",
+      "Art. 29",
+      "Art. 32",
+      "Art. 30"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query specifically addresses the mandatory contractual elements and obligations governing the relationship between a controller and a processor under Article 28 GDPR."
+  },
+  {
+    "id": "q038",
+    "question": "What should I do when someone asks how I process their data?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question and answer describe the basic right of access under Article 15 GDPR, which is a foundational concept directly addressed by a single article.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps and obligations an organization must follow to fulfill a data subject access request, including providing a copy and using specific formats.",
+    "gdpr_articles": [
+      "Art. 15",
+      "Art. 12"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically concerns the right of access and the modalities for responding to data subject requests."
+  },
+  {
+    "id": "q039",
+    "question": "When should you share this information?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires distinguishing between direct and indirect data collection and applying specific timelines and exceptions found in Articles 13 and 14 of the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific timelines and conditions under which an organization must fulfill its obligation to provide information to data subjects.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The question and answer specifically address the timing requirements for providing transparency information to data subjects under Articles 13 and 14."
+  },
+  {
+    "id": "q040",
+    "question": "Can I only process personal data when I have the individual’s consent?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a foundational concept in GDPR (Article 6) that can be answered by directly referencing the list of lawful bases for processing.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer lists the existence of multiple legal bases for processing beyond consent without requiring complex procedural steps or scenario-specific application.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 7",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question and answer specifically address the legal bases for processing personal data as defined in Article 6 of the GDPR."
+  },
+  {
+    "id": "q041",
+    "question": "Can I set up the closed CCTV on my business premises to protect my property?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires applying the principle of legitimate interest and transparency requirements to a specific use case, involving the synthesis of legal bases and information obligations under the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps and obligations a business must follow to legally implement CCTV, including identifying purposes, establishing a legal basis, and fulfilling transparency requirements.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 5",
+      "Art. 12"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The response focuses primarily on establishing a legal basis for processing, specifically legitimate interests, and the transparency requirements for data collection."
+  },
+  {
+    "id": "q042",
+    "question": "Can I transfer personal data outside the European Economic Area (EEA)?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question addresses a fundamental GDPR concept and the answer is a direct summary of the primary mechanisms for international transfers found in Articles 45 and 46.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the legal framework and necessary conditions (adequacy decisions or appropriate safeguards) required to perform the process of transferring data outside the EEA.",
+    "gdpr_articles": [
+      "Art. 44",
+      "Art. 45",
+      "Art. 46"
+    ],
+    "ai_act_relevant": false,
+    "domain": "transfers",
+    "domain_rationale": "The query specifically concerns the legal requirements and mechanisms for moving personal data to third countries or international organisations outside the EEA."
+  },
+  {
+    "id": "q043",
+    "question": "Does my organisation have to comply with the GDPR?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question addresses the basic scope of the GDPR (Article 2 and 3) and can be answered by directly referencing the fundamental criteria for territorial and material application.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific criteria and conditions under which an organization is obligated to comply with the GDPR framework.",
+    "gdpr_articles": [
+      "Art. 3",
+      "Art. 2",
+      "Art. 4",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question and answer focus on the material and territorial scope of the GDPR and the fundamental definition of processing."
+  },
+  {
+    "id": "q044",
+    "question": "How can I respect individuals’ data protection rights?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question and answer cover fundamental GDPR concepts found in Articles 12-21, focusing on basic transparency and the standard list of data subject rights without complex application.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines specific actions and obligations an organization must perform to comply with data protection rights, such as informing individuals and responding to requests.",
+    "gdpr_articles": [
+      "Art. 12",
+      "Art. 13",
+      "Art. 14",
+      "Art. 15",
+      "Art. 21"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The question and answer specifically address the transparency obligations and the mechanisms for individuals to exercise their rights of access, rectification, and erasure."
+  },
+  {
+    "id": "q045",
+    "question": "How long can I store personal data?",
+    "difficulty": 0.25,
+    "difficulty_rationale": "The answer explains the fundamental principle of storage limitation under Article 5(1)(e) GDPR without requiring complex legal synthesis or application to specific edge cases.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the operational obligations and steps organizations must take to determine and implement data retention periods and policies.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 13",
+      "Art. 14",
+      "Art. 17"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query concerns the storage limitation principle, which is a core principle of data processing under Article 5(1)(e)."
+  },
+  {
+    "id": "q046",
+    "question": "I am organising an event as part of my business activities, can I make photos and videos of the event and the people attending?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires applying the concept of legal bases to a specific scenario, involving the balancing test for legitimate interest and the requirement for transparency.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the necessary steps and obligations for legal processing, such as determining a legal basis, conducting a balancing test, and informing data subjects.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 14",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on establishing a legal basis for processing personal data and the requirement to inform data subjects."
+  },
+  {
+    "id": "q047",
+    "question": "Is the Data Protection Officer (DPO) responsible for compliance with the GDPR?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a basic conceptual question directly addressed by Article 38 and Article 39 of the GDPR, clarifying the fundamental distinction between the DPO's advisory role and the controller's liability.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts the legal responsibilities of the DPO versus the appointing organization to clarify who holds liability for compliance.",
+    "gdpr_articles": [
+      "Art. 38",
+      "Art. 39",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns the specific role, tasks, and liability of the Data Protection Officer within an organization's compliance framework."
+  },
+  {
+    "id": "q048",
+    "question": "As a data controller I have collected individuals’ personal data from a third party, what do I need to do to be compliant?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires applying multiple core GDPR concepts including Article 14 (information to be provided where personal data have not been obtained from the data subject) and Article 28 (processor contracts).",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines specific compliance steps and obligations a controller must follow when acquiring data from third parties or using processors.",
+    "gdpr_articles": [
+      "Art. 14",
+      "Art. 28",
+      "Art. 5",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query focuses on the obligations of a controller when acquiring data from third parties and managing processor relationships."
+  },
+  {
+    "id": "q049",
+    "question": "Can I publish the names of the winners of a competition on my organisation’s website?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The answer requires applying the principle of Legitimate Interest (Art. 6(1)(f) GDPR) and the necessity of a balancing test, moving beyond a simple citation to practical application.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the GDPR principle of legitimate interest to a specific scenario involving the publication of competition winners' names.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on the legal basis for processing, specifically the application of legitimate interests and the principle of transparency."
+  },
+  {
+    "id": "q050",
+    "question": "Can I record telephone conversations with clients in order to improve quality of service and do I need consent for this?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires applying the principle of transparency and identifying the legal basis for processing, though the answer focuses primarily on information obligations under Articles 13 and 14.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific transparency and notification obligations a controller must follow when recording calls.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 21",
+      "Art. 15",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on the legal basis for processing (consent vs. legitimate interest) and the transparency requirements for recording communications."
+  },
+  {
+    "id": "q051",
+    "question": "How can I know which security measures I need to take?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires applying the principle of 'security of processing' (Article 32 GDPR) and translating the abstract concept of risk-based security into a set of practical, intermediate-level technical and organizational measures.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific security measures and best practices to be implemented without requiring complex legal reasoning or procedural steps.",
+    "gdpr_articles": [
+      "Art. 32",
+      "Art. 5",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question and answer focus on the technical and organizational security measures required of controllers and processors to ensure a level of security appropriate to the risk."
+  },
+  {
+    "id": "q052",
+    "question": "How long do I have to respond to an access request?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question relates to a single, well-defined concept (the timeframe for a Subject Access Request) and is answered by a direct citation of Article 12(3) of the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific timeframe, conditions for extension, and the requirement to provide the service free of charge as part of the compliance process.",
+    "gdpr_articles": [
+      "Art. 12",
+      "Art. 15"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query concerns the procedural timelines and modalities for responding to a data subject's right of access."
+  },
+  {
+    "id": "q053",
+    "question": "Is it possible to process sensitive data?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a general rule and its exceptions, which are directly listed in Article 9 of the GDPR without requiring complex synthesis or cross-regulation analysis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of the specific legal exceptions under which sensitive data can be processed as outlined in Article 9 of the GDPR.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question and answer specifically address the general prohibition and the exhaustive list of exceptions for processing special categories of personal data under Article 9."
+  },
+  {
+    "id": "q054",
+    "question": "Should I appoint a Data Protection Officer (DPO)?",
+    "difficulty": 0.22,
+    "difficulty_rationale": "The answer is a direct summary of Article 37 of the GDPR, outlining the three specific criteria for mandatory appointment and the possibility of voluntary appointment.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific legal criteria and obligations for when an organization is required to appoint a Data Protection Officer under the GDPR.",
+    "gdpr_articles": [
+      "Art. 37",
+      "Art. 38",
+      "Art. 39"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question and answer specifically address the criteria and obligations for appointing a Data Protection Officer under the GDPR."
+  },
+  {
+    "id": "q055",
+    "question": "What are cookies?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a basic definition of a technical concept and its general functions, which can be answered with a straightforward, descriptive explanation without complex legal analysis.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer provides a formal description of what cookies are, their primary functions, and the types of data they contain.",
+    "gdpr_articles": [
+      "Art. 4",
+      "Art. 5",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The text defines cookies as tools that process personal data like identifiers and IP addresses, which relates to the scope and lawfulness of processing under GDPR."
+  },
+  {
+    "id": "q056",
+    "question": "What are my responsibilities under the GDPR?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires a high-level overview of several core GDPR principles and the distinction between controllers and processors, but it remains at an introductory level without requiring complex legal synthesis.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines a series of specific obligations and steps an organization must take to comply with data protection requirements.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 28",
+      "Art. 6",
+      "Art. 30"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response outlines the core compliance duties for both controllers and processors, including data minimization, legal basis, security, and contractual obligations."
+  },
+  {
+    "id": "q057",
+    "question": "What does processing personal data mean?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a fundamental definition that is explicitly provided in a single article (Article 4(2) GDPR) and requires no complex legal reasoning.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer provides the formal meaning and scope of the term 'processing' as defined under data protection law.",
+    "gdpr_articles": [
+      "Art. 4"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The definition of processing is a foundational concept that determines the material scope and application of the principles and lawfulness requirements under the GDPR."
+  },
+  {
+    "id": "q058",
+    "question": "What is personal data?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a foundational definition directly derived from Article 4(1) of the GDPR, requiring only a basic understanding of a single core concept.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer primarily provides the formal definition of 'personal data' and explains the core concept of an identifiable individual.",
+    "gdpr_articles": [
+      "Art. 4"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The definition of personal data is a foundational concept that determines the scope of application for all GDPR principles and lawfulness requirements."
+  },
+  {
+    "id": "q059",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “3G regulation at the workplace” for the purpose: “Verification and documentation of your 3G (recovered, vaccinated, tested) status as a prerequisite for access to the workplace”?\n\nLegal basis:",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific workplace scenario, involving the application of Article 6 principles and the distinction between legal obligation and consent in an employment context.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer identifies the specific legal bases from the GDPR that apply to a concrete real-world processing scenario involving workplace health status verification.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question focuses on identifying the specific legal bases under Article 6 for processing health-related data in an employment context."
+  },
+  {
+    "id": "q060",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Absence time recording” for the purpose: “Documentation of absences and absence times for internal and external processing (e.g. illness, vacation, special leave, further education / training)”?\n\nLegal basis:",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific HR processing activity, which involves applying the principle of legitimate interest versus other potential bases like legal obligation or contract.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the general rule of legitimate interest to a specific processing scenario and purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically asks for the legal basis for processing personal data, which is governed by the lawfulness provisions of the GDPR."
+  },
+  {
+    "id": "q061",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Settlement of expenses” for the purpose: “Settlement of expenses of employees and applicants of the company”?\n\nLegal basis:",
+    "difficulty": 0.25,
+    "difficulty_rationale": "The question requires identifying a single, standard legal basis for a common HR processing activity, which is a direct application of Article 6(1)(b) regarding contractual necessity.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the legal basis of contractual necessity to a specific real-world processing scenario involving employee and applicant expense settlements.",
+    "gdpr_articles": [
+      "Art. 6(1)(b)",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal basis for processing personal data under Article 6 of the GDPR."
+  },
+  {
+    "id": "q062",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Health management” for the purpose: “Administration and billing of health programs in the company”?\n\nLegal basis:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific corporate health processing activity, which involves applying Article 6 principles to a practical HR/Health scenario.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer identifies the specific legal basis applicable to a concrete processing scenario and purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically asks for the legal basis for processing personal data, which is governed by the lawfulness principles of Article 6."
+  },
+  {
+    "id": "q063",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Competitions” for the purpose of: “Conducting competitions to attract new customers”?\n\nLegal basis:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific marketing activity, which involves applying the principle of legitimate interest versus contractual necessity.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the legal basis of legitimate interest to a specific processing scenario involving customer acquisition through competitions.",
+    "gdpr_articles": [
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal basis for processing personal data under Article 6 of the GDPR."
+  },
+  {
+    "id": "q064",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Customer management” for the purpose: “Establishment and provision of a CRM system for entering, processing and managing customer data and contract data for shared use by employees”?\n\nLegal basis:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for the legal basis of a standard processing activity (CRM/Contract management) which is directly addressed by a single article of the GDPR.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the legal basis of contractual necessity to a specific, real-world business scenario involving CRM data management.",
+    "gdpr_articles": [
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal basis for processing personal data under Article 6 of the GDPR."
+  },
+  {
+    "id": "q065",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Insurance” for the purpose: “Reporting and settlement of claims against insurance companies and the assertion of internal or external claims”?\n\nLegal basis:",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying and distinguishing between multiple legal bases (legal obligation vs. legitimate interest) for a specific multi-faceted processing purpose, moving beyond a single-article lookup.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of applicable legal bases from the GDPR for a specific processing purpose without requiring complex procedural steps or scenario-based reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal bases for processing personal data under Article 6 of the GDPR."
+  },
+  {
+    "id": "q066",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Video surveillance” for the purpose: “Video surveillance to ensure security with regard to technical and organizational measures and to assist law enforcement authorities”?\n\nLegal basis:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific processing activity, which involves applying the principle of legitimate interest to a common security scenario.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer identifies the specific legal basis applicable to a concrete processing scenario and purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically asks for the legal basis for processing under Article 6 of the GDPR."
+  },
+  {
+    "id": "q067",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Project management” for the purpose: “Entry and processing of project data incl. status, successes and follow-ups”?\n\nLegal basis:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a direct identification of a standard legal basis for a common business activity, which is explicitly covered by a single article of the GDPR.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies a specific legal basis from the GDPR to a concrete processing scenario and purpose.",
+    "gdpr_articles": [
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the legal basis for processing personal data under Article 6 of the GDPR."
+  },
+  {
+    "id": "q068",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Employee appraisal” for the purpose of: “Conducting and recording employee appraisals”?\n\nLegal basis:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the correct legal basis for a specific HR processing activity, which involves applying Article 6(1) principles to a common workplace scenario.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer identifies the specific legal basis applicable to a concrete processing scenario and purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically asks for the legal basis for processing under Article 6 in the context of employment."
+  },
+  {
+    "id": "q069",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Location monitoring of employees via GPS” for the purpose: “Monitoring the length of breaks”?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "This requires applying the principles of proportionality and data minimization to a specific workplace surveillance scenario, recognizing that no legal basis can justify such an intrusive measure for a minor purpose.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR principles and legal bases to a specific factual scenario involving employee monitoring to determine the lawfulness of the processing.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of a valid legal basis for processing under Article 6 and the principle of proportionality."
+  },
+  {
+    "id": "q070",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Sale of customer data to advertising companies” for the purpose of: “Generating additional revenue”?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "Requires applying the core principles of purpose limitation and legal basis to a specific commercial scenario, identifying that 'revenue generation' lacks a valid legal ground for selling data without specific consent.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR legal basis constraints to a specific factual scenario involving a processing activity and a defined purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of a valid legal basis for a specific processing activity under the GDPR."
+  },
+  {
+    "id": "q071",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Storage of political opinions of customers” for the purpose: “Targeted political advertising”?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "This requires identifying political opinions as a special category of data under Article 9 and recognizing that the 'targeted advertising' purpose typically fails to meet the strict necessity or public interest exceptions required to override the general prohibition.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the GDPR's prohibition on processing special categories of data to a specific scenario involving political opinions and targeted advertising.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": true,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query concerns the legal basis for processing special categories of data and the general lawfulness of processing under the GDPR."
+  },
+  {
+    "id": "q072",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Installation of cameras in employee toilets” for the purpose: “Security monitoring”?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "While the answer is straightforward, it requires synthesising the principles of data minimisation and proportionality with the fundamental right to privacy, recognizing that no legal basis can override the inherent lack of necessity and dignity in this specific context.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR principles and legal bases to a specific factual scenario involving employee monitoring to determine the lawfulness of the processing.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 6",
+      "Art. 9",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The scenario concerns the fundamental lawfulness and proportionality of processing under Article 6 and the principle of data minimization."
+  },
+  {
+    "id": "q073",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Analysis of the sexual orientation of customers” for the purpose: “Personalization of offers”?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "Requires identifying sexual orientation as a special category of data under Article 9 and recognizing that commercial personalization typically fails to meet any of the narrow exceptions for processing such sensitive data.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the GDPR's prohibition on processing special categories of data to a specific scenario involving sexual orientation and marketing purposes.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the legal basis and prohibition of processing special categories of personal data under the GDPR."
+  },
+  {
+    "id": "q074",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Publication of employee illness diagnoses” for the purpose of: “Informing the workforce”?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "Requires applying the prohibition of processing special categories of data (Article 9) and recognizing that 'informing the workforce' fails to meet any necessity or public interest derogations.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR prohibitions and legal basis requirements to a specific factual scenario involving sensitive employee data and a defined purpose.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query concerns the legal basis for processing special categories of personal data and the general lawfulness of processing under the GDPR."
+  },
+  {
+    "id": "q075",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Making secret audio recordings in the office” for the purpose of: “Checking morale”?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "This requires synthesising the principles of proportionality and necessity under Article 6 with the high threshold for employee privacy, concluding that no legal basis can justify such an intrusive measure.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR legal basis requirements to a specific factual scenario involving secret workplace surveillance to determine its lawfulness.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of a valid legal basis for processing under Article 6 and compliance with fundamental processing principles."
+  },
+  {
+    "id": "q076",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Collection of health data without consent” for the purpose: “Optimization of office workplaces”?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "Requires applying the prohibition of processing special categories of data (Art. 9) and recognizing that workplace optimization does not meet any of the specific derogations for health data without consent.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the GDPR's restrictive rules on special categories of data to a specific processing scenario and purpose to determine its legality.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query concerns the legal basis and prohibitions for processing special categories of personal data under the GDPR."
+  },
+  {
+    "id": "q077",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Transmission of customer data to private investigators” for the purpose: “Verification of solvency”?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "This requires evaluating the proportionality and necessity of a specific processing activity under Article 6, while recognizing that private solvency verification by third parties often lacks a valid legal basis without explicit consent or statutory authorization.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR legal basis rules to a specific processing scenario and purpose to determine its lawfulness.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of a valid legal basis for a specific processing activity under the GDPR."
+  },
+  {
+    "id": "q078",
+    "question": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Storage of children's photos in the cloud” for the purpose: “Use for advertising purposes”?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "Requires applying the principle of 'purpose limitation' and the high threshold for children's consent in a commercial context, though the answer 'None' simplifies a complex balancing test.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies GDPR legal basis rules to a specific scenario involving a processing activity, a data subject category, and a specific purpose.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 8",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of a valid legal basis for processing under Article 6 and the specific conditions for children's consent under Article 8."
+  },
+  {
+    "id": "q079",
+    "question": "Which categories of personal data are relevant for the processing activity: “Password management” for the purpose: “Management and administration of passwords using software (password vault)”?\n\nData categories:",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question requires identifying basic data categories for a standard processing activity, which is a direct application of data inventory principles without complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories associated with a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 6",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question identifies specific categories of personal data and the purpose of processing, which relates to the principle of purpose limitation and the lawfulness of processing."
+  },
+  {
+    "id": "q080",
+    "question": "Which categories of personal data are relevant for the processing activity: “Use of office software” for the purpose: “Creation, processing and management of documents in business operations, analyses and presentations”?\n\nData categories:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question requires identifying standard data categories for a common business activity, which is a direct application of basic data protection inventory concepts.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories associated with a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 4"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question identifies specific categories of personal data and their purposes, which relates to the principles of data minimization and lawfulness of processing."
+  },
+  {
+    "id": "q081",
+    "question": "Which categories of personal data are relevant for the processing activity: “Supplier tenant management” for the purpose: “Execution and management of contractually agreed deliveries or services using a supplier database or file”?\n\nData categories:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question requires identifying standard data categories for a common business process, which can be derived directly from basic data minimization principles and standard commercial practice.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories relevant to a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 13"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The processing involves identifying the legal basis and data minimization principles for managing supplier contracts and personal data categories."
+  },
+  {
+    "id": "q082",
+    "question": "Which categories of personal data are relevant for the processing activity: “Data backup / backups” for the purpose: “Securing data in backups to ensure data availability”?\n\nData categories:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question relates to a fundamental operational concept where the answer is a direct logical consequence of the nature of backups, requiring no complex legal synthesis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer identifies the specific categories of data involved in a process by listing them as a comprehensive set.",
+    "gdpr_articles": [
+      "Art. 32",
+      "Art. 5",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "Data backups are a technical measure to ensure the availability and resilience of processing systems as required by security obligations."
+  },
+  {
+    "id": "q083",
+    "question": "Which categories of personal data are relevant for the processing activity: “Credit assessment” for the purpose of: “Obtaining information on the creditworthiness or solvency of (future) customers”?\n\nData categories:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying a standard set of data categories for a specific processing purpose, applying the principle of data minimization and relevance without complex legal synthesis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories relevant to a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 22",
+      "Art. 13",
+      "Art. 14"
+    ],
+    "ai_act_relevant": true,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The identification of data categories for a specific purpose primarily concerns the principles of data minimization and the legal basis for processing under lawfulness."
+  },
+  {
+    "id": "q084",
+    "question": "Which categories of personal data are relevant for the processing activity: “Management” for the purpose: “Recording and documentation of internal expenses for employee catering costs”?\n\nData categories:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question requires identifying standard data categories for a specific administrative task, which is a direct application of the data minimisation principle to a routine business process.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific data categories associated with a processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 9"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of data categories necessary for a specific processing purpose, which relates to the principle of data minimization and the lawfulness of processing."
+  },
+  {
+    "id": "q085",
+    "question": "Which categories of personal data are relevant for the processing activity: “Performance of payroll accounting” for the purpose: “Calculation of monthly salaries in the HR department”?\n\nData categories:",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying a comprehensive list of data categories for a specific HR process and correctly distinguishing special categories of data under Article 9 GDPR, such as health and religious data.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories required for a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question identifies specific categories of personal data, including special categories under Article 9, required for lawful processing in an employment context."
+  },
+  {
+    "id": "q086",
+    "question": "Which categories of personal data are relevant for the processing activity: “Recording of patient findings” for the purpose: “Processing of patient data for treatment, billing and transmission via a practice management system or other systems”?\n\nData categories:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying standard data categories for a specific medical context and recognizing health data as a special category under Article 9 GDPR, which involves applying basic classification principles.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific data categories relevant to the described processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question focuses on identifying and categorizing personal data, specifically special categories of data under Article 9, to determine the legal basis for processing."
+  },
+  {
+    "id": "q087",
+    "question": "Which categories of personal data are relevant for the processing activity: “Guest Wi-Fi / network access” for the purpose: “Provision of an Internet connection via Wi-Fi or network cable for guests, customers or other visitors to the business premises”?\n\nData categories:",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying standard data categories for a common processing activity, applying the principle of data minimization to a specific business context.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data categories associated with a specific processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 13"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of personal data categories necessary for a specific processing purpose, which relates to the principle of data minimization and the lawfulness of processing."
+  },
+  {
+    "id": "q088",
+    "question": "Which categories of personal data are relevant for the processing activity: “Training” for the purpose of: “Providing training to raise awareness or increase the expertise of employees”?\n\nCategories of data:",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a basic classification task requiring the identification of standard data categories directly associated with a common HR processing activity.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific data categories associated with a processing activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of specific categories of personal data necessary for a processing purpose, which relates to the principle of data minimization and the lawfulness of processing."
+  },
+  {
+    "id": "q089",
+    "question": "How long may personal data be stored for the processing activity: “3G regulation in the workplace” for the purpose of: “Checking and documenting your 3G (recovered, vaccinated or tested) status” before it must be deleted?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "This requires applying the GDPR principle of storage limitation to a specific, time-bound regulatory context (COVID-19 workplace measures), involving the interpretation of necessity and proportionality.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer specifies a storage limitation period, which is a core compliance obligation and part of the data lifecycle process.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 9",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the lawfulness of processing sensitive health data for workplace compliance."
+  },
+  {
+    "id": "q090",
+    "question": "How long may personal data be stored for the processing activity: “Absence time recording” for the purpose: “Documentation of employee absences and absence times” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This requires applying the GDPR principle of storage limitation to a specific HR context, though the answer provided is a simplified rule of thumb rather than a complex legal synthesis.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific temporal obligation and triggering event for the deletion of data as part of a data lifecycle process.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 13"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the duration for which personal data may be kept before deletion."
+  },
+  {
+    "id": "q091",
+    "question": "How long may personal data be stored for the processing activity: “Agencies” for the purpose: “Appointment of an agency to provide services” before it must be deleted?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a specific retention period for a single processing activity, which is a basic compliance fact directly addressed by the storage limitation principle.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific temporal obligation and condition under which the data processing must cease and deletion must occur.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 13",
+      "Art. 17"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the duration of processing, which are core components of data processing principles."
+  },
+  {
+    "id": "q092",
+    "question": "How long may personal data be stored for the processing activity: “File creation” for the purpose: “Collection of data for the creation of a file with the client” before it must be deleted?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question relates to a basic application of the storage limitation principle and the right to erasure upon withdrawal of consent, involving a single direct concept.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the temporal obligation and the specific condition (revocation) that triggers the deletion process for stored data.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 13",
+      "Art. 17"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the duration of processing based on the data subject's consent or revocation."
+  },
+  {
+    "id": "q093",
+    "question": "How long may personal data be stored for the processing activity: “Preparation of offers” for the purpose: “Obtaining offers to determine the best conditions” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This requires applying the principle of storage limitation and the right to erasure (withdrawal of consent) to a specific business process, though the answer provided is a simplified application of GDPR Article 17.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific temporal obligation and condition for the storage and deletion process of personal data.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 13",
+      "Art. 17"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns storage limitation and the duration of processing, which are core principles under Article 5(1)(e)."
+  },
+  {
+    "id": "q094",
+    "question": "How long may personal data be stored for the processing activity: “Acceptance of orders via a web portal” for the purpose: “Collection of customer data to initiate business processes” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires applying the principle of storage limitation to a specific business process, though the provided answer is legally debatable as it ignores statutory retention periods.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific temporal obligation and condition for the deletion process of personal data.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 13",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the duration of processing based on the data subject's consent or business necessity."
+  },
+  {
+    "id": "q095",
+    "question": "How long may personal data be stored for the processing activity: “App and software development” for the purpose of: “Developing, operating and managing an app or software solution” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires applying the GDPR principle of storage limitation to a specific processing purpose, though the answer provided is a simplified application of consent withdrawal rather than a complex legal analysis.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the temporal obligation and the specific condition (revocation) that triggers the data deletion process.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 13",
+      "Art. 7"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the duration of processing based on the withdrawal of consent."
+  },
+  {
+    "id": "q096",
+    "question": "How long may personal data be stored for the processing activity: “Occupational safety” for the purpose: “Planning, implementation and documentation of occupational safety measures” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This requires applying the storage limitation principle to a specific HR context, though the answer provided is a simplified rule of thumb rather than a complex legal synthesis.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer specifies the temporal obligation and the triggering event for the deletion of personal data as part of a data lifecycle process.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 13",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the storage limitation principle and the duration for which personal data may be retained for a specific processing purpose."
+  },
+  {
+    "id": "q097",
+    "question": "How long may personal data be stored for the processing activity: “Employment contracts” for the purpose of: “Drawing up employment contracts to regulate employment” before they must be deleted?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a specific retention period for a standard processing activity, which is directly addressed by the storage limitation principle in Article 5(1)(e) GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific temporal obligation and the triggering event for the deletion process of personal data.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle and the lawfulness of processing durations for employment-related data."
+  },
+  {
+    "id": "q098",
+    "question": "How long may personal data be stored for the processing activity: “Recording working hours” for the purpose of: “Recording the working hours of individual employees” before it must be deleted?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This requires applying the storage limitation principle to a specific HR context, involving an understanding of when the primary purpose for processing expires.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer specifies a temporal obligation and the trigger for a data deletion process based on the storage limitation principle.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 17",
+      "Art. 13"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the storage limitation principle which dictates how long personal data may be retained for a specific processing purpose."
+  },
+  {
+    "id": "q099",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Quality management” for the purpose: “Introduction, auditing and operation of a quality management system (QMS)”?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This question requires identifying standard organizational roles associated with a specific processing purpose, applying general principles of data access and 'need-to-know' within a corporate context.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles authorized for access without describing processes or applying complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32",
+      "Art. 25"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for a specific processing activity, which falls under the controller's responsibility to ensure data protection by design and security."
+  },
+  {
+    "id": "q100",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Preparation of quotations” for the purpose of: “Obtaining quotations to determine the most advantageous conditions and terms of purchase”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a basic operational question regarding role-based access control that can be answered by identifying standard business functions associated with a single processing activity.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles or departments involved in the processing activity without requiring complex procedural steps or logical chaining.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for data processing within a specific business function."
+  },
+  {
+    "id": "q101",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Remote maintenance” for the purpose of: “Maintenance, repair, update, customization and other service activities of the controller on external electronic systems via remote access using third-party software or own software”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a factual identification of internal roles for a standard processing activity, which is a basic administrative aspect of data mapping rather than a complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles or departments authorized for the activity without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 32",
+      "Art. 24",
+      "Art. 5",
+      "Art. 25"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures to ensure secure processing during maintenance activities."
+  },
+  {
+    "id": "q102",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Mobile device management” for the purpose: “Processing of data for the management of issued mobile devices and self-brought devices”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a direct identification of a standard organizational role responsible for a specific technical task, requiring no complex legal interpretation or synthesis of multiple articles.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of roles authorized for access without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 32",
+      "Art. 24",
+      "Art. 5",
+      "Art. 29"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for secure data processing within an entity."
+  },
+  {
+    "id": "q103",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Audit / Internal audit” for the purpose of: “Internal audits for the continuous monitoring of processes to meet legal standards”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a specific internal role associated with a standard processing activity, which is a direct identification task rather than a complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a specific list of roles or departments authorized for a processing activity without requiring complex procedural steps or logical chaining.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal organizational measures, access controls, and the allocation of responsibilities within a controller's audit function."
+  },
+  {
+    "id": "q104",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Device management” for the purpose of: “Recording company-owned devices issued to employees or guests of the company”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic factual question regarding organizational roles in a standard processing activity, requiring no complex legal interpretation or synthesis of articles.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a specific list of roles authorized for a task without requiring complex procedural steps or logical chaining.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for managing employee data, which falls under the controller's responsibility to ensure secure processing."
+  },
+  {
+    "id": "q105",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Newsletter (email marketing)” for the purpose of: “Sending information and advertising by email newsletter incl. evaluations and analyses”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic operational question regarding internal data access roles for a standard processing activity, requiring no complex legal interpretation or synthesis of articles.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles or departments without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for data processing, which falls under the responsibility of the controller to ensure secure and limited access."
+  },
+  {
+    "id": "q106",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Employee appraisal” for the purpose of: “Conducting and recording employee appraisals”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a basic operational question regarding standard data access control and 'need-to-know' principles within a single processing activity.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of roles authorized to access data without describing a process or applying complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for data processing within an employment context."
+  },
+  {
+    "id": "q107",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Health management” for the purpose: “Administration and billing of health programs in the company”?",
+    "difficulty": 0.22,
+    "difficulty_rationale": "This is a basic factual question regarding internal access control and role-based access within a specific organizational process, requiring no complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles authorized for access without describing a process or applying complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 6",
+      "Art. 9",
+      "Art. 32",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the internal access limitations and lawfulness of processing sensitive health data for administrative purposes within an organization."
+  },
+  {
+    "id": "q108",
+    "question": "Which internal persons or roles may access the personal data as part of the processing activity: “Recording of conversations (telephone / face-to-face)” for the purpose of: “Recording and archiving of notes from telephone and face-to-face conversations”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "This is a basic factual question regarding internal access controls for a specific processing activity, requiring only a direct identification of relevant organizational roles.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific roles authorized to access data without explaining processes or applying complex legal logic.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 32",
+      "Art. 25"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question concerns internal access controls and organizational measures for data security and accountability within the controller's entity."
+  },
+  {
+    "id": "q109",
+    "question": "Which groups of data subjects are affected by the processing activity: “3G regulation at the workplace” for the purpose of: “Verification and documentation of your 3G (recovered, vaccinated, tested) status as a prerequisite for access to the workplace”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question requires identifying a single, obvious category of data subjects based on a direct reading of the processing context without complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer identifies a specific category of individuals from a list of potential data subjects without requiring complex legal reasoning or procedural steps.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 6",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The processing involves special categories of health data (vaccination/test status) and requires a valid legal basis under Articles 6 and 9."
+  },
+  {
+    "id": "q110",
+    "question": "Which groups of data subjects are affected by the processing activity: “Special payments (bonus)” for the purpose: “Settlement and administration of bonus and special payments”?",
+    "difficulty": 0.1,
+    "difficulty_rationale": "The question requires identifying a single, obvious category of data subjects directly linked to a standard HR processing activity.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of categories of individuals affected by the processing without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 88"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The processing of employee data for bonus payments primarily concerns the legal basis for processing and the principle of purpose limitation."
+  },
+  {
+    "id": "q111",
+    "question": "Which groups of data subjects are affected by the processing activity: “Preparation of offers” for the purpose of: “Obtaining offers to determine the most advantageous terms and conditions of purchase”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a basic identification task requiring the listing of standard categories of data subjects involved in a common business process, without complex legal interpretation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific categories of data subjects without requiring procedural steps or complex logical chaining.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 14",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The identification of data subjects and purposes is a prerequisite for establishing the legal basis and transparency requirements under the principles of processing."
+  },
+  {
+    "id": "q112",
+    "question": "Which groups of data subjects are affected by the processing activity: “Web forum” for the purpose: “Operation of a web forum for the fulfillment of contractual services determined by the forum rules”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question requires identifying a single category of data subjects based on a straightforward contractual purpose, directly mapping the service users to the legal category of customers.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of categories of individuals affected by the processing activity without requiring complex procedural steps or logical chaining.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 14"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of data subjects in the context of a specific processing purpose and legal basis, namely the fulfillment of a contract."
+  },
+  {
+    "id": "q113",
+    "question": "Which groups of data subjects are affected by the processing activity: “Contact form / chat function” for the purpose of: “Communication with customers, interested parties or other visitors to a website for the purpose of initiating a contract, customer support or for the provision of general information”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question requires identifying standard categories of data subjects for a common processing activity, which is a foundational task in data protection documentation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific categories of data subjects without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 13",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the identification of data subjects and the underlying purpose of processing, which is fundamental to establishing a legal basis and transparency under GDPR."
+  },
+  {
+    "id": "q114",
+    "question": "Which groups of data subjects are affected by the processing activity: “Audit / Internal audit” for the purpose: “Internal audits for the continuous monitoring of processes to meet legal standards”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question requires identifying specific categories of data subjects for a standard processing activity, which is a basic compliance task involving direct mapping of facts.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific categories of data subjects without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 30",
+      "Art. 5",
+      "Art. 6",
+      "Art. 24"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The identification of data subject categories for specific processing purposes is a core requirement of the record of processing activities and general accountability obligations."
+  },
+  {
+    "id": "q115",
+    "question": "Which groups of data subjects are affected by the processing activity: “Recording of conversations (telephone / face-to-face)” for the purpose of: “Recording and archiving of notes from telephone and face-to-face conversations”?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for a factual list of data subjects for a specific processing activity, which is a basic identification task based on standard organizational record-keeping.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific categories of data subjects without describing processes or applying complex legal logic.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 5",
+      "Art. 13",
+      "Art. 14",
+      "Art. 30"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The identification of data subjects and purposes for recording conversations primarily concerns the lawfulness of processing and the principle of purpose limitation."
+  },
+  {
+    "id": "q116",
+    "question": "Which groups of data subjects are affected by the processing activity: “Co-determination of the works council” for the purpose: “Co-determination rights on individual or collective employee-related issues to safeguard the interests of employees”?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question requires identifying standard categories of data subjects for a specific HR processing activity, which is a foundational task in data protection documentation.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of data subject categories without requiring procedural steps or complex legal reasoning.",
+    "gdpr_articles": [
+      "Art. 6",
+      "Art. 88",
+      "Art. 9",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The processing concerns the legal basis for processing employee data in the context of employment and collective agreements under Art. 88 and Art. 6."
+  },
+  {
+    "id": "q117",
+    "question": "We do not target customers using personal data - is the GDPR still relevant to us?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question addresses a common misconception about the scope of GDPR, requiring an understanding of the broad definition of personal data and its application to internal business operations beyond marketing.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the broad scope of GDPR rules to a specific business scenario where the user believes they do not process personal data.",
+    "gdpr_articles": [
+      "Art. 2",
+      "Art. 4",
+      "Art. 5",
+      "Art. 24",
+      "Art. 28"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response focuses on the broad scope of application for controllers and the necessity of contractual arrangements with third-party processors."
+  },
+  {
+    "id": "q118",
+    "question": "Does the GDPR also apply when personal data are processed outside the EU?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "This question requires understanding the extraterritorial application of Article 3, moving beyond simple establishment to the concepts of targeting and monitoring.",
+    "gdpr_articles": [
+      "Art. 3",
+      "Art. 27"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question specifically addresses the territorial scope of the Regulation as defined in the general provisions.",
+    "errors": {
+      "answer_type": "1 validation error for TypeResult\n  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value='thoughtful predictions (...s to non-EU entities.\"}', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+    }
+  },
+  {
+    "id": "q119",
+    "question": "Does the GDPR allow flexibility in its application?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires understanding the core principle of the risk-based approach and how it modulates specific obligations like DPIAs and breach notifications across different contexts.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the process and obligations of the risk-based approach, specifically how controllers must implement measures based on the nature and risk level of processing.",
+    "gdpr_articles": [
+      "Art. 24",
+      "Art. 25",
+      "Art. 32",
+      "Art. 33",
+      "Art. 35"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response focuses on the risk-based approach and the implementation of technical and organizational measures by controllers to ensure compliance."
+  },
+  {
+    "id": "q120",
+    "question": "I heard that we no longer need to file a notification for each processing? Is that true?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question addresses the shift from notification to accountability, requiring knowledge of Article 30 (records) and Article 36 (prior consultation) while noting specific exemptions for SMEs.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the shift in compliance obligations from a notification process to internal record-keeping and specific consultation steps for high-risk processing.",
+    "gdpr_articles": [
+      "Art. 30",
+      "Art. 36",
+      "Art. 35",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response focuses on the shift from administrative notification to internal record-keeping and prior consultation obligations for controllers."
+  },
+  {
+    "id": "q121",
+    "question": "Do we need to certify GDPR compliance by certification bodies?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires understanding the voluntary nature of certification and its relationship with the accountability principle under Articles 42 and 43 of the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the voluntary nature of the certification process and the mechanisms used to demonstrate compliance with legal obligations.",
+    "gdpr_articles": [
+      "Art. 42",
+      "Art. 43",
+      "Art. 5",
+      "Art. 24",
+      "Art. 28"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response focuses on voluntary certification mechanisms and codes of conduct used by controllers and processors to demonstrate accountability and compliance."
+  },
+  {
+    "id": "q122",
+    "question": "What does \"accountability\" mean in practice?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires moving beyond a simple definition to synthesize several distinct operational requirements (DPIAs, DPOs, documentation) that collectively constitute the principle of accountability under Article 5(2).",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the core principle of accountability by explaining its meaning and the practical measures required to fulfill it.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 25",
+      "Art. 30",
+      "Art. 35"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question focuses on the core principle of accountability as defined in Article 5(2) and its practical implementation through controller obligations."
+  },
+  {
+    "id": "q123",
+    "question": "Is it still possible to rely on implicit consent under the GDPR?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires moving beyond a simple definition to understand the shift in legal standards between the old Directive and the GDPR, specifically applying the principle of 'affirmative action' to exclude implicit consent.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the specific legal requirements and characteristics that constitute valid consent under the GDPR while clarifying what no longer qualifies.",
+    "gdpr_articles": [
+      "Art. 7",
+      "Art. 4(11)",
+      "Art. 6(1)(a)"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The query focuses on the validity and requirements of consent as a legal basis for processing personal data."
+  },
+  {
+    "id": "q124",
+    "question": "Should we update the information given to data subjects?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires understanding the core principle of transparency and the specific list of mandatory disclosures under Articles 13 and 14 of the GDPR, applying these requirements to the context of maintaining up-to-date privacy notices.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer primarily provides a list of specific information items that must be included in a privacy notice as required by the GDPR.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14",
+      "Art. 12",
+      "Art. 5"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query and answer focus on the transparency obligations and the specific information that must be provided to data subjects to exercise their rights."
+  },
+  {
+    "id": "q125",
+    "question": "How can Data Subjects ask to \"be forgotten\"?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question covers the core conditions and obligations of Article 17 GDPR, requiring the application of several specific grounds for erasure and the 'link-deletion' rule.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific conditions and steps required for a data subject to exercise the right to erasure and the subsequent obligations of the controller.",
+    "gdpr_articles": [
+      "Art. 17",
+      "Art. 12",
+      "Art. 19",
+      "Art. 21"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically addresses the Right to Erasure, which is a core individual right under Chapter III of the GDPR."
+  },
+  {
+    "id": "q126",
+    "question": "Can Data Subjects request a copy of their personal data or transfer these data to another service (data portability)?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires understanding the specific conditions and limitations of the right to data portability, including the distinction between provided and inferred data and the specific legal bases required.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the scope, conditions, and limitations of the right to data portability under the GDPR.",
+    "gdpr_articles": [
+      "Art. 20",
+      "Art. 15",
+      "Art. 12"
+    ],
+    "ai_act_relevant": false,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The query specifically addresses the right to data portability and the right of access, which are core components of Chapter III regarding data subject rights."
+  },
+  {
+    "id": "q127",
+    "question": "Does the GDPR restrict profiling of Data Subjects?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires synthesizing several distinct concepts including the definition of profiling, transparency obligations, the right to object, and specific exceptions under Article 22.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific obligations, conditions, and steps a controller must follow to legally conduct profiling and automated decision-making.",
+    "gdpr_articles": [
+      "Art. 22",
+      "Art. 21",
+      "Art. 13",
+      "Art. 4",
+      "Art. 35"
+    ],
+    "ai_act_relevant": true,
+    "domain": "data_subject_rights",
+    "domain_rationale": "The core of the response focuses on the data subject's right not to be subject to automated decision-making and the right to object."
+  },
+  {
+    "id": "q128",
+    "question": "Does the GDPR also apply if I use pseudonymous or encoded data?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires distinguishing between pseudonymisation and anonymisation, applying the concept of 'identifiability' under Recital 26 and Article 4(5) of the GDPR.",
+    "answer_type": "application",
+    "answer_type_rationale": "The answer applies the scope of the GDPR to a specific technical scenario (the use of pseudonymous data) and explains the resulting legal status.",
+    "gdpr_articles": [
+      "Art. 4",
+      "Art. 25",
+      "Art. 32",
+      "Art. 89",
+      "Art. 6"
+    ],
+    "ai_act_relevant": false,
+    "domain": "principles_and_lawfulness",
+    "domain_rationale": "The question concerns the definition and legal status of pseudonymised data as personal data under the scope of the Regulation's core principles."
+  },
+  {
+    "id": "q129",
+    "question": "What does a controller need to do when it relies on data processors?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires understanding the relationship between two core GDPR roles and identifying the specific compliance requirements under Article 28, moving beyond a single definition into procedural application.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps and obligations a controller must follow when engaging a processor, such as selecting providers, signing contracts, and managing sub-processing consent.",
+    "gdpr_articles": [
+      "Art. 28",
+      "Art. 24",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question specifically addresses the legal requirements and contractual obligations governing the relationship between a data controller and a data processor under Article 28."
+  },
+  {
+    "id": "q130",
+    "question": "My company processes personal data on behalf of other companies. What does the GDPR mean for us as a processor?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires synthesizing several distinct obligations for processors found across Articles 28, 30, and 82, moving beyond a single article to provide a comprehensive overview of the processor's legal status.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific legal obligations and operational steps a data processor must follow to comply with the GDPR.",
+    "gdpr_articles": [
+      "Art. 28",
+      "Art. 30",
+      "Art. 32",
+      "Art. 82",
+      "Art. 40"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query specifically addresses the direct statutory obligations, contractual requirements, and liability regimes applicable to data processors under the GDPR."
+  },
+  {
+    "id": "q131",
+    "question": "Data Breach Notification: What to do when your personal data has been breached?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires understanding the multi-step notification process and the specific risk thresholds (risk vs. high risk) that trigger different obligations under Articles 33 and 34 of the GDPR.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific steps and obligations a controller must follow when a data breach occurs, including notification timelines and required content.",
+    "gdpr_articles": [
+      "Art. 33",
+      "Art. 34",
+      "Art. 4",
+      "Art. 32"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The text focuses on the specific procedural obligations of data controllers to notify authorities and individuals in the event of a personal data breach."
+  },
+  {
+    "id": "q132",
+    "question": "I was informed, that as a director of a company, I have to appoint a data protection officer (DPO). Is this true for all companies?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the specific conditions under Article 37 of the GDPR where a DPO is mandatory, moving beyond a simple 'yes/no' to applying specific legal criteria.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific conditions under which a DPO must be appointed according to the GDPR.",
+    "gdpr_articles": [
+      "Art. 37",
+      "Art. 38",
+      "Art. 39"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The query specifically addresses the mandatory designation and requirements of a Data Protection Officer, which is a core obligation for controllers and processors."
+  },
+  {
+    "id": "q133",
+    "question": "My group of companies operates in different parts of the world. Can I still transfer personal data to countries outside the EU?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires understanding the multi-layered framework for international data transfers, including adequacy decisions, safeguards like BCRs/SCCs, and specific derogations.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific legal mechanisms and sequential conditions under which data transfers outside the EU are permitted, including adequacy decisions, safeguards, and derogations.",
+    "gdpr_articles": [
+      "Art. 44",
+      "Art. 45",
+      "Art. 46",
+      "Art. 47",
+      "Art. 49"
+    ],
+    "ai_act_relevant": false,
+    "domain": "transfers",
+    "domain_rationale": "The query and answer specifically address the legal mechanisms and conditions for transferring personal data to third countries or international organizations."
+  },
+  {
+    "id": "q134",
+    "question": "To which supervisory authority should I report?",
+    "difficulty": 0.65,
+    "difficulty_rationale": "The answer requires synthesising multiple complex concepts including the 'One-Stop-Shop' mechanism, the role of the Lead Supervisory Authority, the distinction between EU and non-EU controllers, and the dispute resolution role of the EDPB.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the process and mechanisms for determining which authority to report to, including the one-stop-shop mechanism and the coordination process between authorities.",
+    "gdpr_articles": [
+      "Art. 56",
+      "Art. 77",
+      "Art. 60",
+      "Art. 63",
+      "Art. 65"
+    ],
+    "ai_act_relevant": false,
+    "domain": "supervisory_authorities",
+    "domain_rationale": "The text focuses on the competence of the lead supervisory authority, the one-stop-shop mechanism, and the role of the EDPB in cross-border enforcement."
+  },
+  {
+    "id": "q135",
+    "question": "Does the GDPR provide full harmonisation or are there differences between member states?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires moving beyond the basic definition of a Regulation to understand the 'opening clauses' and the specific areas where Member States retain legislative discretion.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts the concept of direct applicability/harmonization with the reality of national variations and flexibility across different Member States.",
+    "gdpr_articles": [
+      "Art. 1",
+      "Art. 6",
+      "Art. 8",
+      "Art. 88",
+      "Art. 89"
+    ],
+    "ai_act_relevant": false,
+    "domain": "cross_cutting",
+    "domain_rationale": "The question addresses the regulatory nature of the GDPR as a whole, specifically focusing on opening clauses and national derogations that span multiple chapters."
+  },
+  {
+    "id": "q136",
+    "question": "How do I ensure that my organisation is GDPR-compliant?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question asks for a broad procedural overview rather than a specific legal interpretation, requiring the application of general accountability principles and organizational measures.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines a sequence of operational steps and ongoing obligations required to achieve and maintain compliance.",
+    "gdpr_articles": [
+      "Art. 24",
+      "Art. 5",
+      "Art. 30",
+      "Art. 32",
+      "Art. 35"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The response focuses on the organizational measures, accountability, and operational steps required for a controller to demonstrate and maintain compliance."
+  },
+  {
+    "id": "q137",
+    "question": "What is the risk of my organisation to comply with data protection rules as set by the GDPR?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question asks for a general overview of enforcement risks, which requires synthesizing several articles regarding corrective powers and administrative fines, but remains a foundational topic in GDPR compliance.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of corrective powers and potential penalties available to supervisory authorities without requiring complex procedural steps or multi-article logical chaining.",
+    "gdpr_articles": [
+      "Art. 83",
+      "Art. 58",
+      "Art. 82",
+      "Art. 77",
+      "Art. 80"
+    ],
+    "ai_act_relevant": false,
+    "domain": "enforcement_and_remedies",
+    "domain_rationale": "The response focuses on the corrective powers of supervisory authorities, administrative fines, and the right to compensation for data subjects."
+  },
+  {
+    "id": "q138",
+    "question": "When is a record of processing activities required under the GDPR and what does it contain?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the specific thresholds and content requirements of Article 30, including the application of the 'fewer than 250 employees' exemption and its three specific caveats.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines the specific conditions under which an obligation is triggered and the mandatory components required to fulfill that regulatory process.",
+    "gdpr_articles": [
+      "Art. 30",
+      "Art. 9",
+      "Art. 10"
+    ],
+    "ai_act_relevant": false,
+    "domain": "controller_processor_obligations",
+    "domain_rationale": "The question and answer specifically address the documentation requirements and exemptions for records of processing activities (ROPA) imposed on controllers and processors."
+  },
+  {
+    "id": "q139",
+    "question": "What is the primary objective of the AI Act?",
+    "difficulty": 0.15,
+    "difficulty_rationale": "The question asks for the core purpose of the regulation, which is explicitly stated in Article 1 and the introductory recitals of the AI Act.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the core purpose and fundamental objective of the AI Act as a legal concept.",
+    "gdpr_articles": [],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question and answer specifically address the core objectives and regulatory scope of the EU AI Act."
+  },
+  {
+    "id": "q140",
+    "question": "What approach does the AI Act propose for regulating AI systems?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "This is a foundational concept of the AI Act that can be answered by identifying the core regulatory framework described in the introductory articles.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the regulatory framework's operational process of categorizing systems into risk levels and assigning corresponding obligations.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 25",
+      "Art. 35"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question and answer specifically address the core regulatory framework and risk-based classification system of the EU AI Act."
+  },
+  {
+    "id": "q141",
+    "question": "What are the prohibited AI practices under the AI Act?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a factual list of prohibited practices which can be answered by a direct reference to Article 5 of the AI Act.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific prohibited practices explicitly mentioned in the legislation without requiring complex procedural steps or comparative analysis.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 9",
+      "Art. 22"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses prohibited AI practices which are a core regulatory component of the EU AI Act framework."
+  },
+  {
+    "id": "q142",
+    "question": "How are high-risk AI systems defined in the AI Act?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying the two-pronged classification mechanism of the AI Act (Annex II and Annex III), which involves understanding the relationship between product safety legislation and specific use-case categories.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer provides the criteria and scope that constitute the legal definition of 'high-risk AI systems' under the Act.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 22",
+      "Art. 35"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses the classification criteria for high-risk AI systems under the EU AI Act framework."
+  },
+  {
+    "id": "q143",
+    "question": "What obligations are imposed on high-risk AI system providers?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying a specific category of actor (high-risk providers) and listing several core compliance requirements, which involves applying multiple concepts from the AI Act.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific requirements and duties for providers without detailing the underlying processes or applying them to a specific case.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 24",
+      "Art. 25",
+      "Art. 35"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses the regulatory obligations for providers of high-risk AI systems as defined under the EU AI Act framework."
+  },
+  {
+    "id": "q144",
+    "question": "What transparency obligations exist for certain AI systems?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying specific categories of AI systems subject to transparency rules under the AI Act, involving the application of a single regulatory principle across several distinct use cases.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a direct list of specific AI system types and their associated transparency obligations as outlined in the regulation.",
+    "gdpr_articles": [
+      "Art. 13",
+      "Art. 14",
+      "Art. 12",
+      "Art. 5"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses transparency obligations for AI systems as defined in the EU AI Act, particularly for emotion recognition and synthetic content."
+  },
+  {
+    "id": "q145",
+    "question": "Does the AI Act support innovation?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying specific policy objectives and mechanisms within the Act, such as sandboxes and SME support, rather than just quoting a single definition.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes specific mechanisms and measures, such as regulatory sandboxes and SME support, designed to fulfill the obligation of promoting innovation.",
+    "gdpr_articles": [],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses the innovation-promoting mechanisms and regulatory frameworks established by the EU AI Act."
+  },
+  {
+    "id": "q146",
+    "question": "What governance structure is proposed for enforcing the AI Act?",
+    "difficulty": 0.25,
+    "difficulty_rationale": "The question asks for a factual description of the institutional framework, which is directly addressed in the text of the AI Act without requiring complex legal reasoning or synthesis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer lists the specific entities that comprise the governance structure without describing detailed procedures or complex logic.",
+    "gdpr_articles": [],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses the institutional governance and enforcement framework established by the EU AI Act."
+  },
+  {
+    "id": "q147",
+    "question": "How does the AI Act align with existing EU legislation?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires understanding the high-level relationship between the AI Act and other major frameworks like GDPR, though the answer provided is a general summary of the principle of legal coherence.",
+    "answer_type": "comparative",
+    "answer_type_rationale": "The answer contrasts and relates the AI Act to other existing legal frameworks like the GDPR and consumer protection laws to show how they align.",
+    "gdpr_articles": [
+      "Art. 1",
+      "Art. 2",
+      "Art. 95"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses the legislative alignment and integration of the AI Act within the broader EU legal framework."
+  },
+  {
+    "id": "q148",
+    "question": "What provisions are included for the monitoring and evaluation of AI systems?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying multiple distinct mechanisms for oversight, including reporting obligations and the role of the EU database, but remains at a descriptive level of the regulation's framework.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines specific reporting obligations for providers and the establishment of a database as part of the regulatory oversight process.",
+    "gdpr_articles": [
+      "Art. 35",
+      "Art. 5",
+      "Art. 24"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question and answer specifically address post-market monitoring, incident reporting, and registration requirements established under the EU AI Act framework."
+  },
+  {
+    "id": "q149",
+    "question": "What penalties does the AI Act impose for non-compliance?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a high-level summary of the enforcement mechanism which is directly stated in the core provisions of the regulation without requiring complex legal synthesis.",
+    "answer_type": "enumerative",
+    "answer_type_rationale": "The answer provides a list of the qualitative characteristics of the penalties imposed by the Act without requiring complex legal reasoning or procedural steps.",
+    "gdpr_articles": [
+      "Art. 83"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses the enforcement and penalty regime established by the EU AI Act."
+  },
+  {
+    "id": "q150",
+    "question": "What is the role of the conformity assessment in the AI Act?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a fundamental definition of a core mechanism in the AI Act, which can be answered by a direct reference to the purpose of high-risk classification and compliance.",
+    "answer_type": "definitional",
+    "answer_type_rationale": "The answer defines the fundamental purpose and function of the conformity assessment within the regulatory framework of the AI Act.",
+    "gdpr_articles": [],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses the conformity assessment procedure which is a core regulatory mechanism of the EU AI Act for high-risk systems."
+  },
+  {
+    "id": "q151",
+    "question": "What measured does the AI Act include for ensuring fairness and non-discrimination?",
+    "difficulty": 0.45,
+    "difficulty_rationale": "The question requires identifying and synthesizing several distinct requirements of the AI Act, such as data governance and risk management, to address the specific principle of non-discrimination.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer outlines specific technical and organizational measures and obligations that must be followed to achieve a regulatory objective.",
+    "gdpr_articles": [
+      "Art. 5",
+      "Art. 9",
+      "Art. 22"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses the EU AI Act's mechanisms for bias mitigation and non-discrimination through data governance and risk management."
+  },
+  {
+    "id": "q152",
+    "question": "Does the AI Act address the use of AI in biometric identification?",
+    "difficulty": 0.35,
+    "difficulty_rationale": "The question requires identifying a specific regulatory stance within the AI Act regarding a high-risk use case, involving the application of specific prohibitions and their exceptions.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the specific legal restrictions and conditional obligations governing the use of a particular AI application.",
+    "gdpr_articles": [
+      "Art. 9",
+      "Art. 5",
+      "Art. 35"
+    ],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The query specifically addresses the regulatory framework and prohibitions established by the EU AI Act regarding biometric identification systems."
+  },
+  {
+    "id": "q153",
+    "question": "What timeline does the AI Act propose for implementation and compliance?",
+    "difficulty": 0.2,
+    "difficulty_rationale": "The question asks for a basic factual timeline which is directly addressed by specific transitional provisions in the regulation.",
+    "answer_type": "procedural",
+    "answer_type_rationale": "The answer describes the timeline and process for implementation, compliance, and subsequent review obligations.",
+    "gdpr_articles": [],
+    "ai_act_relevant": true,
+    "domain": "ai_act",
+    "domain_rationale": "The question specifically addresses the implementation timeline and compliance deadlines established by the EU AI Act."
+  }
+]
