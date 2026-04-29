@@ -1,0 +1,172 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-26 22:34:58
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 3
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260426_223458.log
+=============================================
+[2026-04-26 22:34:58] INFO  Approach [agentic_rag] starting
+
+=============================================
+  [2026-04-26 22:34:58] Running: Agentic RAG
+=============================================
+[2026-04-26 22:34:58] INFO  Starting [agentic_rag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/agentic_rag/run.py --questions data/questions/allquestions.json --max-workers 3 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+[AgenticRAG] Processing 153 questions (max_workers=3)
+  [1/153] q001: tier=no_retrieval, 3.042s
+  [2/153] q002: tier=single_step, 5.898s
+  [3/153] q003: tier=single_step, 6.986s
+  [4/153] q004: tier=single_step, 6.381s
+  [5/153] q005: tier=single_step, 5.614s
+  [6/153] q006: tier=multi_step, 11.076s
+  [7/153] q008: tier=single_step, 7.013s
+  [8/153] q007: tier=multi_step, 11.301s
+  [9/153] q009: tier=single_step, 5.879s
+  [10/153] q010: tier=single_step, 6.868s
+  [11/153] q011: tier=single_step, 6.1s
+  [12/153] q012: tier=no_retrieval, 5.742s
+  [13/153] q013: tier=single_step, 5.379s
+  [14/153] q014: tier=single_step, 7.687s
+  [15/153] q015: tier=single_step, 5.983s
+  [16/153] q016: tier=single_step, 6.114s
+  [17/153] q017: tier=no_retrieval, 5.19s
+  [18/153] q019: tier=single_step, 7.415s
+  [19/153] q020: tier=single_step, 5.769s
+  [20/153] q018: tier=multi_step, 11.655s
+  [21/153] q021: tier=single_step, 6.426s
+  [22/153] q023: tier=single_step, 7.111s
+  [23/153] q024: tier=single_step, 6.063s
+  [24/153] q026: tier=multi_step, 9.258s
+  [25/153] q025: tier=multi_step, 12.205s
+  [26/153] q022: tier=multi_step, 27.282s
+  [27/153] q028: tier=single_step, 6.216s
+  [28/153] q030: tier=no_retrieval, 3.661s
+  [29/153] q027: tier=single_step, 11.374s
+  [30/153] q029: tier=single_step, 5.666s
+  [31/153] q032: tier=single_step, 5.782s
+  [32/153] q033: tier=single_step, 5.774s
+  [33/153] q031: tier=multi_step, 11.427s
+  [34/153] q035: tier=single_step, 4.766s
+  [35/153] q034: tier=single_step, 5.995s
+  [36/153] q036: tier=no_retrieval, 4.053s
+  [37/153] q037: tier=single_step, 6.15s
+  [38/153] q038: tier=single_step, 6.25s
+  [39/153] q039: tier=no_retrieval, 3.845s
+  [40/153] q041: tier=multi_step, 5.026s
+  [41/153] q040: tier=single_step, 6.438s
+  [42/153] q042: tier=single_step, 6.852s
+  [43/153] q043: tier=single_step, 6.708s
+  [44/153] q045: tier=single_step, 5.967s
+  [45/153] q044: tier=multi_step, 12.71s
+  [46/153] q047: tier=single_step, 6.295s
+  [47/153] q046: tier=multi_step, 12.057s
+  [48/153] q048: tier=single_step, 6.29s
+  [49/153] q049: tier=multi_step, 5.996s
+  [50/153] q052: tier=single_step, 4.091s
+  [51/153] q050: tier=multi_step, 10.964s
+  [52/153] q051: tier=multi_step, 11.136s
+  [53/153] q053: tier=single_step, 6.763s
+  [54/153] q054: tier=single_step, 5.827s
+  [55/153] q055: tier=no_retrieval, 4.815s
+  [56/153] q058: tier=single_step, 4.986s
+  [57/153] q057: tier=single_step, 5.942s
+  [58/153] q056: tier=multi_step, 10.998s
+  [59/153] q060: tier=single_step, 5.939s
+  [60/153] q061: tier=single_step, 6.2s
+  [61/153] q059: tier=multi_step, 11.52s
+  [62/153] q063: tier=single_step, 6.628s
+  [63/153] q062: tier=multi_step, 11.082s
+  [64/153] q064: tier=single_step, 6.179s
+  [65/153] q065: tier=single_step, 5.186s
+  [66/153] q066: tier=single_step, 7.103s
+  [67/153] q067: tier=single_step, 7.083s
+  [68/153] q068: tier=single_step, 6.465s
+  [69/153] q070: tier=single_step, 6.799s
+  [70/153] q071: tier=multi_step, 11.382s
+  [71/153] q069: tier=multi_step, 12.569s
+  [72/153] q072: tier=multi_step, 11.931s
+  [73/153] q074: tier=multi_step, 11.368s
+  [74/153] q073: tier=multi_step, 11.844s
+  [75/153] q075: tier=multi_step, 14.744s
+  [76/153] q077: tier=multi_step, 11.318s
+  [77/153] q076: tier=multi_step, 12.157s
+  [78/153] q080: tier=single_step, 6.501s
+  [79/153] q078: tier=multi_step, 11.487s
+  [80/153] q081: tier=single_step, 4.968s
+  [81/153] q082: tier=multi_step, 11.263s
+  [82/153] q083: tier=multi_step, 10.25s
+  [83/153] q079: tier=single_step, 25.401s
+  [84/153] q085: tier=single_step, 5.857s
+  [85/153] q086: tier=single_step, 6.798s
+  [86/153] q084: tier=single_step, 12.535s
+  [87/153] q088: tier=single_step, 5.676s
+  [88/153] q087: tier=multi_step, 10.14s
+  [89/153] q089: tier=multi_step, 11.326s
+  [90/153] q091: tier=multi_step, 9.402s
+  [91/153] q090: tier=multi_step, 10.717s
+  [92/153] q092: tier=multi_step, 10.387s
+  [93/153] q093: tier=multi_step, 10.197s
+  [94/153] q094: tier=multi_step, 10.836s
+  [95/153] q095: tier=multi_step, 12.132s
+  [96/153] q096: tier=multi_step, 10.905s
+  [97/153] q097: tier=multi_step, 10.801s
+  [98/153] q098: tier=multi_step, 11.766s
+  [99/153] q099: tier=multi_step, 11.11s
+  [100/153] q100: tier=multi_step, 10.102s
+  [101/153] q101: tier=multi_step, 10.503s
+  [102/153] q103: tier=multi_step, 10.972s
+  [103/153] q102: tier=multi_step, 12.421s
+  [104/153] q104: tier=multi_step, 10.978s
+  [105/153] q106: tier=multi_step, 10.009s
+  [106/153] q105: tier=multi_step, 11.951s
+  [107/153] q108: tier=multi_step, 10.873s
+  [108/153] q109: tier=multi_step, 10.053s
+  [109/153] q110: tier=no_retrieval, 3.657s
+  [110/153] q107: tier=multi_step, 17.653s
+  [111/153] q113: tier=no_retrieval, 3.358s
+  [112/153] q112: tier=single_step, 5.119s
+  [113/153] q111: tier=single_step, 12.34s
+  [114/153] q115: tier=multi_step, 9.436s
+  [115/153] q114: tier=multi_step, 11.772s
+  [116/153] q117: tier=no_retrieval, 4.78s
+  [117/153] q116: tier=multi_step, 10.575s
+  [118/153] q118: tier=single_step, 6.195s
+  [119/153] q119: tier=no_retrieval, 5.761s
+  [120/153] q120: tier=single_step, 6.707s
+  [121/153] q121: tier=single_step, 6.526s
+  [122/153] q123: tier=single_step, 9.483s
+  [123/153] q122: tier=multi_step, 11.196s
+  [124/153] q124: tier=multi_step, 10.478s
+  [125/153] q125: tier=single_step, 6.393s
+  [126/153] q128: tier=single_step, 4.861s
+  [127/153] q127: tier=multi_step, 11.616s
+  [128/153] q129: tier=single_step, 7.019s
+  [129/153] q126: tier=multi_step, 18.841s
+  [130/153] q131: tier=single_step, 7.067s
+  [131/153] q132: tier=single_step, 7.233s
+  [132/153] q130: tier=single_step, 14.875s
+  [133/153] q134: tier=single_step, 5.529s
+  [134/153] q133: tier=single_step, 7.129s
+  [135/153] q135: tier=multi_step, 13.558s
+  [136/153] q136: tier=multi_step, 12.062s
+  [137/153] q137: tier=multi_step, 12.042s
+  [138/153] q139: tier=no_retrieval, 3.384s
+  [139/153] q140: tier=no_retrieval, 4.088s
+  [140/153] q138: tier=single_step, 7.117s
+  [141/153] q141: tier=no_retrieval, 5.372s
+  [142/153] q142: tier=no_retrieval, 6.344s
+  [143/153] q143: tier=no_retrieval, 6.301s
+  [144/153] q145: tier=no_retrieval, 5.743s
+  [145/153] q144: tier=multi_step, 12.268s
+  [146/153] q146: tier=multi_step, 12.045s
+  [147/153] q147: tier=multi_step, 11.276s
+  [148/153] q149: tier=no_retrieval, 4.557s
+  [149/153] q148: tier=multi_step, 11.278s
+  [150/153] q150: tier=no_retrieval, 5.434s
+  [151/153] q152: tier=no_retrieval, 5.457s
+  [152/153] q153: tier=no_retrieval, 5.094s
+  [153/153] q151: tier=multi_step, 14.624s
+[OutputLogger] Saved 153 results to /root/home/masterarbeit_implementation/rag_evaluation/outputs/agentic_rag_2026-04-26T20-42-22.json
+[AgenticRAG] Done. Output: /root/home/masterarbeit_implementation/rag_evaluation/outputs/agentic_rag_2026-04-26T20-42-22.json
+[2026-04-26 22:42:22] INFO  Finished [agentic_rag] in 444s
+[2026-04-26 22:42:22] INFO  Approach [agentic_rag] done in 444s

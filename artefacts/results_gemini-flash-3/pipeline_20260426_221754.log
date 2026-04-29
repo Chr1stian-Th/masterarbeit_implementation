@@ -1,0 +1,172 @@
+=============================================
+  RAG Evaluation Pipeline
+  Started:     2026-04-26 22:17:54
+  Mode:        run
+  Approaches:  lightrag,agentic_rag,crag
+  Max workers: 3
+  Log file:    /root/home/masterarbeit_implementation/rag_evaluation/pipeline_20260426_221754.log
+=============================================
+[2026-04-26 22:17:54] INFO  Approach [crag] starting
+
+=============================================
+  [2026-04-26 22:17:54] Running: CRAG
+=============================================
+[2026-04-26 22:17:54] INFO  Starting [crag]: /root/home/masterarbeit_implementation/rag_evaluation/approaches/crag/run.py --questions data/questions/allquestions.json --max-workers 3 --output-dir /root/home/masterarbeit_implementation/rag_evaluation/outputs
+[CRAG] Processing 153 questions (max_workers=3)
+  [1/153] q001: verdict=correct, 17.063s
+  [2/153] q002: verdict=correct, 17.767s
+  [3/153] q003: verdict=correct, 20.289s
+  [4/153] q005: verdict=correct, 14.344s
+  [5/153] q004: verdict=correct, 20.325s
+  [6/153] q006: verdict=correct, 19.73s
+  [7/153] q008: verdict=correct, 15.016s
+  [8/153] q007: verdict=correct, 20.936s
+  [9/153] q009: verdict=correct, 18.279s
+  [10/153] q012: verdict=correct, 10.432s
+  [11/153] q011: verdict=correct, 18.041s
+  [12/153] q010: verdict=correct, 19.281s
+  [13/153] q015: verdict=correct, 9.811s
+  [14/153] q013: verdict=correct, 15.057s
+  [15/153] q014: verdict=correct, 17.457s
+  [16/153] q016: verdict=correct, 15.942s
+  [17/153] q017: verdict=correct, 15.775s
+  [18/153] q018: verdict=correct, 12.42s
+  [19/153] q021: verdict=correct, 15.774s
+  [20/153] q019: verdict=correct, 19.322s
+  [21/153] q020: verdict=correct, 21.138s
+  [22/153] q022: verdict=correct, 15.736s
+  [23/153] q023: verdict=correct, 21.01s
+  [24/153] q025: verdict=correct, 15.259s
+  [25/153] q024: verdict=correct, 28.085s
+  [26/153] q026: verdict=correct, 12.311s
+  [27/153] q027: verdict=correct, 17.627s
+  [28/153] q029: verdict=correct, 17.068s
+  [29/153] q028: verdict=correct, 18.442s
+  [30/153] q032: verdict=correct, 13.151s
+  [31/153] q031: verdict=correct, 15.798s
+  [32/153] q030: verdict=correct, 19.992s
+  [33/153] q033: verdict=correct, 9.947s
+  [34/153] q035: verdict=correct, 11.219s
+  [35/153] q034: verdict=correct, 17.861s
+  [36/153] q036: verdict=correct, 12.814s
+  [37/153] q037: verdict=correct, 18.175s
+  [38/153] q038: verdict=correct, 18.354s
+  [39/153] q039: verdict=correct, 19.907s
+  [40/153] q041: verdict=correct, 13.822s
+  [41/153] q040: verdict=correct, 21.142s
+  [42/153] q042: verdict=correct, 23.094s
+  [43/153] q043: verdict=correct, 14.303s
+  [44/153] q044: verdict=correct, 17.241s
+  [45/153] q046: verdict=correct, 11.54s
+  [46/153] q045: verdict=correct, 16.365s
+  [47/153] q047: verdict=correct, 15.554s
+  [48/153] q048: verdict=correct, 14.911s
+  [49/153] q049: verdict=correct, 15.458s
+  [50/153] q052: verdict=correct, 10.876s
+  [51/153] q050: verdict=correct, 22.046s
+  [52/153] q051: verdict=correct, 17.662s
+  [53/153] q055: verdict=correct, 9.476s
+  [54/153] q054: verdict=correct, 15.846s
+  [55/153] q053: verdict=correct, 20.922s
+  [56/153] q057: verdict=correct, 9.283s
+  [57/153] q056: verdict=correct, 18.546s
+  [58/153] q058: verdict=correct, 11.272s
+  [59/153] q059: verdict=correct, 18.403s
+  [60/153] q060: verdict=correct, 15.796s
+  [61/153] q061: verdict=correct, 14.477s
+  [62/153] q064: verdict=correct, 13.478s
+  [63/153] q063: verdict=correct, 17.002s
+  [64/153] q062: verdict=correct, 18.702s
+  [65/153] q065: verdict=correct, 15.169s
+  [66/153] q067: verdict=correct, 15.074s
+  [67/153] q066: verdict=correct, 19.445s
+  [68/153] q068: verdict=correct, 15.263s
+  [69/153] q069: verdict=correct, 13.008s
+  [70/153] q070: verdict=correct, 17.48s
+  [71/153] q071: verdict=correct, 15.62s
+  [72/153] q072: verdict=correct, 18.151s
+  [73/153] q073: verdict=correct, 13.325s
+  [74/153] q074: verdict=correct, 19.444s
+  [75/153] q076: verdict=correct, 14.189s
+  [76/153] q075: verdict=correct, 17.52s
+  [77/153] q077: verdict=correct, 13.693s
+  [78/153] q078: verdict=correct, 17.195s
+  [79/153] q079: verdict=correct, 18.166s
+  [80/153] q080: verdict=correct, 15.401s
+  [81/153] q081: verdict=correct, 15.269s
+  [82/153] q083: verdict=correct, 9.831s
+  [83/153] q082: verdict=correct, 18.568s
+  [84/153] q085: verdict=correct, 10.591s
+  [85/153] q084: verdict=correct, 16.615s
+  [86/153] q086: verdict=correct, 15.854s
+  [87/153] q087: verdict=correct, 10.593s
+  [88/153] q089: verdict=correct, 11.831s
+  [89/153] q088: verdict=correct, 16.708s
+  [90/153] q090: verdict=correct, 10.458s
+  [91/153] q091: verdict=correct, 9.938s
+  [92/153] q093: verdict=correct, 10.16s
+  [93/153] q092: verdict=correct, 15.794s
+  [94/153] q094: verdict=correct, 15.345s
+  [95/153] q095: verdict=correct, 19.14s
+  [96/153] q096: verdict=correct, 18.982s
+  [97/153] q097: verdict=correct, 10.839s
+  [98/153] q098: verdict=correct, 14.674s
+  [99/153] q100: verdict=correct, 14.429s
+  [100/153] q099: verdict=correct, 16.321s
+  [101/153] q101: verdict=correct, 15.427s
+  [102/153] q102: verdict=correct, 15.638s
+  [103/153] q103: verdict=correct, 16.27s
+  [104/153] q104: verdict=correct, 12.93s
+  [105/153] q105: verdict=correct, 16.171s
+  [106/153] q106: verdict=correct, 14.884s
+  [107/153] q109: verdict=correct, 9.647s
+  [108/153] q107: verdict=correct, 19.093s
+  [109/153] q108: verdict=correct, 17.23s
+  [110/153] q110: verdict=correct, 9.598s
+  [111/153] q111: verdict=correct, 16.553s
+  [112/153] q112: verdict=correct, 17.496s
+  [113/153] q113: verdict=correct, 14.896s
+  [114/153] q116: verdict=correct, 10.515s
+  [115/153] q114: verdict=correct, 17.034s
+  [116/153] q115: verdict=correct, 15.198s
+  [117/153] q118: verdict=correct, 16.712s
+  [118/153] q117: verdict=correct, 18.94s
+  [119/153] q119: verdict=correct, 17.479s
+  [120/153] q122: verdict=correct, 13.331s
+  [121/153] q120: verdict=correct, 19.98s
+  [122/153] q121: verdict=correct, 19.091s
+  [123/153] q123: verdict=correct, 14.919s
+  [124/153] q124: verdict=correct, 17.733s
+  [125/153] q125: verdict=correct, 18.432s
+  [126/153] q126: verdict=correct, 17.755s
+  [127/153] q128: verdict=correct, 14.22s
+  [128/153] q127: verdict=correct, 19.503s
+  [129/153] q129: verdict=correct, 20.417s
+  [130/153] q130: verdict=correct, 18.734s
+  [131/153] q131: verdict=correct, 16.644s
+  [132/153] q134: verdict=correct, 10.023s
+  [133/153] q132: verdict=correct, 15.984s
+  [134/153] q133: verdict=correct, 19.238s
+  [135/153] q135: verdict=correct, 15.485s
+  [136/153] q136: verdict=correct, 21.087s
+  [137/153] q137: verdict=correct, 19.911s
+  [138/153] q138: verdict=correct, 17.383s
+  [139/153] q139: verdict=correct, 18.591s
+  [140/153] q140: verdict=correct, 19.819s
+  [141/153] q141: verdict=correct, 15.895s
+  [142/153] q142: verdict=correct, 19.906s
+  [143/153] q144: verdict=correct, 19.308s
+  [144/153] q143: verdict=correct, 22.231s
+  [145/153] q145: verdict=correct, 18.08s
+  [146/153] q147: verdict=correct, 19.177s
+  [147/153] q148: verdict=correct, 17.738s
+  [148/153] q146: verdict=correct, 37.816s
+  [149/153] q149: verdict=correct, 20.341s
+  [150/153] q150: verdict=correct, 19.629s
+  [151/153] q151: verdict=correct, 18.662s
+  [152/153] q152: verdict=correct, 19.973s
+  [153/153] q153: verdict=correct, 15.63s
+[OutputLogger] Saved 153 results to /root/home/masterarbeit_implementation/rag_evaluation/outputs/crag_2026-04-26T20-31-59.json
+[CRAG] Done. Output: /root/home/masterarbeit_implementation/rag_evaluation/outputs/crag_2026-04-26T20-31-59.json
+[2026-04-26 22:31:59] INFO  Finished [crag] in 845s
+[2026-04-26 22:31:59] INFO  Approach [crag] done in 845s
