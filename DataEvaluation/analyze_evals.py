@@ -78,6 +78,7 @@ from typing import Any
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -300,14 +301,23 @@ def compute_costs(evals: list[dict], costs_table: dict, eval_dir: Path) -> pd.Da
 # ---------------------------------------------------------------------------
 
 def aggregate(df: pd.DataFrame, group_cols: list[str], score_type: str) -> pd.DataFrame:
-    """Aggregate scores; score_type ∈ {avg_score, pass_rate}."""
-    if score_type == "avg_score":
-        agg = df.groupby(group_cols, dropna=False)["score"].mean().reset_index()
-        return agg.rename(columns={"score": "value"})
-    if score_type == "pass_rate":
-        agg = df.groupby(group_cols, dropna=False)["passed"].mean().reset_index()
-        return agg.rename(columns={"passed": "value"})
-    raise ValueError(f"Unknown score_type: {score_type}")
+    """Aggregate scores with 95% CI half-width; score_type ∈ {avg_score, pass_rate}."""
+    col = "score" if score_type == "avg_score" else "passed"
+
+    def _ci95(x):
+        arr = np.asarray(x, dtype=float)
+        n = len(arr)
+        if n < 2:
+            return 0.0
+        se = arr.std(ddof=1) / np.sqrt(n)
+        return float(se * stats.t.ppf(0.975, df=n - 1))
+
+    agg = (
+        df.groupby(group_cols, dropna=False)[col]
+        .agg(value="mean", ci=_ci95)
+        .reset_index()
+    )
+    return agg
 
 
 def score_label(score_type: str) -> str:
@@ -318,8 +328,10 @@ def score_label(score_type: str) -> str:
 # Plotting helpers
 # ---------------------------------------------------------------------------
 
-def _bar_pivot(pivot: pd.DataFrame, ax, ylabel: str, title: str, ylim=(0, 1.05)):
-    pivot.plot(kind="bar", ax=ax, edgecolor="black", linewidth=0.4, width=0.8)
+def _bar_pivot(pivot: pd.DataFrame, ax, ylabel: str, title: str, ylim=(0, 1.05),
+               errors: pd.DataFrame | None = None):
+    pivot.plot(kind="bar", ax=ax, edgecolor="black", linewidth=0.4, width=0.8,
+               yerr=errors, error_kw={"linewidth": 1, "ecolor": "black", "capsize": 3})
     ax.set_title(title)
     ax.set_ylabel(ylabel)
     if ylim is not None:
@@ -333,9 +345,10 @@ def plot_all_metrics_grouped(df: pd.DataFrame, group_col: str, score_type: str,
     """Grouped bars: x = metric, hue = group_col."""
     agg = aggregate(df, ["metric", group_col], score_type)
     pivot = agg.pivot(index="metric", columns=group_col, values="value")
+    errors = agg.pivot(index="metric", columns=group_col, values="ci")
     fig, ax = plt.subplots(figsize=FIG_WIDE)
     title = f"All metrics — {score_label(score_type)} by {group_col}"
-    _bar_pivot(pivot, ax, score_label(score_type), title)
+    _bar_pivot(pivot, ax, score_label(score_type), title, errors=errors)
     plt.tight_layout()
     fig.savefig(save_path)
     plt.close(fig)
@@ -356,8 +369,9 @@ def plot_all_metrics_facets(df: pd.DataFrame, facet_col: str, group_col: str,
         sub = df[df[facet_col] == fv]
         agg = aggregate(sub, ["metric", group_col], score_type)
         pivot = agg.pivot(index="metric", columns=group_col, values="value")
+        errors = agg.pivot(index="metric", columns=group_col, values="ci")
         title = f"{fv} — {score_label(score_type)}"
-        _bar_pivot(pivot, ax, score_label(score_type), title)
+        _bar_pivot(pivot, ax, score_label(score_type), title, errors=errors)
     # Hide unused subplots
     for j in range(n, rows * cols):
         axes[j // cols][j % cols].axis("off")
@@ -375,8 +389,10 @@ def plot_per_metric_bars(df: pd.DataFrame, metric: str, group_col: str,
     agg = aggregate(sub, [group_col], score_type)
     fig, ax = plt.subplots(figsize=FIG_NARROW)
     xs = agg[group_col].astype(str).tolist()
-    ax.bar(xs, agg["value"],
-           edgecolor="black", linewidth=0.4)
+    colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(xs), 1)))
+    ax.bar(xs, agg["value"], yerr=agg["ci"], capsize=4,
+           color=colors, edgecolor="black", linewidth=0.4,
+           error_kw={"linewidth": 1, "ecolor": "black"})
     ax.set_title(f"{metric} — {score_label(score_type)} by {group_col}")
     ax.set_ylabel(score_label(score_type))
     ax.set_ylim(0, 1.05)
@@ -403,8 +419,10 @@ def plot_per_metric_facets(df: pd.DataFrame, metric: str, facet_col: str,
         s2 = sub[sub[facet_col] == fv]
         agg = aggregate(s2, [group_col], score_type)
         xs = agg[group_col].astype(str).tolist()
-        ax.bar(xs, agg["value"],
-               edgecolor="black", linewidth=0.4)
+        colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(xs), 1)))
+        ax.bar(xs, agg["value"], yerr=agg["ci"], capsize=4,
+               color=colors, edgecolor="black", linewidth=0.4,
+               error_kw={"linewidth": 1, "ecolor": "black"})
         ax.set_title(f"{fv}")
         ax.set_ylabel(score_label(score_type))
         ax.set_ylim(0, 1.05)
@@ -414,6 +432,56 @@ def plot_per_metric_facets(df: pd.DataFrame, metric: str, facet_col: str,
         axes[j // cols][j % cols].axis("off")
     fig.suptitle(f"{metric} — {score_label(score_type)} by {group_col}, "
                  f"per {facet_col}", fontsize=12, y=1.02)
+    plt.tight_layout()
+    fig.savefig(save_path, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
+# Spider / radar charts
+# ---------------------------------------------------------------------------
+
+def plot_spider_chart(df: pd.DataFrame, group_col: str, score_type: str,
+                      save_path: Path):
+    """Radar chart: axes = metrics, one polygon per group_col value."""
+    agg = aggregate(df, ["metric", group_col], score_type)
+    metrics = sorted(agg["metric"].unique())
+    groups = sorted(agg[group_col].unique())
+    N = len(metrics)
+    if N < 3:
+        return  # need ≥3 axes for a meaningful radar chart
+
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]  # close the polygon
+
+    fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
+    colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(groups), 1)))
+
+    for group, color in zip(groups, colors):
+        vals = []
+        cis = []
+        for metric in metrics:
+            row = agg[(agg["metric"] == metric) & (agg[group_col] == group)]
+            vals.append(float(row["value"].iloc[0]) if not row.empty else 0.0)
+            cis.append(float(row["ci"].iloc[0]) if not row.empty else 0.0)
+        vals += vals[:1]
+        cis += cis[:1]
+
+        ax.plot(angles, vals, "o-", linewidth=2, color=color, label=str(group))
+        ax.fill(angles, vals, alpha=0.1, color=color)
+
+        # CI band
+        ci_upper = [min(v + c, 1.0) for v, c in zip(vals, cis)]
+        ci_lower = [max(v - c, 0.0) for v, c in zip(vals, cis)]
+        ax.fill_between(angles, ci_lower, ci_upper, alpha=0.08, color=color)
+
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(metrics, fontsize=9)
+    ax.set_ylim(0, 1)
+    ax.set_title(f"All metrics — {score_label(score_type)} by {group_col}",
+                 pad=20, fontsize=12)
+    ax.legend(loc="upper right", bbox_to_anchor=(1.35, 1.1), fontsize=8,
+              frameon=False)
     plt.tight_layout()
     fig.savefig(save_path, bbox_inches="tight")
     plt.close(fig)
@@ -431,8 +499,9 @@ def plot_cost_charts(cost_df: pd.DataFrame, df_scores: pd.DataFrame, save_dir: P
     # 1) Raw cost per (model, approach)
     fig, ax = plt.subplots(figsize=FIG_NARROW)
     plot_df = cost_df.dropna(subset=["cost_usd"])
+    colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(plot_df), 1)))
     ax.bar(plot_df["model_approach"], plot_df["cost_usd"],
-           edgecolor="black", linewidth=0.4)
+           color=colors, edgecolor="black", linewidth=0.4)
     ax.set_title("Raw cost (USD) per model & approach")
     ax.set_ylabel("USD")
     plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
@@ -445,8 +514,9 @@ def plot_cost_charts(cost_df: pd.DataFrame, df_scores: pd.DataFrame, save_dir: P
     by_model = by_model.dropna()
     if not by_model.empty:
         fig, ax = plt.subplots(figsize=FIG_NARROW)
+        colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(by_model), 1)))
         ax.bar(by_model["model"], by_model["cost_usd"],
-               edgecolor="black", linewidth=0.4)
+               color=colors, edgecolor="black", linewidth=0.4)
         ax.set_title("Raw cost (USD) per model")
         ax.set_ylabel("USD")
         plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
@@ -459,8 +529,9 @@ def plot_cost_charts(cost_df: pd.DataFrame, df_scores: pd.DataFrame, save_dir: P
     by_app = by_app.dropna()
     if not by_app.empty:
         fig, ax = plt.subplots(figsize=FIG_NARROW)
+        colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(by_app), 1)))
         ax.bar(by_app["approach"], by_app["cost_usd"],
-               edgecolor="black", linewidth=0.4)
+               color=colors, edgecolor="black", linewidth=0.4)
         ax.set_title("Raw cost (USD) per approach")
         ax.set_ylabel("USD")
         plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
@@ -479,8 +550,9 @@ def plot_cost_charts(cost_df: pd.DataFrame, df_scores: pd.DataFrame, save_dir: P
     plot_df = merged.dropna(subset=["score_per_usd"])
     if not plot_df.empty:
         fig, ax = plt.subplots(figsize=FIG_NARROW)
+        colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(plot_df), 1)))
         ax.bar(plot_df["model_approach"], plot_df["score_per_usd"],
-               edgecolor="black", linewidth=0.4)
+               color=colors, edgecolor="black", linewidth=0.4)
         ax.set_title("Avg score per USD (overall)")
         ax.set_ylabel("score / USD")
         plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
@@ -547,16 +619,16 @@ def plot_breakdown(df: pd.DataFrame, breakdown_col: str, save_dir: Path):
     for i, metric in enumerate(metrics):
         ax = axes[i // cols][i % cols]
         m_df = sub[sub["metric"] == metric]
-        agg = (m_df
-               .groupby([breakdown_col, "model_approach"], dropna=False)["score"]
-               .mean()
-               .reset_index())
+        agg = aggregate(m_df, [breakdown_col, "model_approach"], "avg_score")
         try:
             pivot = agg.pivot(index=breakdown_col, columns="model_approach",
-                              values="score").reindex(bucket_order)
+                              values="value").reindex(bucket_order)
+            errors = agg.pivot(index=breakdown_col, columns="model_approach",
+                               values="ci").reindex(bucket_order)
         except Exception:
             continue
-        pivot.plot(kind="bar", ax=ax, edgecolor="black", linewidth=0.4, width=0.8)
+        pivot.plot(kind="bar", ax=ax, edgecolor="black", linewidth=0.4, width=0.8,
+                   yerr=errors, error_kw={"linewidth": 1, "ecolor": "black", "capsize": 3})
         ax.set_title(metric)
         ax.set_ylabel("Avg score")
         ax.set_ylim(0, 1.05)
@@ -590,9 +662,13 @@ def make_all_plots(df: pd.DataFrame, output_dir: Path):
         # 1) All metrics, by model
         plot_all_metrics_grouped(df, "model", score_type,
                                  all_dir / f"{score_type}_by_model.png")
+        plot_spider_chart(df, "model", score_type,
+                          all_dir / f"{score_type}_spider_by_model.png")
         # 2) All metrics, by approach
         plot_all_metrics_grouped(df, "approach", score_type,
                                  all_dir / f"{score_type}_by_approach.png")
+        plot_spider_chart(df, "approach", score_type,
+                          all_dir / f"{score_type}_spider_by_approach.png")
         # 3) All metrics, approaches per model + models per approach
         if n_models > 1:
             plot_all_metrics_facets(df, "model", "approach", score_type,
