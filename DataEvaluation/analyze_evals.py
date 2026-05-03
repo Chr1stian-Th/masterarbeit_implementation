@@ -70,6 +70,7 @@ output_dir/
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import warnings
 from pathlib import Path
@@ -314,7 +315,7 @@ def aggregate(df: pd.DataFrame, group_cols: list[str], score_type: str) -> pd.Da
 
     agg = (
         df.groupby(group_cols, dropna=False)[col]
-        .agg(value="mean", ci=_ci95)
+        .agg(value="mean", ci=_ci95, n="count")
         .reset_index()
     )
     return agg
@@ -644,6 +645,179 @@ def plot_breakdown(df: pd.DataFrame, breakdown_col: str, save_dir: Path):
 
 
 # ---------------------------------------------------------------------------
+# Report generation
+# ---------------------------------------------------------------------------
+
+def _md_table(df: pd.DataFrame) -> str:
+    """Render a DataFrame as a GitHub-flavored Markdown table."""
+    def _cell(v) -> str:
+        if isinstance(v, float):
+            return "N/A" if np.isnan(v) else f"{v:.4f}"
+        return str(v).replace("|", "\\|")
+
+    cols = list(df.columns)
+    header = "| " + " | ".join(cols) + " |"
+    sep    = "| " + " | ".join(":---" for _ in cols) + " |"
+    rows   = ["| " + " | ".join(_cell(v) for v in row) + " |"
+              for _, row in df.iterrows()]
+    return "\n".join([header, sep] + rows)
+
+
+def _pivot_table(agg: pd.DataFrame, index_col: str, pivot_col: str) -> str:
+    """Pivot agg into a markdown table; cells = 'mean ± ci (n=N)'."""
+    agg = agg.copy()
+    agg["_cell"] = agg.apply(
+        lambda r: f"{r['value']:.3f} ± {r['ci']:.3f} (n={int(r['n'])})", axis=1
+    )
+    pivot = agg.pivot(index=index_col, columns=pivot_col, values="_cell").reset_index()
+    pivot.columns.name = None
+    # convert Categorical index to str so _md_table handles it cleanly
+    pivot[index_col] = pivot[index_col].astype(str)
+    return _md_table(pivot)
+
+
+def _flat_table(agg: pd.DataFrame, group_col: str) -> str:
+    """Flat markdown table with mean, ±CI, n columns."""
+    out = agg[[group_col, "value", "ci", "n"]].copy()
+    out["value"] = out["value"].map(lambda v: f"{v:.4f}")
+    out["ci"]    = out["ci"].map(lambda v: f"{v:.4f}")
+    out["n"]     = out["n"].astype(int)
+    return _md_table(out.rename(columns={"value": "mean", "ci": "± CI (95%)"}))
+
+
+def generate_report(
+    df: pd.DataFrame,
+    cost_df: pd.DataFrame | None,
+    output_dir: Path,
+) -> None:
+    """Write report.md with tables of the numbers behind every figure."""
+    lines: list[str] = []
+    add = lines.append
+
+    add("# Evaluation Analysis Report\n")
+    add(f"_Generated: {datetime.date.today()}_\n")
+
+    # ------------------------------------------------------------------
+    # 1. Dataset Overview
+    # ------------------------------------------------------------------
+    add("## Dataset Overview\n")
+    models    = sorted(df["model"].unique())
+    approaches = sorted(df["approach"].unique())
+    metrics   = sorted(df["metric"].unique())
+
+    add("| Property | Value |")
+    add("| :--- | :--- |")
+    add(f"| Models | {', '.join(models)} |")
+    add(f"| Approaches | {', '.join(approaches)} |")
+    add(f"| Metrics | {', '.join(metrics)} |")
+    add(f"| Unique questions | {df['question_id'].nunique()} |")
+    add(f"| Scored rows (question × metric) | {len(df)} |\n")
+
+    add("### Question Count per Model × Approach\n")
+    q_counts = (
+        df.groupby(["model", "approach"])["question_id"]
+        .nunique()
+        .reset_index()
+        .rename(columns={"question_id": "unique_questions"})
+    )
+    add(_md_table(q_counts) + "\n")
+
+    # ------------------------------------------------------------------
+    # 2. Score Summaries
+    # ------------------------------------------------------------------
+    add("## Score Summaries\n")
+    add("> Values: **mean ± 95 % CI (n = number of scored question–metric pairs)**.\n")
+
+    for score_type in SCORE_TYPES:
+        label = score_label(score_type)
+        add(f"### {label}\n")
+
+        add("#### By Model\n")
+        agg = aggregate(df, ["metric", "model"], score_type)
+        add(_pivot_table(agg, "metric", "model") + "\n")
+
+        add("#### By Approach\n")
+        agg = aggregate(df, ["metric", "approach"], score_type)
+        add(_pivot_table(agg, "metric", "approach") + "\n")
+
+        add("#### By Model × Approach (all metrics pooled)\n")
+        agg = aggregate(df, ["model_approach"], score_type)
+        add(_flat_table(agg, "model_approach") + "\n")
+
+    # ------------------------------------------------------------------
+    # 3. Per-Metric Results
+    # ------------------------------------------------------------------
+    add("## Per-Metric Results\n")
+
+    for metric in metrics:
+        add(f"### {metric}\n")
+        sub = df[df["metric"] == metric]
+        for score_type in SCORE_TYPES:
+            add(f"#### {score_label(score_type)}\n")
+            agg = aggregate(sub, ["model_approach"], score_type)
+            add(_flat_table(agg, "model_approach") + "\n")
+
+    # ------------------------------------------------------------------
+    # 4. Cost Analysis
+    # ------------------------------------------------------------------
+    if cost_df is not None and not cost_df.empty:
+        add("## Cost Analysis\n")
+
+        add("### Token Usage and Raw Cost\n")
+        tbl = cost_df[["model", "approach", "input_tokens", "output_tokens",
+                        "cost_usd", "used_estimate"]].copy()
+        tbl["used_estimate"] = tbl["used_estimate"].map(
+            {True: "estimated", False: "actual"}
+        )
+        add(_md_table(tbl) + "\n")
+
+        avg_overall = (
+            df.groupby(["model", "approach", "model_approach"])["score"]
+            .mean()
+            .reset_index()
+        )
+        merged = avg_overall.merge(
+            cost_df[["model_approach", "cost_usd"]], on="model_approach", how="left"
+        )
+        merged["score_per_usd"] = merged["score"] / merged["cost_usd"]
+        spd = merged.dropna(subset=["score_per_usd"])
+        if not spd.empty:
+            add("### Score per Dollar\n")
+            tbl2 = spd[["model_approach", "score", "cost_usd", "score_per_usd"]].rename(
+                columns={"score": "avg_score", "cost_usd": "cost (USD)",
+                         "score_per_usd": "score / USD"}
+            )
+            add(_md_table(tbl2) + "\n")
+
+    # ------------------------------------------------------------------
+    # 5. Breakdowns
+    # ------------------------------------------------------------------
+    add("## Breakdowns\n")
+    add("> Values: **avg score ± 95 % CI (n)**.\n")
+
+    for col in ("domain", "difficulty_bucket", "answer_type"):
+        if col not in df.columns:
+            continue
+        sub = df.dropna(subset=[col])
+        if sub.empty:
+            continue
+        add(f"### By {col.replace('_', ' ').title()}\n")
+        for metric in metrics:
+            add(f"#### {metric}\n")
+            m_df = sub[sub["metric"] == metric]
+            agg = aggregate(m_df, [col, "model_approach"], "avg_score")
+            try:
+                add(_pivot_table(agg, col, "model_approach") + "\n")
+            except Exception:
+                add("_(table generation failed for this breakdown)_\n")
+
+    report_path = output_dir / "report.md"
+    with open(report_path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines))
+    print(f"Report written to: {report_path.resolve()}")
+
+
+# ---------------------------------------------------------------------------
 # Driver
 # ---------------------------------------------------------------------------
 
@@ -730,6 +904,7 @@ def main():
     make_all_plots(df, args.output_dir)
 
     # Cost plots
+    cost_df: pd.DataFrame | None = None
     if costs_table:
         cost_df = compute_costs(evals, costs_table, args.eval_dir)
         cost_dir = args.output_dir / "cost"
@@ -744,6 +919,9 @@ def main():
     breakdowns_dir.mkdir(parents=True, exist_ok=True)
     for col in ("domain", "difficulty_bucket", "answer_type"):
         plot_breakdown(df, col, breakdowns_dir)
+
+    # Written report
+    generate_report(df, cost_df, args.output_dir)
 
     print(f"\nDone. Figures in: {args.output_dir.resolve()}")
 
