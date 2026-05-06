@@ -1,0 +1,64 @@
+{
+  "source_output_file": "agentic_rag_2026-04-20T11-43-32.json",
+  "source_results_file": "eval_agentic_rag_2026-04-21T00-27-02.json",
+  "approach": "agentic_rag",
+  "errored_by_metric": {
+    "context_precision": [
+      "q107",
+      "q116",
+      "q117",
+      "q118",
+      "q134"
+    ],
+    "faithfulness": [
+      "q001",
+      "q012",
+      "q036",
+      "q041",
+      "q043",
+      "q049",
+      "q050",
+      "q055",
+      "q057",
+      "q058",
+      "q087",
+      "q113",
+      "q139",
+      "q141",
+      "q142",
+      "q149",
+      "q153"
+    ],
+    "regulatory_grounding": [
+      "q115",
+      "q116",
+      "q117",
+      "q118"
+    ]
+  },
+  "all_errored_question_ids": [
+    "q001",
+    "q012",
+    "q036",
+    "q041",
+    "q043",
+    "q049",
+    "q050",
+    "q055",
+    "q057",
+    "q058",
+    "q087",
+    "q107",
+    "q113",
+    "q115",
+    "q116",
+    "q117",
+    "q118",
+    "q134",
+    "q139",
+    "q141",
+    "q142",
+    "q149",
+    "q153"
+  ]
+}

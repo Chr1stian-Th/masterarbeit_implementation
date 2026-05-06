@@ -1,0 +1,895 @@
+{
+  "approach": "crag",
+  "timestamp": "2026-04-20T11:57:55",
+  "model_config": {
+    "generation_model": "mistralai/mistral-small-2603",
+    "embedding_model": "text-embedding-3-large"
+  },
+  "total_token_usage": {
+    "prompt_tokens": 787843,
+    "completion_tokens": 263770,
+    "total_tokens": 1051613,
+    "embedding_tokens": 3627
+  },
+  "results": [
+    {
+      "question_id": "q007",
+      "input": "How does the GDPR regulate cross-border data transfers?",
+      "retriever_context": [
+        "Transfers of personal data to third countries or international organisations must not undermine the level of protection ensured in the Union by the GDPR, including in cases of onward transfers.",
+        "Transfers to third countries and international organisations may only occur in full compliance with the GDPR.",
+        "A transfer to a third country or international organisation can only take place if the controller or processor complies with the GDPR provisions relating to such transfers.",
+        "The GDPR does not prejudice international agreements between the Union and third countries that regulate data transfers with appropriate safeguards for data subjects.",
+        "Member States may conclude international agreements involving data transfers to third countries or international organisations, provided they do not affect the GDPR or other Union law and include an appropriate level of protection for data subjects.",
+        "Third countries may adopt laws or regulations that require controllers or processors in the EU to transfer or disclose personal data, which can conflict with GDPR protections.",
+        "Such third-country legal acts may not be based on international agreements like mutual legal assistance treaties.",
+        "Extraterritorial application of third-country laws may breach international law and hinder GDPR protections.",
+        "Cross-border data transfers are only allowed if they meet the conditions set out in the GDPR for transfers to third countries.",
+        "Transfers may be permitted if disclosure is necessary for an important ground of public interest recognized in EU or Member State law.",
+        "Cross-border data transfers increase risks to individuals' ability to exercise data protection rights and protect their data.",
+        "Supervisory authorities face challenges in pursuing complaints or investigations related to data processing outside their jurisdiction.",
+        "Inconsistent legal regimes and practical obstacles can hamper cooperation between supervisory authorities in cross-border contexts.",
+        "A transfer of personal data to a third country or an international organisation may take place where the Commission has decided that the third country, territory, sector, or international organisation ensures an adequate level of protection.",
+        "Such a transfer shall not require any specific authorisation if an adequate level of protection is ensured.",
+        "When assessing the adequacy of the level of protection, the Commission shall take account of the rule of law, respect for human rights and fundamental freedoms, relevant legislation, and the implementation of such legislation.",
+        "The Commission shall consider data protection rules, professional rules, security measures, and rules for onward transfers of personal data in the third country or international organisation.",
+        "The Commission shall assess case-law, effective and enforceable data subject rights, and effective administrative and judicial redress for data subjects.",
+        "The existence and effective functioning of one or more independent supervisory authorities in the third country or international organisation is a factor in adequacy assessment.",
+        "Independent supervisory authorities must ensure and enforce compliance with data protection rules, have adequate enforcement powers, and assist data subjects in exercising their rights.",
+        "Independent supervisory authorities must cooperate with the supervisory authorities of the Member States.",
+        "Cross-border data transfers require appropriate safeguards and enforceable data subject rights and effective legal remedies.",
+        "Appropriate safeguards can be provided without specific authorization from a supervisory authority through legally binding instruments between public authorities, binding corporate rules, standard data protection clauses adopted by the Commission, approved codes of conduct, or approved certification mechanisms.",
+        "Appropriate safeguards can also be provided with authorization from the competent supervisory authority through contractual clauses or provisions in administrative arrangements between public authorities.",
+        "Transfers of personal data to third countries or international organisations are regulated under Chapter V of the GDPR.",
+        "Any transfer of personal data to a third country or international organisation must comply with the conditions laid down in Chapter V.",
+        "The GDPR ensures that the level of protection of natural persons is not undermined by cross-border data transfers.",
+        "Onward transfers of personal data from a third country or international organisation to another third country or international organisation must also comply with Chapter V.",
+        "The controller and processor must ensure compliance with Chapter V for cross-border data transfers."
+      ],
+      "output": "The GDPR regulates cross-border data transfers under **Chapter V**, ensuring that the level of protection for natural persons is not undermined when personal data is transferred to third countries or international organisations. Below is a structured breakdown of the key regulatory mechanisms based strictly on the provided context:\n\n---\n\n### **1. General Principles for Cross-Border Transfers**\n- **No Undermining of Protection**: Transfers to third countries or international organisations must not reduce the level of protection guaranteed by the GDPR, including in cases of **onward transfers** (transfers from the initial third country to another third country or organisation).\n- **Full Compliance Required**: All cross-border transfers must comply with the GDPR’s provisions on transfers to third countries (Chapter V).\n- **International Agreements**: The GDPR does not override **Union-level international agreements** (e.g., adequacy decisions) that regulate data transfers with appropriate safeguards for data subjects, provided they do not conflict with GDPR or other EU law.\n- **Member State Agreements**: Member States may conclude international agreements involving data transfers, but these must:\n  - Not affect the GDPR or other EU law.\n  - Include **appropriate safeguards** for data subjects.\n\n---\n\n### **2. Conditions for Permissible Transfers**\nCross-border transfers are only allowed if they meet **one of the following conditions** (as outlined in Chapter V):\n\n#### **A. Adequacy Decisions (Article 45 GDPR)**\n- The **European Commission** may determine that a third country, territory, sector, or international organisation provides an **adequate level of protection** for personal data.\n- **No Further Authorisation Needed**: If an adequacy decision exists, transfers can proceed **without additional safeguards or authorisation**.\n- **Adequacy Assessment Criteria**:\n  The Commission evaluates:\n  - **Rule of law** and respect for human rights/fundamental freedoms.\n  - **Relevant legislation** (e.g., data protection laws) and its implementation.\n  - **Data protection rules**, professional standards, and security measures.\n  - **Onward transfer rules** (e.g., whether the third country restricts further transfers).\n  - **Case-law** and enforceable data subject rights.\n  - **Effective administrative and judicial redress** for individuals.\n  - **Existence of independent supervisory authorities** with:\n    - Enforcement powers.\n    - Ability to assist data subjects.\n    - Cooperation mechanisms with EU supervisory authorities (e.g., national DPAs like the CNIL or ICO).\n\n#### **B. Appropriate Safeguards (Article 46 GDPR)**\nIf no adequacy decision exists, transfers may proceed if **appropriate safeguards** are in place, including:\n1. **Legally Binding Instruments**:\n   - Agreements between public authorities (e.g., mutual legal assistance treaties, but **not** if they conflict with GDPR).\n2. **Binding Corporate Rules (BCRs)**:\n   - Internal policies adopted by multinational companies to ensure GDPR-compliant data transfers within their group.\n3. **Standard Data Protection Clauses (SCCs)**:\n   - Pre-approved contractual clauses adopted by the Commission (e.g., the 2021 SCCs for controllers/processors).\n4. **Approved Codes of Conduct**:\n   - Sector-specific or general codes approved by a supervisory authority or the EDPB.\n5. **Approved Certification Mechanisms**:\n   - Certification schemes (e.g., under Article 42 GDPR) that ensure compliance with GDPR principles.\n6. **Contractual Clauses or Administrative Arrangements**:\n   - Require **authorisation from the competent supervisory authority** (e.g., a national DPA).\n\n#### **C. Derogations (Article 49 GDPR)**\nIn **exceptional cases**, transfers may occur without adequacy decisions or safeguards if:\n- The data subject has **explicitly consented** after being informed of the risks.\n- The transfer is **necessary for**:\n  - **Performance of a contract** between the data subject and controller (or pre-contractual measures).\n  - **Important public interest** recognised in EU or Member State law (e.g., public health, national security).\n  - **Establishment, exercise, or defence of legal claims**.\n  - **Vital interests** of the data subject (e.g., life-threatening situations).\n  - **Public register disclosures** (if required by law and subject to public access).\n- The transfer is **from a public register** (if disclosure is lawful and the register is intended for public consultation).\n\n**Note**: Derogations are **narrowly interpreted** and cannot be used for systematic or repetitive transfers.\n\n---\n\n### **3. Restrictions and Risks**\n- **Third-Country Laws**: If",
+      "ground_truth": "Transfers outside the EU are allowed if the destination ensures adequate protection, or safeguards such as standard contractual clauses or binding corporate rules are in place.",
+      "token_usage": {
+        "prompt_tokens": 17661,
+        "completion_tokens": 6770,
+        "total_tokens": 24431,
+        "embedding_tokens": 35
+      },
+      "latency_seconds": 19.178,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the regulation of cross-border data transfers under the GDPR. It discusses the conditions for transferring personal data to third countries or international organizations, emphasizes that the level of protection should not be undermined, and mentions compliance with GDPR provisions. It also touches on international agreements, which are relevant to cross-border data transfers. The content aligns closely with the question about GDPR's regulation of such transfers."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly addresses the regulation of cross-border data transfers under the GDPR. It discusses the risks of extraterritorial laws from third countries requiring data transfers, the potential breach of international law, and the conditions under which transfers should be allowed (e.g., public interest grounds). It also highlights the challenges supervisory authorities face in cross-border contexts, which is relevant to the enforcement of GDPR's cross-border data transfer rules."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the GDPR's regulation of cross-border data transfers by outlining the conditions under which such transfers are permitted, specifically when the European Commission has determined an adequate level of protection in the third country or international organization. It also details the criteria the Commission uses to assess adequacy, which is central to understanding how GDPR governs these transfers. The content is highly relevant to the question."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question by outlining the GDPR's regulations on cross-border data transfers. It specifies the conditions under which such transfers can occur (e.g., appropriate safeguards, enforceable rights, and effective legal remedies) and lists the mechanisms that can be used to provide these safeguards (e.g., standard data protection clauses, binding corporate rules, contractual clauses, etc.). This aligns closely with the question's focus on GDPR's regulatory framework for cross-border data transfers."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question by discussing GDPR's regulation of cross-border data transfers. It mentions the general principle for transfers (Article 44) and the mechanism of transfers based on an adequacy decision (Article 45), which are key components of GDPR's framework for cross-border data transfers. The passage is highly relevant as it outlines the foundational rules and conditions for such transfers under GDPR."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 29
+      }
+    },
+    {
+      "question_id": "q012",
+      "input": "What is the GDPR?",
+      "retriever_context": [
+        "GDPR is a regulation that defines 'personal data' as any information relating to an identified or identifiable natural person",
+        "An identifiable natural person is one who can be identified directly or indirectly, such as by name, ID number, location data, online identifier, or factors specific to their identity",
+        "'Processing' means any operation performed on personal data, whether automated or not, including collection, recording, storage, use, disclosure, and erasure",
+        "'Restriction of processing' means marking stored personal data to limit their future processing",
+        "'Profiling' means automated processing of personal data to evaluate aspects like performance, economic situation, health, preferences, or behavior",
+        "GDPR stands for General Data Protection Regulation",
+        "It is a Regulation (EU) 2016/679 of the European Parliament and of the Council",
+        "It was adopted on 27 April 2016",
+        "It concerns the protection of natural persons regarding the processing of personal data",
+        "It also governs the free movement of such data",
+        "It repealed Directive 95/46/EC",
+        "It has EEA relevance",
+        "It is based on Article 16 of the Treaty on the Functioning of the European Union",
+        "This Regulation lays down rules relating to the protection of natural persons with regard to the processing of personal data.",
+        "This Regulation lays down rules relating to the free movement of personal data.",
+        "This Regulation protects fundamental rights and freedoms of natural persons, particularly their right to the protection of personal data.",
+        "The free movement of personal data within the Union shall be neither restricted nor prohibited for reasons connected with the protection of natural persons with regard to the processing of personal data."
+      ],
+      "output": "The **General Data Protection Regulation (GDPR)** is a **Regulation (EU) 2016/679** adopted by the European Parliament and the Council on **27 April 2016**, which entered into force on **25 May 2018**. It is a binding legal framework with **EEA relevance** that governs the **protection of natural persons** regarding the **processing of their personal data** and ensures the **free movement of such data** within the European Union.\n\n### **Key Aspects of the GDPR (Based on Provided Context):**\n1. **Scope & Purpose**:\n   - Protects the **fundamental rights and freedoms** of natural persons, particularly their **right to the protection of personal data**.\n   - Ensures that the **free movement of personal data** within the EU is **neither restricted nor prohibited** for reasons related to data protection.\n\n2. **Legal Basis**:\n   - Grounded in **Article 16 of the Treaty on the Functioning of the European Union (TFEU)**.\n   - Replaced the earlier **Directive 95/46/EC** (which was not directly applicable in all EU member states).\n\n3. **Core Definitions (Relevant to GDPR’s Application)**:\n   - **Personal Data**: Any information relating to an **identified or identifiable natural person** (e.g., name, ID number, location data, online identifiers, or factors specific to their identity).\n   - **Processing**: Any operation performed on personal data (e.g., collection, recording, storage, use, disclosure, erasure, or profiling).\n   - **Profiling**: Automated processing of personal data to evaluate aspects such as performance, economic situation, health, preferences, or behavior.\n   - **Restriction of Processing**: Marking stored personal data to limit future processing.\n\n4. **Key Principles**:\n   - Sets rules for **lawful, fair, and transparent** processing of personal data.\n   - Ensures data subjects have **rights** (e.g., access, rectification, erasure, restriction of processing, data portability, and objection).\n   - Imposes obligations on **controllers and processors** (e.g., data security, breach notification, Data Protection Impact Assessments, and accountability).\n\n5. **Territorial Scope**:\n   - Applies to organizations **within the EU/EEA** processing personal data.\n   - Also applies to organizations **outside the EU/EEA** if they process data of EU/EEA residents in connection with offering goods/services or monitoring behavior.\n\n### **Gaps in Context (If Any):**\nThe provided context does not include:\n- Specific **rights of data subjects** (e.g., right to erasure, right to object).\n- **Obligations of controllers/processors** (e.g., lawful bases for processing, Data Protection Officers, records of processing activities).\n- **Enforcement mechanisms** (e.g., fines, supervisory authorities).\n- **International data transfers** (e.g., adequacy decisions, Standard Contractual Clauses).\n\nFor a **comprehensive understanding**, additional GDPR provisions beyond the provided context would be necessary. However, the answer strictly adheres to the given knowledge base.",
+      "ground_truth": "The GDPR or General Data Protection Regulation creates a harmonised set of rules applicable to all personal data processing by organisations (public or private, regardless of their size)  established in the European Economic Area (EEA) or targeting individuals in the EU. The primary objective of GDPR is to ensure that personal data enjoys the same high standard of protection everywhere in the EEA, increasing legal certainty for both individuals and organisations processing data, and offering a high degree of protection for individuals.\n\nThe regulation entered into force on 24 May 2016 and applies since 25 May 2018.",
+      "token_usage": {
+        "prompt_tokens": 11917,
+        "completion_tokens": 4341,
+        "total_tokens": 16258,
+        "embedding_tokens": 16
+      },
+      "latency_seconds": 14.864,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses procedural and enforcement details of the GDPR, such as its entry into force, application date, and review of other Union legal acts. While it provides context about the GDPR's implementation and scope, it does not define what the GDPR is. The question asks for a definition or explanation of the GDPR, which this passage does not address."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage defines key terms related to GDPR, such as 'personal data' and 'processing', which are fundamental to understanding the GDPR itself. While it does not provide a direct definition of 'GDPR', it lays the groundwork for comprehending the regulation by explaining its core concepts. This makes the passage highly relevant to answering the question about what the GDPR is, as it provides essential context and definitions that are central to the regulation."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage explicitly mentions 'REGULATION (EU) 2016/679' and its title, which directly corresponds to the 'General Data Protection Regulation' (GDPR). The text is the official legislative act defining GDPR, making it highly relevant to the question about what GDPR is."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly addresses the GDPR by providing its formal structure and objectives. It mentions the regulation's purpose (protection of natural persons' data and free movement of personal data) and scope (Article 1 and 2), which are core aspects of answering 'What is the GDPR?'. The content is highly relevant as it outlines the foundational principles of the regulation."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage consists of definitions of specific GDPR terms (e.g., 'third party', 'consent', 'personal data breach', etc.) rather than providing a general explanation of what the GDPR is. While these definitions are part of the GDPR, they do not directly answer the question 'What is the GDPR?' which requires a broader overview or definition of the regulation itself."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 17
+      }
+    },
+    {
+      "question_id": "q018",
+      "input": "Can I share a list of individuals’ personal data with my business partners (third parties)?",
+      "retriever_context": [
+        "This Regulation applies to controllers or processors which provide the means for processing personal data for personal or household activities.",
+        "Controllers within a group of undertakings may have a legitimate interest in transmitting personal data within the group for internal administrative purposes, including processing clients' or employees' personal data.",
+        "The general principles for transferring personal data within a group of undertakings to a third country remain unaffected.",
+        "Processing personal data for direct marketing purposes may be regarded as carried out for a legitimate interest.",
+        "Processing personal data for network and information security purposes may constitute a legitimate interest of the data controller.",
+        "Processing personal data for purposes other than those for which it was initially collected is allowed only if compatible with the initial purposes.",
+        "The right to data portability applies where the data subject provided personal data based on consent or for the performance of a contract.",
+        "The right to data portability does not apply where processing is based on a legal ground other than consent or contract.",
+        "The right to data portability does not apply where processing is necessary for compliance with a legal obligation, public interest, or official authority.",
+        "The right to transmit or receive personal data does not obligate controllers to adopt or maintain technically compatible processing systems.",
+        "Where multiple data subjects are involved, the right to receive personal data must not prejudice the rights and freedoms of others under the Regulation.",
+        "Data transfers may be lawful if required for important reasons of public interest, such as international data exchange between authorities (e.g., competition, tax, customs, financial supervision, social security, or public health).",
+        "Sharing personal data can be lawful if necessary to protect a vital interest (e.g., physical integrity or life) when the data subject cannot give consent.",
+        "Union or Member State law may set limits on transferring specific categories of data to third countries or international organizations for important public interest reasons, in the absence of an adequacy decision.",
+        "Member States must notify such legal provisions to the European Commission.",
+        "Transfers to international humanitarian organizations of data subjects incapable of consenting may be lawful if necessary to comply with the Geneva Conventions or international humanitarian law in armed conflicts."
+      ],
+      "output": "Based strictly on the provided knowledge context, the lawfulness of sharing a list of individuals' personal data with business partners (third parties) depends on the **legal basis** for the transfer and compliance with GDPR principles. Here’s a structured analysis:\n\n### **1. General Conditions for Sharing Personal Data with Third Parties**\n- The GDPR applies to controllers/processors who provide means for processing personal data, including sharing with third parties.\n- **Legitimate Interest**: Sharing may be lawful if based on a **legitimate interest** (e.g., internal administrative purposes, direct marketing, or network security), provided:\n  - A **balancing test** is conducted (interests of the controller vs. rights/freedoms of data subjects).\n  - Data subjects’ rights are not overridden (e.g., transparency, objection rights).\n  - The processing is **compatible** with the original purpose (if data was collected for another purpose).\n- **Consent or Contract**: If sharing is necessary for fulfilling a contract or based on explicit consent, it may be lawful.\n- **Legal Obligation/Public Interest**: Sharing may be required by law (e.g., tax, financial supervision) or for public interest (e.g., public health).\n\n### **2. Specific Scenarios**\n- **Group of Undertakings**: Intra-group transfers for administrative purposes (e.g., HR, client management) may rely on legitimate interest, but **third-country transfers** must still comply with general transfer rules (e.g., adequacy decisions, SCCs).\n- **Direct Marketing**: May qualify as a legitimate interest if balanced against data subjects’ rights.\n- **Vital Interests**: Sharing to protect life/physical integrity (e.g., emergencies) is allowed even without consent.\n- **Public Interest**: Transfers for tax, competition, or public health may be lawful under Member State law.\n\n### **3. Restrictions & Safeguards**\n- **Data Portability**: If sharing involves data provided by the data subject (e.g., for a contract), they may have the right to receive it in a portable format—but this does not obligate the controller to adopt compatible systems.\n- **Third-Country Transfers**: If partners are outside the EEA, additional safeguards (e.g., adequacy decisions, Standard Contractual Clauses) are required unless an exception applies (e.g., public interest, vital interests).\n- **Rights of Others**: If the list includes data about multiple individuals, sharing must not prejudice others’ rights (e.g., privacy).\n\n### **4. Key Gaps in the Context**\nThe provided context does not address:\n- **Explicit consent** as a legal basis for sharing.\n- **Standard Contractual Clauses (SCCs)** or **Binding Corporate Rules (BCRs)** for third-country transfers.\n- **Data subject rights** (e.g., right to object, access) in the context of third-party sharing.\n- **Member State-specific laws** limiting transfers (e.g., special categories of data).\n\n### **Conclusion**\nSharing a list of individuals’ personal data with third-party business partners **may be lawful** if:\n✅ A valid legal basis exists (e.g., legitimate interest, consent, contract, legal obligation).\n✅ The transfer complies with GDPR principles (purpose limitation, proportionality, transparency).\n✅ For third-country transfers, adequate safeguards are in place (if applicable).\n✅ Data subjects’ rights are respected (e.g., no undue prejudice to others).\n\n**If the context lacks clarity on your specific scenario (e.g., purpose, location of partners, data types), consult GDPR Article 6 (lawful bases) and Chapter V (transfers) for further guidance.**",
+      "ground_truth": "Yes, you can, but the GDPR places certain obligations on businesses which share personal data. Your organisation must inform individuals that you will share their data with a third party. You must also inform them of your purposes, security, access and the retention measures that will apply.",
+      "token_usage": {
+        "prompt_tokens": 17337,
+        "completion_tokens": 5043,
+        "total_tokens": 22380,
+        "embedding_tokens": 50
+      },
+      "latency_seconds": 18.152,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 1.0,
+            "reasoning": "The passage discusses definitions and regulations related to micro, small, and medium-sized enterprises, as well as the processing of personal data by EU institutions and household activities. It does not address the question about sharing personal data with business partners (third parties) under GDPR."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses exemptions related to intellectual property, trade secrets, public/national security, criminal proceedings, and confidential information exchange between authorities under the context of AI systems regulation (likely referring to the AI Act). It does not address the sharing of individuals' personal data with third parties under GDPR, which is the focus of the question. The content is unrelated to GDPR's rules on data sharing with business partners."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses legitimate interests for processing personal data in specific contexts (direct marketing, group administrative purposes, network security, and compatible purposes), but it does not directly address the question of sharing a list of individuals' personal data with business partners (third parties). The examples provided are narrow and do not cover the general case of sharing personal data with external third parties outside of a group of undertakings or for security purposes."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the right to data portability under GDPR, which is about individuals' rights to receive and transmit their own personal data. It does not address the question of whether a data controller can share a list of individuals' personal data with third-party business partners. The content is unrelated to the legal basis or conditions for sharing personal data with third parties."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses specific derogations for transferring personal data in cases of public interest, vital interests, or international humanitarian law, but it does not directly address the general question of whether sharing a list of individuals' personal data with business partners (third parties) is allowed under GDPR. The context is more about public authorities, international organizations, or humanitarian exceptions rather than commercial or business-related data sharing."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 16
+      }
+    },
+    {
+      "question_id": "q019",
+      "input": "What are the sanctions if my organisation does not comply with the GDPR or if my processing violates the GDPR?",
+      "retriever_context": [
+        "Administrative fines for GDPR infringements can be up to 20,000,000 EUR or, for an undertaking, up to 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher.",
+        "Infringements of basic processing principles (Articles 5, 6, 7, 9), data subject rights (Articles 12-22), or third-country data transfers (Articles 44-49) are subject to administrative fines.",
+        "Non-compliance with supervisory authority orders or limitations on processing (Article 58(2)) or failure to provide access (Article 58(1)) can result in administrative fines.",
+        "Non-compliance with supervisory authority orders (Article 58(2)) is subject to administrative fines up to 20,000,000 EUR or 4% of the total worldwide annual turnover, whichever is higher.",
+        "Member States may determine rules on whether and to what extent administrative fines apply to public authorities and bodies within their jurisdiction.",
+        "Infringements of certain GDPR provisions may result in administrative fines up to 10,000,000 EUR, or up to 2% of the total worldwide annual turnover of the preceding financial year, whichever is higher.",
+        "The total amount of the administrative fine shall not exceed the amount specified for the gravest infringement if multiple provisions are infringed intentionally or negligently for the same or linked processing operations.",
+        "Factors such as previous orders against the controller or processor, adherence to approved codes of conduct or certification mechanisms, and aggravating or mitigating circumstances (e.g., financial benefits gained or losses avoided) may influence the sanction.",
+        "The manner in which the infringement became known to the supervisory authority, including whether the controller or processor notified the infringement, may be considered in determining sanctions.",
+        "Administrative fines imposed by supervisory authorities must be effective, proportionate, and dissuasive.",
+        "If a Member State's legal system does not provide for administrative fines, courts may impose fines equivalent to those imposed by supervisory authorities.",
+        "Member States must ensure that legal remedies against fines are effective and have an equivalent effect to administrative fines.",
+        "Member States must notify the European Commission of laws adopted to implement penalties for GDPR infringements by 25 May 2018 and any subsequent amendments.",
+        "Penalties for GDPR infringements must be effective, proportionate, and dissuasive, even if not subject to administrative fines under Article 83.",
+        "Supervisory authorities' exercise of powers under GDPR is subject to appropriate procedural safeguards, including effective judicial remedy and due process.",
+        "Administrative fines for GDPR infringements must be effective, proportionate, and dissuasive.",
+        "Administrative fines can be imposed in addition to or instead of other corrective measures.",
+        "Fines are determined based on the nature, gravity, and duration of the infringement.",
+        "The scope or purpose of the processing and the number of affected data subjects are considered.",
+        "The level of damage suffered by data subjects is a factor in determining fines.",
+        "The intentional or negligent nature of the infringement is taken into account.",
+        "Actions taken to mitigate damage suffered by data subjects may reduce fines.",
+        "The degree of responsibility of the controller or processor is considered, including technical and organisational measures.",
+        "Previous infringements by the controller or processor may increase fines.",
+        "Cooperation with the supervisory authority to remedy the infringement can influence fines.",
+        "The categories of personal data affected by the infringement are relevant to fines.",
+        "How the infringement became known to the supervisory authority (e.g., self-reporting) affects fines."
+      ],
+      "output": "Based strictly on the provided knowledge context, here is a clear and comprehensive answer regarding the sanctions for GDPR non-compliance or violations:\n\n### **Sanctions for GDPR Non-Compliance or Violations**\n\n1. **Administrative Fines (Primary Sanction)**\n   - **Maximum Fines**:\n     - **Up to €20,000,000** **OR**\n     - **Up to 4% of the total worldwide annual turnover** of the preceding financial year (whichever is higher).\n   - **Applies to**:\n     - Infringements of **basic processing principles** (Articles 5, 6, 7, 9).\n     - Violations of **data subject rights** (Articles 12–22).\n     - **Third-country data transfers** (Articles 44–49).\n     - **Non-compliance with supervisory authority orders** (Article 58(2)).\n     - **Failure to provide access** (Article 58(1)).\n\n2. **Lower Tier Administrative Fines**\n   - **Up to €10,000,000** **OR**\n   - **Up to 2% of the total worldwide annual turnover** (whichever is higher).\n   - **Applies to**:\n     - Less severe infringements (specific provisions not detailed in the context but implied to be less critical than those in the 4% category).\n\n3. **Additional Corrective Measures**\n   - Fines may be imposed **in addition to or instead of** other corrective measures (e.g., warnings, reprimands, orders to comply, or bans on processing).\n\n4. **Factors Influencing Fine Amounts**\n   - **Nature, gravity, and duration** of the infringement.\n   - **Scope/purpose of processing** and **number of affected data subjects**.\n   - **Level of damage** suffered by data subjects.\n   - **Intentional or negligent** nature of the infringement.\n   - **Degree of responsibility** of the controller/processor (e.g., lack of technical/organisational measures).\n   - **Previous infringements** by the organisation (aggravating factor).\n   - **Cooperation with the supervisory authority** (mitigating factor).\n   - **Actions taken to mitigate harm** to data subjects.\n   - **Categories of personal data affected** (e.g., special categories under Article 9).\n   - **How the infringement became known** (e.g., self-reporting vs. discovery by the authority).\n\n5. **Caps on Fines for Multiple Infringements**\n   - If multiple provisions are infringed **intentionally or negligently** for the **same or linked processing operations**, the total fine **cannot exceed the amount for the gravest infringement**.\n\n6. **Public Authorities & Bodies**\n   - Member States **may** determine whether and to what extent fines apply to public authorities and bodies.\n\n7. **Alternative Sanctions in Some Member States**\n   - If a Member State’s legal system **does not provide for administrative fines**, courts may impose fines **equivalent to those imposed by supervisory authorities**.\n\n8. **Legal Remedies & Procedural Safeguards**\n   - Fines must be **effective, proportionate, and dissuasive**.\n   - Organisations have **rights to effective judicial remedy** and **due process** against fines.\n   - Member States must ensure **legal remedies** against fines are **effective and equivalent** to administrative fines.\n\n### **Key Gaps in the Context**\n- The context does not specify **which exact GDPR provisions** fall under the **2% fine tier** (only that they are less severe than the 4% category).\n- It does not detail **other non-financial sanctions** (e.g., injunctions, data breach notifications, or reputational consequences).\n- The context does not outline **criminal penalties** (as GDPR primarily focuses on administrative fines, but some Member States may impose criminal sanctions for severe violations).\n\n### **Conclusion**\nYour organisation could face **administrative fines of up to €20M or 4% of global turnover** for serious GDPR violations (e.g., unlawful processing, breaches of data subject rights, or third-country transfers). For less severe breaches, fines may reach **€10M or 2% of turnover**. Fines are determined based on **aggravating/mitigating factors**, and organisations have **rights to challenge** them. Public authorities may face different rules depending on the Member State.",
+      "ground_truth": "Compliance with the GDPR is monitored by the national data protection authorities (DPAs). DPAs can conduct investigations and impose sanctions where necessary. DPAs have a number of tools at their disposal, including fines up to 20 M€ or 4% of the worldwide annual turnover whichever is higher, reprimands, and temporary or permanent processing bans.",
+      "token_usage": {
+        "prompt_tokens": 17924,
+        "completion_tokens": 5906,
+        "total_tokens": 23830,
+        "embedding_tokens": 45
+      },
+      "latency_seconds": 18.717,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.99,
+            "reasoning": "The passage directly addresses the sanctions for non-compliance with the GDPR, specifically detailing administrative fines of up to 20,000,000 EUR or 4% of the total worldwide annual turnover (whichever is higher) for infringements of key provisions such as basic processing principles, data subject rights, and transfers of personal data. It also mentions fines for non-compliance with supervisory authority orders. This directly answers the question about sanctions for GDPR violations."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly addresses administrative fines and sanctions under GDPR for non-compliance or violations, which is the core of the question. It includes specific details about the calculation of fines (e.g., up to 10M EUR or 2% of turnover for certain infringements), aggravating/mitigating factors, and conditions for repeated infringements. While it does not cover all possible sanctions (e.g., criminal penalties or private claims), it is highly relevant to the administrative fines aspect of the question."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses sanctions for GDPR non-compliance, specifically mentioning administrative fines (Article 83) and other penalties (Article 84). It discusses the nature of these fines (effective, proportionate, dissuasive) and the procedural safeguards involved, which are directly relevant to the question about sanctions for violations. The mention of Member States' obligations to implement penalties further ties to enforcement mechanisms under the GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the sanctions for GDPR non-compliance by detailing the imposition of administrative fines, which are a key sanction under GDPR (Article 83). It outlines the factors considered when determining fines (e.g., nature, gravity, and duration of infringement, intentionality, mitigating actions, etc.), making it highly relevant to the question about sanctions for violations."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses sanctions related to non-compliance with the AI Act (specifically regarding prohibited AI practices and other requirements), not the GDPR. The question asks about sanctions for GDPR non-compliance or GDPR processing violations, which are not addressed in this passage."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 27
+      }
+    },
+    {
+      "question_id": "q028",
+      "input": "What should I do in case of a data breach?",
+      "retriever_context": [
+        "The controller should notify the personal data breach to the supervisory authority without undue delay.",
+        "The notification should be made not later than 72 hours after becoming aware of the breach, where feasible.",
+        "The controller may be exempt from notification if they can demonstrate that the breach is unlikely to result in a risk to the rights and freedoms of natural persons.",
+        "If notification cannot be achieved within 72 hours, the reasons for the delay should accompany the notification.",
+        "Information may be provided in phases without undue further delay if the initial notification is delayed.",
+        "In case of a personal data breach, the controller must notify the supervisory authority within 72 hours unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons.",
+        "If the notification is not made within 72 hours, it must be accompanied by reasons for the delay.",
+        "The processor must notify the controller without undue delay after becoming aware of a personal data breach.",
+        "The notification to the supervisory authority must at least describe the nature of the breach, including categories and approximate number of data subjects and records affected.",
+        "The notification must include the name and contact details of the data protection officer or other contact point for further information.",
+        "The notification must describe the likely consequences of the personal data breach.",
+        "The notification must describe the measures taken or proposed to address the breach, including steps to mitigate adverse effects.",
+        "If not all information can be provided at once, it may be communicated in phases without undue further delay.",
+        "The controller must document any personal data breaches, including facts, effects, and remedial actions taken, to enable supervisory authority verification.",
+        "The controller should communicate a personal data breach to the data subject without undue delay if it is likely to result in a high risk to the rights and freedoms of the natural person.",
+        "The communication should describe the nature of the personal data breach and provide recommendations for the data subject to mitigate potential adverse effects.",
+        "Communications to data subjects should be made as soon as reasonably feasible and in close cooperation with the supervisory authority.",
+        "The need to mitigate an immediate risk of damage may require prompt communication with data subjects.",
+        "The need to implement measures against continuing or similar breaches may justify more time for communication.",
+        "The controller should implement appropriate technological and organizational measures to detect personal data breaches and inform the supervisory authority and the data subject promptly.",
+        "The fact that the notification was made without undue delay should consider the nature, gravity, consequences, and adverse effects of the breach.",
+        "Notification may result in an intervention by the supervisory authority according to its tasks and powers under the Regulation.",
+        "A personal data breach may result in physical, material, or non-material damage to natural persons if not addressed appropriately and timely.",
+        "Damage from a data breach can include loss of control over personal data, discrimination, identity theft, fraud, financial loss, damage to reputation, or other significant economic or social disadvantages.",
+        "Controllers must address data breaches in an appropriate and timely manner to mitigate potential harm.",
+        "If a personal data breach is likely to result in a high risk to the rights and freedoms of natural persons, the controller must communicate the breach to the data subject without undue delay.",
+        "The communication to the data subject must describe the nature of the breach in clear and plain language and include at least the information and measures specified in points (b), (c), and (d) of Article 33(3).",
+        "Communication to the data subject is not required if the controller has implemented appropriate technical and organizational protection measures (e.g., encryption) that render the data unintelligible to unauthorized persons.",
+        "Communication to the data subject is not required if the controller has taken subsequent measures that eliminate the high risk to data subjects' rights and freedoms.",
+        "Communication to the data subject is not required if it would involve disproportionate effort; instead, a public communication or similar measure must be made to inform data subjects equally effectively.",
+        "If the controller has not already communicated the breach to the data subject, the supervisory authority may require them to do so or determine that one of the exceptions in paragraph 3 applies."
+      ],
+      "output": "Based on the provided knowledge context, here is a clear, accurate, and comprehensive step-by-step response to what you should do in case of a data breach:\n\n---\n\n### **Immediate Actions Upon Discovering a Data Breach**\n1. **Assess the Breach**\n   - Determine the nature, scope, and severity of the breach (e.g., what data was accessed, lost, or altered; how many individuals are affected; whether the breach is ongoing).\n   - Identify whether the breach is likely to result in a **risk** or **high risk** to the rights and freedoms of natural persons (e.g., financial loss, identity theft, discrimination, or reputational damage).\n\n2. **Contain the Breach**\n   - Take immediate steps to mitigate the breach (e.g., revoke unauthorized access, patch vulnerabilities, or isolate affected systems).\n   - Prevent further unauthorized access or disclosure of personal data.\n\n3. **Notify the Controller (if you are a Processor)**\n   - If you are a **processor**, notify the **controller without undue delay** after becoming aware of the breach. Provide all relevant details to enable the controller to assess and respond appropriately.\n\n---\n\n### **Actions for the Controller (Data Controller)**\n4. **Document the Breach**\n   - Record all details of the breach, including:\n     - Facts (how the breach occurred, when it was discovered).\n     - Effects (categories and approximate number of data subjects and records affected).\n     - Remedial actions taken (e.g., containment, mitigation measures).\n\n5. **Assess Notification Obligations to the Supervisory Authority**\n   - Determine whether the breach is **likely to result in a risk** to individuals' rights and freedoms. If **unlikely**, you may be exempt from notification (but must document this assessment).\n   - If the breach poses a **risk or high risk**, notify the **supervisory authority** **without undue delay**, and **no later than 72 hours** after becoming aware of the breach.\n     - If notification cannot be made within 72 hours, provide the reasons for the delay alongside the notification.\n     - Information can be provided in phases if not all details are available immediately.\n\n6. **Prepare the Notification to the Supervisory Authority**\n   The notification must include at least:\n   - The **nature of the breach** (e.g., unauthorized access, loss, or alteration of data).\n   - The **categories and approximate number** of data subjects and records affected.\n   - The **name and contact details** of the Data Protection Officer (DPO) or other contact point.\n   - The **likely consequences** of the breach (e.g., financial loss, identity theft).\n   - The **measures taken or proposed** to address the breach (e.g., containment, mitigation, or notification to data subjects).\n\n7. **Assess Communication Obligations to Data Subjects**\n   - If the breach is **likely to result in a high risk** to individuals' rights and freedoms, communicate the breach to the **data subjects without undue delay**.\n     - The communication must describe the breach in **clear and plain language** and include:\n       - The nature of the breach.\n       - Recommendations to mitigate adverse effects (e.g., changing passwords, monitoring financial accounts).\n     - Exceptions where communication to data subjects is **not required**:\n       - If the breach was **encrypted** (rendering data unintelligible to unauthorized persons).\n       - If **subsequent measures** have eliminated the high risk (e.g., the exposed data was deleted or corrected).\n       - If communication would involve **disproportionate effort** (in which case, a **public communication** or similar measure must be made to inform data subjects equally effectively).\n\n8. **Cooperate with the Supervisory Authority**\n   - Work closely with the supervisory authority to address the breach and provide any additional information requested.\n   - The supervisory authority may require you to communicate the breach to data subjects or determine that an exception applies.\n\n9. **Implement Preventive Measures**\n   - Review and strengthen **technological and organizational measures** (e.g., encryption, access controls, staff training) to detect and prevent future breaches.\n   - Ensure prompt detection and reporting mechanisms are in place.\n\n---\n\n### **Key Timelines and Considerations**\n- **72-hour rule**: Notification to the supervisory authority must occur **within 72 hours** unless the breach is unlikely to pose a risk.\n- **High-risk breaches**: Communication to data subjects must occur **without undue delay** if the breach poses a high risk.\n- **Documentation**: Maintain detailed records of the breach, actions taken, and decisions made for supervisory authority verification.\n- **Proportionality**: The urgency of communication to data subjects may vary based on the need",
+      "ground_truth": "A personal data breach is a security breach leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data.\n\nIf the data breach poses a risk to the individuals concerned, you must report it to the relevant data protection authority within 72 hours.\nIf the breach is likely to result in a high risk to individuals, you will also need to communicate that breach to the individuals concerned without undue delay.\nIn any case, for all breaches – even those that are not notified to a DPA - you must record at least the basic details of the breach, the assessment thereof, its effects, and the steps taken in response.",
+      "token_usage": {
+        "prompt_tokens": 18474,
+        "completion_tokens": 7042,
+        "total_tokens": 25516,
+        "embedding_tokens": 34
+      },
+      "latency_seconds": 19.817,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question by outlining the immediate steps a controller must take upon discovering a personal data breach, specifically the requirement to notify the supervisory authority within 72 hours unless certain conditions are met. This is a core aspect of responding to a data breach under GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.99,
+            "reasoning": "The passage directly addresses the question about what to do in case of a data breach by outlining specific obligations under GDPR Article 33, including the requirement to notify the supervisory authority within 72 hours, the information to be provided in the notification, and the documentation requirements. This is highly relevant as it provides actionable guidance for handling a data breach."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question about what to do in case of a data breach by outlining the controller's obligations to communicate the breach to the data subject without undue delay, including the nature of the breach and recommendations for mitigation. It also mentions cooperation with supervisory authorities and the importance of prompt notification, which are key actions in handling a data breach under GDPR."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the potential consequences of a data breach (e.g., physical, material, or non-material damage) and emphasizes the importance of addressing breaches appropriately and timely. While it does not explicitly list the steps to take in case of a data breach, it provides context about why breaches are serious and the need for prompt action, which is relevant to the question. The passage also mentions the role of the controller in mitigating risks, which indirectly relates to breach response."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question about what to do in case of a data breach by outlining the controller's obligations under GDPR, including when and how to communicate the breach to affected data subjects, exceptions to this requirement, and the role of the supervisory authority. This is highly relevant to the question as it provides specific steps and legal requirements for handling a data breach."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 31
+      }
+    },
+    {
+      "question_id": "q029",
+      "input": "Who can fulfil the role of Data Protection Officer (DPO)?",
+      "retriever_context": [
+        "The controller and the processor shall designate a data protection officer if the processing is carried out by a public authority or body, except for courts acting in their judicial capacity.",
+        "The controller and the processor shall designate a data protection officer if the core activities involve regular and systematic monitoring of data subjects on a large scale.",
+        "The controller and the processor shall designate a data protection officer if the core activities involve processing on a large scale of special categories of data or personal data relating to criminal convictions and offences.",
+        "A group of undertakings may appoint a single data protection officer provided that the officer is easily accessible from each establishment.",
+        "A single data protection officer may be designated for several public authorities or bodies, taking account of their organisational structure and size.",
+        "In cases other than those requiring mandatory designation, the controller, processor, or associations representing them may or shall designate a data protection officer where required by Union or Member State law.",
+        "The data protection officer may act for associations and other bodies representing controllers or processors.",
+        "The data protection officer shall be designated on the basis of professional qualities, expert knowledge of data protection law and practices, and the ability to fulfil the tasks referred to in Article 39.",
+        "The data protection officer may be a staff member of the controller or processor, or fulfil the tasks on the basis of a service contract.",
+        "The Data Protection Officer (DPO) may be a staff member of the controller or processor.",
+        "The DPO may fulfil the tasks on the basis of a service contract.",
+        "The controller or processor shall publish the contact details of the DPO and communicate them to the supervisory authority.",
+        "The controller and processor shall ensure that the DPO is involved in all issues related to the protection of personal data.",
+        "The controller and processor shall support the DPO by providing necessary resources and access to personal data and processing operations.",
+        "The controller and processor shall ensure that the DPO does not receive instructions regarding the exercise of tasks.",
+        "The DPO shall not be dismissed or penalised for performing tasks.",
+        "The DPO shall directly report to the highest management level of the controller or processor.",
+        "Data subjects may contact the DPO regarding issues related to their personal data and rights under the Regulation.",
+        "The DPO shall be bound by secrecy or confidentiality concerning task performance, in accordance with Union or Member State law.",
+        "The DPO may fulfil other tasks and duties, provided they do not result in a conflict of interests."
+      ],
+      "output": "Based strictly on the provided knowledge context, the following individuals or entities can fulfil the role of **Data Protection Officer (DPO)**:\n\n1. **Staff Member of the Controller or Processor**:\n   - The DPO may be an employee of the organization acting as the controller or processor.\n\n2. **External Service Provider (on a contractual basis)**:\n   - The DPO may fulfil the tasks on the basis of a **service contract** (i.e., an external consultant or third-party entity).\n\n3. **Associations or Bodies Representing Controllers or Processors**:\n   - The DPO may act for **associations and other bodies representing controllers or processors**.\n\n4. **Single DPO for Multiple Entities**:\n   - A **group of undertakings** may appoint a single DPO, provided the officer is **easily accessible from each establishment**.\n   - A single DPO may also be designated for **several public authorities or bodies**, considering their organizational structure and size.\n\n### **Key Requirements for the DPO (as per context)**:\n- Must be designated based on **professional qualities, expert knowledge of data protection law and practices**, and the ability to perform tasks under **Article 39** (e.g., monitoring compliance, advising on DPIAs, cooperating with supervisory authorities).\n- Must be **independent** (no instructions on task performance, protected from dismissal/penalties for performing duties).\n- Must **directly report to the highest management level**.\n- Must be **easily accessible** (for data subjects and supervisory authorities).\n- Must maintain **confidentiality/secrecy** regarding task performance (subject to Union/Member State law).\n- Must **not have a conflict of interest** (e.g., cannot hold roles like CEO, CIO, or HR director if they involve conflicting decision-making powers).\n\n### **Gaps in Context**:\n- The context does not specify whether the DPO must be an **EU resident** (though this is implied in practice due to GDPR enforcement).\n- No explicit mention of **qualifications or certifications** required (though \"expert knowledge\" is referenced).\n- No details on **liability or accountability** beyond independence protections.\n\nWould you like clarification on any of these points?",
+      "ground_truth": "The DPO can be an existing employee with sufficient knowledge of GDPR (if the professional tasks of the employee are compatible with those of the DPO and this does not lead to conflicts of interest) or an external person. The DPO should be able to carry out tasks independently and should be able to report directly to the highest management.",
+      "token_usage": {
+        "prompt_tokens": 13217,
+        "completion_tokens": 5506,
+        "total_tokens": 18723,
+        "embedding_tokens": 38
+      },
+      "latency_seconds": 14.159,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question by outlining the conditions under which a Data Protection Officer (DPO) must be designated, including the scenarios where a DPO is required (e.g., public authorities, large-scale processing, or special categories of data). It also specifies who can fulfill the role (e.g., a staff member or a service provider) and additional conditions for group or public authority scenarios. This provides a comprehensive answer to the question about who can fulfill the role of DPO."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the requirement for organizations to have a person with expert knowledge of data protection law to assist with internal compliance under GDPR, but it does not explicitly answer the question about who can fulfil the role of Data Protection Officer (DPO). It mentions that such a person should be in a position to perform duties independently but does not specify the qualifications, eligibility, or who can be appointed as a DPO."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.98,
+            "reasoning": "The passage directly addresses the question by stating that the Data Protection Officer (DPO) 'may be a staff member of the controller or processor, or fulfil the tasks on the basis of a service contract' (Article 37(6)). This explicitly answers who can fulfil the role of DPO. Additionally, Article 38 and 39 provide context about the DPO's position and tasks, which further supports the relevance by clarifying the role's requirements and constraints, though the core answer is in Article 37(6)."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage provided is from Article 37 of the GDPR, which discusses the designation of the Data Protection Officer (DPO), but it is not included in the excerpt. The given passage consists of unrelated articles (Article 35, 4, and 5) that deal with data protection impact assessments, supervisory authority consultations, and legislative measures, none of which address the qualifications or roles of a DPO. Thus, it is not relevant to the question about who can fulfil the role of DPO."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the tasks and responsibilities of the Data Protection Officer (DPO) under Article 39 and briefly mentions codes of conduct in Article 40, but it does not address who can fulfil the role of DPO. The question specifically asks about the eligibility criteria or qualifications for the DPO role, which is not covered in this passage."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 20
+      }
+    },
+    {
+      "question_id": "q032",
+      "input": "Do I need to be certified to become a Data Protection Officer (DPO)?",
+      "retriever_context": [
+        "The controller and processor must designate a DPO if processing is by a public authority (except courts in judicial capacity).",
+        "A DPO is required if core activities involve regular/systematic monitoring of data subjects on a large scale.",
+        "A DPO is required if core activities involve large-scale processing of special categories of data (Article 9) or criminal convictions/offences (Article 10).",
+        "A group of undertakings may appoint a single DPO if easily accessible from each establishment.",
+        "A single DPO may serve multiple public authorities/bodies, considering their structure and size.",
+        "Voluntary or mandatory (by law) designation of a DPO is allowed for cases not covered in paragraph 1.",
+        "The DPO must be designated based on professional qualities, including expert knowledge of data protection law and practices.",
+        "The DPO may be a staff member or fulfill tasks via a service contract.",
+        "A Data Protection Officer (DPO) is required where processing is carried out by a public authority (except courts or independent judicial authorities in their judicial capacity)",
+        "A DPO is required in the private sector where processing involves regular and systematic monitoring of data subjects on a large scale",
+        "A DPO is required in the private sector where the core activities involve large-scale processing of special categories of personal data or data relating to criminal convictions and offences",
+        "The DPO must have expert knowledge of data protection law and practices",
+        "The DPO assists the controller or processor in monitoring internal compliance with GDPR",
+        "The core activities of a controller relate to its primary activities, not ancillary data processing",
+        "The required level of expert knowledge for a DPO depends on the data processing operations and the protection required for the personal data",
+        "A DPO must be able to perform their duties and tasks independently, whether or not they are an employee of the controller",
+        "The Data Protection Officer (DPO) may be a staff member of the controller or processor, or fulfill the tasks on the basis of a service contract.",
+        "The controller or the processor shall publish the contact details of the Data Protection Officer and communicate them to the supervisory authority.",
+        "The controller and processor shall ensure that the Data Protection Officer is involved, properly and in a timely manner, in all issues which relate to the protection of personal data.",
+        "The controller and processor shall support the Data Protection Officer in performing tasks by providing necessary resources, access to personal data, and maintaining expert knowledge.",
+        "The controller and processor shall ensure that the Data Protection Officer does not receive any instructions regarding the exercise of tasks and shall not be dismissed or penalized for performing them.",
+        "The Data Protection Officer shall directly report to the highest management level of the controller or the processor.",
+        "Data subjects may contact the Data Protection Officer with regard to all issues related to processing of their personal data and to the exercise of their rights under the Regulation.",
+        "The Data Protection Officer shall be bound by secrecy or confidentiality concerning the performance of tasks, in accordance with Union or Member State law.",
+        "The Data Protection Officer may fulfill other tasks and duties, provided that these do not result in a conflict of interests.",
+        "The designation of a Data Protection Officer (DPO) is addressed in Article 37 of the GDPR.",
+        "Member States may require controllers to consult with and obtain prior authorization from the supervisory authority for certain processing activities carried out in the public interest.",
+        "The Data Protection Officer (DPO) has specific tasks outlined in Article 39 of GDPR.",
+        "The DPO is responsible for informing and advising the controller, processor, and employees about their GDPR obligations.",
+        "The DPO monitors compliance with GDPR, other Union/Member State data protection provisions, and internal policies.",
+        "The DPO provides advice on Data Protection Impact Assessments (DPIAs) and monitors their performance.",
+        "The DPO cooperates with the supervisory authority and acts as a contact point for them.",
+        "GDPR encourages the development of codes of conduct to ensure proper application of the regulation.",
+        "Codes of conduct may be prepared by associations or bodies representing controllers or processors."
+      ],
+      "output": "Based strictly on the provided knowledge context, **there is no explicit requirement under GDPR for a Data Protection Officer (DPO) to hold a specific certification**. The context does not mention any mandatory certification for DPOs.\n\nHowever, the context does specify that a DPO must have **expert knowledge of data protection law and practices**, and the required level of expertise depends on the complexity and sensitivity of the data processing operations. This implies that while certification is not explicitly required, **professional qualifications, training, or demonstrated expertise in data protection law and practices are essential** to meet the GDPR’s standards for a DPO.\n\n### Summary:\n- **No explicit certification requirement** is stated in the provided context.\n- **Expert knowledge of data protection law and practices** is mandatory.\n- The level of expertise required may necessitate formal training, qualifications, or certifications in practice, depending on the context and jurisdiction.\n\nThus, while certification is not strictly mandated by the GDPR text provided, it is likely necessary in practice to demonstrate the required level of expertise.",
+      "ground_truth": "No, you do not need to be certified to become a DPO.\n\nDPOs must, however, be able to demonstrate that they have the necessary qualifications required by the GDPR, such as expert knowledge of data protection law and practices.",
+      "token_usage": {
+        "prompt_tokens": 19184,
+        "completion_tokens": 4770,
+        "total_tokens": 23954,
+        "embedding_tokens": 25
+      },
+      "latency_seconds": 16.513,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the conditions under which a Data Protection Officer (DPO) must be designated (e.g., public authorities, large-scale processing, or special categories of data) and the qualifications required for the role. However, it does not address whether certification is required to become a DPO, which is the specific question asked. The passage focuses on appointment criteria and professional qualities but lacks any mention of certification requirements."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the conditions under which a Data Protection Officer (DPO) is required and the qualifications or expertise needed for the role, but it does not explicitly address whether certification is required to become a DPO. The text focuses on the necessity of having a DPO with expert knowledge and independence, but it does not mention certification as a requirement."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the role, position, and tasks of a Data Protection Officer (DPO) under GDPR (Articles 37-39), including their involvement in data protection issues, support from controllers/processors, and their duties. However, it does not address whether certification is required to become a DPO. The question specifically asks about certification requirements, which are not mentioned in the provided passage."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses obligations related to data protection impact assessments, supervisory authority consultations, and legislative measures, but does not address the certification requirements for becoming a Data Protection Officer (DPO). The relevant section (Article 37) on the designation of the DPO is mentioned but not detailed in the provided passage, and the content does not pertain to certification."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the tasks of the Data Protection Officer (DPO) under Article 39 and codes of conduct under Article 40 of the GDPR. However, it does not address the specific requirement of certification for becoming a DPO. The question asks whether certification is needed, but the passage does not mention certification at all."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 34
+      }
+    },
+    {
+      "question_id": "q038",
+      "input": "What should I do when someone asks how I process their data?",
+      "retriever_context": [
+        "Information about data processing must be easily accessible and easy to understand.",
+        "Clear and plain language must be used when communicating about data processing.",
+        "You must inform data subjects about the identity of the controller.",
+        "You must inform data subjects about the purposes of the processing.",
+        "Data subjects have the right to obtain confirmation and communication of their personal data.",
+        "Data subjects should be made aware of risks, rules, safeguards, and rights related to data processing.",
+        "Data subjects should be informed about how to exercise their rights regarding their data.",
+        "The specific purposes for processing personal data should be explicit and legitimate.",
+        "Purposes should be determined at the time of data collection.",
+        "Personal data should be adequate, relevant, and limited to what is necessary for the purposes.",
+        "The period for which personal data are stored should be limited to a strict minimum.",
+        "Personal data should only be processed if the purpose cannot reasonably be fulfilled by other means.",
+        "Time limits for erasure or review should be established to ensure data is not kept longer than necessary.",
+        "Every reasonable step should be taken to rectify or delete inaccurate personal data.",
+        "Personal data should be processed in a manner that ensures appropriate security and confidentiality.",
+        "Measures should be taken to prevent unauthorized access to or use of personal data and related equipment.",
+        "You must confirm whether their personal data is being processed.",
+        "You must provide access to their personal data if it is being processed.",
+        "You must disclose the purposes of processing their data.",
+        "You must disclose the categories of personal data concerned.",
+        "You must disclose the recipients or categories of recipients of their data, including third-country recipients.",
+        "You must disclose the envisaged storage period or criteria for determining it.",
+        "You must inform them of their right to request rectification, erasure, or restriction of processing.",
+        "You must inform them of their right to object to processing.",
+        "You must inform them of their right to lodge a complaint with a supervisory authority.",
+        "If their data was not collected from them, you must provide available information about the source.",
+        "You must disclose the existence of automated decision-making (including profiling) and meaningful information about its logic and consequences.",
+        "If their data is transferred to a third country or international organization, you must inform them of the relevant safeguards.",
+        "You must provide a copy of their personal data undergoing processing."
+      ],
+      "output": "Based on the provided GDPR knowledge context, here’s a clear, accurate, and comprehensive answer to your question:\n\n---\n\n### **What to Do When Someone Asks How You Process Their Data**\n\nWhen a data subject (the individual whose data you process) requests information about how their personal data is being processed, you must provide them with the following details in a **clear, plain language**, and **easily accessible** manner. The response should cover:\n\n#### **1. Confirmation of Processing**\n- Confirm whether their personal data is being processed.\n\n#### **2. Access to Their Data**\n- Provide a **copy of their personal data** undergoing processing.\n\n#### **3. Transparency About Processing Details**\nDisclose the following information:\n- **Identity of the controller** (who is responsible for processing their data).\n- **Purposes of processing** (why their data is being processed).\n- **Categories of personal data concerned** (what types of data are processed, e.g., name, email, IP address).\n- **Recipients or categories of recipients** of their data (who receives or has access to their data, including third-country recipients or international organizations).\n- **Envisaged storage period** or the criteria used to determine how long their data will be stored.\n- **Source of the data** (if their data was not collected directly from them, provide available information about where it came from).\n- **Existence of automated decision-making** (including profiling), along with meaningful information about the logic involved and the consequences of such processing.\n- **Relevant safeguards** if their data is transferred to a third country or international organization (e.g., adequacy decisions, standard contractual clauses, or binding corporate rules).\n\n#### **4. Rights of the Data Subject**\nInform them of their rights regarding their data, including:\n- The right to request **rectification, erasure, or restriction of processing**.\n- The right to **object to processing**.\n- The right to **lodge a complaint with a supervisory authority**.\n\n#### **5. Security and Safeguards**\n- Explain the **security measures** in place to protect their data (e.g., encryption, access controls) and how you prevent unauthorized access or use.\n\n#### **6. Additional Context (if applicable)**\n- If their data is processed for **explicit and legitimate purposes**, ensure these purposes are clearly communicated.\n- If their data is **inaccurate**, explain how they can request rectification or deletion.\n- If their data is stored for a **strict minimum period**, clarify the retention criteria.\n\n---\n\n### **Key Requirements for Your Response**\n1. **Clarity and Plain Language**: Avoid legal jargon; use simple, understandable terms.\n2. **Accessibility**: Provide the information in a format that is easy to read (e.g., a privacy notice, email, or dedicated portal).\n3. **Timeliness**: Respond **without undue delay** and within **one month** of receiving the request (extendable to three months for complex requests).\n4. **Free of Charge**: The response should generally be provided free of charge, unless the request is excessive or repetitive.\n\n### **Gaps in the Context**\nThe provided context does not specify:\n- The **format** in which the information must be provided (e.g., electronic vs. physical copy).\n- The **process for verifying the identity** of the requester (though GDPR requires this to prevent unauthorized access).\n- The **exceptions** where you may refuse to provide certain information (e.g., if it would adversely affect the rights and freedoms of others).\n\nFor these, you would need to refer to the full text of **Article 15 (Right of Access by the Data Subject)** of the GDPR.\n\n---\n### **Summary of Action Steps**\n1. **Acknowledge the request** promptly.\n2. **Verify the requester’s identity** (if necessary).\n3. **Gather all relevant information** about their data processing.\n4. **Provide a clear, detailed response** covering all the points above.\n5. **Deliver the response within one month** (or three months for complex cases).\n\nWould you like a template for drafting such a response?",
+      "ground_truth": "Individuals can ask you whether you are processing their data and where it is the case, they have a right to access that data. So when this happens and if you process their data, you should, for example provide a copy of their personal data, free of charge, together with any necessary additional information. Where a request is made electronically, your organisation should provide the required information in a commonly used electronic format, unless the individual requests otherwise.",
+      "token_usage": {
+        "prompt_tokens": 13511,
+        "completion_tokens": 6130,
+        "total_tokens": 19641,
+        "embedding_tokens": 50
+      },
+      "latency_seconds": 18.525,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses general principles of data processing (security, confidentiality, lawful bases like consent or legal obligation) but does not address the specific question about what to do when someone asks how their data is processed. It lacks actionable guidance for responding to such a request."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly addresses the principle of transparency in GDPR, which is directly relevant to the question about how to respond when someone asks how their data is processed. It emphasizes the controller's obligation to provide clear, accessible, and understandable information to data subjects about data processing, including their rights and how to exercise them. While it does not provide a step-by-step answer, it covers the legal framework that informs what should be communicated in such a scenario."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage defines key GDPR terms such as 'personal data' and 'processing', but it does not provide guidance on what to do when someone asks how their data is processed. The question seeks actionable steps or responses, whereas the passage is purely definitional and lacks practical advice."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage primarily discusses the obligations of data controllers to provide specific information to data subjects about their data processing, including details about automated decision-making, sources of data, and the right to lodge complaints. However, it does not directly address what an individual should do when someone asks how their data is being processed. The passage is more about the controller's responsibilities rather than the individual's actions in response to such a query."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage directly addresses the rights of data subjects (individuals whose data is processed) under GDPR, specifically their right to obtain information about how their data is processed. It outlines the details a controller must provide upon request, such as the purposes of processing, categories of data, recipients, storage periods, and rights of the data subject. This is highly relevant to the question about what to do when someone asks how their data is processed, as it describes the obligations of the controller (the entity processing the data) in responding to such a request. The passage is a direct excerpt from GDPR Article 15 (Right of access by the data subject), which is the legal basis for handling such inquiries."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 29
+      }
+    },
+    {
+      "question_id": "q075",
+      "input": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Making secret audio recordings in the office” for the purpose of: “Checking morale”?",
+      "retriever_context": [
+        "Personal data should be processed in a manner that ensures appropriate security and confidentiality",
+        "In order for processing to be lawful, personal data should be processed on the basis of the consent of the data subject concerned or some other legitimate basis, laid down by law",
+        "Legitimate bases include: necessity for compliance with a legal obligation, necessity for the performance of a contract, or necessity to take steps at the request of the data subject prior to entering into a contract",
+        "The legitimate interests of a controller may provide a legal basis for processing personal data.",
+        "Processing is allowed under legitimate interests if the fundamental rights and freedoms of the data subject do not override the controller's interests.",
+        "The assessment must consider the reasonable expectations of data subjects based on their relationship with the controller.",
+        "A legitimate interest may exist where there is a relevant and appropriate relationship between the data subject and the controller (e.g., employee-employer).",
+        "The existence of a legitimate interest requires careful assessment, including whether data subjects could reasonably expect the processing at the time of data collection.",
+        "The interests and fundamental rights of the data subject could override the controller's interest if the data subjects do not reasonably expect further processing.",
+        "Processing personal data strictly necessary for preventing fraud may constitute a legitimate interest of the controller.",
+        "Processing personal data for direct marketing purposes may be regarded as carried out for a legitimate interest."
+      ],
+      "output": "Based on the provided knowledge context, the legal basis for processing personal data for the activity **\"Making secret audio recordings in the office\" for the purpose of \"Checking morale\"** is **not clearly supported** under the GDPR. Here’s the analysis:\n\n### **Key Issues:**\n1. **Lack of Transparency & Consent:**\n   - Secret audio recordings inherently involve processing personal data without the knowledge or consent of the data subjects (employees), which violates the principle of **fair and transparent processing** (implied in the context).\n   - Consent is not a viable legal basis here because it cannot be freely given if employees are unaware of the recordings.\n\n2. **Legitimate Interest Assessment (LIA) Fails:**\n   - While **legitimate interest** is a possible legal basis, the context specifies that:\n     - The processing must align with **reasonable expectations** of the data subjects.\n     - Secret recordings would **not reasonably be expected** by employees in an office setting, making this basis **unlikely to apply**.\n     - The **fundamental rights and freedoms** of employees (privacy, data protection) would **override** any controller interest in morale-checking via covert means.\n\n3. **Other Legal Bases Do Not Apply:**\n   - **Contractual necessity?** No, morale-checking is not essential for an employment contract.\n   - **Legal obligation?** No law mandates secret audio recordings for morale purposes.\n   - **Vital interests?** Not applicable here.\n\n### **Conclusion:**\nThe provided context **does not support** any GDPR legal basis for making **secret audio recordings in the office** for morale-checking. Such processing would likely be **unlawful** under GDPR due to:\n- Lack of transparency,\n- Breach of reasonable expectations,\n- Overriding data subject rights.\n\n### **Gaps in Context:**\n- The context does not address **explicit consent** (which would require opt-in, informed consent).\n- It does not cover **member state-specific laws** (e.g., national wiretapping regulations).\n- No mention of **balancing tests** for legitimate interest in covert surveillance.\n\n**Final Answer:** *No valid GDPR legal basis exists for making secret audio recordings in the office for morale-checking under the provided context.*",
+      "ground_truth": "None - Processing not permitted under GDPR.",
+      "token_usage": {
+        "prompt_tokens": 9828,
+        "completion_tokens": 3468,
+        "total_tokens": 13296,
+        "embedding_tokens": 71
+      },
+      "latency_seconds": 15.425,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the legal basis for processing personal data under the vital interests of another natural person, particularly in contexts like humanitarian emergencies or monitoring epidemics. It does not address the specific GDPR legal basis for making secret audio recordings in an office for the purpose of checking morale. The content is unrelated to the question's context."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.9,
+            "reasoning": "The passage discusses the legal bases for processing personal data under GDPR, specifically mentioning consent and other legitimate bases such as legal obligations or contractual necessity. While it does not explicitly address the specific scenario of making secret audio recordings for morale-checking, it provides foundational information on the legal bases for processing personal data, which is relevant to determining the appropriate legal basis for the given activity."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.85,
+            "reasoning": "The passage discusses the legal basis of 'legitimate interest' under GDPR Article 6(1)(f), which is one of the possible legal bases for processing personal data. While the passage does not explicitly mention 'secret audio recordings' or 'checking morale,' it provides general conditions under which legitimate interest can be used as a legal basis for processing personal data. This includes assessing whether the data subject could reasonably expect the processing and whether their rights override the controller's interests. Given the question's focus on GDPR legal bases for a specific processing activity, this passage is relevant as it addresses the legitimate interest basis, which could potentially apply to the described scenario. However, the lack of specific mention of the exact processing activity slightly reduces the confidence."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage lists legal bases under GDPR (Art. 6(1)(f), (g), (h), (i)) but none of them directly or plausibly apply to the processing activity of 'making secret audio recordings in the office' for the purpose of 'checking morale'. The listed bases relate to legal claims, public interest, occupational medicine, or public health, none of which are relevant to general employee morale monitoring through covert audio recording. The activity described does not fit the conditions or context of the provided legal bases."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage provided lists various legal bases for processing personal data under GDPR (Article 9, Paragraph 2), but none of the listed bases (consent, employment law, vital interests, etc.) directly apply to the specific processing activity of 'making secret audio recordings in the office' for the purpose of 'checking morale'. The passage does not address the legal basis for covert surveillance or employee monitoring, which would typically require justification under Article 6 (lawfulness of processing) rather than Article 9 (special categories of data). The question pertains to a different legal context (employee monitoring vs. sensitive data processing), making the passage largely irrelevant."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 11
+      }
+    },
+    {
+      "question_id": "q078",
+      "input": "Under which legal basis from the GDPR may personal data be processed for the processing activity: “Storage of children's photos in the cloud” for the purpose: “Use for advertising purposes”?",
+      "retriever_context": [
+        "Processing shall be lawful only if and to the extent that at least one of the following applies:",
+        "the data subject has given consent to the processing of his or her personal data for one or more specific purposes",
+        "processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract",
+        "processing is necessary for compliance with a legal obligation to which the controller is subject",
+        "processing is necessary in order to protect the vital interests of the data subject or of another natural person",
+        "processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller",
+        "processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child",
+        "The legitimate interests of a controller may provide a legal basis for processing personal data.",
+        "The interests or fundamental rights and freedoms of the data subject must not override the controller's legitimate interests.",
+        "The assessment of legitimate interests must consider the reasonable expectations of data subjects based on their relationship with the controller.",
+        "A legitimate interest could exist where there is a relevant and appropriate relationship between the data subject and the controller, such as in client-service relationships.",
+        "The existence of a legitimate interest requires careful assessment, including whether data subjects can reasonably expect the processing at the time and context of data collection.",
+        "The interests and fundamental rights of the data subject could override the controller's interest where data subjects do not reasonably expect further processing.",
+        "The processing of personal data for direct marketing purposes may be regarded as carried out for a legitimate interest."
+      ],
+      "output": "Based strictly on the provided knowledge context, the legal basis for processing personal data (storage of children's photos in the cloud) for the purpose of \"use for advertising purposes\" is **not clearly supported** by any of the listed GDPR legal bases. Here’s the analysis:\n\n1. **Consent (Art. 6(1)(a))**:\n   - Not applicable unless the data subject (or their legal guardian) has explicitly given consent for the specific purpose of advertising. The context does not indicate consent was obtained.\n\n2. **Contractual necessity (Art. 6(1)(b))**:\n   - Unlikely, as storing children’s photos in the cloud for advertising is not necessary for the performance of a contract or pre-contractual steps.\n\n3. **Legal obligation (Art. 6(1)(c))**:\n   - No indication this processing is required by law.\n\n4. **Vital interests (Art. 6(1)(d))**:\n   - Irrelevant here, as advertising does not relate to life-or-death situations.\n\n5. **Public interest (Art. 6(1)(e))**:\n   - Not applicable, as advertising is not a task carried out in the public interest.\n\n6. **Legitimate interests (Art. 6(1)(f))**:\n   - **Potentially relevant but highly questionable**:\n     - The context notes that legitimate interests *may* apply where there is a relevant relationship (e.g., client-service) and data subjects reasonably expect the processing.\n     - However, **children’s data is given special protection** under GDPR (Recital 38), and advertising purposes are unlikely to align with a child’s reasonable expectations.\n     - The context explicitly states that the interests/fundamental rights of the data subject (especially a child) could override the controller’s legitimate interests where expectations are not met.\n     - **Conclusion**: The legitimate interests basis is unlikely to apply here due to the imbalance of power (children) and lack of reasonable expectation of advertising use.\n\n### Gaps in Context:\n- The provided context does not address **children’s data specifically** (beyond noting special protection in Recital 38).\n- No mention of **consent requirements for children** (Art. 8 GDPR), which would likely require parental consent for such processing.\n- No guidance on **balancing tests** for legitimate interests involving children.\n\n### Final Answer:\n**None of the listed GDPR legal bases clearly justify processing children’s photos in the cloud for advertising purposes under the provided context.** The most plausible candidate (legitimate interests) is unlikely to apply due to the special protection of children’s data and lack of reasonable expectations. **Explicit consent (Art. 6(1)(a)) from a legal guardian would likely be required.**",
+      "ground_truth": "None - Processing not permitted under GDPR.",
+      "token_usage": {
+        "prompt_tokens": 12458,
+        "completion_tokens": 4616,
+        "total_tokens": 17074,
+        "embedding_tokens": 115
+      },
+      "latency_seconds": 14.408,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the legal basis of 'vital interests of another natural person' under GDPR, which is unrelated to the question about processing children's photos in the cloud for advertising purposes. The question specifically asks about the legal basis for such processing, while the passage refers to Directive 93/13/EEC and the legal basis of 'vital interests,' neither of which pertains to cloud storage or advertising. The content is entirely irrelevant to the question."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses general principles of lawful processing under GDPR (e.g., consent or other legitimate bases) and security requirements, but it does not specifically address the legal basis for processing children's photos in the cloud for advertising purposes. The question requires a direct answer about which GDPR legal basis applies to this specific processing activity and purpose, which the passage does not provide."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage provides the legal bases for processing personal data under GDPR Article 6, which is directly relevant to the question about the legal basis for processing children's photos in the cloud for advertising purposes. While the passage does not explicitly mention children's photos or advertising, it outlines the possible legal bases (consent, contract, legal obligation, vital interests, public interest, legitimate interests) that would need to be evaluated for this specific scenario. The most likely relevant basis here would be consent (a) or legitimate interests (f), but the passage itself is a foundational reference that would be necessary to answer the question."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses legitimate interests for processing personal data in contexts such as direct marketing, group administrative purposes, and network security, but it does not address the specific scenario of storing children's photos in the cloud for advertising purposes. The question requires evaluating the legal basis for this exact processing activity, which is not covered in the passage."
+          },
+          {
+            "is_relevant": true,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the legal basis of 'legitimate interests' under GDPR Article 6(1)(f), which is relevant to the question about processing personal data (children's photos in the cloud) for advertising purposes. It explicitly mentions that 'The processing of personal data for direct marketing purposes may be regarded as carried out for a legitimate interest,' which directly relates to the question's purpose. While the passage does not explicitly address children's photos, it provides a legal basis (legitimate interests) that could potentially apply to such processing if other conditions (e.g., balancing test, reasonable expectations) are met."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 14
+      }
+    },
+    {
+      "question_id": "q085",
+      "input": "Which categories of personal data are relevant for the processing activity: “Performance of payroll accounting” for the purpose: “Calculation of monthly salaries in the HR department”?\n\nData categories:",
+      "retriever_context": [
+        "Personal data means any information relating to an identified or identifiable natural person",
+        "An identifiable natural person can be identified directly or indirectly by reference to identifiers such as a name, identification number, location data, or online identifier",
+        "Personal data can also be identified by factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that natural person",
+        "Processing includes operations performed on personal data such as collection, recording, organisation, storage, retrieval, use, and disclosure",
+        "Profiling involves automated processing of personal data to evaluate aspects concerning a natural person's performance at work or economic situation",
+        "Processing of employees' personal data in the employment context may be governed by specific rules under national law or collective agreements.",
+        "The performance of the contract of employment includes the discharge of obligations laid down by law or by collective agreements.",
+        "Processing for the performance of the contract of employment may include the management, planning, and organisation of work.",
+        "Processing for the performance of the contract of employment may include the calculation of salaries.",
+        "Personal data revealing racial or ethnic origin are considered particularly sensitive and merit specific protection.",
+        "Photographs are not automatically considered special categories of personal data unless processed through specific technical means for unique identification or authentication.",
+        "Special categories of personal data should not be processed unless allowed by specific cases set out in the GDPR or Member State law.",
+        "Processing is necessary for the purposes of carrying out the obligations and exercising specific rights of the controller or of the data subject in the field of employment and social security and social protection law in so far as it is authorised by Union or Member State law or a collective agreement pursuant to Member State law providing for appropriate safeguards for the fundamental rights and the interests of the data subject."
+      ],
+      "output": "Based strictly on the provided knowledge context, the relevant categories of personal data for the processing activity **\"Performance of payroll accounting\"** for the purpose **\"Calculation of monthly salaries in the HR department\"** include:\n\n1. **Identifiers**:\n   - Name (directly identifies the employee).\n   - Identification number (e.g., employee ID, tax ID, or social security number).\n   - Location data (e.g., work location or address for tax or legal compliance).\n\n2. **Factors specific to identity**:\n   - Economic identity (e.g., salary details, bank account information for salary payments).\n   - Employment-related data (e.g., job title, department, employment status, working hours, overtime, bonuses, or deductions).\n\n3. **Other relevant data**:\n   - Financial data (e.g., salary components, tax deductions, pension contributions).\n   - Employment contract details (e.g., agreed salary, benefits, or allowances).\n\n### Notes:\n- **Special categories of personal data** (e.g., racial/ethnic origin, health data) are **not inherently relevant** for payroll accounting unless explicitly required by law (e.g., for tax or social security purposes) and processed with appropriate safeguards.\n- **Photographs** are not relevant unless used for unique identification/authentication (not typical for payroll).\n- Processing must comply with GDPR principles (lawfulness, fairness, transparency) and may require a legal basis such as **performance of a contract** (Article 6(1)(b) GDPR) or **compliance with legal obligations** (Article 6(1)(c) GDPR), depending on national law or collective agreements.\n\n### Gaps:\nThe context does not specify whether:\n- Bank account details (for salary payments) are considered personal data (they are, under GDPR).\n- Sensitive data (e.g., health-related deductions) are involved (if so, stricter rules apply).\n- National law or collective agreements impose additional requirements.\n\nFor a complete assessment, further details on the legal basis and specific data processed would be needed.",
+      "ground_truth": "address data, age, working hours, bank details, professional position, e-mail address, marital status, place of birth, gender, monthly salaries, sick days (special category according to Art. 9 GDPR), name, personnel number, religious affiliation (special category according to Art. 9 GDPR), pension insurance number, social security number, nationality, tax identification number, telephone number, vacation days",
+      "token_usage": {
+        "prompt_tokens": 19964,
+        "completion_tokens": 5147,
+        "total_tokens": 25111,
+        "embedding_tokens": 136
+      },
+      "latency_seconds": 17.672,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage defines general concepts related to GDPR (e.g., 'personal data', 'processing', 'restriction of processing', 'profiling') but does not provide specific categories of personal data relevant for payroll accounting. It lacks the necessary details about which data categories (e.g., employee ID, salary details, bank account information, tax identification numbers) are involved in the 'Performance of payroll accounting' activity."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses Articles 87, 88, and 89 of the GDPR, which pertain to the processing of national identification numbers, employment-related data processing, and safeguards for data subjects in employment contexts. While Article 88 mentions payroll-related processing ('performance of the contract of employment, including discharge of obligations laid down by law'), it does not explicitly list or categorize the types of personal data relevant for payroll accounting (e.g., salary details, tax information, bank account details). The passage is too general and does not address the specific question about data categories for payroll processing."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the processing of special categories of personal data (e.g., racial or ethnic origin, biometric data) and their heightened protection under GDPR. However, it does not address the specific categories of personal data relevant for payroll accounting (e.g., name, address, bank details, tax ID, employment contract details, salary information). The question pertains to standard personal data categories for payroll processing, not special categories or legal obligations for sensitive data."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses legal bases for processing personal data under GDPR (e.g., consent, employment law, vital interests, etc.), but it does not address the specific question about which categories of personal data are relevant for the processing activity 'Performance of payroll accounting' for the purpose 'Calculation of monthly salaries in the HR department'. The passage is general and does not provide any information about data categories like employee names, salaries, tax IDs, bank details, etc., which would be directly relevant to payroll processing."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 1.0,
+            "reasoning": "The passage discusses micro, small, and medium-sized enterprises (SMEs) and a regulation on data protection by EU institutions, neither of which pertains to the categories of personal data relevant for payroll accounting or salary calculation. Additionally, the mention of household activities and social networking is unrelated to the HR department's payroll processing activity."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 13
+      }
+    },
+    {
+      "question_id": "q088",
+      "input": "Which categories of personal data are relevant for the processing activity: “Training” for the purpose of: “Providing training to raise awareness or increase the expertise of employees”?\n\nCategories of data:",
+      "retriever_context": [
+        "Personal data means any information relating to an identified or identifiable natural person",
+        "An identifiable natural person can be identified directly or indirectly, including by reference to factors specific to their physical, physiological, genetic, mental, economic, cultural, or social identity",
+        "Processing includes operations such as collection, recording, organisation, storage, retrieval, use, and dissemination of personal data",
+        "Profiling involves automated processing of personal data to evaluate aspects like performance at work, economic situation, health, personal preferences, interests, reliability, behaviour, location, or movements",
+        "Personal data revealing racial or ethnic origin are considered particularly sensitive and merit specific protection.",
+        "The processing of photographs is not automatically considered processing of special categories of personal data unless processed through specific technical means allowing unique identification or authentication.",
+        "Special categories of personal data should not be processed unless allowed in specific cases set out in the GDPR or under Member State law for compliance with legal obligations or public interest tasks.",
+        "Member States may determine specific conditions for processing a national identification number or other general identifier, with appropriate safeguards.",
+        "Member States may provide specific rules for processing employees' personal data in the employment context, including for management and organization of work.",
+        "Processing of employees' personal data in employment may include purposes such as recruitment, performance of employment contracts, equality and diversity, health and safety, and termination of employment.",
+        "Rules for processing employees' personal data must include measures to safeguard data subjects' human dignity, legitimate interests, and fundamental rights, particularly regarding transparency and monitoring systems."
+      ],
+      "output": "Based strictly on the provided knowledge context, the relevant categories of personal data for the processing activity **\"Training\"** (for the purpose of *\"Providing training to raise awareness or increase the expertise of employees\"*) include:\n\n### **Relevant Categories of Personal Data:**\n1. **General Personal Data** (Article 4(1) GDPR):\n   - Any information relating to an identified or identifiable natural person (employee), such as:\n     - **Name, contact details** (e.g., email, phone number) – used for inviting employees to training.\n     - **Job title, department, role** – relevant for tailoring training content (e.g., compliance, safety, or role-specific training).\n     - **Performance-related data** (e.g., training completion records, assessment results) – if used to evaluate training effectiveness or employee progress.\n     - **Demographic data** (e.g., age, gender) – if used for diversity or inclusion training (but note: special category rules may apply if linked to sensitive attributes).\n     - **Behavioral data** (e.g., participation in training modules, engagement metrics) – if tracked for training analytics.\n\n2. **Special Categories of Personal Data (Article 9 GDPR)** – *Only if explicitly processed*:\n   - **Health data** (e.g., if training includes medical or ergonomic assessments, or if health-related accommodations are discussed).\n   - **Biometric/genetic data** (e.g., if training involves fitness tracking or health screenings using biometric identifiers).\n   - **Racial/ethnic origin** (e.g., if training includes diversity/inclusion modules where such data is inferred or disclosed).\n   - **Religious/cultural beliefs** (e.g., if training covers cultural sensitivity and such data is processed).\n   - **Trade union membership** (e.g., if training involves employee representation rights).\n\n   - **Note:** *Photographs* (e.g., training attendance photos) are **not** automatically special category data unless processed via technical means for unique identification (e.g., facial recognition for authentication).\n\n3. **Employment-Related Data** (Article 88 GDPR + Member State laws):\n   - **Employment history, skills, certifications** – relevant for assessing training needs.\n   - **Disciplinary records** – if training includes corrective measures.\n   - **Sensitive employment data** (e.g., whistleblowing reports, grievances) – if training covers these topics.\n\n4. **Profiling Data** (Article 4(4) GDPR):\n   - **Automated assessments** (e.g., pre- and post-training quizzes to measure knowledge gains).\n   - **Behavioral tracking** (e.g., e-learning platform analytics on employee engagement with training materials).\n\n---\n\n### **Key Considerations from Context:**\n- **Legal Basis for Processing:**\n  - Training for employee upskilling typically relies on **Article 6(1)(f) GDPR (legitimate interest)** or **Article 6(1)(b) (contractual necessity)** if tied to employment contracts.\n  - For **special category data (Article 9)**, explicit consent (Article 9(2)(a)) or substantial public interest (Article 9(2)(g)) may be required, depending on the data type and Member State laws.\n\n- **Member State-Specific Rules (Article 88 GDPR):**\n  - Some jurisdictions impose stricter rules on processing employee data, including training records (e.g., Germany’s *Bundesdatenschutzgesetz*).\n  - **National identification numbers** (if used for training tracking) may require additional safeguards under Member State law.\n\n- **Safeguards Required:**\n  - **Transparency** (inform employees via privacy notices about training data processing).\n  - **Data minimization** (only collect data necessary for training purposes).\n  - **Security measures** (e.g., encryption for digital training platforms, access controls).\n  - **Human dignity protections** (e.g., avoiding intrusive monitoring like keystroke logging during e-learning).\n\n---\n### **Gaps in Context:**\nThe provided knowledge does not specify:\n- Whether **biometric data** (e.g., fingerprint scans for training attendance) is considered special category data (though likely yes under Article 9).\n- Whether **Member State laws** impose additional restrictions on training-related data processing (e.g., France’s *CNIL* guidelines).\n- Whether **automated decision-making** (e.g., AI-driven training recommendations) triggers **Article 22 GDPR** requirements.\n\nFor a complete assessment, these gaps would need to be addressed under applicable national law.",
+      "ground_truth": "professional position, expertise, skills, name",
+      "token_usage": {
+        "prompt_tokens": 18278,
+        "completion_tokens": 5577,
+        "total_tokens": 23855,
+        "embedding_tokens": 161
+      },
+      "latency_seconds": 16.669,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage defines general GDPR terms like 'personal data' and 'processing' but does not specifically address which categories of personal data are relevant for the 'Training' activity described in the question. It lacks context about employee training purposes or the types of data that might be processed in such a scenario."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the processing of special categories of personal data (e.g., racial or ethnic origin, biometric data) and their heightened protection under GDPR. However, it does not address the specific question about which categories of personal data are relevant for the 'Training' processing activity for raising employee awareness or expertise. The passage is more general and focuses on legal obligations and special categories rather than the practical data categories needed for training purposes."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses the processing of personal data within an AI regulatory sandbox for specific purposes like public safety, health, environment, etc., and under strict conditions. It does not address the categories of personal data relevant for the processing activity of 'Training' to provide employee training or raise awareness/expertise. The context is entirely different (AI system development/testing in a sandbox) and does not cover employee training activities or the types of personal data needed for such training."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 1.0,
+            "reasoning": "The passage discusses definitions and regulations related to micro, small, and medium-sized enterprises (SMEs) and the processing of personal data by Community institutions, but it does not address the categories of personal data relevant for the processing activity 'Training' for the purpose of 'Providing training to raise awareness or increase the expertise of employees'. The mention of household activities and social networking is unrelated to the question."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses Articles 87, 88, and 89 of the GDPR, which relate to the processing of national identification numbers, employment context, and safeguards for data processing in employment, respectively. However, it does not directly address the categories of personal data relevant for the specific processing activity of 'Training' for the purpose of 'Providing training to raise awareness or increase the expertise of employees'. The passage is more general and does not provide specific information about the types of personal data that may be processed in the context of employee training."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 11
+      }
+    },
+    {
+      "question_id": "q106",
+      "input": "Which internal persons or roles may access the personal data as part of the processing activity: “Employee appraisal” for the purpose of: “Conducting and recording employee appraisals”?",
+      "retriever_context": [
+        "Member State law or collective agreements may provide specific rules on processing employees' personal data in the employment context.",
+        "Processing of employees' personal data may be based on the performance of the contract of employment, including discharge of obligations laid down by law or collective agreements.",
+        "Processing of employees' personal data may be conducted for the management, planning, and organisation of work.",
+        "The controller must ensure appropriate safeguards for the rights and freedoms of the data subject when processing personal data for archiving, scientific, historical research, or statistical purposes.",
+        "'processing' means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means",
+        "'profiling' means any form of automated processing of personal data consisting of the use of personal data to evaluate certain personal aspects relating to a natural person, in particular to analyse or predict aspects concerning that natural person's performance at work",
+        "Controllers or processors providing means for processing personal data for personal or household activities are subject to GDPR.",
+        "GDPR applies to controllers or processors involved in processing personal data for professional or organizational purposes.",
+        "Member States may provide specific rules for processing employees' personal data in the employment context.",
+        "Processing employees' personal data may include purposes such as management, planning, and organisation of work.",
+        "Employee appraisal falls under the purposes of management, planning, and organisation of work.",
+        "Rules for processing employees' personal data must include safeguards for the data subject's human dignity, legitimate interests, and fundamental rights.",
+        "Safeguards must ensure transparency of processing, transfer of personal data within a group of undertakings, and monitoring systems in the workplace.",
+        "'controller' means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data",
+        "'processor' means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller",
+        "'recipient' means a natural or legal person, public authority, agency or another body, to which the personal data are disclosed, whether a third party or not"
+      ],
+      "output": "Based strictly on the provided knowledge context, the following internal persons or roles may access employees' personal data as part of the processing activity **\"Employee appraisal\"** for the purpose of **\"Conducting and recording employee appraisals\"**:\n\n1. **Controllers** – As defined in the context, controllers determine the purposes and means of processing personal data. In this case, they would include:\n   - **HR departments/HR managers** (as they typically oversee employee appraisals).\n   - **Direct supervisors/line managers** (as they are responsible for evaluating employee performance).\n   - **Senior management** (if involved in strategic decisions based on appraisals).\n\n2. **Processors** – If an external or internal entity processes data on behalf of the controller (e.g., an HR software provider or internal IT team managing appraisal systems), they may also access the data, provided they act under the controller’s instructions.\n\n3. **Other relevant personnel** – Depending on the organization’s structure and Member State laws:\n   - **Trade union representatives** (if involved in collective bargaining or employee rights).\n   - **Data protection officers (DPOs)** (if monitoring compliance with GDPR).\n   - **Internal auditors** (if reviewing appraisal processes for compliance).\n\n### **Key Considerations from the Context:**\n- **Purpose Limitation:** Access must align with the stated purpose of conducting and recording appraisals (management, planning, and organization of work).\n- **Safeguards Required:** The controller must ensure transparency, human dignity, and fundamental rights are respected (e.g., employees should know who accesses their data).\n- **Member State Rules:** Additional restrictions or permissions may apply under national employment laws.\n\n### **Gaps in the Context:**\n- The context does not specify whether **peers or subordinates** (e.g., 360-degree feedback) may access appraisal data.\n- It does not clarify whether **external consultants** (e.g., career coaches) may be involved.\n- No explicit mention of **IT/system administrators** who may technically access data but should only do so under strict access controls.\n\nFor a complete answer, further details on the organization’s internal policies or Member State-specific laws would be needed.",
+      "ground_truth": "management, human resources, specialist department",
+      "token_usage": {
+        "prompt_tokens": 20818,
+        "completion_tokens": 5138,
+        "total_tokens": 25956,
+        "embedding_tokens": 173
+      },
+      "latency_seconds": 19.739,
+      "metadata": {
+        "initial_verdict": "correct",
+        "passage_grades": [
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses general rules for processing employees' personal data in the employment context and archiving purposes, but it does not specifically address which internal persons or roles may access personal data for the 'Employee appraisal' processing activity. It lacks details on role-based access or the specific individuals involved in conducting and recording employee appraisals."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage defines key GDPR terms such as 'personal data' and 'processing', but it does not address the specific question about which internal persons or roles may access personal data in the context of 'Employee appraisal' for the purpose of 'Conducting and recording employee appraisals'. The definitions are general and do not provide information about data access roles or permissions."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 1.0,
+            "reasoning": "The passage discusses unrelated topics such as definitions of micro, small and medium-sized enterprises, Regulation (EC) No 45/2001 concerning data protection by EU institutions, and household activities. None of these topics address the question about internal persons or roles that may access personal data for the purpose of conducting and recording employee appraisals."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage discusses Articles 87, 88, and 89 of the GDPR, which focus on the processing of national identification numbers, employment-related data processing, and safeguards for data subjects in employment contexts. While Article 88 mentions employment-related processing purposes (including management and organization of work), it does not specifically address which internal persons or roles may access personal data for the 'Employee appraisal' processing activity. The passage lacks direct relevance to the question about roles accessing personal data in the context of employee appraisals."
+          },
+          {
+            "is_relevant": false,
+            "confidence": 0.95,
+            "reasoning": "The passage defines key GDPR terms such as 'pseudonymisation', 'filing system', 'controller', 'processor', and 'recipient', but it does not address the specific question about which internal persons or roles may access personal data for the 'Employee appraisal' processing activity. The definitions are general and do not provide information about roles involved in employee appraisal processing."
+          }
+        ],
+        "refinement_iterations": 0,
+        "final_context_count": 16
+      }
+    }
+  ]
+}

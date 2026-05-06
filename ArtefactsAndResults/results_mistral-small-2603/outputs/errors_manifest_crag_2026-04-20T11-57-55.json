@@ -1,0 +1,43 @@
+{
+  "source_output_file": "crag_2026-04-20T11-57-55.json",
+  "source_results_file": "eval_crag_2026-04-22T18-34-01.json",
+  "approach": "crag",
+  "errored_by_metric": {
+    "context_precision": [
+      "q038"
+    ],
+    "context_relevancy": [
+      "q078",
+      "q085",
+      "q088",
+      "q106"
+    ],
+    "faithfulness": [
+      "q075"
+    ],
+    "regulatory_grounding": [
+      "q007",
+      "q012",
+      "q018",
+      "q019",
+      "q028",
+      "q029",
+      "q032"
+    ]
+  },
+  "all_errored_question_ids": [
+    "q007",
+    "q012",
+    "q018",
+    "q019",
+    "q028",
+    "q029",
+    "q032",
+    "q038",
+    "q075",
+    "q078",
+    "q085",
+    "q088",
+    "q106"
+  ]
+}
