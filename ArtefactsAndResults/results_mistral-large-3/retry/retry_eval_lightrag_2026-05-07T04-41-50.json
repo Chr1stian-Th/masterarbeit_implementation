@@ -1,0 +1,805 @@
+{
+  "approach": "lightrag",
+  "source_output_file": "lightrag_2026-04-25T11-18-40_splice.json",
+  "source_results_file": "eval_lightrag_2026-04-26T19-47-29.json",
+  "retry_timestamp": "2026-05-07T04-41-50",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "answer_relevancy": [
+      {
+        "question_id": "q051",
+        "score": 0.9,
+        "reason": "The score is 0.90 because the response provides the necessary guidance on determining security measures, but it is not higher due to the inclusion of reactive information regarding breach notifications, documentation, and organizational processes that do not assist the user in proactive planning.",
+        "passed": true
+      },
+      {
+        "question_id": "q094",
+        "score": 0.7,
+        "reason": "The score is 0.70 because the output likely addresses the core topic of data storage, but it is penalized for including extensive irrelevant information regarding transparency obligations, consent mechanisms, and erasure rights rather than focusing strictly on the specific storage duration for order acceptance.",
+        "passed": true
+      },
+      {
+        "question_id": "q095",
+        "score": 0.7777777777777778,
+        "reason": "The score is 0.78 because the output provides the requested storage duration, but it is lowered by irrelevant tangents regarding Knowledge Graph internal structures and AI regulatory sandboxes.",
+        "passed": true
+      },
+      {
+        "question_id": "q096",
+        "score": 0.6956521739130435,
+        "reason": "The score is 0.70 because the output addresses the core topic but includes significant irrelevant information regarding archiving, research, and technical compliance measures instead of focusing strictly on the specific storage duration requested.",
+        "passed": false
+      },
+      {
+        "question_id": "q097",
+        "score": 0.7727272727272727,
+        "reason": "The score is 0.77 because the output provides the necessary information regarding storage duration, but it is lowered by the inclusion of several irrelevant sections concerning archiving for scientific research, safeguards for research, and the withdrawal of consent, which do not apply to the specific activity of drawing up employment contracts.",
+        "passed": true
+      },
+      {
+        "question_id": "q130",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the response is perfectly aligned with the user's request and contains no irrelevant information!",
+        "passed": true
+      },
+      {
+        "question_id": "q131",
+        "score": 0.8448275862068966,
+        "reason": "The score is 0.84 because the output provides relevant information, but it is lowered by the inclusion of definitions, role descriptions, and preventative measures rather than focusing exclusively on the actionable steps to take after a breach has occurred.",
+        "passed": true
+      },
+      {
+        "question_id": "q148",
+        "score": 0.9682539682539683,
+        "reason": "The score is 0.97 because the response is almost entirely focused on monitoring and evaluation, but it includes minor irrelevant mentions of confidentiality and SME prioritization policies.",
+        "passed": true
+      },
+      {
+        "question_id": "q150",
+        "score": 0.9555555555555556,
+        "reason": "The score is 0.96 because the response accurately explains the role of the conformity assessment, but it is not a perfect score due to the inclusion of unrelated details regarding enforcement actions and financial penalties.",
+        "passed": true
+      },
+      {
+        "question_id": "q152",
+        "score": 0.9230769230769231,
+        "reason": "The score is 0.92 because the response accurately addresses the AI Act's stance on biometric identification, but it is not higher due to the inclusion of tangential information regarding emotion recognition, social scoring, and national authority actions.",
+        "passed": true
+      }
+    ],
+    "context_precision": [
+      {
+        "question_id": "q003",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135706138d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q005",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135704834d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q006",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q007",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q009",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.6634516099876342,
+        "reason": "The score is 0.66 because while the first node in the retrieval contexts is relevant, the second node in the retrieval contexts is an irrelevant node that \"describes the role of an 'AI Provider' and does not define or explain the GDPR,\" which should be ranked lower than subsequent relevant nodes such as the third node in the retrieval contexts which \"explicitly identifies the 'General Data Protection Regulation' as 'Regulation (EU) 2016/679 on the protection of natural persons regarding the processing of personal data'.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q019",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713570364dd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q026",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q034",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357039e950 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q042",
+        "score": 0.8040875790875792,
+        "reason": "The score is 0.80 because the first three nodes in the retrieval contexts are relevant, but the score is not higher because the fourth node in the retrieval contexts is an irrelevant node that \"discusses AI systems and high-risk classifications,\" which should be ranked lower than subsequent relevant nodes, such as the fifth node in the retrieval contexts which \"discusses binding corporate rules and Article 49 derogations.\"",
+        "passed": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135703d17d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q048",
+        "score": 0.9761904761904762,
+        "reason": "The score is 0.98 because the vast majority of relevant nodes are ranked at the top, but it is not a perfect 1.0 because the sixth node in the retrieval contexts is irrelevant as it \"discusses the AI value chain and deployer responsibilities,\" and it is ranked higher than the seventh node which is relevant because it mentions that obligations are imposed \"by way of a contract or other legal act\".",
+        "passed": true
+      },
+      {
+        "question_id": "q056",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713570421b50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q073",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all relevant nodes are perfectly ranked above the irrelevant ones! The first five nodes in the retrieval contexts are all highly relevant, providing critical information such as the definition of 'Special Categories Of Personal Data' and the prohibition in Article 9(1), while the irrelevant nodes, such as the sixth node discussing 'general principles of lawfulness and transparency' and the seventh node regarding 'transparency obligations for AI providers', are correctly placed at the bottom.",
+        "passed": true
+      },
+      {
+        "question_id": "q092",
+        "score": 0.225,
+        "reason": "The score is 0.23 because the relevant nodes are ranked very low. Specifically, the first, second, third, and fourth nodes in the retrieval contexts are irrelevant as they only provide \"general definitions\", \"relationships between entities\", \"transparency obligations\", and \"transparency obligations for AI providers\", respectively. These should be ranked lower than the fifth node in the retrieval contexts, which is relevant because it mentions data should be erased \"where a data subject has withdrawn his or her consent\".",
+        "passed": false
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q118",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135702cfdd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q119",
+        "score": 0.3888588079046416,
+        "reason": "The score is 0.39 because while the first and second nodes in retrieval contexts are relevant, several irrelevant nodes are ranked higher than highly relevant ones; for example, the third node in retrieval contexts is irrelevant as it 'does not contain information regarding flexibility or risk-based approaches', yet it is ranked above the eleventh node in retrieval contexts which explicitly mentions 'allowing Member States some margin of maneuver for national specifications and providing derogations'.",
+        "passed": false
+      },
+      {
+        "question_id": "q123",
+        "score": 0.25268805325449545,
+        "reason": "The score is 0.25 because while the first node in retrieval contexts is relevant as it provides the 'core definition' of consent, it is followed by six irrelevant nodes, such as the second node which 'focuses on AI system developers' and the third node which 'does not provide the specific rules regarding implicit vs. explicit consent'. The score is not higher because several highly relevant nodes are ranked much lower, including the 63rd node which 'contains Article 7', the 65th node which 'explicitly states \"Silence, pre-ticked boxes or inactivity should not therefore constitute consent\"', the 71st node which discusses the ease of withdrawing consent, and the 73rd node which 'directly answers the input question' by stating silence should not constitute consent.",
+        "passed": false
+      },
+      {
+        "question_id": "q125",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q127",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713570175ed0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q135",
+        "score": 0.7833333333333333,
+        "reason": "The score is 0.78 because while the first and second nodes in the retrieval contexts are relevant, the third node is irrelevant as it \"discusses the delegation of power to the Commission and the repeal of Directive 95/46/EC, but does not provide information regarding the harmonisation or national variations of the GDPR,\" and should therefore be ranked lower than the fourth, sixth, and tenth nodes which provide relevant details on national specifications and consistency.",
+        "passed": true
+      },
+      {
+        "question_id": "q136",
+        "score": 0,
+        "reason": "The score is 0.00 because all retrieved nodes are irrelevant. Specifically, the first node in the retrieval contexts only provides \"general definitions of GDPR and other regulations\", the second node focuses on \"AI Providers and their obligations\", the third node is a \"brief definition of the GDPR\", the fourth node is a \"high-level definition of the legal framework\", the fifth node \"does not list the specific operational steps\", the sixth node merely \"defines 'Processing'\", and the seventh node discusses a \"different regulation (EU 2018/1725)\".",
+        "passed": false
+      },
+      {
+        "question_id": "q137",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135703180d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.1751177394034537,
+        "reason": "The score is 0.18 because several irrelevant nodes are ranked higher than relevant ones; for example, the first node describes 'High-Risk AI Systems', the second node describes 'General-Purpose AI Systems', and the third node is a 'general description of AI Systems', all of which should be ranked lower than the fourth node in retrieval contexts which 'explicitly defines \"Prohibited AI Practices\"'.",
+        "passed": false
+      },
+      {
+        "question_id": "q143",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135701f8d50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q145",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357024cb50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q150",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357024f650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q152",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135700e4a50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "context_recall": [
+      {
+        "question_id": "q002",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q045",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "context_relevancy": [
+      {
+        "question_id": "q004",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135700e5450 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q006",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357011f550 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q010",
+        "score": 0.6027397260273972,
+        "reason": "The score is 0.60 because while the context contains highly relevant statements such as \"Article 22 is a legal provision concerning automated individual decision-making, including profiling\" and details on the \"data subject's right not to be subject to a decision based solely on automated processing,\" it is diluted by a significant amount of irrelevant data. Specifically, much of the context refers to other regulations like \"Regulation (EU) 2018/1725\" and \"Directive (EU) 2016/680,\" or focuses on \"human oversight of high-risk AI systems\" rather than the specific GDPR mechanisms requested.",
+        "passed": false
+      },
+      {
+        "question_id": "q015",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560e78f50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q023",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560593bd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q028",
+        "score": 0.3626373626373626,
+        "reason": "The score is 0.36 because while the context contains relevant instructions such as the controller needing to notify the supervisory authority \"within 72 hours\" and the requirement to \"document any personal data breaches,\" a significant portion of the retrieval context is irrelevant, consisting of \"general principles,\" \"preventative measures,\" and \"general regulatory information\" that do not provide actionable response steps.",
+        "passed": false
+      },
+      {
+        "question_id": "q031",
+        "score": 0.5272727272727272,
+        "reason": "The score is 0.53 because while the context provides relevant definitions of consent as a \"clear affirmative act\" and mentions that \"natural persons may be associated with online identifiers such as cookie identifiers,\" it fails to provide a direct answer to the input. Much of the retrieval context is irrelevant, focusing on \"AI systems,\" \"high-risk AI systems,\" and \"the processing of personal data by Union institutions,\" which do not address the specific requirement for consent on a general organisation's website.",
+        "passed": false
+      },
+      {
+        "question_id": "q033",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135603a6250 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q035",
+        "score": 0.12244897959183673,
+        "reason": "The score is 0.12 because while there are highly relevant statements such as 'Joint controllers are two or more controllers who jointly determine the purposes and means of processing personal data', the vast majority of the retrieval context is irrelevant, consisting of structural headers and definitions for unrelated terms like 'Personal data', 'Data Processor', and 'Data Subject'.",
+        "passed": false
+      },
+      {
+        "question_id": "q036",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135604bd050 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q039",
+        "score": 0.39080459770114945,
+        "reason": "The score is 0.39 because while the context contains several specific triggers for sharing, such as when a controller must notify a breach \"within 72 hours\" or when providers report incidents \"not later than 15 days after becoming aware\", the reasons for irrelevancy note that these are specific scenarios rather than a \"general rule for when to share this information\" requested by the input.",
+        "passed": false
+      },
+      {
+        "question_id": "q041",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135601d4bd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543f10550 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q045",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q046",
+        "score": 0.32894736842105265,
+        "reason": "The score is 0.33 because while the context provides general legal foundations such as 'Consent' and 'Legitimate Interest' as a 'legal basis for processing personal data', it fails to provide a direct answer to the user's specific scenario. Much of the retrieval context is entirely irrelevant, containing information on 'AI models', 'War Crimes', and 'Law Enforcement' which 'has nothing to do with organizing a business event and taking photos'.",
+        "passed": false
+      },
+      {
+        "question_id": "q049",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543d0b450 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q051",
+        "score": 0.6375838926174496,
+        "reason": "The score is 0.64 because while the context provides extensive definitions of security tools (e.g., \"Encryption is a security method\") and obligations for specific roles, it lacks a direct step-by-step guide on how a general user can determine their specific needs. However, it does offer some relevant guidance, stating that \"Guidance on implementing appropriate measures and identifying risks can be provided through approved codes of conduct, certifications, guidelines from the Board, or a data protection officer,\" and that controllers should implement measures \"taking into account the nature, scope, context, purposes of processing and the risk to the rights and freedoms of natural persons.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q052",
+        "score": 0.07352941176470588,
+        "reason": "The score is 0.07 because while the context contains highly relevant statements such as \"The controller should be obliged to respond to requests from the data subject without undue delay and at the latest within one month,\" the vast majority of the retrieved content is irrelevant, with many statements describing \"AI Systems,\" \"Technical Documentation,\" and \"the Right to Erasure,\" which do not address the specific response timeframe.",
+        "passed": false
+      },
+      {
+        "question_id": "q053",
+        "score": 0.44680851063829785,
+        "reason": "The score is 0.45 because while the context contains highly relevant statements such as 'Processing of sensitive data is possible if the data subject has given explicit consent' and 'Special categories of personal data... may be exceptionally processed for bias detection', a significant portion of the retrieval context is irrelevant, consisting of structural headers and general definitions that 'contain no actual content or statements regarding the processing of sensitive data'.",
+        "passed": false
+      },
+      {
+        "question_id": "q054",
+        "score": 0.4489795918367347,
+        "reason": "The score is 0.45 because while the context contains highly relevant statements explaining when a DPO is mandatory (e.g., \"if the processing is carried out by a public authority or body\" or \"large-scale processing of special categories of data\"), it is heavily diluted by a large volume of irrelevant information, such as definitions of \"AI Provider,\" \"Deployer,\" and general \"AI Regulation\" which do not answer the specific input.",
+        "passed": false
+      },
+      {
+        "question_id": "q055",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543c426d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q057",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543b33950 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q060",
+        "score": 0.5461538461538461,
+        "reason": "The score is 0.55 because while the context provides general GDPR legal bases such as \"Consent\", \"Legal Obligation\", and \"Legitimate Interest\", and mentions that \"Member State law or collective agreements... may provide for specific rules on the processing of employees' personal data in the employment context\", it fails to specify which exact legal basis applies to the specific activity of \"Absence time recording\". Much of the retrieved content is irrelevant, mentioning unrelated topics like \"Asylum, Visa Or Residence Permits\" and \"AI Regulatory Sandboxes\".",
+        "passed": false
+      },
+      {
+        "question_id": "q062",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543a6c6d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q063",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543959ad0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q065",
+        "score": 0.0,
+        "reason": "Error: Expecting value: line 213 column 1 (char 1166)",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q066",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543bdef50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q067",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543aa4050 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q069",
+        "score": 0.5357142857142857,
+        "reason": "The score is 0.54 because while the context provides general legal bases under GDPR such as 'Consent', 'Legitimate Interest', and 'Member State law or collective agreements' for the 'management, planning and organisation of work', it fails to specifically link these to the activity of 'Location monitoring of employees via GPS' for 'Monitoring the length of breaks', with many retrieved statements being irrelevant, such as those referring to 'AI Regulatory Sandboxes' or 'Fraud Prevention'.",
+        "passed": false
+      },
+      {
+        "question_id": "q071",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543b70c50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q074",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e4dd50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q075",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e5e750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q076",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543c43450 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q077",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543f12f50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q079",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356014c5d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q080",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356010d3d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q082",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135603eedd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q083",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135603072d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q084",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560403150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q085",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e4a150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q087",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560ec4050 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q088",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713563feec50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q089",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135605e1750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q091",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357011f1d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q093",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560439ad0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q094",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135604019d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q096",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135603056d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q097",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356043ad50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q100",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543fc0f50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q101",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e4a4d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q102",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e5efd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q103",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356043a650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q105",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e4d250 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q106",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356010c550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q107",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356014e850 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560e7bcd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q111",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543e5dad0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q112",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560e54250 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q113",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560305f50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71356043b8d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713563fa3650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q118",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713560e78350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q120",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543ca5b50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q122",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713563f6b2d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q131",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135603045d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713563fa1c50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7135602b3650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q143",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543cef750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q149",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543bcec50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q151",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543ab42d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q153",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x713543a6ecd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q030",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357024ce50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q066",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x71357024f7d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q077",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      }
+    ]
+  }
+}

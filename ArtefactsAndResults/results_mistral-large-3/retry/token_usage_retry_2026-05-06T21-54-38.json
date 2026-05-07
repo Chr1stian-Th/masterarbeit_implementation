@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-06T21:54:38",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "crag": {
+      "by_metric": {
+        "context_precision": {
+          "prompt_tokens": 3512,
+          "completion_tokens": 1395,
+          "total_tokens": 4907,
+          "api_calls": 4
+        },
+        "context_recall": {
+          "prompt_tokens": 1423,
+          "completion_tokens": 165,
+          "total_tokens": 1588,
+          "api_calls": 2
+        }
+      },
+      "totals": {
+        "prompt_tokens": 4935,
+        "completion_tokens": 1560,
+        "total_tokens": 6495,
+        "api_calls": 6
+      }
+    }
+  },
+  "by_metric": {
+    "context_precision": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 3512,
+          "completion_tokens": 1395,
+          "total_tokens": 4907,
+          "api_calls": 4
+        }
+      },
+      "totals": {
+        "prompt_tokens": 3512,
+        "completion_tokens": 1395,
+        "total_tokens": 4907,
+        "api_calls": 4
+      }
+    },
+    "context_recall": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 1423,
+          "completion_tokens": 165,
+          "total_tokens": 1588,
+          "api_calls": 2
+        }
+      },
+      "totals": {
+        "prompt_tokens": 1423,
+        "completion_tokens": 165,
+        "total_tokens": 1588,
+        "api_calls": 2
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 4935,
+    "completion_tokens": 1560,
+    "total_tokens": 6495,
+    "api_calls": 6
+  }
+}

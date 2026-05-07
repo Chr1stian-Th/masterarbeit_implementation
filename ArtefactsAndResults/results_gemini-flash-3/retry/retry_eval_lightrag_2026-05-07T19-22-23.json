@@ -1,0 +1,833 @@
+{
+  "approach": "lightrag",
+  "source_output_file": "lightrag_2026-04-27T16-07-15.json",
+  "source_results_file": "eval_lightrag_2026-04-29T03-10-18.json",
+  "retry_timestamp": "2026-05-07T19-22-23",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "answer_relevancy": [
+      {
+        "question_id": "q031",
+        "score": 0.7222222222222222,
+        "reason": "The score is 0.72 because while the output likely provides some relevant context, it includes several irrelevant sections such as general definitions of cookies, risks of identifiers, and multiple citations that do not directly answer whether consent is required.",
+        "passed": true
+      }
+    ],
+    "context_precision": [
+      {
+        "question_id": "q001",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f57811d050 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q004",
+        "score": 0.8541666666666666,
+        "reason": "The score is 0.85 because while the first and second nodes in the retrieval contexts are relevant, the third node in the retrieval contexts is irrelevant as it \"should not be understood as providing for the legal ground for processing of personal data\", which ranks it higher than the fourth node in the retrieval contexts that \"explicitly lists the conditions for lawful processing\".",
+        "passed": true
+      },
+      {
+        "question_id": "q006",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572f460d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572f8b250 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q023",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572fc7d50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q024",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572e0a150 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q029",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.7047165151853169,
+        "reason": "The score is 0.70 because while the first three nodes in the retrieval contexts are relevant, the fourth node is an irrelevant node that \"describes Regulation (EU) 2018/1725, which specifically governs 'Union institutions, bodies, offices, and agencies', rather than the general GDPR compliance for all organisations,\" and the fifth node is an irrelevant node that \"simply identifies the GDPR as Regulation (EU) 2016/679, which is a basic identifier but not helpful for determining compliance criteria.\" These irrelevant nodes should be ranked lower than relevant nodes such as the seventh node, which \"defines 'Controllers' as entities that determine the purposes and means of processing, which is the primary role that must comply with the GDPR.\"",
+        "passed": true
+      },
+      {
+        "question_id": "q058",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all relevant nodes are perfectly ranked above the irrelevant node! The first six nodes in the retrieval contexts provide essential definitions and examples, such as 'Personal data refers to any information relating to an identified or identifiable natural person', while the seventh node in the retrieval contexts is correctly placed last as it only 'discusses the rights of data subjects'.",
+        "passed": true
+      },
+      {
+        "question_id": "q063",
+        "score": 0.3380952380952381,
+        "reason": "The score is 0.34 because several irrelevant nodes are ranked above relevant ones; specifically, the first node \"provides general information about the GDPR but does not specify the legal basis for 'Competitions'\" and the second node \"defines 'Personal Data' and its general processing but does not provide the specific legal basis\" are ranked higher than the third node in retrieval contexts, which correctly identifies \"'Article 6' as the section detailing 'specific conditions under which the processing of personal data is considered lawful'\". ",
+        "passed": false
+      },
+      {
+        "question_id": "q109",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ee66d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q120",
+        "score": 0.4956442200406851,
+        "reason": "The score is 0.50 because while the first node in the retrieval contexts is relevant as it describes a 'mandatory log maintained by controllers', several irrelevant nodes are ranked higher than critical relevant nodes. For example, the second node is irrelevant because it 'focuses on AI systems and the AI Act', and the third node is irrelevant as it is about 'notifying and documenting personal data breaches', yet these appear before the thirtieth node, which is highly relevant as it explicitly states that 'Directive 95/46/EC... provided for a general obligation to notify the processing of personal data to supervisory authorities', which was the requirement abolished by the GDPR.",
+        "passed": false
+      },
+      {
+        "question_id": "q125",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q128",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572da7cd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q130",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572c0c1d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q131",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572c0f3d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q132",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572c530d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q135",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q140",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572e5c3d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572c9e450 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q143",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ca44d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q145",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ca72d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q148",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572b5f8d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "context_recall": [
+      {
+        "question_id": "q013",
+        "score": 0.5,
+        "reason": "The score is 0.50 because while sentence 2 is supported by node(s) in retrieval context 11, sentence 1 is not explicitly supported as the context only describes the record as a mandatory log in node 4 without confirming it does not need to be public.",
+        "passed": false
+      },
+      {
+        "question_id": "q059",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all parts of the expected output are perfectly supported! Sentence 1 is confirmed by node(s) in retrieval context 1, and sentence 2 is also explicitly backed by node 1.",
+        "passed": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ba20d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q133",
+        "score": 1.0,
+        "reason": "The score is 1.00 because every part of the expected output is perfectly supported by the node(s) in retrieval context: sentence 1 is backed by nodes 7 and 41, sentence 2 by node 18, sentences 3-5 by nodes 9, 30, and 7, sentence 6 by the relationship between 'Appropriate Safeguards' and 'Data Subject', sentence 7-8 by the 3rd Document Chunk, and sentence 9 by node 2. Great job!",
+        "passed": true
+      }
+    ],
+    "context_relevancy": [
+      {
+        "question_id": "q002",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572a5c350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q009",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572bf8dd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ab9b50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q013",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572bcef50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q015",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f57015a350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q016",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f570117c50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q017",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572ca4050 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q020",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572a90550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q023",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5537a9250 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q024",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5701db2d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q027",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55364e6d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q028",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55350b5d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q031",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535178d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q032",
+        "score": 0.20833333333333334,
+        "reason": "The score is 0.21 because while the context mentions that a DPO should be designated based on \"professional qualities\" and \"expert knowledge of data protection law and practices,\" it fails to answer the specific question of whether they \"need to be certified,\" instead focusing on \"tasks of the data protection officer\" and \"compliance mechanisms\" for organizations rather than professional certification for individuals.",
+        "passed": false
+      },
+      {
+        "question_id": "q033",
+        "score": 0.3333333333333333,
+        "reason": "The score is 0.33 because while the context contains highly relevant statements such as 'The Regulation applies to manual processing if the personal data are contained in a filing system,' it is heavily diluted by a large volume of irrelevant information, including data on 'AI Provider' obligations, 'AI Regulation', and 'Regulation (EU) 2018/1725', which 'is distinct from the GDPR'.",
+        "passed": false
+      },
+      {
+        "question_id": "q035",
+        "score": 0.0898876404494382,
+        "reason": "The score is 0.09 because while there are some relevant statements such as \"Joint controllers are two or more controllers who jointly determine the purposes and means of processing personal data,\" the vast majority of the retrieval context is irrelevant, containing definitions for a general \"Controller,\" \"Processor,\" or \"Data subjects,\" and references to various Articles that \"do not define or describe joint controllers.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q036",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b044d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q039",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552a04550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q041",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552ba7350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q042",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552a8dc50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55295c750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q044",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552837350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q045",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b70c50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q046",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535b1b50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q049",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552837150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q052",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552667050 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q054",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55279ded0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q055",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55253fe50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q058",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55262e550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q060",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55259d650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q061",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b07a50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q064",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5526d74d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q067",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5524e3650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q069",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552254150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q070",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552254650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q072",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55227f5d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q074",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55227ef50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q075",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55216e0d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q077",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55256f550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q079",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5521f18d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q080",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552028d50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q081",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5520b4f50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q082",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551f6c350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q083",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551fc7e50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q084",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551e060d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q085",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551e07250 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q086",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551f6d2d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q087",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f551f6e8d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q088",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5525e9450 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q089",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q090",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5528f1ed0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q091",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552893bd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q092",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5526b1550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q093",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552a8f150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q094",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5525ea750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q095",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b71650 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q096",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b069d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q097",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b72750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q098",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535fa4d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q099",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552ba56d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q100",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535b2450 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q101",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f553696fd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q104",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5536968d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q106",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5537ec850 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q107",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5701a9350 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q108",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f572a917d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5701aae50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q111",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5537ee5d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q112",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5537efed0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q113",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55354c5d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q114",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f553696950 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f553514bd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55364c2d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q120",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55372ad50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q122",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535f8b50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q124",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b045d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q125",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b71f50 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q127",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b73550 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q131",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55344a750 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q139",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b06fd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55350bed0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q143",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55354d050 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q144",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5535b13d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q146",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55344aad0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q147",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55372b350 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q149",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f552b729d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q153",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f55372a450 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q140",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x79f5536ce9d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      }
+    ]
+  }
+}

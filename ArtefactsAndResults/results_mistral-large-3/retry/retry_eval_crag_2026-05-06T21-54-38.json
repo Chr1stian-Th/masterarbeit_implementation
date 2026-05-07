@@ -1,0 +1,31 @@
+{
+  "approach": "crag",
+  "source_output_file": "crag_2026-04-24T11-37-39.json",
+  "source_results_file": "eval_crag_2026-04-24T23-48-16.json",
+  "retry_timestamp": "2026-05-06T21-54-38",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "context_precision": [
+      {
+        "question_id": "q085",
+        "score": 0.35789541255098534,
+        "reason": "The score is 0.36 because several irrelevant nodes are ranked higher than relevant ones; specifically, the first node is a \"general definition of 'personal data'\", the second node is a \"general definition of an 'identifiable natural person'\", and the third node \"defines the term 'Processing'\", all of which should be ranked lower than the fourth node in the retrieval contexts which \"explicitly mentions relevant data for payroll accounting such as 'salary details, tax information, bank account details'\".",
+        "passed": false
+      },
+      {
+        "question_id": "q109",
+        "score": 0.41666666666666663,
+        "reason": "The score is 0.42 because the first and second nodes in the retrieval contexts are irrelevant, as they only discuss 'general GDPR regulations' and the 'employment context' without listing data subjects. The score is not higher because these irrelevant nodes are ranked above the third and fourth nodes, which are relevant as they identify 'employees (current, prospective, or former)' and 'contractors, visitors, or temporary workers'.",
+        "passed": false
+      }
+    ],
+    "context_recall": [
+      {
+        "question_id": "q107",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all parts of the expected output are perfectly captured! Sentence 1 is fully supported by node(s) in retrieval context 23 and 24.",
+        "passed": true
+      }
+    ]
+  }
+}

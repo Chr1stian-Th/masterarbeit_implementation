@@ -1,0 +1,202 @@
+{
+  "approach": "agentic_rag",
+  "source_output_file": "agentic_rag_2026-04-24T11-00-32.json",
+  "source_results_file": "eval_agentic_rag_2026-04-24T23-02-36.json",
+  "retry_timestamp": "2026-05-06T21-51-12",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "answer_relevancy": [
+      {
+        "question_id": "q063",
+        "score": 0.95,
+        "reason": "The score is 0.95 because the response accurately identifies the legal basis, but it is not higher due to the inclusion of a meta-commentary statement that does not directly answer the legal query.",
+        "passed": true
+      }
+    ],
+    "context_recall": [
+      {
+        "question_id": "q056",
+        "score": 0.875,
+        "reason": "The score is 0.88 because most of the expected output is well-supported by node(s) in retrieval context, specifically nodes 1, 4, 5, 7, 11, and 22 which cover the obligations and principles mentioned in sentences 1 through 7; however, the final sentence regarding the controller-processor contract is not explicitly mentioned in the provided context.",
+        "passed": true
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q001",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q014",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q015",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q016",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q017",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q032",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q035",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q036",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q041",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q049",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q050",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q055",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q057",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q058",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q139",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q140",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q145",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q146",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q149",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q150",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q153",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-05-07T14:42:08",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "agentic_rag": {
+      "by_metric": {
+        "answer_relevancy": {
+          "prompt_tokens": 2068,
+          "completion_tokens": 1087,
+          "total_tokens": 3155,
+          "api_calls": 3
+        },
+        "context_precision": {
+          "prompt_tokens": 3505,
+          "completion_tokens": 317,
+          "total_tokens": 3822,
+          "api_calls": 2
+        },
+        "context_recall": {
+          "prompt_tokens": 2702,
+          "completion_tokens": 922,
+          "total_tokens": 3624,
+          "api_calls": 1
+        },
+        "faithfulness": {
+          "prompt_tokens": 31519,
+          "completion_tokens": 11291,
+          "total_tokens": 42810,
+          "api_calls": 47
+        }
+      },
+      "totals": {
+        "prompt_tokens": 39794,
+        "completion_tokens": 13617,
+        "total_tokens": 53411,
+        "api_calls": 53
+      }
+    }
+  },
+  "by_metric": {
+    "answer_relevancy": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 2068,
+          "completion_tokens": 1087,
+          "total_tokens": 3155,
+          "api_calls": 3
+        }
+      },
+      "totals": {
+        "prompt_tokens": 2068,
+        "completion_tokens": 1087,
+        "total_tokens": 3155,
+        "api_calls": 3
+      }
+    },
+    "context_precision": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 3505,
+          "completion_tokens": 317,
+          "total_tokens": 3822,
+          "api_calls": 2
+        }
+      },
+      "totals": {
+        "prompt_tokens": 3505,
+        "completion_tokens": 317,
+        "total_tokens": 3822,
+        "api_calls": 2
+      }
+    },
+    "context_recall": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 2702,
+          "completion_tokens": 922,
+          "total_tokens": 3624,
+          "api_calls": 1
+        }
+      },
+      "totals": {
+        "prompt_tokens": 2702,
+        "completion_tokens": 922,
+        "total_tokens": 3624,
+        "api_calls": 1
+      }
+    },
+    "faithfulness": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 31519,
+          "completion_tokens": 11291,
+          "total_tokens": 42810,
+          "api_calls": 47
+        }
+      },
+      "totals": {
+        "prompt_tokens": 31519,
+        "completion_tokens": 11291,
+        "total_tokens": 42810,
+        "api_calls": 47
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 39794,
+    "completion_tokens": 13617,
+    "total_tokens": 53411,
+    "api_calls": 53
+  }
+}

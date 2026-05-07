@@ -1,0 +1,25 @@
+{
+  "approach": "crag",
+  "source_output_file": "crag_2026-04-26T20-31-59.json",
+  "source_results_file": "eval_crag_2026-04-27T07-09-41.json",
+  "retry_timestamp": "2026-05-07T14-59-59",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "context_precision": [
+      {
+        "question_id": "q040",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7df7f53d82d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q147",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7df7f53a1a30 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      }
+    ]
+  }
+}

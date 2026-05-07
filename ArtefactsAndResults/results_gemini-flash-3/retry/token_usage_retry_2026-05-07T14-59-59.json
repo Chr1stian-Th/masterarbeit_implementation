@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-07T14:59:59",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {},
+  "by_metric": {},
+  "overview": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "api_calls": 0
+  }
+}

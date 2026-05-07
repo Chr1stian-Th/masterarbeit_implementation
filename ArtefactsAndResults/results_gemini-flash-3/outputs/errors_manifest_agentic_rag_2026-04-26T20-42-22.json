@@ -1,0 +1,73 @@
+{
+  "source_output_file": "agentic_rag_2026-04-26T20-42-22.json",
+  "source_results_file": "eval_agentic_rag_2026-04-27T07-14-02.json",
+  "approach": "agentic_rag",
+  "errored_by_metric": {
+    "answer_relevancy": [
+      "q122"
+    ],
+    "context_precision": [
+      "q003"
+    ],
+    "context_recall": [
+      "q058"
+    ],
+    "faithfulness": [
+      "q001",
+      "q012",
+      "q017",
+      "q030",
+      "q036",
+      "q039",
+      "q041",
+      "q049",
+      "q050",
+      "q055",
+      "q092",
+      "q110",
+      "q113",
+      "q117",
+      "q119",
+      "q139",
+      "q140",
+      "q141",
+      "q142",
+      "q143",
+      "q145",
+      "q149",
+      "q150",
+      "q152",
+      "q153"
+    ]
+  },
+  "all_errored_question_ids": [
+    "q001",
+    "q003",
+    "q012",
+    "q017",
+    "q030",
+    "q036",
+    "q039",
+    "q041",
+    "q049",
+    "q050",
+    "q055",
+    "q058",
+    "q092",
+    "q110",
+    "q113",
+    "q117",
+    "q119",
+    "q122",
+    "q139",
+    "q140",
+    "q141",
+    "q142",
+    "q143",
+    "q145",
+    "q149",
+    "q150",
+    "q152",
+    "q153"
+  ]
+}
