@@ -1,0 +1,95 @@
+{
+  "approach": "crag",
+  "source_output_file": "crag_2026-04-20T11-57-55.json",
+  "source_results_file": "eval_crag_2026-04-22T18-34-01.json",
+  "retry_timestamp": "2026-05-06T12-21-13",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "context_precision": [
+      {
+        "question_id": "q038",
+        "score": 0.26601954437925984,
+        "reason": "The score is 0.27 because several irrelevant nodes are ranked higher than the relevant ones; for example, the first node in retrieval contexts \"discusses general accessibility of information, not the specific action to take when asked about data processing,\" while the first relevant node does not appear until the fifth node in retrieval contexts, which \"supports the expected output by stating 'Data subjects have the right to obtain confirmation and communication of their personal data.'\"",
+        "passed": false
+      }
+    ],
+    "context_relevancy": [
+      {
+        "question_id": "q078",
+        "score": 0.2857142857142857,
+        "reason": "The score is 0.29 because while the context mentions that 'processing of personal data for direct marketing purposes may be regarded as carried out for a legitimate interest' and notes protections 'where the data subject is a child', it fails to provide a definitive 'legal basis from the GDPR' specifically for the 'Storage of children's photos in the cloud' for 'advertising purposes', instead offering general introductory phrases and irrelevant bases like 'performance of a contract' or 'compliance with a legal obligation'.",
+        "passed": false
+      },
+      {
+        "question_id": "q085",
+        "score": 0.07692307692307693,
+        "reason": "The score is 0.08 because while the context mentions that processing for employment contracts \"may include the calculation of salaries,\" it fails to list the specific \"categories of personal data\" requested, providing instead a \"general definition of 'Personal data'\" and irrelevant information regarding \"Profiling\" and \"Special categories of personal data.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q088",
+        "score": 0.0,
+        "reason": "The score is 0.00 because the retrieval context contains no relevant statements and only provides general definitions, such as the \"general definition of 'Personal data'\" and \"what 'processing' is in general,\" rather than specifying \"Which categories of personal data are relevant for the processing activity: ‘Training’\".",
+        "passed": false
+      },
+      {
+        "question_id": "q106",
+        "score": 0.0,
+        "reason": "The score is 0.00 because the retrieval context contains no relevant statements and only discusses general topics such as 'Member State law', 'GDPR applies to controllers or processors', and the 'general purposes of processing data', failing to specify 'which internal persons or roles may access' data for the 'Employee appraisal' activity.",
+        "passed": false
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q075",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      }
+    ],
+    "regulatory_grounding": [
+      {
+        "question_id": "q007",
+        "score": 1.0,
+        "reason": "The response accurately identifies and references the most relevant regulatory provisions, specifically Chapter V, Article 45, Article 46, and Article 49. The characterization of these provisions is factually correct and aligns perfectly with the provided retrieval context, covering adequacy decisions, appropriate safeguards, and derogations without distorting the meaning or inventing regulatory language.",
+        "passed": true
+      },
+      {
+        "question_id": "q012",
+        "score": 1.0,
+        "reason": "The response accurately identifies and references the core regulatory provisions found in the retrieval context, specifically citing Regulation (EU) 2016/679 and Article 16 of the TFEU. It correctly paraphrases the definitions of personal data, processing, and profiling without distorting the meaning or inventing regulatory language not present in the provided text.",
+        "passed": true
+      },
+      {
+        "question_id": "q018",
+        "score": 0.3,
+        "reason": "The response fails to identify or reference any specific regulatory provisions (articles, paragraphs, or clauses) from the retrieval context, which is a primary requirement of the evaluation steps. While it accurately paraphrases the semantic content of the context (e.g., legitimate interest, public interest, and data portability), it provides no formal citations and only suggests consulting Article 6 and Chapter V in the conclusion, which were not part of the provided retrieval context.",
+        "passed": false
+      },
+      {
+        "question_id": "q019",
+        "score": 1.0,
+        "reason": "The response demonstrates strong alignment with the evaluation steps. It correctly identifies and references the relevant regulatory provisions from the retrieval context, specifically citing Articles 5, 6, 7, 9, 12-22, 44-49, 58(1), and 58(2). The characterization of the fine tiers (4% vs 2%) and the factors influencing the sanctions is factually accurate and grounded in the provided text without inventing regulatory language.",
+        "passed": true
+      },
+      {
+        "question_id": "q028",
+        "score": 0.5,
+        "reason": "The response provides a semantically accurate summary of the retrieval context but fails to identify or reference the specific regulatory provisions (articles, paragraphs, or clauses) as required by the evaluation steps. While it mentions 'Article 33(3)' in the retrieval context, the actual output does not cite this or any other specific provision by name or number.",
+        "passed": false
+      },
+      {
+        "question_id": "q029",
+        "score": 0.7,
+        "reason": "The response accurately identifies the roles and requirements for a DPO based on the retrieval context and correctly references Article 39. However, it fails to identify the primary regulatory provision (Article 37) that governs the designation of the DPO, which is the most directly relevant provision for the question 'Who can fulfil the role'.",
+        "passed": true
+      },
+      {
+        "question_id": "q032",
+        "score": 0.5,
+        "reason": "The response accurately identifies the requirement for 'expert knowledge of data protection law and practices' and correctly states that no explicit certification is mandated, aligning with the retrieval context. However, it fails to reference the specific regulatory provision by name or number (e.g., Article 37), which is a requirement in the evaluation steps.",
+        "passed": false
+      }
+    ]
+  }
+}

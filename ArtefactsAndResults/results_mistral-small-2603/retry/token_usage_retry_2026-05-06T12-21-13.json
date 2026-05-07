@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-05-06T12:21:13",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "crag": {
+      "by_metric": {
+        "context_precision": {
+          "prompt_tokens": 2343,
+          "completion_tokens": 1314,
+          "total_tokens": 3657,
+          "api_calls": 2
+        },
+        "context_relevancy": {
+          "prompt_tokens": 29075,
+          "completion_tokens": 6209,
+          "total_tokens": 35284,
+          "api_calls": 58
+        },
+        "faithfulness": {
+          "prompt_tokens": 2629,
+          "completion_tokens": 1049,
+          "total_tokens": 3678,
+          "api_calls": 4
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 12620,
+          "completion_tokens": 694,
+          "total_tokens": 13314,
+          "api_calls": 7
+        }
+      },
+      "totals": {
+        "prompt_tokens": 46667,
+        "completion_tokens": 9266,
+        "total_tokens": 55933,
+        "api_calls": 71
+      }
+    }
+  },
+  "by_metric": {
+    "context_precision": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 2343,
+          "completion_tokens": 1314,
+          "total_tokens": 3657,
+          "api_calls": 2
+        }
+      },
+      "totals": {
+        "prompt_tokens": 2343,
+        "completion_tokens": 1314,
+        "total_tokens": 3657,
+        "api_calls": 2
+      }
+    },
+    "context_relevancy": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 29075,
+          "completion_tokens": 6209,
+          "total_tokens": 35284,
+          "api_calls": 58
+        }
+      },
+      "totals": {
+        "prompt_tokens": 29075,
+        "completion_tokens": 6209,
+        "total_tokens": 35284,
+        "api_calls": 58
+      }
+    },
+    "faithfulness": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 2629,
+          "completion_tokens": 1049,
+          "total_tokens": 3678,
+          "api_calls": 4
+        }
+      },
+      "totals": {
+        "prompt_tokens": 2629,
+        "completion_tokens": 1049,
+        "total_tokens": 3678,
+        "api_calls": 4
+      }
+    },
+    "regulatory_grounding": {
+      "by_approach": {
+        "crag": {
+          "prompt_tokens": 12620,
+          "completion_tokens": 694,
+          "total_tokens": 13314,
+          "api_calls": 7
+        }
+      },
+      "totals": {
+        "prompt_tokens": 12620,
+        "completion_tokens": 694,
+        "total_tokens": 13314,
+        "api_calls": 7
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 46667,
+    "completion_tokens": 9266,
+    "total_tokens": 55933,
+    "api_calls": 71
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_output_file": "crag_2026-04-24T11-37-39.json",
+  "source_results_file": "eval_crag_2026-04-24T23-48-16.json",
+  "approach": "crag",
+  "errored_by_metric": {
+    "context_precision": [
+      "q085",
+      "q109"
+    ],
+    "context_recall": [
+      "q107"
+    ]
+  },
+  "all_errored_question_ids": [
+    "q085",
+    "q107",
+    "q109"
+  ]
+}

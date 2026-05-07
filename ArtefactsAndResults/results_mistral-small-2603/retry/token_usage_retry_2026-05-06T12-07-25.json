@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-06T12:07:25",
+  "judge_model": "google/gemma-4-31b-it",
+  "by_approach": {
+    "agentic_rag": {
+      "by_metric": {
+        "context_precision": {
+          "prompt_tokens": 31193,
+          "completion_tokens": 3289,
+          "total_tokens": 34482,
+          "api_calls": 10
+        },
+        "faithfulness": {
+          "prompt_tokens": 26306,
+          "completion_tokens": 8708,
+          "total_tokens": 35014,
+          "api_calls": 33
+        },
+        "regulatory_grounding": {
+          "prompt_tokens": 29630,
+          "completion_tokens": 2067,
+          "total_tokens": 31697,
+          "api_calls": 8
+        }
+      },
+      "totals": {
+        "prompt_tokens": 87129,
+        "completion_tokens": 14064,
+        "total_tokens": 101193,
+        "api_calls": 51
+      }
+    }
+  },
+  "by_metric": {
+    "context_precision": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 31193,
+          "completion_tokens": 3289,
+          "total_tokens": 34482,
+          "api_calls": 10
+        }
+      },
+      "totals": {
+        "prompt_tokens": 31193,
+        "completion_tokens": 3289,
+        "total_tokens": 34482,
+        "api_calls": 10
+      }
+    },
+    "faithfulness": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 26306,
+          "completion_tokens": 8708,
+          "total_tokens": 35014,
+          "api_calls": 33
+        }
+      },
+      "totals": {
+        "prompt_tokens": 26306,
+        "completion_tokens": 8708,
+        "total_tokens": 35014,
+        "api_calls": 33
+      }
+    },
+    "regulatory_grounding": {
+      "by_approach": {
+        "agentic_rag": {
+          "prompt_tokens": 29630,
+          "completion_tokens": 2067,
+          "total_tokens": 31697,
+          "api_calls": 8
+        }
+      },
+      "totals": {
+        "prompt_tokens": 29630,
+        "completion_tokens": 2067,
+        "total_tokens": 31697,
+        "api_calls": 8
+      }
+    }
+  },
+  "overview": {
+    "prompt_tokens": 87129,
+    "completion_tokens": 14064,
+    "total_tokens": 101193,
+    "api_calls": 51
+  }
+}

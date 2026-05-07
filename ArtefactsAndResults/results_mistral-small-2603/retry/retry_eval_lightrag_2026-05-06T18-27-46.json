@@ -1,0 +1,736 @@
+{
+  "approach": "lightrag",
+  "source_output_file": "lightrag_2026-04-20T11-35-07.json",
+  "source_results_file": "eval_lightrag_2026-04-23T20-08-04.json",
+  "retry_timestamp": "2026-05-06T18-27-46",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "answer_relevancy": [
+      {
+        "question_id": "q102",
+        "score": 0.2903225806451613,
+        "reason": "The score is 0.29 because the output consists almost entirely of general legal definitions, administrative requirements, and data protection principles rather than identifying the specific internal roles with access. It is not higher because it fails to answer the core question, but it remains above zero as it identifies the general context of the processing activity.",
+        "passed": false
+      },
+      {
+        "question_id": "q133",
+        "score": 0.8837209302325582,
+        "reason": "The score is 0.88 because the response accurately addresses the core question of data transfers, but it is not higher due to the inclusion of several irrelevant details regarding procedural reviews, historical context, internal training, and the consequences of non-compliance.",
+        "passed": true
+      },
+      {
+        "question_id": "q137",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the response is perfectly aligned with the user's request and contains no irrelevant information. Great job!",
+        "passed": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460fedd30 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.5833333333333334,
+        "reason": "The score is 0.58 because while the output likely contains the definition, it is heavily diluted by a vast amount of irrelevant information regarding obligations, enforcement, and administrative processes that do not define what a high-risk system is.",
+        "passed": false
+      }
+    ],
+    "context_precision": [
+      {
+        "question_id": "q003",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460fa8950 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q006",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1461003150 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q009",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e14610031d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e146104d1d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q018",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q019",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460ecfb50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q025",
+        "score": 0.8260281385281386,
+        "reason": "The score is 0.83 because the first three nodes in the retrieval contexts are relevant, but the fourth node is an irrelevant node as it \"discusses biometric identification and law enforcement\". The score is not higher because this irrelevant node is ranked above several relevant nodes, such as the fifth node which \"lists the legal bases for processing\" and the seventh node which \"details the conditions for consent\".",
+        "passed": true
+      },
+      {
+        "question_id": "q029",
+        "score": 0,
+        "reason": "The score is 0.00 because all retrieved nodes are irrelevant. Specifically, the first node only provides a \"general description of the DPO's role\", the second node focuses on \"Data Protection Impact Assessment (DPIA)\", the third node defines \"'Personal Data Protection'\", the fourth node describes \"'The Regulation' in general terms\", the fifth node discusses \"'Binding Corporate Rules'\", the sixth node describes \"Regulation (EU) 2016/679 (GDPR) generally\", and the seventh node defines \"'Personal Data'\"; since no relevant nodes were found, no relevant information was ranked above these irrelevant nodes.",
+        "passed": false
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460f0ee50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q044",
+        "score": 0.8127455877455878,
+        "reason": "The score is 0.81 because while the first three nodes in the retrieval contexts are relevant, the fourth node is an irrelevant node that \"discusses AI systems and general Union values\" and the sixth node is an irrelevant node that \"focuses on the 'Urgency procedure' and the 'European Data Protection Board'\", both of which should be ranked lower than the relevant nodes that provide specific actionable steps for respecting data protection rights.",
+        "passed": true
+      },
+      {
+        "question_id": "q047",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q063",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q073",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q074",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first, second, and third nodes in the retrieval contexts provide essential definitions, relevant relationships, and specific recitals, while the irrelevant fourth node in the retrieval contexts is correctly placed last as it 'provides no content to assist in arriving at the output'.",
+        "passed": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q119",
+        "score": 0.22873931623931626,
+        "reason": "The score is 0.23 because several irrelevant nodes are ranked above relevant ones; for example, the first node in retrieval contexts is irrelevant as it 'does not mention a risk-based approach or flexibility in application', whereas the thirteenth node in retrieval contexts is relevant because it states the GDPR is 'allowing Member States some margin of maneuver for national specifications'. Additionally, the twentieth node in retrieval contexts, which describes the DPIA to 'evaluate and analyze the risks', and the thirty-sixth node in retrieval contexts, which describes the DPIA as a 'formal process carried out by a data controller to evaluate and analyze the risks', are both ranked significantly lower than numerous irrelevant nodes.",
+        "passed": false
+      },
+      {
+        "question_id": "q130",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460e4aad0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q135",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q138",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460c7cbd0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q140",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460ce7e50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.8634920634920635,
+        "reason": "The score is 0.86 because the first three nodes in the retrieval contexts are highly relevant, but the score is not higher because the fourth node is an irrelevant node that \"discusses data controllers, personal data, and other regulations, but does not list the prohibited AI practices,\" appearing before relevant nodes such as the fifth node which mentions \"manipulative or exploitative AI-enabled practices\" and the seventh node which discusses \"manipulative, exploitative and social control practices.\"",
+        "passed": true
+      },
+      {
+        "question_id": "q143",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q145",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q152",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460bb81d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "context_recall": [
+      {
+        "question_id": "q108",
+        "score": 0.0,
+        "reason": "The score is 0.00 because none of the sentences in the expected output (sentence 1) can be attributed to any node(s) in retrieval context, as the context focuses on data protection and AI regulations rather than office management, human resources, support, or sales.",
+        "passed": false
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q116",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "context_relevancy": [
+      {
+        "question_id": "q011",
+        "score": 0.075,
+        "reason": "The score is 0.07 because while the retrieval context contains highly relevant statements such as 'A Record Of Processing Activities is a mandatory log maintained by controllers and processors' and details on exemptions for organizations 'employing fewer than 250 persons', the vast majority of the retrieved content is irrelevant, consisting of general definitions and unrelated statements like 'Criminal And Administrative Proceedings are legal proceedings whose integrity must be maintained'.",
+        "passed": false
+      },
+      {
+        "question_id": "q015",
+        "score": 0.03125,
+        "reason": "The score is 0.03 because while the context contains specific definitions of 'Pseudonymisation' as a process where data 'can no longer be attributed to a specific data subject without additional information' and 'Anonymisation' as 'removing personally identifiable information', the vast majority of the retrieval context is irrelevant, containing unrelated information about 'AI systems', 'Directive 2002/58/EC', and 'administrative fines'.",
+        "passed": false
+      },
+      {
+        "question_id": "q022",
+        "score": 0.24096385542168675,
+        "reason": "The score is 0.24 because while the context provides definitions and requirements, such as stating that processing 'shall be governed by a contract or other legal act', it 'does not provide instructions on \"what can I do in case the data processor does not want to sign a controller-processor contract\"' or explain the 'recourse or actions to take if a processor refuses to sign one'.",
+        "passed": false
+      },
+      {
+        "question_id": "q027",
+        "score": 0.24786324786324787,
+        "reason": "The score is 0.25 because while the context contains highly relevant guidelines—such as requiring controllers to provide \"the identity and contact details of the controller,\" \"purposes and legal basis of processing,\" and notifying natural persons when \"they are interacting with an AI system\"—a vast majority of the retrieved content is irrelevant, consisting of internal administrative processes, inter-agency communications, and legal definitions that do not specify what information should be shared with individuals.",
+        "passed": false
+      },
+      {
+        "question_id": "q028",
+        "score": 0.21374045801526717,
+        "reason": "The score is 0.21 because while the context contains relevant instructions such as the controller's requirement to \"notify the supervisory authority of a personal data breach within 72 hours\" and the need to \"communicate a personal data breach to the data subject,\" a vast majority of the retrieved content is irrelevant, consisting of \"preventative measures,\" \"definitions of concepts,\" and \"AI system classifications\" that do not provide reactive steps for a breach.",
+        "passed": false
+      },
+      {
+        "question_id": "q033",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460b2a3d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q035",
+        "score": 0.0425531914893617,
+        "reason": "The score is 0.04 because, although the relevant statements provide a clear definition that \"Joint controllers are two or more controllers who jointly determine the purposes and means of processing personal data,\" the vast majority of the retrieval context is irrelevant, containing numerous statements that only define a general \"controller,\" \"Processor,\" or \"AI systems,\" and several sections that are merely structural headers with \"no actual content or statements explaining what a joint controller is.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q036",
+        "score": 0.0,
+        "reason": "The score is 0.00 because the retrieval context contains no relevant statements, and the reasons for irrelevancy indicate that the text focuses on other topics such as 'Artificial Intelligence', 'Personal data', and 'The Regulation', but \"does not define or explain what a 'privacy statement' is.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q041",
+        "score": 0.07692307692307693,
+        "reason": "The score is 0.08 because the retrieval context is almost entirely irrelevant, focusing on 'Law Enforcement', 'AI models', and 'biometric systems' rather than private business security. While it mentions 'Optic-Electronic Devices' and 'Safety Components', these refer to 'monitoring publicly accessible areas on a large scale' and 'critical infrastructure' rather than the user's specific request about 'business premises' for 'protecting my property'.",
+        "passed": false
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1460b0f2d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q044",
+        "score": 0.8058823529411765,
+        "reason": "The score is 0.81 because the context provides extensive actionable guidance on respecting data rights, such as requiring that \"Personal data processing must adhere to principles of lawfulness, fairness, transparency, security, and data minimization\" and noting that \"the controller is required to facilitate the exercise of data subject rights.\" However, the score is not a 1 because a significant portion of the retrieval context consists of irrelevant structural headers and definitions, such as \"Knowledge Graph Data (Entity):\" and \"the definition of 'Artificial Intelligence',\" which do not provide instructions on respecting data protection rights.",
+        "passed": true
+      },
+      {
+        "question_id": "q049",
+        "score": 0.05737704918032787,
+        "reason": "The score is 0.06 because the retrieval context is almost entirely irrelevant, focusing on \"AI regulatory sandboxes,\" \"biometric identification systems,\" and \"Union law on competition rules\" rather than the specific act of publishing competition winners. While some statements mention general concepts like \"Consent\" and that \"Public authorities may hold personal data in official documents,\" they do not provide a direct answer to whether an organisation can publish winner names on its website.",
+        "passed": false
+      },
+      {
+        "question_id": "q050",
+        "score": 0.35526315789473684,
+        "reason": "The score is 0.36 because while the context provides general definitions of 'Consent' as a 'clear affirmative act' and 'Processing' as operations including 'recording', it fails to address the specific scenario of 'recording telephone conversations with clients' for 'quality of service'. Much of the retrieval context is irrelevant, focusing on 'high-risk AI systems', 'War Crimes', and 'processing employee data' rather than the user's specific query.",
+        "passed": false
+      },
+      {
+        "question_id": "q051",
+        "score": 0.7112676056338029,
+        "reason": "The score is 0.71 because while the context provides a comprehensive list of security tools and roles, it lacks a direct step-by-step guide on 'how' to determine which measures to take. However, it offers relevant guidance by stating that controllers should implement measures 'taking into account the nature, scope, context, purposes of processing and the risk' and that 'Guidance on implementing appropriate measures and identifying risks can be provided through approved codes of conduct, certifications, guidelines from the Board, or indications from a data protection officer.'",
+        "passed": true
+      },
+      {
+        "question_id": "q052",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e14516aa850 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q055",
+        "score": 0.009950248756218905,
+        "reason": "The score is 0.01 because while the context mentions \"cookie identifiers\" as examples of \"Online Identifiers,\" the vast majority of the retrieval context is irrelevant, with many statements describing unrelated topics such as \"International Organisations,\" \"Artificial Intelligence,\" and \"Biometric data\" that \"do not mention cookies\" or \"do not explain what cookies are.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q058",
+        "score": 0.4132231404958678,
+        "reason": "The score is 0.41 because while the context contains highly relevant definitions such as \"'personal data' means any information relating to an identified or identifiable natural person\", it also contains a vast amount of irrelevant information, with many statements describing \"'An AI System'\", \"'Subjects Of Testing'\", or \"the 'responsibilities and obligations of a data controller'\" rather than defining personal data itself.",
+        "passed": false
+      },
+      {
+        "question_id": "q059",
+        "score": 0.5822784810126582,
+        "reason": "The score is 0.58 because while the context provides general GDPR principles and relevant legal bases such as 'Article 6' and 'Article 9', and mentions that 'Derogations for processing special categories of personal data are allowed... particularly in employment law... and for health security', it fails to explicitly link these to the specific '3G regulation at the workplace' activity. Furthermore, much of the context is irrelevant, containing data on 'Fraud Prevention', 'AI Providers', and 'high-risk AI systems' which have nothing to do with the input.",
+        "passed": false
+      },
+      {
+        "question_id": "q060",
+        "score": 0.6444444444444445,
+        "reason": "The score is 0.64 because while the context provides general legal frameworks such as 'Article 6' and 'Regulation (EU) 2016/679 (GDPR)' and mentions that 'Member State law or collective agreements may provide specific rules for processing employees' personal data in the employment context', it fails to specify the exact legal basis for the specific activity of 'Absence time recording'. Additionally, much of the context is irrelevant, containing information about 'high-risk AI systems' and 'AI regulatory sandboxes' which have 'nothing to do with the legal basis for Absence time recording under the GDPR'.",
+        "passed": false
+      },
+      {
+        "question_id": "q061",
+        "score": 0.2708333333333333,
+        "reason": "The score is 0.27 because while the context provides general GDPR principles, such as 'Article 6 defines the lawful bases' and that 'Member State law may provide specific rules for processing personal data within the employment context', it fails to link these to the specific activity requested. As noted in the irrelevancy reasons, the context 'does not provide the specific legal basis for the processing activity \"Settlement of expenses\"' and contains many unrelated statements regarding 'Fraud Prevention' and 'AI systems'.",
+        "passed": false
+      },
+      {
+        "question_id": "q062",
+        "score": 0.5909090909090909,
+        "reason": "The score is 0.59 because while the context provides general definitions of GDPR legal bases such as 'Article 6' and 'Article 9' and mentions that 'Special categories of personal data may be processed for the management of health or social care systems', it fails to specify the exact legal basis for the specific activity of 'Administration and billing of health programs in the company'. Furthermore, much of the retrieval context is irrelevant, referring to 'governmental bodies', 'public interest', or 'AI systems' rather than the 'company' context requested in the input.",
+        "passed": false
+      },
+      {
+        "question_id": "q063",
+        "score": 0.3611111111111111,
+        "reason": "The score is 0.36 because while the context provides general GDPR definitions and mentions that \"Processing of personal data for direct marketing purposes may be regarded as carried out for a legitimate interest,\" it fails to specifically address the processing activity of \"Competitions\" to attract new customers. Furthermore, much of the context is irrelevant, containing data on \"Fraud Prevention,\" \"AI Regulatory Sandboxes,\" and \"high-risk AI systems,\" which do not pertain to the input.",
+        "passed": false
+      },
+      {
+        "question_id": "q064",
+        "score": 0.4625,
+        "reason": "The score is 0.46 because while the context provides general definitions of GDPR legal bases such as 'Legitimate Interest', 'Consent', and 'A Contract', it fails to specify which one applies to the specific activity of 'Customer management' for a CRM system. Furthermore, much of the retrieval context is irrelevant, containing 'structural headers' or referring to 'Employment Context' and 'direct marketing purposes' rather than the requested CRM purpose.",
+        "passed": false
+      },
+      {
+        "question_id": "q065",
+        "score": 0.41025641025641024,
+        "reason": "The score is 0.41 because while the context provides general GDPR legal bases such as 'Article 6(1)', 'Legitimate Interest', and 'Legal Obligation', and specifically mentions that processing is necessary for the 'establishment, exercise or defence of legal claims', it fails to explicitly link these bases to the specific insurance processing activity of 'Reporting and settlement of claims against insurance companies'. Furthermore, much of the retrieval context is irrelevant, containing unrelated information such as 'AI Regulatory Sandboxes', 'biometric identification', and 'Direct Marketing'.",
+        "passed": false
+      },
+      {
+        "question_id": "q067",
+        "score": 0.2375,
+        "reason": "The score is 0.24 because while the context provides general information on GDPR, such as stating that \"Article 6 defines the lawful bases under which personal data may be processed,\" it fails to identify a specific legal basis for the activity of \"Project management,\" as noted in the reasons for irrelevancy.",
+        "passed": false
+      },
+      {
+        "question_id": "q068",
+        "score": 0.4358974358974359,
+        "reason": "The score is 0.44 because while the context provides general legal bases under Article 6 and mentions that \"Member State law or collective agreements may provide specific rules on processing employees' personal data in the employment context, including for management, planning and organisation of work,\" it fails to identify the specific legal basis for the activity of \"Employee appraisal,\" with many retrieved statements being irrelevant, such as those discussing \"AI systems\" or \"criminal offences.\"",
+        "passed": false
+      },
+      {
+        "question_id": "q070",
+        "score": 0.45161290322580644,
+        "reason": "The score is 0.45 because while the context provides general legal bases such as 'Consent' and 'Legitimate Interest' and notes that 'Direct Marketing... may be regarded as a legitimate interest', it fails to specifically address the activity of 'Sale of customer data to advertising companies' for 'Generating additional revenue', with much of the retrieval containing irrelevant information about 'AI systems', 'Fraud Prevention', and 'Directive (EU) 2016/680'.",
+        "passed": false
+      },
+      {
+        "question_id": "q072",
+        "score": 0.5797101449275363,
+        "reason": "The score is 0.58 because while the context provides general GDPR principles and lists various legal bases such as 'Consent', 'Legitimate Interest', and 'Legal Obligation' under 'Article 6', it fails to provide a specific answer for the activity of 'Installation of cameras in employee toilets'. Furthermore, much of the retrieval context is irrelevant, containing data about 'AI Regulatory Sandboxes', 'monitoring publicly accessible areas', and 'Fraud Prevention' which do not align with the input's focus on private employee areas and 'Security monitoring'.",
+        "passed": false
+      },
+      {
+        "question_id": "q075",
+        "score": 0.49264705882352944,
+        "reason": "The score is 0.49 because while the context provides general GDPR definitions and legal bases such as 'Legitimate Interest', 'Consent', and 'Article 6', it fails to address the specific activity of 'Making secret audio recordings in the office' for 'Checking morale'. As noted in the irrelevancy reasons, the context contains unrelated topics like 'AI Regulatory Sandboxes' and 'scientific research purposes', and does not provide a specific legal determination for the input's scenario.",
+        "passed": false
+      },
+      {
+        "question_id": "q076",
+        "score": 0.24630541871921183,
+        "reason": "The score is 0.25 because while the context provides general definitions of 'Data Concerning Health' and mentions that 'Article 9(2) is a legal provision defining conditions and providing exceptions for the processing of special categories of personal data', it fails to identify a specific legal basis for the purpose of 'Optimization of office workplaces'. The retrieval is largely irrelevant as it discusses unrelated topics such as 'Fraud Prevention', 'AI Regulatory Sandboxes', and 'public health', which do not align with the input's specific processing activity.",
+        "passed": false
+      },
+      {
+        "question_id": "q079",
+        "score": 0.08878504672897196,
+        "reason": "The score is 0.09 because the retrieval context fails to identify specific data categories for 'Password management', instead providing general definitions such as 'Personal data refers to any information relating to an identified or identifiable natural person' and 'Digital Identification' processes. As noted in the irrelevancy reasons, the context contains 'no actual content or specific data categories relevant to Password management' and instead describes unrelated elements like 'Encryption', 'Integrity and Confidentiality', and 'Scientific Research'.",
+        "passed": false
+      },
+      {
+        "question_id": "q080",
+        "score": 0.05232558139534884,
+        "reason": "The score is 0.05 because the retrieval context provides only general definitions, such as \"'processing' means any operation or set of operations which is performed on personal data,\" rather than identifying the specific categories of personal data relevant to the activity \"Use of office software\" for business operations.",
+        "passed": false
+      },
+      {
+        "question_id": "q081",
+        "score": 0.018292682926829267,
+        "reason": "The score is 0.02 because the retrieval context provides only general legal definitions, such as \"'processing' means any operation or set of operations which is performed on personal data,\" rather than listing the specific \"categories of personal data\" required for the \"Supplier tenant management\" activity.",
+        "passed": false
+      },
+      {
+        "question_id": "q082",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e145109c0d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q084",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1451032fd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q085",
+        "score": 0.08762886597938144,
+        "reason": "The score is 0.09 because the retrieval context fails to list specific data categories for the activity of 'Performance of payroll accounting', instead providing general definitions such as 'Personal Data refers to any information relating to an identified or identifiable natural person' and discussing broad legal frameworks like 'Employment law' and 'Social Protection Law' which do not specify the data needed for 'Calculation of monthly salaries'.",
+        "passed": false
+      },
+      {
+        "question_id": "q086",
+        "score": 0.2361111111111111,
+        "reason": "The score is 0.24 because while the context contains relevant definitions such as 'Medical Records are documents containing health-related personal data such as diagnoses, examination results, and treatment assessments', the majority of the retrieval context is irrelevant, consisting of structural headers or descriptions of entities like 'Health Professional', 'Hospital', and 'AI System' which are 'not a category of personal data'.",
+        "passed": false
+      },
+      {
+        "question_id": "q087",
+        "score": 0.12209302325581395,
+        "reason": "The score is 0.12 because the retrieval context fails to list specific categories of personal data for the activity of 'Guest Wi-Fi / network access', instead providing general definitions and legal principles. While some statements are marginally relevant, such as the mention of 'internet protocol addresses' as online identifiers and the 'legitimate interest' of 'ensuring network and information security', the majority of the context is irrelevant, containing 'general obligations' and data types like 'Genetic data' or 'Personal data concerning health' that have 'nothing to do with the processing activity of Guest Wi-Fi / network access'.",
+        "passed": false
+      },
+      {
+        "question_id": "q088",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1450eb03d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q089",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1450e88350 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q090",
+        "score": 0.0,
+        "reason": "Error: Expecting value: line 327 column 1 (char 1793)",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q091",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1450e89ed0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q092",
+        "score": 0.14761904761904762,
+        "reason": "The score is 0.15 because while the context mentions general principles like 'Storage Limitation' and that the 'Controller... is responsible for establishing time limits', it fails to provide the specific storage duration for the activity 'File creation' for the purpose of 'Collection of data for the creation of a file with the client'.",
+        "passed": false
+      },
+      {
+        "question_id": "q093",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q094",
+        "score": 0.09782608695652174,
+        "reason": "The score is 0.10 because while the context mentions general principles like the \"principle of storage limitation\" and that data should be kept \"no longer than is necessary,\" it fails to provide the specific storage duration for the activity \"Acceptance of orders via a web portal,\" as noted in the reasons for irrelevancy.",
+        "passed": false
+      },
+      {
+        "question_id": "q095",
+        "score": 0.08585858585858586,
+        "reason": "The score is 0.09 because while the context mentions general principles like 'Storage Limitation' and that data in a sandbox is 'deleted once the participation in the sandbox has terminated', it fails to provide the specific storage duration for the processing activity 'App and software development', as noted in the reasons for irrelevancy.",
+        "passed": false
+      },
+      {
+        "question_id": "q096",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e145124f650 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q097",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e14514862d0 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q098",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e1451485d50 state=finished raised TimeoutError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q099",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q101",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q102",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q104",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q106",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q107",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q110",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q111",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q112",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e14514b1cd0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q113",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e14514cb2d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q114",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q115",
+        "score": 0.0,
+        "reason": "Error: RetryError[<Future at 0x7e145124d4d0 state=finished raised RateLimitError>]",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q120",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q131",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q132",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q144",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q151",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q153",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q090",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q091",
+        "score": 0.0,
+        "reason": "Error: Expecting value: line 149 column 1 (char 814)",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q092",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q093",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q097",
+        "score": 0.0,
+        "reason": "Error: 'NoneType' object is not subscriptable",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q098",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q120",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q134",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q149",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      }
+    ]
+  }
+}

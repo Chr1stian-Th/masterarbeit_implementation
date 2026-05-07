@@ -1,0 +1,186 @@
+{
+  "approach": "agentic_rag",
+  "source_output_file": "agentic_rag_2026-04-20T11-43-32.json",
+  "source_results_file": "eval_agentic_rag_2026-04-21T00-27-02.json",
+  "retry_timestamp": "2026-05-06T12-07-25",
+  "model": "google/gemma-4-31b-it",
+  "partial_metrics": {
+    "context_precision": [
+      {
+        "question_id": "q107",
+        "score": 0,
+        "reason": "The score is 0.00 because all retrieved nodes in the retrieval contexts are irrelevant. For example, the first node in retrieval contexts \"does not mention specific internal roles like 'accounting' or 'human resources'\", and the second node in retrieval contexts \"does not list specific internal roles for billing and administration\", meaning no relevant information was ranked at the top.",
+        "passed": false
+      },
+      {
+        "question_id": "q116",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first node in the retrieval contexts mentions 'employees' personal data in the employment context' and the second node discusses 'Processing in the context of employment', while all subsequent irrelevant nodes, such as the third node which 'discusses public health and religious associations', are correctly ranked lower.",
+        "passed": true
+      },
+      {
+        "question_id": "q117",
+        "score": 0.9765432098765433,
+        "reason": "The score is 0.98 because the vast majority of relevant nodes are ranked at the top, but it is not a perfect 1.0 since the eighth node in the retrieval contexts is irrelevant as it \"discusses journalistic exemptions and public access to documents,\" and it is ranked higher than the ninth and tenth nodes which are relevant for defining \"controller\" and \"processor\" and processing for \"employment and social security.\"",
+        "passed": true
+      },
+      {
+        "question_id": "q118",
+        "score": 1.0,
+        "reason": "The score is 1.00 because all retrieved nodes are perfectly ranked, with every single node in the retrieval contexts being highly relevant to the input!",
+        "passed": true
+      },
+      {
+        "question_id": "q134",
+        "score": 0.8875,
+        "reason": "The score is 0.89 because while the first, second, fourth, and fifth nodes in the retrieval contexts are relevant, the third node in the retrieval contexts is irrelevant as it \"focuses on the timeline for notifying a supervisory authority about a 'personal data breach'\", and thus should have been ranked lower than the relevant nodes.",
+        "passed": true
+      }
+    ],
+    "faithfulness": [
+      {
+        "question_id": "q001",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q012",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q036",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q041",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q043",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q049",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q050",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q055",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q057",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q058",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q087",
+        "score": 1.0,
+        "reason": "The score is 1.00 because the actual output is perfectly faithful to the retrieval context with no contradictions found!",
+        "passed": true
+      },
+      {
+        "question_id": "q113",
+        "score": 0.9,
+        "reason": "The score is 0.90 because the output incorrectly implies the context does not mention children's data protection in marketing and profiling, and it references 'GDPR Recital 38' which is not present in the retrieval context.",
+        "passed": true
+      },
+      {
+        "question_id": "q139",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q141",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q142",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q149",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      },
+      {
+        "question_id": "q153",
+        "score": 0.0,
+        "reason": "Error: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+        "passed": false,
+        "errored": true
+      }
+    ],
+    "regulatory_grounding": [
+      {
+        "question_id": "q115",
+        "score": 1.0,
+        "reason": "The response accurately identifies the relevant groups of data subjects (natural persons, children, and employees) and grounds them in the provided retrieval context. It correctly cites Article 4(1) for the definition of a data subject, Article 8 and Recital 38 for children, and Article 88 for employees. Furthermore, it correctly references Article 9 for special categories of data and Article 46 for third-country transfers, all of which are present in the provided text.",
+        "passed": true
+      },
+      {
+        "question_id": "q116",
+        "score": 1.0,
+        "reason": "The response correctly identifies 'employees' as the affected data subjects and accurately cites Article 88 and Recital 155 from the retrieval context. It correctly characterizes these provisions as allowing Member States to provide specific rules for processing employees' personal data in the employment context, specifically referencing the 'exercise and enjoyment, on an individual or collective basis, of rights and benefits related to employment' which aligns with the co-determination purpose.",
+        "passed": true
+      },
+      {
+        "question_id": "q117",
+        "score": 1.0,
+        "reason": "The response perfectly aligns with the evaluation steps. It identifies the most relevant provisions (Article 3 for territorial scope, Recital 18 for household exemptions, and Article 4(2)/Recitals 15-16 for processing/filing systems) and references them by accurate number and name. The characterization of these provisions is factually correct based on the provided retrieval context, and the answer correctly applies these rules to the user's specific scenario regarding the relevance of the GDPR.",
+        "passed": true
+      },
+      {
+        "question_id": "q118",
+        "score": 1.0,
+        "reason": "The response accurately identifies and cites Article 3 (paragraphs 1, 2, and 3) as the primary regulatory provision for territorial scope, correctly paraphrasing the conditions under which the GDPR applies outside the EU. It also correctly references Article 2 for exclusions and Article 27 regarding representatives, all of which are supported by the retrieval context. The characterization of these provisions is factually correct and well-grounded.",
+        "passed": true
+      }
+    ]
+  }
+}
