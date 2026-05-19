@@ -208,7 +208,7 @@ def build_long_dataframe(evals: list[dict], classified_by_id: dict[str, dict]) -
 
 def _extract_usage(item: dict) -> tuple[int | None, int | None]:
     """Try several common shapes for usage data."""
-    usage = item.get("usage") or item.get("tokens") or {}
+    usage = item.get("usage") or item.get("tokens") or item.get("token_usage") or {}
     if not isinstance(usage, dict):
         return None, None
     in_t = usage.get("input_tokens") or usage.get("prompt_tokens")
