@@ -1,239 +1,190 @@
-# RAG Evaluation Framework
+# Master's Thesis — Comparative Evaluation of RAG Approaches for regulatory question answering
 
-A comprehensive framework for evaluating Retrieval-Augmented Generation (RAG) approaches
-against a GDPR/AI Act question-answering corpus using [DeepEval](https://github.com/confident-ai/deepeval) and based on RAGAS.
+Empirical evaluation of three Retrieval-Augmented Generation (RAG) architectures on a
+GDPR / EU AI Act question-answering corpus.
+Three commercial LLMs are compared across seven metrics covering answer quality, retrieval
+quality, legal interpretability, and cost efficiency.
 
-## Architecture Overview
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        orchestrator.sh                          │
-│  Sets up venvs, runs ingestion, executes approaches, evaluates │
-└──────────┬──────────────┬──────────────┬──────────────┬─────────┘
-           │              │              │              │
-     ┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼──────┐
-     │ Ingestion │ │ LightRAG  │ │ Agentic   │ │   CRAG     │
-     │ Pipeline  │ │ (graph)   │ │ RAG       │ │(corrective)│
-     └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬──────┘
-           │              │              │              │
-     ┌─────▼─────┐       │        ┌─────▼─────┐       │
-     │ ChromaDB  │       │        │ ChromaDB  │       │
-     │ + LightRAG│       │        │ (shared)  ├───────┘
-     └───────────┘       │        └───────────┘
-                   ┌─────▼─────┐
-                   │ LightRAG  │
-                   │ Graph DB  │
-                   └───────────┘
-           │              │              │              │
-           └──────────────┴──────┬───────┴──────────────┘
-                                 │ outputs/*.json
-                           ┌─────▼─────┐
-                           │ DeepEval  │
-                           │ Evaluator │
-                           └─────┬─────┘
-                                 │ results/
-                                 ▼
-                         Evaluation Reports
-```
-
-## RAG Approaches
-
-### 1. LightRAG (Graph-Based RAG)
-Uses [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) which builds a knowledge graph
-from the GDPR corpus and performs hybrid (graph + vector) retrieval.
-
-### 2. Agentic RAG (Adaptive Retrieval)
-A multi-stage pipeline:
-- **Query Classifier**: Categorizes questions as no-retrieval / single-step / multi-step
-- **Dynamic Retrieval**: Adapts retrieval strategy based on classification
-- **Hallucination Check**: Verifies answer is grounded in retrieved context
-
-### 3. CRAG (Corrective RAG)
-Implements the Corrective Retrieval-Augmented Generation pattern:
-- **Retrieve** documents from ChromaDB
-- **Grade** each document for relevance (Correct / Incorrect / Ambiguous)
-- **Refine** by re-retrieving with improved queries if confidence is low
-- **Generate** with refined, high-quality context
-
-## Project Structure
+## Repository Layout
 
 ```
 masterarbeit_implementation/
-└── rag_evaluation/
-    ├── README.md
-    ├── orchestrator.sh              # Main entry: runs everything end-to-end
-    ├── setup_envs.sh                # Creates virtual environments
-    ├── .gitignore
-    ├── config/
-    │   └── settings.yaml            # Global configuration
-    ├── data/
-    │   ├── README.md
-    │   ├── gdpr/                    # GDPR and AI Act source PDFs
-    │   │   ├── GDPR_EN.pdf
-    │   │   └── AI_ACT_EN.pdf
-    │   └── questions/
-    │       ├── questions.json       # Active question corpus (with ground truth)
-    │       └── allquestions.json    # Full question pool
-    ├── db/
-    │   ├── chromadb/                # [gitignored] Shared ChromaDB vector store
-    │   └── lightrag/                # [gitignored] LightRAG graph storage
-    ├── .venvs/                      # [gitignored] Per-approach virtual environments
-    │   ├── ingestion/
-    │   ├── lightrag/
-    │   ├── agentic_rag/
-    │   ├── crag/
-    │   └── evaluation/
-    ├── .deepeval/                   # [gitignored] DeepEval telemetry cache
-    ├── approaches/
-    │   ├── common/                  # Shared utilities (imported via sys.path)
-    │   │   ├── __init__.py
-    │   │   ├── config_loader.py     # Loads settings.yaml
-    │   │   ├── schemas.py           # Output data models
-    │   │   ├── token_tracker.py     # OpenAI token usage tracking
-    │   │   └── output_logger.py     # Standardized result logging
-    │   ├── lightrag_approach/
-    │   │   ├── requirements.txt
-    │   │   ├── .env.example
-    │   │   └── run.py
-    │   ├── agentic_rag/
-    │   │   ├── requirements.txt
-    │   │   ├── .env.example
-    │   │   └── run.py
-    │   └── crag/
-    │       ├── requirements.txt
-    │       ├── .env.example
-    │       └── run.py
-    ├── ingestion/
-    │   ├── requirements.txt
-    │   ├── .env.example
-    │   ├── pdf_utils.py             # PDF parsing helpers
-    │   ├── ingest_chromadb.py       # Ingest corpus into ChromaDB
-    │   └── ingest_lightrag.py       # Ingest corpus into LightRAG
-    ├── evaluation/
-    │   ├── requirements.txt
-    │   ├── .env.example
-    │   ├── evaluate.py              # Main evaluation entry point
-    │   └── metrics/
-    │       ├── __init__.py          # Metric registry
-    │       ├── faithfulness.py
-    │       ├── answer_relevancy.py
-    │       ├── context_precision.py
-    │       ├── context_recall.py
-    │       ├── context_relevancy.py
-    │       ├── legal_interpretability.py
-    │       └── regulatory_grounding.py
-    ├── outputs/                     # [gitignored] JSON results from approach runs
-    └── results/                     # [gitignored] JSON evaluation reports
+├── rag_evaluation/          # Core RAG framework: ingestion, approaches, evaluation
+├── ArtefactsAndResults/     # Archived outputs and evaluation results for every run
+├── DataEvaluation/          # Statistical analysis, visualisation, and report generation
+└── ExtraScripts/            # Standalone utilities (question classifier)
 ```
 
-## Quick Start
+---
 
-### 1. Prepare Data
-Place your source PDFs in `data/gdpr/` (e.g. `GDPR_EN.pdf`, `AI_ACT_EN.pdf`).
-The ingestion pipeline uses `pdf_utils.py` to parse and chunk these automatically.
+## `rag_evaluation/` — Core RAG Framework
 
-Place your question corpus in `data/questions/questions.json`:
+The primary codebase. An orchestrated pipeline that ingests source PDFs, runs three RAG
+approaches, and evaluates their answers with DeepEval / RAGAS metrics.
 
-```json
-[
-  {
-    "id": "q001",
-    "question": "What is the right to erasure under GDPR?",
-    "ground_truth": "Article 17 establishes the right to erasure..."
-  }
-]
-```
+### RAG Approaches
 
-A full question pool is kept in `data/questions/allquestions.json`; copy a subset into `questions.json` to control which questions are evaluated.
+| Approach | Key idea |
+|---|---|
+| **LightRAG** | Knowledge-graph + vector hybrid retrieval ([HKUDS/LightRAG](https://github.com/HKUDS/LightRAG)) |
+| **Agentic RAG** | Query classification (no-retrieval / single-step / multi-step) → adaptive retrieval → hallucination check |
+| **CRAG** | Corrective RAG: retrieve → grade documents (Correct / Incorrect / Ambiguous) → refine query if needed → generate |
 
-### 2. Configure Environment
-Copy `.env.example` files and fill in your API keys:
+### Evaluation Metrics
+
+| Metric | File |
+|---|---|
+| Faithfulness | `evaluation/metrics/faithfulness.py` |
+| Answer Relevancy | `evaluation/metrics/answer_relevancy.py` |
+| Context Precision | `evaluation/metrics/context_precision.py` |
+| Context Recall | `evaluation/metrics/context_recall.py` |
+| Context Relevancy | `evaluation/metrics/context_relevancy.py` |
+| Legal Interpretability | `evaluation/metrics/legal_interpretability.py` |
+| Regulatory Grounding | `evaluation/metrics/regulatory_grounding.py` |
+
+### Quick Start
 
 ```bash
-# Each approach can have its own API key
-cp ingestion/.env.example ingestion/.env
+cd rag_evaluation
+
+# 1. Copy and fill in API keys for each component
+cp ingestion/.env.example            ingestion/.env
 cp approaches/lightrag_approach/.env.example approaches/lightrag_approach/.env
-cp approaches/agentic_rag/.env.example approaches/agentic_rag/.env
-cp approaches/crag/.env.example approaches/crag/.env
-cp evaluation/.env.example evaluation/.env
-```
+cp approaches/agentic_rag/.env.example       approaches/agentic_rag/.env
+cp approaches/crag/.env.example              approaches/crag/.env
+cp evaluation/.env.example                   evaluation/.env
 
-### 3. Run Everything
-```bash
+# 2. Place source PDFs in data/gdpr/
+#    Place question corpus in data/questions/questions.json
+
+# 3. Run the full pipeline end-to-end
 chmod +x orchestrator.sh setup_envs.sh
 ./orchestrator.sh
 ```
 
-Or run individual stages:
+Individual stages:
 ```bash
-./orchestrator.sh --setup          # Create venvs only
-./orchestrator.sh --ingest         # Ingest data only
-./orchestrator.sh --run lightrag   # Run one approach
-./orchestrator.sh --evaluate       # Evaluate outputs
+./orchestrator.sh --setup          # Create virtual environments only
+./orchestrator.sh --ingest         # Ingest PDFs into ChromaDB and LightRAG
+./orchestrator.sh --run lightrag   # Run a single approach
+./orchestrator.sh --evaluate       # Evaluate all outputs in outputs/
 ```
 
-## Configuration
+See [rag_evaluation/README.md](rag_evaluation/README.md) for full documentation including
+configuration options, output format, and how to add new metrics.
 
-Edit `config/settings.yaml` to adjust:
-- Model names (generation + embedding)
-- Chunk sizes for ingestion
-- Retrieval parameters (top-k, similarity thresholds)
-- Parallelization settings (max workers)
-- Output paths
+---
 
-## Output Format
+## `ExtraScripts/` — Question Classifier
 
-Each approach produces a JSON file in `outputs/`:
-
-```json
-{
-  "approach": "agentic_rag",
-  "timestamp": "2025-02-23T10:30:00",
-  "model_config": { "generation_model": "gpt-4o-mini", "embedding_model": "text-embedding-3-small" },
-  "results": [
-    {
-      "question_id": "q001",
-      "input": "What is the right to erasure?",
-      "retriever_context": ["Article 17 paragraph 1...", "Article 17 paragraph 2..."],
-      "output": "The right to erasure, also known as...",
-      "ground_truth": "Article 17 establishes...",
-      "token_usage": { "prompt_tokens": 850, "completion_tokens": 200, "total_tokens": 1050 },
-      "latency_seconds": 2.3,
-      "metadata": {}
-    }
-  ],
-  "total_token_usage": { "prompt_tokens": 8500, "completion_tokens": 2000, "total_tokens": 10500 }
-}
-```
-
-## Evaluation
-
-The evaluation framework uses DeepEval and is designed to be extensible:
+Utility that enriches the question corpus with metadata (difficulty, answer type, GDPR
+domain) needed for the breakdown analysis. Runs three LLM agents per question in parallel
+via OpenRouter.
 
 ```bash
-# Evaluate all outputs with all registered metrics
-python evaluation/evaluate.py --input-dir outputs/ --output-dir results/
+cd ExtraScripts/questionclassification
+pip install -r requirements.txt
+cp .env.example .env   # add OPENROUTER_API_KEY
 
-# Evaluate a specific approach
-python evaluation/evaluate.py --input-dir outputs/ --filter lightrag --output-dir results/
+python classify_questions.py \
+    ../../rag_evaluation/data/questions/questions.json \
+    --output classified_questions.json
 ```
 
-### Metrics
+The committed `classified_questions.json` is the pre-generated output used for all thesis
+experiments. Re-run only if the question corpus changes.
 
-| Metric | File |
+See [ExtraScripts/README.md](ExtraScripts/README.md) for full documentation.
+
+---
+
+## `ArtefactsAndResults/` — Experimental Artefacts
+
+Archived snapshots of all pipeline runs, kept for reproducibility.
+
+| Sub-folder | Description |
 |---|---|
-| Faithfulness | `faithfulness.py` |
-| Answer Relevancy | `answer_relevancy.py` |
-| Context Precision | `context_precision.py` |
-| Context Recall | `context_recall.py` |
-| Context Relevancy | `context_relevancy.py` |
-| Legal Interpretability | `legal_interpretability.py` |
-| Regulatory Grounding | `regulatory_grounding.py` |
+| `first_test_run/` | Initial smoke test (March 2026), includes DB snapshots |
+| `second_test_run_19_04/` | Second preliminary run (April 19 2026) |
+| `results_mistral-small-2603/` | Main experiment — Mistral Small 2603 |
+| `results_mistral-large-3/` | Main experiment — Mistral Large 2512 |
+| `results_gemini-flash-3/` | Main experiment — Gemini Flash 3 |
 
-To add new metrics, create a file in `evaluation/metrics/` following the existing patterns and register it in `__init__.py`.
+Each folder contains raw approach outputs (`outputs/`), DeepEval evaluation results
+(`results/`), retry artefacts (`retry/`), and pipeline logs.
+
+The `merged_eval_*.json` files in `results/` are the inputs consumed by `DataEvaluation`.
+
+See [ArtefactsAndResults/README.md](ArtefactsAndResults/README.md) for full documentation.
+
+---
+
+## `DataEvaluation/` — Analysis and Visualisation
+
+Post-processing script that turns eval JSON files into charts and a Markdown report.
+
+```bash
+cd DataEvaluation
+pip install -r requirements.txt
+
+python analyze_evals.py \
+    --eval-dir  Data/ \
+    --questions ../ExtraScripts/questionclassification/classified_questions.json \
+    --costs     costs.json \
+    --output-dir analysis_output
+```
+
+Generated outputs in `analysis_output/`:
+
+| Sub-folder | Contents |
+|---|---|
+| `all_metrics/` | Aggregate bar and spider charts (by model, by approach) |
+| `per_metric/` | One chart set per metric |
+| `cost/` | USD cost charts, score-per-dollar charts, `cost_summary.csv` |
+| `breakdowns/` | Score grids by domain / difficulty / answer type |
+| `report.md` | Full numeric Markdown report |
+
+See [DataEvaluation/README.md](DataEvaluation/README.md) for full documentation.
+
+---
+
+## End-to-End Workflow
+
+```
+1. Prepare corpus
+   └─ Place PDFs in rag_evaluation/data/gdpr/
+   └─ Place questions in rag_evaluation/data/questions/questions.json
+
+2. Classify questions  (ExtraScripts)
+   └─ python classify_questions.py questions.json --output classified_questions.json
+
+3. Run evaluation pipeline  (rag_evaluation)
+   └─ ./orchestrator.sh
+   └─ Results land in rag_evaluation/outputs/ and rag_evaluation/results/
+
+4. Archive results  (ArtefactsAndResults)
+   └─ Copy outputs/ and results/ into a new sub-folder
+
+5. Copy merged_eval_*.json and output *.json into DataEvaluation/Data/
+
+6. Analyse  (DataEvaluation)
+   └─ python analyze_evals.py --eval-dir Data/ --questions classified_questions.json
+                               --costs costs.json --output-dir analysis_output
+```
+
+## Models Evaluated
+
+| Model | Provider | Use |
+|---|---|---|
+| `mistralai/mistral-small-2603` | Mistral AI | Generation + classification |
+| `mistralai/mistral-large-2512` | Mistral AI | Generation + classification |
+| `google/gemini-3-flash-preview` | Google | Generation + classification |
+
+Embeddings: `text-embedding-3-large` (OpenAI) for all runs.
+Evaluation judge: configured separately in `evaluation/.env`.
 
 ## Requirements
 
 - Python 3.10+ (3.11 recommended)
-- OpenAI API key(s)
-- ~10GB disk space for ChromaDB + LightRAG storage + all the necessary virtual environments
+- OpenRouter API key (generation, evaluation, etc...)
+- ~10 GB disk for ChromaDB + LightRAG storage + virtual environments
