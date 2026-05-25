@@ -94,10 +94,24 @@ SCORE_TYPES = ["avg_score", "pass_rate"]
 
 # Difficulty bucketing for breakdowns
 DIFFICULTY_BUCKETS = [
+    (-0.001, 0.1, "0.0–0.1"),
+    (0.1,    0.2, "0.1–0.2"),
+    (0.2,    0.3, "0.2–0.3"),
+    (0.3,    0.4, "0.3–0.4"),
+    (0.4,    0.5, "0.4–0.5"),
+    (0.5,    0.6, "0.5–0.6"),
+    (0.6,    0.7, "0.6–0.7"),
+    (0.7,    0.8, "0.7–0.8"),
+    (0.8,    0.9, "0.8–0.9"),
+    (0.9,   1.001, "0.9–1.0"),
+]
+
+# Coarse buckets used only in the written report
+DIFFICULTY_BUCKETS_COARSE = [
     (-0.01, 0.25, "easy (≤0.25)"),
-    (0.25, 0.50, "medium (0.25–0.5)"),
-    (0.50, 0.75, "hard (0.5–0.75)"),
-    (0.75, 1.01, "very hard (>0.75)"),
+    (0.25,  0.50, "medium (0.25–0.5)"),
+    (0.50,  0.75, "hard (0.5–0.75)"),
+    (0.75,  1.01, "very hard (>0.75)"),
 ]
 
 # Default figure sizes
@@ -191,12 +205,18 @@ def build_long_dataframe(evals: list[dict], classified_by_id: dict[str, dict]) -
     if df.empty:
         raise RuntimeError("No usable rows after filtering errored entries.")
 
-    # Difficulty bucket label
+    # Difficulty bucket labels
     if "difficulty" in df.columns:
         df["difficulty_bucket"] = pd.cut(
             df["difficulty"],
             bins=[b[0] for b in DIFFICULTY_BUCKETS] + [DIFFICULTY_BUCKETS[-1][1]],
             labels=[b[2] for b in DIFFICULTY_BUCKETS],
+            include_lowest=True,
+        )
+        df["difficulty_bucket_coarse"] = pd.cut(
+            df["difficulty"],
+            bins=[b[0] for b in DIFFICULTY_BUCKETS_COARSE] + [DIFFICULTY_BUCKETS_COARSE[-1][1]],
+            labels=[b[2] for b in DIFFICULTY_BUCKETS_COARSE],
             include_lowest=True,
         )
     return df
@@ -644,6 +664,120 @@ def plot_breakdown(df: pd.DataFrame, breakdown_col: str, save_dir: Path):
     plt.close(fig)
 
 
+def plot_breakdown_spider(df: pd.DataFrame, breakdown_col: str, group_col: str,
+                          score_type: str, save_path: Path):
+    """Radar chart: axes = breakdown_col categories, polygons = group_col values.
+    Scores are pooled across all metrics."""
+    if breakdown_col not in df.columns:
+        return
+    sub = df.dropna(subset=[breakdown_col])
+    if sub.empty:
+        return
+
+    agg = aggregate(sub, [breakdown_col, group_col], score_type)
+    categories = sorted(agg[breakdown_col].dropna().unique(), key=str)
+    groups = sorted(agg[group_col].unique())
+    N = len(categories)
+    if N < 3:
+        return
+
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]
+
+    fig, ax = plt.subplots(figsize=(9, 9), subplot_kw=dict(polar=True))
+    colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(groups), 1)))
+
+    for group, color in zip(groups, colors):
+        vals, cis = [], []
+        for cat in categories:
+            row = agg[(agg[breakdown_col].astype(str) == str(cat)) &
+                      (agg[group_col] == group)]
+            vals.append(float(row["value"].iloc[0]) if not row.empty else 0.0)
+            cis.append(float(row["ci"].iloc[0]) if not row.empty else 0.0)
+        vals += vals[:1]
+        cis += cis[:1]
+
+        ax.plot(angles, vals, "o-", linewidth=2, color=color, label=str(group))
+        ax.fill(angles, vals, alpha=0.1, color=color)
+        ci_upper = [min(v + c, 1.0) for v, c in zip(vals, cis)]
+        ci_lower = [max(v - c, 0.0) for v, c in zip(vals, cis)]
+        ax.fill_between(angles, ci_lower, ci_upper, alpha=0.08, color=color)
+
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels([str(c) for c in categories], fontsize=9)
+    ax.set_ylim(0, 1)
+    ax.set_title(
+        f"{score_label(score_type)} by {breakdown_col}\n(per {group_col})",
+        pad=20, fontsize=12,
+    )
+    ax.legend(loc="upper right", bbox_to_anchor=(1.35, 1.1), fontsize=8, frameon=False)
+    plt.tight_layout()
+    fig.savefig(save_path, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_difficulty_line(df: pd.DataFrame, group_col: str, score_type: str,
+                         save_path: Path):
+    """Line chart: x = difficulty bucket (ordered), y = avg score, one line per group_col.
+    Scores are pooled across all metrics."""
+    if "difficulty_bucket" not in df.columns:
+        return
+    sub = df.dropna(subset=["difficulty_bucket"])
+    if sub.empty:
+        return
+
+    all_bucket_labels = [b[2] for b in DIFFICULTY_BUCKETS]
+    agg = aggregate(sub, ["difficulty_bucket", group_col], score_type)
+    groups = sorted(agg[group_col].unique())
+
+    # Keep only buckets that have at least one data point across any group
+    present = set(agg["difficulty_bucket"].astype(str).unique())
+    bucket_labels = [b for b in all_bucket_labels if b in present]
+    if not bucket_labels:
+        return
+    x_pos = list(range(len(bucket_labels)))
+
+    fig, ax = plt.subplots(figsize=FIG_WIDE)
+    colors = plt.cm.tab10(np.linspace(0, 0.9, max(len(groups), 1)))
+
+    for group, color in zip(groups, colors):
+        vals, cis = [], []
+        for bucket in bucket_labels:
+            row = agg[(agg["difficulty_bucket"].astype(str) == bucket) &
+                      (agg[group_col] == group)]
+            if not row.empty:
+                vals.append(float(row["value"].iloc[0]))
+                cis.append(float(row["ci"].iloc[0]))
+            else:
+                vals.append(np.nan)
+                cis.append(0.0)
+
+        vals_arr = np.array(vals, dtype=float)
+        cis_arr = np.array(cis, dtype=float)
+        mask = ~np.isnan(vals_arr)
+
+        ax.plot(np.array(x_pos)[mask], vals_arr[mask], "o-", linewidth=2,
+                color=color, label=str(group))
+        if mask.sum() > 1:
+            ax.fill_between(
+                np.array(x_pos)[mask],
+                np.clip(vals_arr[mask] - cis_arr[mask], 0, 1),
+                np.clip(vals_arr[mask] + cis_arr[mask], 0, 1),
+                alpha=0.12, color=color,
+            )
+
+    ax.set_xticks(x_pos)
+    ax.set_xticklabels(bucket_labels, rotation=20, ha="right")
+    ax.set_ylim(0, 1.05)
+    ax.set_xlabel("Difficulty bracket")
+    ax.set_ylabel(score_label(score_type))
+    ax.set_title(f"{score_label(score_type)} across difficulty brackets — per {group_col}")
+    ax.legend(loc="best", fontsize=8, frameon=False)
+    plt.tight_layout()
+    fig.savefig(save_path, bbox_inches="tight")
+    plt.close(fig)
+
+
 # ---------------------------------------------------------------------------
 # Report generation
 # ---------------------------------------------------------------------------
@@ -795,7 +929,7 @@ def generate_report(
     add("## Breakdowns\n")
     add("> Values: **avg score ± 95 % CI (n)**.\n")
 
-    for col in ("domain", "difficulty_bucket", "answer_type"):
+    for col in ("domain", "difficulty_bucket_coarse", "answer_type"):
         if col not in df.columns:
             continue
         sub = df.dropna(subset=[col])
@@ -919,6 +1053,22 @@ def main():
     breakdowns_dir.mkdir(parents=True, exist_ok=True)
     for col in ("domain", "difficulty_bucket", "answer_type"):
         plot_breakdown(df, col, breakdowns_dir)
+
+    # Granular breakdown charts
+    for breakdown_col in ("answer_type", "domain"):
+        for score_type in SCORE_TYPES:
+            for group_col in ("model", "approach"):
+                plot_breakdown_spider(
+                    df, breakdown_col, group_col, score_type,
+                    breakdowns_dir / f"{breakdown_col}_spider_{score_type}_by_{group_col}.png",
+                )
+
+    for score_type in SCORE_TYPES:
+        for group_col in ("model", "approach"):
+            plot_difficulty_line(
+                df, group_col, score_type,
+                breakdowns_dir / f"difficulty_line_{score_type}_by_{group_col}.png",
+            )
 
     # Written report
     generate_report(df, cost_df, args.output_dir)
